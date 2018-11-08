@@ -8,3 +8,13 @@ C:\Users\Tzel\source\repos\Multiple-Choice-Generator\Multiple-Choice-Generator\o
 C:\Users\Tzel\source\repos\Multiple-Choice-Generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CoreCompileInputs.cache
 C:\Users\Tzel\source\repos\Multiple-Choice-Generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.exe
 C:\Users\Tzel\source\repos\Multiple-Choice-Generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.pdb
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\bin\Debug\Multiple-Choice-Generator.exe.config
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\bin\Debug\Multiple-Choice-Generator.exe
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\bin\Debug\Multiple-Choice-Generator.pdb
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csprojAssemblyReference.cache
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.Form1.resources
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.Properties.Resources.resources
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.GenerateResource.cache
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CoreCompileInputs.cache
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.exe
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.pdb
