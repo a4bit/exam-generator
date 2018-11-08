@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Multiple_Choice_Generator
 {
@@ -15,6 +16,9 @@ namespace Multiple_Choice_Generator
         public Form1()
         {
             InitializeComponent();
+
+            
+            
         }
 
         //-----------------------------------------------------------------------
@@ -53,12 +57,34 @@ namespace Multiple_Choice_Generator
 
         //TOP MENU BAR, SHOW DROP DOWN LIST WITH EFFECT
         bool createflag = false;
-        private void submenuVis_Click(object sender, EventArgs e)
+        bool editflag = false;
+
+        //when left clicked pressed call timer
+        private void topmenu_MouseClick(object sender, MouseEventArgs e)
         {
-            if (sender.Equals(createL))
-                timer1.Start();
+            Label temp = (Label)sender;
+            temp.Focus();   //set focus to selected label
+            //check if ckicked was left
+            if (e.Button == MouseButtons.Left)
+            {
+                if (sender.Equals(createL))
+                    timer1.Start();
+                else if (sender.Equals(editL))
+                    timer2.Start();
+            }
         }
 
+        //when it loose focus call timer to close submenu
+        private void topmenu_Leave(object sender, EventArgs e)
+        {
+            Label temp = (Label)sender;
+            if (createflag)
+                timer1.Start();
+            else if (editflag)
+                timer2.Start();
+        }
+
+        //effect for create submenu (createSubMenuP)
         private void timer1_Tick(object sender, EventArgs e)
         {
             //if dropdown menu is open then close
@@ -85,49 +111,77 @@ namespace Multiple_Choice_Generator
                 }
             }
         }
+
+        //effect for edit submenu (editSubMenuP)
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            //if dropdown menu is open then close
+            if (editflag)
+            {
+                editSubMenuP.Height -= 21;
+                if (editSubMenuP.Height == 0)
+                {
+                    timer2.Stop();
+                    editflag = false;
+                    //return to blue background, we put the code here because it happend after close dropdown effect
+                    editL.BackColor = Color.DodgerBlue;
+                    editL.ForeColor = Color.White;
+                }
+            }
+            //if dropdown menu is close then open
+            else if (!editflag)
+            {
+                editSubMenuP.Height += 21;
+                if (editSubMenuP.Height == 105)
+                {
+                    timer2.Stop();
+                    editflag = true;
+                }
+            }
+        }
         //-----------------------------------------------------------------------
 
         //TOP MENU BAR, CHANCE FONT SIZE WHEN ENTER
         private void topmenu_MouseEnter(object sender, EventArgs e)
         {
             Label temp = (Label)sender;
-
-            if(temp.Equals(createL))
-            {
-                createL.Font = new Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            }
+                temp.Font = new Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
         }
 
         private void topmenu_MouseLeave(object sender, EventArgs e)
         {
             Label temp = (Label)sender;
-
-            if (temp.Equals(createL))
-            {
-                createL.Font = new Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            }
+            temp.Font = new Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
         }
         //-----------------------------------------------------------------------
 
         //TOP MENU BAR, CHANGE COLOR WHEN CLICKED
         private void topmenu_MouseDown(object sender, MouseEventArgs e)
         {
-            Label temp = (Label)sender;
-            temp.BackColor = Color.White;
-            temp.ForeColor = Color.DodgerBlue;
+            if (e.Button == MouseButtons.Left)
+            {
+                Label temp = (Label)sender;
+                temp.BackColor = Color.White;
+                temp.ForeColor = Color.DodgerBlue;
+            }
         }
+        //-----------------------------------------------------------------------
 
-
-
-
-
-
-
-        private void changeColorTopMen_MouseOver(object sender, EventArgs e)
+        //PLACEHOLDER FOR SEARCH TEXTBOX
+        private void searchTBPLaceholder_Enter(object sender, EventArgs e)
         {
-            Label temp = (Label)sender;
-            temp.BackColor = Color.DodgerBlue;
-            temp.ForeColor = Color.White;
+            if(searchTB.Text.Equals("Search..."))
+            searchTB.Text = "";
         }
+
+        private void searchTBPlaceholder_Leave(object sender, EventArgs e)
+        {
+            if (searchTB.Text.Equals(""))
+                searchTB.Text = "Search...";
+        }
+        //-----------------------------------------------------------------------
+
+ 
+
     }
 }
