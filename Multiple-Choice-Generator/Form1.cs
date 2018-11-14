@@ -26,6 +26,7 @@ namespace Multiple_Choice_Generator
         int mov;
         int movX;
         int movY;
+        int test = 0;
         //load my screen and workingarea location
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -179,9 +180,168 @@ namespace Multiple_Choice_Generator
             if (searchTB.Text.Equals(""))
                 searchTB.Text = "Search...";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text !="")   //// Αν δεν ειναι καινό το Textbox πρόσθεσε το περιεχόμενο του στο listbox αλλιώς εκτύπωση μήνυμα λάθους
+            {
+                
+                listBox1.Items.Add(++test+". "+textBox1.Text);
+                textBox1.Focus();
+                textBox1.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Παρακαλώ πληκρολόγησε την ερώτηση που θέλεις να προσθέσεις στο διαγώνισμα","Error",MessageBoxButtons.OK);
+                textBox1.Focus();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex >= 0)   //// Αν δεν ειναι καινό το Textbox πρόσθεσε το περιεχόμενο του στο listbox αλλιώς εκτύπωση μήνυμα λάθους
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                textBox1.Focus();
+                textBox1.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Επέλεξε την ερώτηση θέλεις να διαγράψεις", "Error", MessageBoxButtons.OK);
+                textBox1.Focus();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void leftmenuP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void helpB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settingsB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoutB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void testB_Click(object sender, EventArgs e)
+        {
+            listBox1.Visible = false;
+            groupBox1.Visible = false;
+        }
+
+        private void questionsB_Click(object sender, EventArgs e)
+        {
+            listBox1.Visible = true;
+            groupBox1.Visible = true;
+        }
+
+        private void createL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createSubMenuP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void create_questionL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void topmenuP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void editL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editSubMenuP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
         //-----------------------------------------------------------------------
 
- 
+
 
     }
 }
