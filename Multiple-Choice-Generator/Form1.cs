@@ -39,6 +39,11 @@ namespace Multiple_Choice_Generator
 
         //LOAD FORM1 AND DO SOME THINGS IN THE START OF APP
         //-----------------------------------------------------------------------
+        int mov;
+        int movX;
+        int movY;
+        int test = 0;
+        //load my screen and workingarea location
         private void Form1_Load(object sender, EventArgs e)
         {
             //load my screen and workingarea location
