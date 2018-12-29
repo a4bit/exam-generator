@@ -20,7 +20,7 @@ namespace Multiple_Choice_Generator
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        {            
             InitializeComponent();
             this.DoubleBuffered = true; //fix gradiend resize problem
             temp = panel1;            
@@ -39,8 +39,12 @@ namespace Multiple_Choice_Generator
 
         //LOAD FORM1 AND DO SOME THINGS IN THE START OF APP
         //-----------------------------------------------------------------------
+        int mov;
+        int movX;
+        int movY;
+        //load my screen and workingarea location
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {        
             //load my screen and workingarea location
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
 
@@ -61,6 +65,15 @@ namespace Multiple_Choice_Generator
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
 
+        }
+
+
+
+        //EXIT APLLICATION WHEN THIS FORM CLOSE
+        //-----------------------------------------------------------------------
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
 
@@ -122,9 +135,6 @@ namespace Multiple_Choice_Generator
 
         //CODE FOR MOVE FORM WITH DRAG AND BUTTON DESIGN
         //-----------------------------------------------------------------------        
-        int mov;
-        int movX;
-        int movY;
         //set movX and movY with mouse current possition when mouse is down
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -459,17 +469,17 @@ namespace Multiple_Choice_Generator
 
                 this.createQuestionConfigButton.Location = new System.Drawing.Point(createQuestionConfigButton.Location.X, textboxY + 167); //move config button down
                 
-                this.createTextBoxButton.Location = new System.Drawing.Point(createTextBoxButton.Location.X, textboxY + 108); //move add textbox button down
-                this.deleteTextBoxButton.Location = new System.Drawing.Point(deleteTextBoxButton.Location.X, textboxY + 108); //move dellete textbox button down
-                this.deleteTextBoxButton.Enabled = true; //set deleteTextBoxButton enable
+                this.createTextboxPictureBox.Location = new System.Drawing.Point(createTextboxPictureBox.Location.X, textboxY + 108); //move add textbox button down
+                this.deleteTextboxPictureBox.Location = new System.Drawing.Point(deleteTextboxPictureBox.Location.X, textboxY + 108); //move dellete textbox button down
+                this.deleteTextboxPictureBox.Enabled = true; //set deleteTextBoxButton enable
 
                 //enable deleteTextBoxButton if disable
-                if (!deleteTextBoxButton.Enabled)
-                    deleteTextBoxButton.Enabled = true;
+                if (!this.deleteTextboxPictureBox.Enabled)
+                    this.deleteTextboxPictureBox.Enabled = true;
 
                 //disable createTextBoxButton if textBoxes == max answers
                 if (n == maxAnswers - 1)
-                    createTextBoxButton.Enabled = false;
+                    this.createTextboxPictureBox.Enabled = false;
 
                 n++;
             }            
@@ -484,17 +494,17 @@ namespace Multiple_Choice_Generator
                 textboxes[n].Visible = false;
                 textboxes[n] = null;
                 this.createQuestionConfigButton.Location = new System.Drawing.Point(createQuestionConfigButton.Location.X, createQuestionConfigButton.Location.Y-54); //move config button up
-                this.createTextBoxButton.Location = new System.Drawing.Point(createTextBoxButton.Location.X, createTextBoxButton.Location.Y-54); //move add textbox button up               
-                this.deleteTextBoxButton.Location = new System.Drawing.Point(deleteTextBoxButton.Location.X, deleteTextBoxButton.Location.Y-54); //move deleteTextButton up
+                this.createTextboxPictureBox.Location = new System.Drawing.Point(createTextboxPictureBox.Location.X, createTextboxPictureBox.Location.Y-54); //move add textbox button up               
+                this.deleteTextboxPictureBox.Location = new System.Drawing.Point(deleteTextboxPictureBox.Location.X, deleteTextboxPictureBox.Location.Y-54); //move deleteTextButton up
 
                 //enabe createTextBoxButton when delete 1 textbox if disable
-                if (!createTextBoxButton.Enabled)
-                    createTextBoxButton.Enabled = true;
+                if (!this.createTextboxPictureBox.Enabled)
+                    this.createTextboxPictureBox.Enabled = true;
 
                 //disable add button to when you have 2 answers
                 if (n == 0)
                 {
-                    deleteTextBoxButton.Enabled = false;
+                    this.deleteTextboxPictureBox.Enabled = false;
                 }
             }            
         }
@@ -521,19 +531,6 @@ namespace Multiple_Choice_Generator
         {
             this.filtersButtonFlag = 'S';
             filtersTimer.Start();
-        }
-
-
-
-        //METHODS OF createAutoTestPanel
-        //-----------------------------------------------------------------------
-        //accept only numbers in createAutoTestQuestionsNumberTextbox
-        private void createAutoTestQuestionsNumberTextbox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
         }
 
 
@@ -669,5 +666,60 @@ namespace Multiple_Choice_Generator
         }
 
 
+
+        //change image when mouse enter
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+        }
+
+        //reset image when mouse leave
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus;
+        }
+
+        //set image when mouse is down
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus_pressed;
+        }
+
+        //change img when mouse is up
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (this.createTextboxPictureBox.ClientRectangle.Contains(this.createTextboxPictureBox.PointToClient(Cursor.Position)))
+                this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+            else
+                this.createTextboxPictureBox.Image = Resources.icon_plus;
+
+        }
+
+        //change img when mouse enter
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+        }
+
+        //change img when mouse leave
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+        }
+
+        //change img when mouse is down
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative_press;
+        }
+
+        //change img ehen mouse is up
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (this.deleteTextboxPictureBox.ClientRectangle.Contains(this.deleteTextboxPictureBox.PointToClient(Cursor.Position)))
+                this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+            else
+                this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+        }
     }
 }
