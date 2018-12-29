@@ -57,9 +57,9 @@ namespace Multiple_Choice_Generator
             this.editQuestionL = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.createQuestionPanel = new System.Windows.Forms.Panel();
+            this.deleteTextboxPictureBox = new System.Windows.Forms.PictureBox();
+            this.createTextboxPictureBox = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.deleteTextBoxButton = new System.Windows.Forms.Button();
-            this.createTextBoxButton = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -78,6 +78,26 @@ namespace Multiple_Choice_Generator
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
+            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
+            this.createAutoTestPanel = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.createManualTestPanel = new System.Windows.Forms.Panel();
             this.createManualTestFilterPanel = new System.Windows.Forms.Panel();
             this.createManualTestFilterConfButton = new System.Windows.Forms.Button();
@@ -102,26 +122,6 @@ namespace Multiple_Choice_Generator
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.showQuestionsPanel = new System.Windows.Forms.Panel();
-            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
-            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
-            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
-            this.createAutoTestPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.createAutoTestQuestionsNumberTextbox = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.filtersTimer = new System.Windows.Forms.Timer(this.components);
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
@@ -131,21 +131,24 @@ namespace Multiple_Choice_Generator
             this.editSubMenuP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.createQuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).BeginInit();
             this.createQuestionsplitContainer.Panel1.SuspendLayout();
             this.createQuestionsplitContainer.Panel2.SuspendLayout();
             this.createQuestionsplitContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            this.showQuestionsPanel.SuspendLayout();
+            this.showQuestionsFilterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
+            this.createAutoTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.createManualTestPanel.SuspendLayout();
             this.createManualTestFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
             this.createTestPanel.SuspendLayout();
             this.createLessonPanel.SuspendLayout();
-            this.showQuestionsPanel.SuspendLayout();
-            this.showQuestionsFilterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
-            this.createAutoTestPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -488,9 +491,9 @@ namespace Multiple_Choice_Generator
             this.createQuestionPanel.AutoScroll = true;
             this.createQuestionPanel.AutoScrollMinSize = new System.Drawing.Size(0, 582);
             this.createQuestionPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.createQuestionPanel.Controls.Add(this.deleteTextboxPictureBox);
+            this.createQuestionPanel.Controls.Add(this.createTextboxPictureBox);
             this.createQuestionPanel.Controls.Add(this.comboBox1);
-            this.createQuestionPanel.Controls.Add(this.deleteTextBoxButton);
-            this.createQuestionPanel.Controls.Add(this.createTextBoxButton);
             this.createQuestionPanel.Controls.Add(this.comboBox2);
             this.createQuestionPanel.Controls.Add(this.label5);
             this.createQuestionPanel.Controls.Add(this.radioButton3);
@@ -511,6 +514,39 @@ namespace Multiple_Choice_Generator
             this.createQuestionPanel.Visible = false;
             this.createQuestionPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
+            // deleteTextboxPictureBox
+            // 
+            this.deleteTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteTextboxPictureBox.Enabled = false;
+            this.deleteTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_negative;
+            this.deleteTextboxPictureBox.Location = new System.Drawing.Point(805, 456);
+            this.deleteTextboxPictureBox.Name = "deleteTextboxPictureBox";
+            this.deleteTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.deleteTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.deleteTextboxPictureBox.TabIndex = 16;
+            this.deleteTextboxPictureBox.TabStop = false;
+            this.deleteTextboxPictureBox.Click += new System.EventHandler(this.deleteTextBoxButton_Click);
+            this.deleteTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.deleteTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.deleteTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.deleteTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            // 
+            // createTextboxPictureBox
+            // 
+            this.createTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_plus;
+            this.createTextboxPictureBox.Location = new System.Drawing.Point(861, 455);
+            this.createTextboxPictureBox.Name = "createTextboxPictureBox";
+            this.createTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.createTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.createTextboxPictureBox.TabIndex = 15;
+            this.createTextboxPictureBox.TabStop = false;
+            this.createTextboxPictureBox.Click += new System.EventHandler(this.createTextBoxButton_Click);
+            this.createTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.createTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.createTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.createTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -525,37 +561,8 @@ namespace Multiple_Choice_Generator
             "Γλωσσα"});
             this.comboBox1.Location = new System.Drawing.Point(167, 19);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(761, 32);
+            this.comboBox1.Size = new System.Drawing.Size(744, 32);
             this.comboBox1.TabIndex = 1;
-            // 
-            // deleteTextBoxButton
-            // 
-            this.deleteTextBoxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteTextBoxButton.BackColor = System.Drawing.Color.Red;
-            this.deleteTextBoxButton.Enabled = false;
-            this.deleteTextBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.deleteTextBoxButton.ForeColor = System.Drawing.Color.White;
-            this.deleteTextBoxButton.Location = new System.Drawing.Point(830, 453);
-            this.deleteTextBoxButton.Name = "deleteTextBoxButton";
-            this.deleteTextBoxButton.Size = new System.Drawing.Size(46, 52);
-            this.deleteTextBoxButton.TabIndex = 0;
-            this.deleteTextBoxButton.Text = "-";
-            this.deleteTextBoxButton.UseVisualStyleBackColor = false;
-            this.deleteTextBoxButton.Click += new System.EventHandler(this.deleteTextBoxButton_Click);
-            // 
-            // createTextBoxButton
-            // 
-            this.createTextBoxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createTextBoxButton.BackColor = System.Drawing.Color.Lime;
-            this.createTextBoxButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createTextBoxButton.ForeColor = System.Drawing.Color.White;
-            this.createTextBoxButton.Location = new System.Drawing.Point(882, 453);
-            this.createTextBoxButton.Name = "createTextBoxButton";
-            this.createTextBoxButton.Size = new System.Drawing.Size(46, 52);
-            this.createTextBoxButton.TabIndex = 0;
-            this.createTextBoxButton.Text = "+";
-            this.createTextBoxButton.UseVisualStyleBackColor = false;
-            this.createTextBoxButton.Click += new System.EventHandler(this.createTextBoxButton_Click);
             // 
             // comboBox2
             // 
@@ -571,7 +578,7 @@ namespace Multiple_Choice_Generator
             "Γλωσσα"});
             this.comboBox2.Location = new System.Drawing.Point(166, 65);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(762, 32);
+            this.comboBox2.Size = new System.Drawing.Size(745, 32);
             this.comboBox2.TabIndex = 2;
             // 
             // label5
@@ -654,7 +661,7 @@ namespace Multiple_Choice_Generator
             this.createQuestionConfigButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createQuestionConfigButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createQuestionConfigButton.ForeColor = System.Drawing.Color.White;
-            this.createQuestionConfigButton.Location = new System.Drawing.Point(746, 511);
+            this.createQuestionConfigButton.Location = new System.Drawing.Point(729, 511);
             this.createQuestionConfigButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.createQuestionConfigButton.Name = "createQuestionConfigButton";
             this.createQuestionConfigButton.Size = new System.Drawing.Size(182, 60);
@@ -673,7 +680,7 @@ namespace Multiple_Choice_Generator
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(887, 48);
+            this.textBox2.Size = new System.Drawing.Size(870, 48);
             this.textBox2.TabIndex = 8;
             // 
             // textBox1
@@ -686,7 +693,7 @@ namespace Multiple_Choice_Generator
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(887, 48);
+            this.textBox1.Size = new System.Drawing.Size(870, 48);
             this.textBox1.TabIndex = 7;
             // 
             // label2
@@ -721,8 +728,8 @@ namespace Multiple_Choice_Generator
             // 
             this.createQuestionsplitContainer.Panel2.Controls.Add(this.webBrowser1);
             this.createQuestionsplitContainer.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.createQuestionsplitContainer.Size = new System.Drawing.Size(890, 122);
-            this.createQuestionsplitContainer.SplitterDistance = 437;
+            this.createQuestionsplitContainer.Size = new System.Drawing.Size(873, 122);
+            this.createQuestionsplitContainer.SplitterDistance = 419;
             this.createQuestionsplitContainer.TabIndex = 3;
             // 
             // richTextBox1
@@ -735,7 +742,7 @@ namespace Multiple_Choice_Generator
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.MinimumSize = new System.Drawing.Size(0, 100);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(435, 120);
+            this.richTextBox1.Size = new System.Drawing.Size(408, 120);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
@@ -748,7 +755,7 @@ namespace Multiple_Choice_Generator
             this.webBrowser1.Location = new System.Drawing.Point(2, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(445, 122);
+            this.webBrowser1.Size = new System.Drawing.Size(438, 122);
             this.webBrowser1.TabIndex = 0;
             // 
             // label1
@@ -784,17 +791,282 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.showQuestionsPanel);
+            this.mainPanel.Controls.Add(this.createQuestionPanel);
+            this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.createTestPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
-            this.mainPanel.Controls.Add(this.createQuestionPanel);
-            this.mainPanel.Controls.Add(this.showQuestionsPanel);
-            this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Location = new System.Drawing.Point(223, 53);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(959, 583);
             this.mainPanel.TabIndex = 0;
+            // 
+            // showQuestionsPanel
+            // 
+            this.showQuestionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionsPanel.AutoScroll = true;
+            this.showQuestionsPanel.AutoScrollMinSize = new System.Drawing.Size(888, 0);
+            this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterButton);
+            this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterPanel);
+            this.showQuestionsPanel.Controls.Add(this.textBox6);
+            this.showQuestionsPanel.Controls.Add(this.showQuestionDataGridView);
+            this.showQuestionsPanel.Location = new System.Drawing.Point(0, 0);
+            this.showQuestionsPanel.Name = "showQuestionsPanel";
+            this.showQuestionsPanel.Size = new System.Drawing.Size(962, 583);
+            this.showQuestionsPanel.TabIndex = 19;
+            this.showQuestionsPanel.Visible = false;
+            this.showQuestionsPanel.Click += new System.EventHandler(this.setfocus_Click);
+            // 
+            // showQuestionsFilterButton
+            // 
+            this.showQuestionsFilterButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.showQuestionsFilterButton.FlatAppearance.BorderSize = 0;
+            this.showQuestionsFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showQuestionsFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showQuestionsFilterButton.ForeColor = System.Drawing.Color.White;
+            this.showQuestionsFilterButton.Location = new System.Drawing.Point(0, 195);
+            this.showQuestionsFilterButton.Name = "showQuestionsFilterButton";
+            this.showQuestionsFilterButton.Size = new System.Drawing.Size(32, 149);
+            this.showQuestionsFilterButton.TabIndex = 7;
+            this.showQuestionsFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
+            this.showQuestionsFilterButton.UseVisualStyleBackColor = false;
+            this.showQuestionsFilterButton.Click += new System.EventHandler(this.showQuestionsFilterButton_Click);
+            // 
+            // showQuestionsFilterPanel
+            // 
+            this.showQuestionsFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.showQuestionsFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.showQuestionsFilterPanel.Controls.Add(this.showQuestionsFilterConfButton);
+            this.showQuestionsFilterPanel.Controls.Add(this.comboBox4);
+            this.showQuestionsFilterPanel.Controls.Add(this.label14);
+            this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox3);
+            this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox4);
+            this.showQuestionsFilterPanel.Location = new System.Drawing.Point(0, 0);
+            this.showQuestionsFilterPanel.Name = "showQuestionsFilterPanel";
+            this.showQuestionsFilterPanel.Size = new System.Drawing.Size(0, 583);
+            this.showQuestionsFilterPanel.TabIndex = 6;
+            // 
+            // showQuestionsFilterConfButton
+            // 
+            this.showQuestionsFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.showQuestionsFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.showQuestionsFilterConfButton.FlatAppearance.BorderSize = 0;
+            this.showQuestionsFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showQuestionsFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showQuestionsFilterConfButton.ForeColor = System.Drawing.Color.White;
+            this.showQuestionsFilterConfButton.Location = new System.Drawing.Point(16, 541);
+            this.showQuestionsFilterConfButton.Name = "showQuestionsFilterConfButton";
+            this.showQuestionsFilterConfButton.Size = new System.Drawing.Size(212, 35);
+            this.showQuestionsFilterConfButton.TabIndex = 6;
+            this.showQuestionsFilterConfButton.Text = "Εφαρμογή";
+            this.showQuestionsFilterConfButton.UseVisualStyleBackColor = false;
+            this.showQuestionsFilterConfButton.Click += new System.EventHandler(this.showQuestionsFilterConfButton_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(17, 49);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(212, 32);
+            this.comboBox4.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(14, 13);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 23);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Φίλτρα";
+            // 
+            // checkedListBox3
+            // 
+            this.checkedListBox3.CheckOnClick = true;
+            this.checkedListBox3.ColumnWidth = 90;
+            this.checkedListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.checkedListBox3.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μεσαίες",
+            "Δύσκολες"});
+            this.checkedListBox3.Location = new System.Drawing.Point(17, 87);
+            this.checkedListBox3.Name = "checkedListBox3";
+            this.checkedListBox3.Size = new System.Drawing.Size(127, 76);
+            this.checkedListBox3.TabIndex = 2;
+            // 
+            // checkedListBox4
+            // 
+            this.checkedListBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkedListBox4.CheckOnClick = true;
+            this.checkedListBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.checkedListBox4.FormattingEnabled = true;
+            this.checkedListBox4.Location = new System.Drawing.Point(16, 177);
+            this.checkedListBox4.Name = "checkedListBox4";
+            this.checkedListBox4.Size = new System.Drawing.Size(213, 346);
+            this.checkedListBox4.TabIndex = 4;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox6.Location = new System.Drawing.Point(611, 34);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(322, 29);
+            this.textBox6.TabIndex = 3;
+            // 
+            // showQuestionDataGridView
+            // 
+            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
+            this.showQuestionDataGridView.Name = "showQuestionDataGridView";
+            this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 482);
+            this.showQuestionDataGridView.TabIndex = 0;
+            // 
+            // createAutoTestPanel
+            // 
+            this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestPanel.AutoScroll = true;
+            this.createAutoTestPanel.AutoScrollMinSize = new System.Drawing.Size(0, 500);
+            this.createAutoTestPanel.Controls.Add(this.numericUpDown1);
+            this.createAutoTestPanel.Controls.Add(this.button4);
+            this.createAutoTestPanel.Controls.Add(this.checkedListBox2);
+            this.createAutoTestPanel.Controls.Add(this.label13);
+            this.createAutoTestPanel.Controls.Add(this.comboBox3);
+            this.createAutoTestPanel.Controls.Add(this.checkedListBox1);
+            this.createAutoTestPanel.Controls.Add(this.label12);
+            this.createAutoTestPanel.Controls.Add(this.label11);
+            this.createAutoTestPanel.Controls.Add(this.label10);
+            this.createAutoTestPanel.Location = new System.Drawing.Point(0, 0);
+            this.createAutoTestPanel.Name = "createAutoTestPanel";
+            this.createAutoTestPanel.Size = new System.Drawing.Size(962, 583);
+            this.createAutoTestPanel.TabIndex = 17;
+            this.createAutoTestPanel.Visible = false;
+            this.createAutoTestPanel.Click += new System.EventHandler(this.setfocus_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
+            this.numericUpDown1.Location = new System.Drawing.Point(45, 130);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(88, 29);
+            this.numericUpDown1.TabIndex = 10;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(751, 487);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(182, 60);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Δημιουργία";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkedListBox2.CheckOnClick = true;
+            this.checkedListBox2.ColumnWidth = 200;
+            this.checkedListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.IntegralHeight = false;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Παραδειγμα1",
+            "Παράδειγμα2",
+            "Παράδειγμα2",
+            "Παράδειγμα2",
+            "Παράδειγμα2",
+            "Παράδειγμα2",
+            "Παράδειγμα2"});
+            this.checkedListBox2.Location = new System.Drawing.Point(45, 262);
+            this.checkedListBox2.MultiColumn = true;
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(888, 210);
+            this.checkedListBox2.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(42, 238);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 18);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Ενότητες:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(45, 66);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(888, 32);
+            this.comboBox3.TabIndex = 4;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.checkedListBox1.HorizontalExtent = 70;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μεσαίες",
+            "Δύσκολες"});
+            this.checkedListBox1.Location = new System.Drawing.Point(45, 195);
+            this.checkedListBox1.MultiColumn = true;
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(369, 28);
+            this.checkedListBox1.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(42, 109);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(186, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Αριθμός ερωτήσεων:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(42, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 18);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Δυσκολία:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(42, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 18);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Μάθημα:";
             // 
             // createManualTestPanel
             // 
@@ -1108,273 +1380,6 @@ namespace Multiple_Choice_Generator
             this.label6.TabIndex = 0;
             this.label6.Text = "Τίτλος Μαθήματος";
             // 
-            // showQuestionsPanel
-            // 
-            this.showQuestionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showQuestionsPanel.AutoScroll = true;
-            this.showQuestionsPanel.AutoScrollMinSize = new System.Drawing.Size(888, 0);
-            this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterButton);
-            this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterPanel);
-            this.showQuestionsPanel.Controls.Add(this.textBox6);
-            this.showQuestionsPanel.Controls.Add(this.showQuestionDataGridView);
-            this.showQuestionsPanel.Location = new System.Drawing.Point(0, 0);
-            this.showQuestionsPanel.Name = "showQuestionsPanel";
-            this.showQuestionsPanel.Size = new System.Drawing.Size(962, 583);
-            this.showQuestionsPanel.TabIndex = 19;
-            this.showQuestionsPanel.Visible = false;
-            this.showQuestionsPanel.Click += new System.EventHandler(this.setfocus_Click);
-            // 
-            // showQuestionsFilterButton
-            // 
-            this.showQuestionsFilterButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.showQuestionsFilterButton.FlatAppearance.BorderSize = 0;
-            this.showQuestionsFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showQuestionsFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.showQuestionsFilterButton.ForeColor = System.Drawing.Color.White;
-            this.showQuestionsFilterButton.Location = new System.Drawing.Point(0, 195);
-            this.showQuestionsFilterButton.Name = "showQuestionsFilterButton";
-            this.showQuestionsFilterButton.Size = new System.Drawing.Size(32, 149);
-            this.showQuestionsFilterButton.TabIndex = 7;
-            this.showQuestionsFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
-            this.showQuestionsFilterButton.UseVisualStyleBackColor = false;
-            this.showQuestionsFilterButton.Click += new System.EventHandler(this.showQuestionsFilterButton_Click);
-            // 
-            // showQuestionsFilterPanel
-            // 
-            this.showQuestionsFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.showQuestionsFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
-            this.showQuestionsFilterPanel.Controls.Add(this.showQuestionsFilterConfButton);
-            this.showQuestionsFilterPanel.Controls.Add(this.comboBox4);
-            this.showQuestionsFilterPanel.Controls.Add(this.label14);
-            this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox3);
-            this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox4);
-            this.showQuestionsFilterPanel.Location = new System.Drawing.Point(0, 0);
-            this.showQuestionsFilterPanel.Name = "showQuestionsFilterPanel";
-            this.showQuestionsFilterPanel.Size = new System.Drawing.Size(0, 583);
-            this.showQuestionsFilterPanel.TabIndex = 6;
-            // 
-            // showQuestionsFilterConfButton
-            // 
-            this.showQuestionsFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showQuestionsFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.showQuestionsFilterConfButton.FlatAppearance.BorderSize = 0;
-            this.showQuestionsFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showQuestionsFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.showQuestionsFilterConfButton.ForeColor = System.Drawing.Color.White;
-            this.showQuestionsFilterConfButton.Location = new System.Drawing.Point(16, 541);
-            this.showQuestionsFilterConfButton.Name = "showQuestionsFilterConfButton";
-            this.showQuestionsFilterConfButton.Size = new System.Drawing.Size(212, 35);
-            this.showQuestionsFilterConfButton.TabIndex = 6;
-            this.showQuestionsFilterConfButton.Text = "Εφαρμογή";
-            this.showQuestionsFilterConfButton.UseVisualStyleBackColor = false;
-            this.showQuestionsFilterConfButton.Click += new System.EventHandler(this.showQuestionsFilterConfButton_Click);
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(17, 49);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(212, 32);
-            this.comboBox4.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(14, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 23);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Φίλτρα";
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.CheckOnClick = true;
-            this.checkedListBox3.ColumnWidth = 90;
-            this.checkedListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "Εύκολες",
-            "Μεσαίες",
-            "Δύσκολες"});
-            this.checkedListBox3.Location = new System.Drawing.Point(17, 87);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(127, 76);
-            this.checkedListBox3.TabIndex = 2;
-            // 
-            // checkedListBox4
-            // 
-            this.checkedListBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkedListBox4.CheckOnClick = true;
-            this.checkedListBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Location = new System.Drawing.Point(16, 177);
-            this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(213, 346);
-            this.checkedListBox4.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox6.Location = new System.Drawing.Point(611, 34);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(322, 29);
-            this.textBox6.TabIndex = 3;
-            // 
-            // showQuestionDataGridView
-            // 
-            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
-            this.showQuestionDataGridView.Name = "showQuestionDataGridView";
-            this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 496);
-            this.showQuestionDataGridView.TabIndex = 0;
-            // 
-            // createAutoTestPanel
-            // 
-            this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.createAutoTestPanel.AutoScroll = true;
-            this.createAutoTestPanel.AutoScrollMinSize = new System.Drawing.Size(0, 500);
-            this.createAutoTestPanel.Controls.Add(this.button4);
-            this.createAutoTestPanel.Controls.Add(this.checkedListBox2);
-            this.createAutoTestPanel.Controls.Add(this.label13);
-            this.createAutoTestPanel.Controls.Add(this.createAutoTestQuestionsNumberTextbox);
-            this.createAutoTestPanel.Controls.Add(this.comboBox3);
-            this.createAutoTestPanel.Controls.Add(this.checkedListBox1);
-            this.createAutoTestPanel.Controls.Add(this.label12);
-            this.createAutoTestPanel.Controls.Add(this.label11);
-            this.createAutoTestPanel.Controls.Add(this.label10);
-            this.createAutoTestPanel.Location = new System.Drawing.Point(0, 0);
-            this.createAutoTestPanel.Name = "createAutoTestPanel";
-            this.createAutoTestPanel.Size = new System.Drawing.Size(962, 583);
-            this.createAutoTestPanel.TabIndex = 17;
-            this.createAutoTestPanel.Visible = false;
-            this.createAutoTestPanel.Click += new System.EventHandler(this.setfocus_Click);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(751, 487);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 60);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Δημιουργία";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox2.CheckOnClick = true;
-            this.checkedListBox2.ColumnWidth = 200;
-            this.checkedListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.IntegralHeight = false;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Παραδειγμα1",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2"});
-            this.checkedListBox2.Location = new System.Drawing.Point(45, 262);
-            this.checkedListBox2.MultiColumn = true;
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(888, 210);
-            this.checkedListBox2.TabIndex = 7;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(42, 238);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 18);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Ενότητες:";
-            // 
-            // createAutoTestQuestionsNumberTextbox
-            // 
-            this.createAutoTestQuestionsNumberTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createAutoTestQuestionsNumberTextbox.Location = new System.Drawing.Point(45, 130);
-            this.createAutoTestQuestionsNumberTextbox.MaxLength = 3;
-            this.createAutoTestQuestionsNumberTextbox.Name = "createAutoTestQuestionsNumberTextbox";
-            this.createAutoTestQuestionsNumberTextbox.Size = new System.Drawing.Size(67, 29);
-            this.createAutoTestQuestionsNumberTextbox.TabIndex = 5;
-            this.createAutoTestQuestionsNumberTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.createAutoTestQuestionsNumberTextbox_KeyPress);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(45, 66);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(888, 32);
-            this.comboBox3.TabIndex = 4;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox1.HorizontalExtent = 70;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Εύκολες",
-            "Μεσαίες",
-            "Δύσκολες"});
-            this.checkedListBox1.Location = new System.Drawing.Point(45, 195);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(369, 28);
-            this.checkedListBox1.TabIndex = 3;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(42, 109);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(186, 18);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Αριθμός ερωτήσεων:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(42, 174);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 18);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Δυσκολία:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(42, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 18);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Μάθημα:";
-            // 
             // filtersTimer
             // 
             this.filtersTimer.Interval = 5;
@@ -1402,7 +1407,8 @@ namespace Multiple_Choice_Generator
             this.Controls.Add(this.mainPanel);
             this.MinimumSize = new System.Drawing.Size(900, 506);
             this.Name = "Form1";
-            this.Text = "Multiple Choice Generator";
+            this.Text = "Multiple Choice Exam Generator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.setfocus_Click);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
@@ -1418,12 +1424,22 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.createQuestionPanel.ResumeLayout(false);
             this.createQuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).EndInit();
             this.createQuestionsplitContainer.Panel1.ResumeLayout(false);
             this.createQuestionsplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).EndInit();
             this.createQuestionsplitContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
+            this.showQuestionsPanel.ResumeLayout(false);
+            this.showQuestionsPanel.PerformLayout();
+            this.showQuestionsFilterPanel.ResumeLayout(false);
+            this.showQuestionsFilterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
+            this.createAutoTestPanel.ResumeLayout(false);
+            this.createAutoTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.createManualTestPanel.ResumeLayout(false);
             this.createManualTestPanel.PerformLayout();
             this.createManualTestFilterPanel.ResumeLayout(false);
@@ -1433,13 +1449,6 @@ namespace Multiple_Choice_Generator
             this.createTestPanel.PerformLayout();
             this.createLessonPanel.ResumeLayout(false);
             this.createLessonPanel.PerformLayout();
-            this.showQuestionsPanel.ResumeLayout(false);
-            this.showQuestionsPanel.PerformLayout();
-            this.showQuestionsFilterPanel.ResumeLayout(false);
-            this.showQuestionsFilterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
-            this.createAutoTestPanel.ResumeLayout(false);
-            this.createAutoTestPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1486,8 +1495,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button createTextBoxButton;
-        private System.Windows.Forms.Button deleteTextBoxButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel createLessonPanel;
@@ -1507,7 +1514,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox createAutoTestQuestionsNumberTextbox;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel showQuestionsPanel;
@@ -1539,6 +1545,9 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.CheckedListBox checkedListBox6;
         private System.Windows.Forms.Button createTestFilterButton;
         private System.Windows.Forms.TextBox createManualTestSearchTextbox;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.PictureBox createTextboxPictureBox;
+        private System.Windows.Forms.PictureBox deleteTextboxPictureBox;
     }
 }
 

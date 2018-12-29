@@ -96,6 +96,17 @@
     <Compile Include="infoForm.Designer.cs">
       <DependentUpon>infoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="settingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +127,9 @@
     <EmbeddedResource Include="infoForm.resx">
       <DependentUpon>infoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogoutForm.resx">
       <DependentUpon>LogoutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,11 +146,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -149,7 +158,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\icon_plus.png" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_negative.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_plus_enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_plus_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_negative_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_negative_enter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\ThinkGeo.MapSuite.10.4.0\build\net45\ThinkGeo.MapSuite.targets" Condition="Exists('..\packages\ThinkGeo.MapSuite.10.4.0\build\net45\ThinkGeo.MapSuite.targets')" />
