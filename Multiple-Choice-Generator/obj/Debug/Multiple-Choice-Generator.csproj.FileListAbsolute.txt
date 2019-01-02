@@ -18,7 +18,6 @@ C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Mu
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CoreCompileInputs.cache
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.exe
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.pdb
-C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LogoutForm.resources
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.settingsForm.resources
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.infoForm.resources
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\bin\Debug\Animator.dll
@@ -64,3 +63,4 @@ C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\bin\D
 C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CopyComplete
 C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LoginForm.resources
 C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LoginForm.resources
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.ConfigForm.resources

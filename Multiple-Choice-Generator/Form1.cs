@@ -285,12 +285,14 @@ namespace Multiple_Choice_Generator
         //call logooutForm or focus
         private void logoutB_Click(object sender, EventArgs e)
         {
-            Form logout = new LogoutForm(this);
-            logout.Show();
-            this.Enabled = false;
-            
-            
+            ConfigForm configForm = new ConfigForm("Είστε σίγουρος ότι θέλετε να κλείσετε την εφαρμογή;", "Ακύρωση", "Κλείσιμο", Color.Red, "Κλείσιμο");
+            if (configForm.ShowDialog(this) == DialogResult.OK)
+            {
+                Application.Exit();                
+            }            
+            configForm.Dispose();
         }
+
 
         //call settingsForm or set focus  
         private Form sett = null;

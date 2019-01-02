@@ -138,6 +138,7 @@
             this.Name = "infoForm";
             this.Text = "Informations";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.infoForm_FormClosing);
+            this.Load += new System.EventHandler(this.infoForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
