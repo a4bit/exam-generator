@@ -4,16 +4,10 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using Multiple_Choice_Generator.Properties;
+using System.Media;
 
 namespace Multiple_Choice_Generator
 {
@@ -64,6 +58,7 @@ namespace Multiple_Choice_Generator
             //leftmenu news bar
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
+
 
         }
 
@@ -133,8 +128,8 @@ namespace Multiple_Choice_Generator
         }
 
 
-        //CODE FOR MOVE FORM WITH DRAG AND BUTTON DESIGN
-        //-----------------------------------------------------------------------        
+        #region CODE FOR MOVE FORM WITH DRAG AND BUTTON DESIGN
+        
         //set movX and movY with mouse current possition when mouse is down
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -156,11 +151,11 @@ namespace Multiple_Choice_Generator
             if (mov == 1)
                 this.SetDesktopLocation(MousePosition.X - movX-10, MousePosition.Y - movY - 31);
         }
+        #endregion
 
 
+        #region TOP MENU BAR EFFECTS
 
-        //TOP MENU BAR EFFECTS
-        //-----------------------------------------------------------------------
         bool createflag = false;
         bool editflag = false;
         //when left clicked pressed call timer
@@ -282,11 +277,11 @@ namespace Multiple_Choice_Generator
             if (searchTB.Text.Equals(""))
                 searchTB.Text = "Search...";
         }
+        #endregion
 
 
+        #region CODE BUTTONS TO CALL FORMS
 
-        //CODE BUTTONS TO CALL FORMS
-        //-----------------------------------------------------------------------
         //call logooutForm or focus
         private void logoutB_Click(object sender, EventArgs e)
         {
@@ -349,10 +344,11 @@ namespace Multiple_Choice_Generator
             }
         }
 
+        #endregion
 
 
-        //CODE SUBMENUS BUTTONS AND OTHER BUTTONS TO CALL THEIR PANELS
-        //-----------------------------------------------------------------------
+        #region CODE SUBMENUS BUTTONS AND OTHER BUTTONS TO CALL THEIR PANELS
+
         //call createqiestionPanel  and close submenu
         private void create_questionL_Click(object sender, EventArgs e)
         {
@@ -422,10 +418,10 @@ namespace Multiple_Choice_Generator
             temp = createManualTestPanel;
         }
 
+        #endregion
 
 
-        //METHODS OF createQuestionPanel
-        //-----------------------------------------------------------------------
+        #region METHODS OF createQuestionPanel
         //set richTextBox test to webBrowser
         private void richTextBox1_TextChanged_1(object sender, EventArgs e)
         {
@@ -515,9 +511,65 @@ namespace Multiple_Choice_Generator
             createQuestionPanel.Focus();    //set focus to panel so button not stay focus
         }
 
+        //change image when mouse enter
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+        }
+
+        //reset image when mouse leave
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus;
+        }
+
+        //set image when mouse is down
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.createTextboxPictureBox.Image = Resources.icon_plus_pressed;
+        }
+
+        //change img when mouse is up
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (this.createTextboxPictureBox.ClientRectangle.Contains(this.createTextboxPictureBox.PointToClient(Cursor.Position)))
+                this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+            else
+                this.createTextboxPictureBox.Image = Resources.icon_plus;
+
+        }
+
+        //change img when mouse enter
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+        }
+
+        //change img when mouse leave
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+        }
+
+        //change img when mouse is down
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.deleteTextboxPictureBox.Image = Resources.icon_negative_press;
+        }
+
+        //change img ehen mouse is up
+        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (this.deleteTextboxPictureBox.ClientRectangle.Contains(this.deleteTextboxPictureBox.PointToClient(Cursor.Position)))
+                this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+            else
+                this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+        }
+
+        #endregion
 
 
-        //METHODS OF showQuestionsPanel
+        #region METHODS OF showQuestionsPanel
         //-----------------------------------------------------------------------
         //code showQuestionsFilterConfButton
         private void showQuestionsFilterConfButton_Click(object sender, EventArgs e)
@@ -532,11 +584,11 @@ namespace Multiple_Choice_Generator
             this.filtersButtonFlag = 'S';
             filtersTimer.Start();
         }
+        #endregion
 
 
+        #region METHODS OF createManualTestPanel
 
-        //METHODS OF createManualTestPanel
-        //-----------------------------------------------------------------------
         //open filter panel of createManualTestPanel
         private void createTestFilterButton_Click(object sender, EventArgs e)
         {
@@ -580,9 +632,10 @@ namespace Multiple_Choice_Generator
             
         }
 
+        #endregion
 
 
-        //FILTERS PANEL EFFECT
+        #region FILTERS PANEL EFFECT
         //-----------------------------------------------------------------------
         private char filtersButtonFlag; //flag to see which filter button pressed
         bool showQuestionFiltrerflag = false;  //flag to see if panel is open or not
@@ -640,10 +693,10 @@ namespace Multiple_Choice_Generator
             }
         }
 
+        #endregion
 
 
-        //NEWS LABEL TO LEFTPANEL FROM RIGHT TO LEFT
-        //-----------------------------------------------------------------------
+        #region NEWS LABEL TO LEFTPANEL FROM RIGHT TO LEFT
         private void newstimer_Tick(object sender, EventArgs e)
         {
             this.newsLabel.Location = new Point(this.newsLabel.Location.X - 1, this.newsLabel.Location.Y);
@@ -666,60 +719,44 @@ namespace Multiple_Choice_Generator
         }
 
 
+        #endregion
 
-        //change image when mouse enter
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
-        }
 
-        //reset image when mouse leave
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            this.createTextboxPictureBox.Image = Resources.icon_plus;
-        }
+        #region KONAMI CODE EGG
 
-        //set image when mouse is down
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.createTextboxPictureBox.Image = Resources.icon_plus_pressed;
-        }
+        //Click the titleL in leftmenuP and then the Konami code (UP,UP,DOWN,DOWN,LEFT,RIGHT,LEFT,RIGHT,B,A,ENTER) and Gradius theme song will play.
+        Keys[] konami = { Keys.Up, Keys.Up, Keys.Down, Keys.Down, Keys.Left, Keys.Right, Keys.Left, Keys.Right, Keys.B, Keys.A, Keys.Enter };
+        int konamiCounter = 0;
 
-        //change img when mouse is up
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void konamiTextbox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (this.createTextboxPictureBox.ClientRectangle.Contains(this.createTextboxPictureBox.PointToClient(Cursor.Position)))
-                this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+            if (e.KeyCode == konami[konamiCounter])
+            {
+                konamiCounter++;
+                if (konamiCounter == konami.Length)
+                {
+                    SoundPlayer audio = new SoundPlayer(Resources.gradius_nes_music_1_); 
+                    audio.Play();
+                    konamiCounter = 0;    
+                }
+
+            }
             else
-                this.createTextboxPictureBox.Image = Resources.icon_plus;
-
+                konamiCounter = 0;
         }
 
-        //change img when mouse enter
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        private void konamiTextbox_Leave(object sender, EventArgs e)
         {
-            this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+            konamiCounter = 0;
         }
 
-        //change img when mouse leave
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        private void titleL_Click(object sender, EventArgs e)
         {
-            this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+            konamiTextbox.Focus();
         }
+        #endregion 
 
-        //change img when mouse is down
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.deleteTextboxPictureBox.Image = Resources.icon_negative_press;
-        }
 
-        //change img ehen mouse is up
-        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (this.deleteTextboxPictureBox.ClientRectangle.Contains(this.deleteTextboxPictureBox.PointToClient(Cursor.Position)))
-                this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
-            else
-                this.deleteTextboxPictureBox.Image = Resources.icon_negative;
-        }
+
     }
 }
