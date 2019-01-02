@@ -63,3 +63,4 @@ C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\bin\D
 C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.Styles.Gradient.xml
 C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CopyComplete
 C:\Users\Tzel\source\repos\exam-generator-master\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LoginForm.resources
+C:\Users\Tzel\source\repos\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LoginForm.resources

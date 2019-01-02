@@ -61,6 +61,15 @@ namespace Multiple_Choice_Generator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gradius_nes_music_1_ {
+            get {
+                return ResourceManager.GetStream("gradius_nes_music_1_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icon_negative {
@@ -116,6 +125,16 @@ namespace Multiple_Choice_Generator.Properties {
         internal static System.Drawing.Bitmap icon_plus_pressed {
             get {
                 object obj = ResourceManager.GetObject("icon_plus_pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
