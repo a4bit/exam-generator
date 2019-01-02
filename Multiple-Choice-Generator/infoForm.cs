@@ -24,5 +24,10 @@ namespace Multiple_Choice_Generator
         {
             ((Form1)this.father).setterinfo = null;
         }
+
+        private void infoForm_Load(object sender, EventArgs e)
+        {
+            this.MaximizeBox = false;
+        }
     }
 }

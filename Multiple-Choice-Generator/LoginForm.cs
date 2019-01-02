@@ -29,5 +29,10 @@ namespace Multiple_Choice_Generator
         {
             System.Diagnostics.Process.Start("www.google.com");   //navigate to URL
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.MaximizeBox = false;
+        }
     }
 }

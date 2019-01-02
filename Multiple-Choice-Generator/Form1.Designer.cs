@@ -33,11 +33,15 @@ namespace Multiple_Choice_Generator
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.leftmenuP = new System.Windows.Forms.Panel();
+            this.konamiTextbox = new System.Windows.Forms.TextBox();
             this.newsLabel = new System.Windows.Forms.Label();
+            this.helpB = new System.Windows.Forms.Button();
+            this.logoL = new System.Windows.Forms.Label();
             this.titleL = new System.Windows.Forms.Label();
+            this.settingsB = new System.Windows.Forms.Button();
+            this.logoutB = new System.Windows.Forms.Button();
             this.testB = new System.Windows.Forms.Button();
             this.questionsB = new System.Windows.Forms.Button();
-            this.konamiTextbox = new System.Windows.Forms.TextBox();
             this.createL = new System.Windows.Forms.Label();
             this.createSubMenuP = new System.Windows.Forms.Panel();
             this.createTestL = new System.Windows.Forms.Label();
@@ -55,6 +59,8 @@ namespace Multiple_Choice_Generator
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.createQuestionPanel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
+            this.deleteTextboxPictureBox = new System.Windows.Forms.PictureBox();
+            this.createTextboxPictureBox = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,6 +75,7 @@ namespace Multiple_Choice_Generator
             this.label2 = new System.Windows.Forms.Label();
             this.createQuestionsplitContainer = new System.Windows.Forms.SplitContainer();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -121,19 +128,14 @@ namespace Multiple_Choice_Generator
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.helpB = new System.Windows.Forms.Button();
-            this.settingsB = new System.Windows.Forms.Button();
-            this.logoutB = new System.Windows.Forms.Button();
-            this.deleteTextboxPictureBox = new System.Windows.Forms.PictureBox();
-            this.createTextboxPictureBox = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
             this.editSubMenuP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.createQuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).BeginInit();
             this.createQuestionsplitContainer.Panel1.SuspendLayout();
             this.createQuestionsplitContainer.Panel2.SuspendLayout();
@@ -150,9 +152,6 @@ namespace Multiple_Choice_Generator
             this.createTestPanel.SuspendLayout();
             this.createAutoTestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -160,9 +159,9 @@ namespace Multiple_Choice_Generator
             this.leftmenuP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.leftmenuP.BackColor = System.Drawing.Color.DodgerBlue;
-            this.leftmenuP.Controls.Add(this.pictureBox1);
             this.leftmenuP.Controls.Add(this.newsLabel);
             this.leftmenuP.Controls.Add(this.helpB);
+            this.leftmenuP.Controls.Add(this.logoL);
             this.leftmenuP.Controls.Add(this.titleL);
             this.leftmenuP.Controls.Add(this.settingsB);
             this.leftmenuP.Controls.Add(this.logoutB);
@@ -179,6 +178,18 @@ namespace Multiple_Choice_Generator
             this.leftmenuP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.leftmenuP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             // 
+            // konamiTextbox
+            // 
+            this.konamiTextbox.BackColor = System.Drawing.Color.DodgerBlue;
+            this.konamiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.konamiTextbox.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.konamiTextbox.Location = new System.Drawing.Point(0, 0);
+            this.konamiTextbox.Name = "konamiTextbox";
+            this.konamiTextbox.Size = new System.Drawing.Size(0, 13);
+            this.konamiTextbox.TabIndex = 15;
+            this.konamiTextbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.konamiTextbox_KeyUp);
+            this.konamiTextbox.Leave += new System.EventHandler(this.konamiTextbox_Leave);
+            // 
             // newsLabel
             // 
             this.newsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -190,6 +201,30 @@ namespace Multiple_Choice_Generator
             this.newsLabel.Size = new System.Drawing.Size(0, 17);
             this.newsLabel.TabIndex = 14;
             // 
+            // helpB
+            // 
+            this.helpB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.helpB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.helpB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.helpB.FlatAppearance.BorderSize = 0;
+            this.helpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpB.Image = ((System.Drawing.Image)(resources.GetObject("helpB.Image")));
+            this.helpB.Location = new System.Drawing.Point(12, 594);
+            this.helpB.Name = "helpB";
+            this.helpB.Size = new System.Drawing.Size(47, 39);
+            this.helpB.TabIndex = 11;
+            this.helpB.UseVisualStyleBackColor = true;
+            this.helpB.Click += new System.EventHandler(this.helpB_Click);
+            // 
+            // logoL
+            // 
+            this.logoL.AutoSize = true;
+            this.logoL.Location = new System.Drawing.Point(76, 60);
+            this.logoL.Name = "logoL";
+            this.logoL.Size = new System.Drawing.Size(27, 13);
+            this.logoL.TabIndex = 13;
+            this.logoL.Text = "logo";
+            // 
             // titleL
             // 
             this.titleL.AutoSize = true;
@@ -198,11 +233,41 @@ namespace Multiple_Choice_Generator
             this.titleL.ForeColor = System.Drawing.Color.White;
             this.titleL.Location = new System.Drawing.Point(24, 174);
             this.titleL.Name = "titleL";
-            this.titleL.Size = new System.Drawing.Size(188, 56);
+            this.titleL.Size = new System.Drawing.Size(178, 56);
             this.titleL.TabIndex = 12;
-            this.titleL.Text = "Multiple Choice\r\n Exam Generator";
+            this.titleL.Text = "Multiple Choice\r\nGenerator";
             this.titleL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.titleL.Click += new System.EventHandler(this.titleL_Click);
+            // 
+            // settingsB
+            // 
+            this.settingsB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingsB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.settingsB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.settingsB.FlatAppearance.BorderSize = 0;
+            this.settingsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsB.Image = ((System.Drawing.Image)(resources.GetObject("settingsB.Image")));
+            this.settingsB.Location = new System.Drawing.Point(130, 594);
+            this.settingsB.Name = "settingsB";
+            this.settingsB.Size = new System.Drawing.Size(39, 39);
+            this.settingsB.TabIndex = 10;
+            this.settingsB.UseVisualStyleBackColor = true;
+            this.settingsB.Click += new System.EventHandler(this.settingsB_Click);
+            // 
+            // logoutB
+            // 
+            this.logoutB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.logoutB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.logoutB.FlatAppearance.BorderSize = 0;
+            this.logoutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutB.Image = ((System.Drawing.Image)(resources.GetObject("logoutB.Image")));
+            this.logoutB.Location = new System.Drawing.Point(175, 594);
+            this.logoutB.Name = "logoutB";
+            this.logoutB.Size = new System.Drawing.Size(45, 39);
+            this.logoutB.TabIndex = 9;
+            this.logoutB.UseVisualStyleBackColor = true;
+            this.logoutB.Click += new System.EventHandler(this.logoutB_Click);
             // 
             // testB
             // 
@@ -242,18 +307,6 @@ namespace Multiple_Choice_Generator
             this.questionsB.Text = "Ερωτήσεις";
             this.questionsB.UseVisualStyleBackColor = false;
             this.questionsB.Click += new System.EventHandler(this.questionsB_Click);
-            // 
-            // konamiTextbox
-            // 
-            this.konamiTextbox.BackColor = System.Drawing.Color.DodgerBlue;
-            this.konamiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.konamiTextbox.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.konamiTextbox.Location = new System.Drawing.Point(0, 0);
-            this.konamiTextbox.Name = "konamiTextbox";
-            this.konamiTextbox.Size = new System.Drawing.Size(0, 13);
-            this.konamiTextbox.TabIndex = 15;
-            this.konamiTextbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.konamiTextbox_KeyUp);
-            this.konamiTextbox.Leave += new System.EventHandler(this.konamiTextbox_Leave);
             // 
             // createL
             // 
@@ -488,6 +541,39 @@ namespace Multiple_Choice_Generator
             this.label18.TabIndex = 17;
             this.label18.Text = "label18";
             // 
+            // deleteTextboxPictureBox
+            // 
+            this.deleteTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteTextboxPictureBox.Enabled = false;
+            this.deleteTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_negative;
+            this.deleteTextboxPictureBox.Location = new System.Drawing.Point(805, 456);
+            this.deleteTextboxPictureBox.Name = "deleteTextboxPictureBox";
+            this.deleteTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.deleteTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.deleteTextboxPictureBox.TabIndex = 16;
+            this.deleteTextboxPictureBox.TabStop = false;
+            this.deleteTextboxPictureBox.Click += new System.EventHandler(this.deleteTextBoxButton_Click);
+            this.deleteTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.deleteTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.deleteTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.deleteTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            // 
+            // createTextboxPictureBox
+            // 
+            this.createTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_plus;
+            this.createTextboxPictureBox.Location = new System.Drawing.Point(861, 455);
+            this.createTextboxPictureBox.Name = "createTextboxPictureBox";
+            this.createTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.createTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.createTextboxPictureBox.TabIndex = 15;
+            this.createTextboxPictureBox.TabStop = false;
+            this.createTextboxPictureBox.Click += new System.EventHandler(this.createTextBoxButton_Click);
+            this.createTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.createTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.createTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.createTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -691,6 +777,18 @@ namespace Multiple_Choice_Generator
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowser1.Location = new System.Drawing.Point(2, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(438, 122);
+            this.webBrowser1.TabIndex = 0;
+            this.toolTip.SetToolTip(this.webBrowser1, "Εδώ εμφανίζεται το διαμορφωμένο κείμενο που εισάγετε στο αριστερό μέρος.");
             // 
             // label1
             // 
@@ -1343,106 +1441,6 @@ namespace Multiple_Choice_Generator
             this.sleepTimer.Interval = 5000;
             this.sleepTimer.Tick += new System.EventHandler(this.sleepTimer_Tick);
             // 
-            // helpB
-            // 
-            this.helpB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.helpB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.helpB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.helpB.FlatAppearance.BorderSize = 0;
-            this.helpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.helpB.Image = ((System.Drawing.Image)(resources.GetObject("helpB.Image")));
-            this.helpB.Location = new System.Drawing.Point(12, 594);
-            this.helpB.Name = "helpB";
-            this.helpB.Size = new System.Drawing.Size(47, 39);
-            this.helpB.TabIndex = 11;
-            this.helpB.UseVisualStyleBackColor = true;
-            this.helpB.Click += new System.EventHandler(this.helpB_Click);
-            // 
-            // settingsB
-            // 
-            this.settingsB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.settingsB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.settingsB.FlatAppearance.BorderSize = 0;
-            this.settingsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsB.Image = ((System.Drawing.Image)(resources.GetObject("settingsB.Image")));
-            this.settingsB.Location = new System.Drawing.Point(130, 594);
-            this.settingsB.Name = "settingsB";
-            this.settingsB.Size = new System.Drawing.Size(39, 39);
-            this.settingsB.TabIndex = 10;
-            this.settingsB.UseVisualStyleBackColor = true;
-            this.settingsB.Click += new System.EventHandler(this.settingsB_Click);
-            // 
-            // logoutB
-            // 
-            this.logoutB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoutB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.logoutB.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.logoutB.FlatAppearance.BorderSize = 0;
-            this.logoutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutB.Image = ((System.Drawing.Image)(resources.GetObject("logoutB.Image")));
-            this.logoutB.Location = new System.Drawing.Point(175, 594);
-            this.logoutB.Name = "logoutB";
-            this.logoutB.Size = new System.Drawing.Size(45, 39);
-            this.logoutB.TabIndex = 9;
-            this.logoutB.UseVisualStyleBackColor = true;
-            this.logoutB.Click += new System.EventHandler(this.logoutB_Click);
-            // 
-            // deleteTextboxPictureBox
-            // 
-            this.deleteTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteTextboxPictureBox.Enabled = false;
-            this.deleteTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_negative;
-            this.deleteTextboxPictureBox.Location = new System.Drawing.Point(805, 456);
-            this.deleteTextboxPictureBox.Name = "deleteTextboxPictureBox";
-            this.deleteTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
-            this.deleteTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.deleteTextboxPictureBox.TabIndex = 16;
-            this.deleteTextboxPictureBox.TabStop = false;
-            this.deleteTextboxPictureBox.Click += new System.EventHandler(this.deleteTextBoxButton_Click);
-            this.deleteTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.deleteTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.deleteTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
-            this.deleteTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
-            // 
-            // createTextboxPictureBox
-            // 
-            this.createTextboxPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createTextboxPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_plus;
-            this.createTextboxPictureBox.Location = new System.Drawing.Point(861, 455);
-            this.createTextboxPictureBox.Name = "createTextboxPictureBox";
-            this.createTextboxPictureBox.Size = new System.Drawing.Size(50, 50);
-            this.createTextboxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.createTextboxPictureBox.TabIndex = 15;
-            this.createTextboxPictureBox.TabStop = false;
-            this.createTextboxPictureBox.Click += new System.EventHandler(this.createTextBoxButton_Click);
-            this.createTextboxPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.createTextboxPictureBox.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.createTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.createTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(2, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(438, 122);
-            this.webBrowser1.TabIndex = 0;
-            this.toolTip.SetToolTip(this.webBrowser1, "Εδώ εμφανίζεται το διαμορφωμένο κείμενο που εισάγετε στο αριστερό μέρος.");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Multiple_Choice_Generator.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 156);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1472,6 +1470,8 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.createQuestionPanel.ResumeLayout(false);
             this.createQuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).EndInit();
             this.createQuestionsplitContainer.Panel1.ResumeLayout(false);
             this.createQuestionsplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).EndInit();
@@ -1495,9 +1495,6 @@ namespace Multiple_Choice_Generator
             this.createAutoTestPanel.ResumeLayout(false);
             this.createAutoTestPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteTextboxPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.createTextboxPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1506,6 +1503,7 @@ namespace Multiple_Choice_Generator
 
         private System.Windows.Forms.Panel leftmenuP;
         private System.Windows.Forms.Button helpB;
+        private System.Windows.Forms.Label logoL;
         private System.Windows.Forms.Label titleL;
         private System.Windows.Forms.Button settingsB;
         private System.Windows.Forms.Button logoutB;
@@ -1599,7 +1597,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.TextBox konamiTextbox;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
