@@ -29,6 +29,9 @@ namespace Multiple_Choice_Generator
             "Μπορείτε να πραγματοποιήσετε αλλαγές στην εμφάνιση του συστήματος από τις ρυθμίσεις.",
             "Μπορείτε να κάνετε αλλαγές στα προσωπικά σας στοιχεία από τις ρυθμίσεις."};
 
+        //object for Utils
+        Utils myutils = new Utils();
+
 
 
         //LOAD FORM1 AND DO SOME THINGS IN THE START OF APP
@@ -427,7 +430,7 @@ namespace Multiple_Choice_Generator
         //set richTextBox test to webBrowser
         private void richTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            webBrowser1.DocumentText = richTextBox1.Text;
+            webBrowser1.DocumentText = createQuestionRichTextBox.Text;
         }
 
         //number of max answers
@@ -435,6 +438,7 @@ namespace Multiple_Choice_Generator
         TextBox[] textboxes = new TextBox[maxAnswers];    //array with textboxes (first and second textboxes don't content in array) 
         int n = 0;        
         int textboxY; //last textbox height location
+        bool flagerrorsVisible = false;  //need this flag for corrext errors location
 
         //create textboxes when pess the button createTextBoxButton
         private void createTextBoxButton_Click(object sender, EventArgs e)
@@ -448,7 +452,7 @@ namespace Multiple_Choice_Generator
                 }
                 else
                 {
-                    textboxY = textBox2.Location.Y;
+                    textboxY = createQuestionTextBox2.Location.Y;
                 }
 
                 //create textbox and set propeties
@@ -456,19 +460,21 @@ namespace Multiple_Choice_Generator
                 this.createQuestionPanel.Controls.Add(textboxes[n]);
                 this.textboxes[n].Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                 | System.Windows.Forms.AnchorStyles.Right)));
-                this.textboxes[n].Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));                
-                this.textboxes[n].Location = new System.Drawing.Point(textBox2.Location.X, textboxY+54);                 
+                this.textboxes[n].Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));                
+                this.textboxes[n].Location = new System.Drawing.Point(createQuestionTextBox2.Location.X, textboxY+54);                 
                 this.textboxes[n].Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
                 this.textboxes[n].Multiline = true;
-                this.textboxes[n].Name = "textBoxA" + n;
+                this.textboxes[n].Name = "createQuestionTextBox" + (n+3);
                 this.textboxes[n].ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-                this.textboxes[n].Size = new System.Drawing.Size(textBox2.Size.Width, textBox2.Size.Height);
+                this.textboxes[n].Size = new System.Drawing.Size(createQuestionTextBox2.Size.Width, createQuestionTextBox2.Size.Height);
                 this.textboxes[n].TabIndex = n + 9;
 
-                this.createQuestionConfigButton.Location = new System.Drawing.Point(createQuestionConfigButton.Location.X, textboxY + 167); //move config button down
-                
+                this.createQuestionConfigButton.Location = new System.Drawing.Point(createQuestionConfigButton.Location.X, textboxY + 167); //move config button down              
                 this.createTextboxPictureBox.Location = new System.Drawing.Point(createTextboxPictureBox.Location.X, textboxY + 108); //move add textbox button down
                 this.deleteTextboxPictureBox.Location = new System.Drawing.Point(deleteTextboxPictureBox.Location.X, textboxY + 108); //move dellete textbox button down
+
+                
+
                 this.deleteTextboxPictureBox.Enabled = true; //set deleteTextBoxButton enable
 
                 //enable deleteTextBoxButton if disable
@@ -479,7 +485,7 @@ namespace Multiple_Choice_Generator
                 if (n == maxAnswers - 1)
                     this.createTextboxPictureBox.Enabled = false;
 
-                n++;
+                n++;                
             }            
         }       
 
@@ -494,6 +500,8 @@ namespace Multiple_Choice_Generator
                 this.createQuestionConfigButton.Location = new System.Drawing.Point(createQuestionConfigButton.Location.X, createQuestionConfigButton.Location.Y-54); //move config button up
                 this.createTextboxPictureBox.Location = new System.Drawing.Point(createTextboxPictureBox.Location.X, createTextboxPictureBox.Location.Y-54); //move add textbox button up               
                 this.deleteTextboxPictureBox.Location = new System.Drawing.Point(deleteTextboxPictureBox.Location.X, deleteTextboxPictureBox.Location.Y-54); //move deleteTextButton up
+
+               
 
                 //enabe createTextBoxButton when delete 1 textbox if disable
                 if (!this.createTextboxPictureBox.Enabled)
@@ -511,8 +519,71 @@ namespace Multiple_Choice_Generator
         private void createQuestionConfigButton_Click(object sender, EventArgs e)
         {
             createQuestionPanel.Focus();    //set focus to panel so button not stay focus
-        }
 
+            createQuestionErrorsLabel.Visible = false;
+            label18.Visible = false;
+
+            //get question's lesson
+            String lesson = createQuestionLessonCombobox.Text;
+
+            //get question's category
+            String category = createQuestionCategoryCombobox.Text;
+
+            //get question's difficulty
+            int difficulty;
+            if (createQuestionRadioButton1.Checked)
+                difficulty = 1;
+            else if (createQuestionRadioButton2.Checked)
+                difficulty = 2;
+            else
+                difficulty = 3;
+
+            //get question
+            String question = createQuestionRichTextBox.Text;
+
+            //get answers            
+            String[] answers = new String[n+2];
+            answers[0] = createQuestionTextBox1.Text;
+            answers[1] = createQuestionTextBox2.Text;            
+            for(int i=0; i<n; i++)
+            {
+                answers[i + 2] = textboxes[i].Text;
+            }
+
+            //check if we there are errors
+            bool checkflag = true;
+            bool[] errors = myutils.createQuestionConfirmation(question, lesson, category, difficulty, answers);
+
+            //if there are errors write them to label
+            this.createQuestionErrorsLabel.Text = "";
+            if(errors[0])
+            {
+                checkflag = false;
+                createQuestionErrorsLabel.Text += "Δεν μπορείτε να καταχωρήσετε κενή ερώτηση.\n";
+            }
+            if (errors[1])
+            {
+                checkflag = false;
+                createQuestionErrorsLabel.Text += "Πρέπει να επιλέξετε μάθημα για την εισαγωγή ερώτησης.\n";
+            }
+            if (errors[2])
+            {
+                checkflag = false;
+                createQuestionErrorsLabel.Text += "Δε μπορείτε να καταχωρήσετε κενή απάντηση, σβήστε την ή συμπληρώστε την.\n";
+            }
+
+            if (!checkflag)
+            {                
+                //code for error
+                label18.Visible = true;
+                createQuestionErrorsLabel.Visible = true;                
+            }
+            else
+            {
+                //code for send to database
+            }
+
+        }        
         //change image when mouse enter
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {

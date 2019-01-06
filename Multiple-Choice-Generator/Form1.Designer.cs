@@ -33,7 +33,6 @@ namespace Multiple_Choice_Generator
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.leftmenuP = new System.Windows.Forms.Panel();
-            this.konamiTextbox = new System.Windows.Forms.TextBox();
             this.newsLabel = new System.Windows.Forms.Label();
             this.helpB = new System.Windows.Forms.Button();
             this.logoL = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace Multiple_Choice_Generator
             this.logoutB = new System.Windows.Forms.Button();
             this.testB = new System.Windows.Forms.Button();
             this.questionsB = new System.Windows.Forms.Button();
+            this.konamiTextbox = new System.Windows.Forms.TextBox();
             this.createL = new System.Windows.Forms.Label();
             this.createSubMenuP = new System.Windows.Forms.Panel();
             this.createTestL = new System.Windows.Forms.Label();
@@ -59,27 +59,28 @@ namespace Multiple_Choice_Generator
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.createQuestionPanel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
+            this.createQuestionErrorsLabel = new System.Windows.Forms.Label();
             this.deleteTextboxPictureBox = new System.Windows.Forms.PictureBox();
             this.createTextboxPictureBox = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.createQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
+            this.createQuestionCategoryCombobox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.createQuestionRadioButton3 = new System.Windows.Forms.RadioButton();
+            this.createQuestionRadioButton2 = new System.Windows.Forms.RadioButton();
+            this.createQuestionRadioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.createQuestionConfigButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.createQuestionTextBox2 = new System.Windows.Forms.TextBox();
+            this.createQuestionTextBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.createQuestionsplitContainer = new System.Windows.Forms.SplitContainer();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.createQuestionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.editQuestionPanel = new System.Windows.Forms.Panel();
             this.showQuestionsPanel = new System.Windows.Forms.Panel();
             this.showQuestionsFilterButton = new System.Windows.Forms.Button();
             this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
@@ -140,7 +141,6 @@ namespace Multiple_Choice_Generator
             this.createQuestionsplitContainer.Panel1.SuspendLayout();
             this.createQuestionsplitContainer.Panel2.SuspendLayout();
             this.createQuestionsplitContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.showQuestionsPanel.SuspendLayout();
             this.showQuestionsFilterPanel.SuspendLayout();
@@ -177,18 +177,6 @@ namespace Multiple_Choice_Generator
             this.leftmenuP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.leftmenuP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.leftmenuP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
-            // 
-            // konamiTextbox
-            // 
-            this.konamiTextbox.BackColor = System.Drawing.Color.DodgerBlue;
-            this.konamiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.konamiTextbox.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.konamiTextbox.Location = new System.Drawing.Point(0, 0);
-            this.konamiTextbox.Name = "konamiTextbox";
-            this.konamiTextbox.Size = new System.Drawing.Size(0, 13);
-            this.konamiTextbox.TabIndex = 15;
-            this.konamiTextbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.konamiTextbox_KeyUp);
-            this.konamiTextbox.Leave += new System.EventHandler(this.konamiTextbox_Leave);
             // 
             // newsLabel
             // 
@@ -307,6 +295,18 @@ namespace Multiple_Choice_Generator
             this.questionsB.Text = "Ερωτήσεις";
             this.questionsB.UseVisualStyleBackColor = false;
             this.questionsB.Click += new System.EventHandler(this.questionsB_Click);
+            // 
+            // konamiTextbox
+            // 
+            this.konamiTextbox.BackColor = System.Drawing.Color.DodgerBlue;
+            this.konamiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.konamiTextbox.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.konamiTextbox.Location = new System.Drawing.Point(0, 0);
+            this.konamiTextbox.Name = "konamiTextbox";
+            this.konamiTextbox.Size = new System.Drawing.Size(0, 13);
+            this.konamiTextbox.TabIndex = 15;
+            this.konamiTextbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.konamiTextbox_KeyUp);
+            this.konamiTextbox.Leave += new System.EventHandler(this.konamiTextbox_Leave);
             // 
             // createL
             // 
@@ -509,19 +509,20 @@ namespace Multiple_Choice_Generator
             this.createQuestionPanel.AutoScrollMinSize = new System.Drawing.Size(0, 582);
             this.createQuestionPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.createQuestionPanel.Controls.Add(this.label18);
+            this.createQuestionPanel.Controls.Add(this.createQuestionErrorsLabel);
             this.createQuestionPanel.Controls.Add(this.deleteTextboxPictureBox);
             this.createQuestionPanel.Controls.Add(this.createTextboxPictureBox);
-            this.createQuestionPanel.Controls.Add(this.comboBox1);
-            this.createQuestionPanel.Controls.Add(this.comboBox2);
+            this.createQuestionPanel.Controls.Add(this.createQuestionLessonCombobox);
+            this.createQuestionPanel.Controls.Add(this.createQuestionCategoryCombobox);
             this.createQuestionPanel.Controls.Add(this.label5);
-            this.createQuestionPanel.Controls.Add(this.radioButton3);
-            this.createQuestionPanel.Controls.Add(this.radioButton2);
-            this.createQuestionPanel.Controls.Add(this.radioButton1);
+            this.createQuestionPanel.Controls.Add(this.createQuestionRadioButton3);
+            this.createQuestionPanel.Controls.Add(this.createQuestionRadioButton2);
+            this.createQuestionPanel.Controls.Add(this.createQuestionRadioButton1);
             this.createQuestionPanel.Controls.Add(this.label4);
             this.createQuestionPanel.Controls.Add(this.label3);
             this.createQuestionPanel.Controls.Add(this.createQuestionConfigButton);
-            this.createQuestionPanel.Controls.Add(this.textBox2);
-            this.createQuestionPanel.Controls.Add(this.textBox1);
+            this.createQuestionPanel.Controls.Add(this.createQuestionTextBox2);
+            this.createQuestionPanel.Controls.Add(this.createQuestionTextBox1);
             this.createQuestionPanel.Controls.Add(this.label2);
             this.createQuestionPanel.Controls.Add(this.createQuestionsplitContainer);
             this.createQuestionPanel.Controls.Add(this.label1);
@@ -535,11 +536,29 @@ namespace Multiple_Choice_Generator
             // label18
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label18.Location = new System.Drawing.Point(1, 565);
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label18.ForeColor = System.Drawing.Color.DarkRed;
+            this.label18.Location = new System.Drawing.Point(45, 475);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(653, 18);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "label18";
+            this.label18.Size = new System.Drawing.Size(371, 18);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Βρέθηκαν σφάλματα. Προσπαθήστε ξανά.";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label18.Visible = false;
+            // 
+            // createQuestionErrorsLabel
+            // 
+            this.createQuestionErrorsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createQuestionErrorsLabel.AutoEllipsis = true;
+            this.createQuestionErrorsLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionErrorsLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.createQuestionErrorsLabel.Location = new System.Drawing.Point(45, 493);
+            this.createQuestionErrorsLabel.Name = "createQuestionErrorsLabel";
+            this.createQuestionErrorsLabel.Size = new System.Drawing.Size(678, 78);
+            this.createQuestionErrorsLabel.TabIndex = 17;
+            this.createQuestionErrorsLabel.Visible = false;
             // 
             // deleteTextboxPictureBox
             // 
@@ -574,39 +593,39 @@ namespace Multiple_Choice_Generator
             this.createTextboxPictureBox.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.createTextboxPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // comboBox1
+            // createQuestionLessonCombobox
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.createQuestionLessonCombobox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.createQuestionLessonCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.createQuestionLessonCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionLessonCombobox.FormattingEnabled = true;
+            this.createQuestionLessonCombobox.Items.AddRange(new object[] {
             "Μαθηματικα",
             "Φυσικη",
             "Χημεια",
             "Γλωσσα"});
-            this.comboBox1.Location = new System.Drawing.Point(167, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(744, 32);
-            this.comboBox1.TabIndex = 1;
+            this.createQuestionLessonCombobox.Location = new System.Drawing.Point(167, 19);
+            this.createQuestionLessonCombobox.Name = "createQuestionLessonCombobox";
+            this.createQuestionLessonCombobox.Size = new System.Drawing.Size(744, 32);
+            this.createQuestionLessonCombobox.TabIndex = 1;
             // 
-            // comboBox2
+            // createQuestionCategoryCombobox
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.createQuestionCategoryCombobox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.createQuestionCategoryCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.createQuestionCategoryCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionCategoryCombobox.FormattingEnabled = true;
+            this.createQuestionCategoryCombobox.Items.AddRange(new object[] {
             "Μαθηματικα",
             "Φυσικη",
             "Χημεια",
             "Γλωσσα"});
-            this.comboBox2.Location = new System.Drawing.Point(166, 65);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(745, 32);
-            this.comboBox2.TabIndex = 2;
+            this.createQuestionCategoryCombobox.Location = new System.Drawing.Point(166, 65);
+            this.createQuestionCategoryCombobox.Name = "createQuestionCategoryCombobox";
+            this.createQuestionCategoryCombobox.Size = new System.Drawing.Size(745, 32);
+            this.createQuestionCategoryCombobox.TabIndex = 2;
             // 
             // label5
             // 
@@ -620,45 +639,45 @@ namespace Multiple_Choice_Generator
             this.label5.Text = "Ενότητα:";
             this.toolTip.SetToolTip(this.label5, "Επιλέξτε την ενότητα του μαθήματος της ερώτησης που θα προσθέσετε.");
             // 
-            // radioButton3
+            // createQuestionRadioButton3
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.radioButton3.Location = new System.Drawing.Point(466, 116);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(104, 28);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Δύσκολη";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.createQuestionRadioButton3.AutoSize = true;
+            this.createQuestionRadioButton3.BackColor = System.Drawing.Color.Transparent;
+            this.createQuestionRadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionRadioButton3.Location = new System.Drawing.Point(466, 116);
+            this.createQuestionRadioButton3.Name = "createQuestionRadioButton3";
+            this.createQuestionRadioButton3.Size = new System.Drawing.Size(104, 28);
+            this.createQuestionRadioButton3.TabIndex = 5;
+            this.createQuestionRadioButton3.TabStop = true;
+            this.createQuestionRadioButton3.Text = "Δύσκολη";
+            this.createQuestionRadioButton3.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // createQuestionRadioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.radioButton2.Location = new System.Drawing.Point(321, 116);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(93, 28);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Μεσαία";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.createQuestionRadioButton2.AutoSize = true;
+            this.createQuestionRadioButton2.BackColor = System.Drawing.Color.Transparent;
+            this.createQuestionRadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionRadioButton2.Location = new System.Drawing.Point(321, 116);
+            this.createQuestionRadioButton2.Name = "createQuestionRadioButton2";
+            this.createQuestionRadioButton2.Size = new System.Drawing.Size(93, 28);
+            this.createQuestionRadioButton2.TabIndex = 4;
+            this.createQuestionRadioButton2.TabStop = true;
+            this.createQuestionRadioButton2.Text = "Μεσαία";
+            this.createQuestionRadioButton2.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // createQuestionRadioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.radioButton1.Location = new System.Drawing.Point(166, 116);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 28);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Εύκολη";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.createQuestionRadioButton1.AutoSize = true;
+            this.createQuestionRadioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.createQuestionRadioButton1.Checked = true;
+            this.createQuestionRadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionRadioButton1.Location = new System.Drawing.Point(166, 116);
+            this.createQuestionRadioButton1.Name = "createQuestionRadioButton1";
+            this.createQuestionRadioButton1.Size = new System.Drawing.Size(93, 28);
+            this.createQuestionRadioButton1.TabIndex = 3;
+            this.createQuestionRadioButton1.TabStop = true;
+            this.createQuestionRadioButton1.Text = "Εύκολη";
+            this.createQuestionRadioButton1.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -700,31 +719,33 @@ namespace Multiple_Choice_Generator
             this.createQuestionConfigButton.UseVisualStyleBackColor = false;
             this.createQuestionConfigButton.Click += new System.EventHandler(this.createQuestionConfigButton_Click);
             // 
-            // textBox2
+            // createQuestionTextBox2
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.createQuestionTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox2.Location = new System.Drawing.Point(41, 398);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(870, 48);
-            this.textBox2.TabIndex = 8;
+            this.createQuestionTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionTextBox2.Location = new System.Drawing.Point(41, 398);
+            this.createQuestionTextBox2.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
+            this.createQuestionTextBox2.MaxLength = 300;
+            this.createQuestionTextBox2.Multiline = true;
+            this.createQuestionTextBox2.Name = "createQuestionTextBox2";
+            this.createQuestionTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.createQuestionTextBox2.Size = new System.Drawing.Size(870, 48);
+            this.createQuestionTextBox2.TabIndex = 8;
             // 
-            // textBox1
+            // createQuestionTextBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.createQuestionTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox1.Location = new System.Drawing.Point(41, 344);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(870, 48);
-            this.textBox1.TabIndex = 7;
+            this.createQuestionTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionTextBox1.Location = new System.Drawing.Point(41, 344);
+            this.createQuestionTextBox1.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
+            this.createQuestionTextBox1.MaxLength = 300;
+            this.createQuestionTextBox1.Multiline = true;
+            this.createQuestionTextBox1.Name = "createQuestionTextBox1";
+            this.createQuestionTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.createQuestionTextBox1.Size = new System.Drawing.Size(870, 48);
+            this.createQuestionTextBox1.TabIndex = 7;
             // 
             // label2
             // 
@@ -752,7 +773,7 @@ namespace Multiple_Choice_Generator
             // createQuestionsplitContainer.Panel1
             // 
             this.createQuestionsplitContainer.Panel1.AutoScroll = true;
-            this.createQuestionsplitContainer.Panel1.Controls.Add(this.richTextBox1);
+            this.createQuestionsplitContainer.Panel1.Controls.Add(this.createQuestionRichTextBox);
             this.createQuestionsplitContainer.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // createQuestionsplitContainer.Panel2
@@ -763,20 +784,21 @@ namespace Multiple_Choice_Generator
             this.createQuestionsplitContainer.SplitterDistance = 419;
             this.createQuestionsplitContainer.TabIndex = 3;
             // 
-            // richTextBox1
+            // createQuestionRichTextBox
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.createQuestionRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.MinimumSize = new System.Drawing.Size(0, 100);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(408, 120);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
+            this.createQuestionRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createQuestionRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createQuestionRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.createQuestionRichTextBox.MaxLength = 1000;
+            this.createQuestionRichTextBox.MinimumSize = new System.Drawing.Size(0, 100);
+            this.createQuestionRichTextBox.Name = "createQuestionRichTextBox";
+            this.createQuestionRichTextBox.Size = new System.Drawing.Size(408, 120);
+            this.createQuestionRichTextBox.TabIndex = 6;
+            this.createQuestionRichTextBox.Text = "";
+            this.createQuestionRichTextBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
             // webBrowser1
             // 
@@ -805,20 +827,11 @@ namespace Multiple_Choice_Generator
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(962, 583);
             this.panel1.TabIndex = 15;
             this.panel1.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 583);
-            this.panel2.TabIndex = 16;
-            this.panel2.Visible = false;
             // 
             // mainPanel
             // 
@@ -826,6 +839,7 @@ namespace Multiple_Choice_Generator
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.Controls.Add(this.createQuestionPanel);
+            this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
@@ -836,6 +850,14 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(959, 583);
             this.mainPanel.TabIndex = 0;
+            // 
+            // editQuestionPanel
+            // 
+            this.editQuestionPanel.Location = new System.Drawing.Point(-2, 0);
+            this.editQuestionPanel.Name = "editQuestionPanel";
+            this.editQuestionPanel.Size = new System.Drawing.Size(962, 583);
+            this.editQuestionPanel.TabIndex = 20;
+            this.editQuestionPanel.Visible = false;
             // 
             // showQuestionsPanel
             // 
@@ -1476,7 +1498,6 @@ namespace Multiple_Choice_Generator
             this.createQuestionsplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).EndInit();
             this.createQuestionsplitContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
             this.showQuestionsPanel.ResumeLayout(false);
             this.showQuestionsPanel.PerformLayout();
@@ -1527,20 +1548,20 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Panel createQuestionPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer createQuestionsplitContainer;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox createQuestionRichTextBox;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox createQuestionTextBox1;
+        private System.Windows.Forms.TextBox createQuestionTextBox2;
         private System.Windows.Forms.Button createQuestionConfigButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox createQuestionLessonCombobox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.RadioButton createQuestionRadioButton3;
+        private System.Windows.Forms.RadioButton createQuestionRadioButton2;
+        private System.Windows.Forms.RadioButton createQuestionRadioButton1;
+        private System.Windows.Forms.ComboBox createQuestionCategoryCombobox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel createLessonPanel;
@@ -1583,7 +1604,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Button createManualTestLessonButton;
         private System.Windows.Forms.ComboBox createManualTestComboBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel createManualTestFilterPanel;
         private System.Windows.Forms.Button createManualTestFilterConfButton;
         private System.Windows.Forms.Label label17;
@@ -1594,9 +1614,11 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox createTextboxPictureBox;
         private System.Windows.Forms.PictureBox deleteTextboxPictureBox;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.TextBox konamiTextbox;
+        private System.Windows.Forms.Panel editQuestionPanel;
+        private System.Windows.Forms.Label createQuestionErrorsLabel;
+        private System.Windows.Forms.Label label18;
     }
 }
 
