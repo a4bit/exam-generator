@@ -10,7 +10,7 @@ namespace Multiple_Choice_Generator
     class Utils
     {
 
-        //check if informations are okey to send to database
+        //check if fields of createQuestion are okey to send to database
         public bool[] createQuestionConfirmation(String question, String lesson, String category, int difficulty, String[] answers)
         {
             /*
@@ -22,7 +22,7 @@ namespace Multiple_Choice_Generator
 
             if (String.IsNullOrEmpty(question) || String.IsNullOrWhiteSpace(question))  //need upgrading
                 errors[0] = true;
-            if (lesson.Equals(""))
+            if(lesson.Equals(""))
                 errors[1] = true;
             
             for(int i=0; i<answers.Length; i++)
@@ -34,6 +34,49 @@ namespace Multiple_Choice_Generator
             return errors;
         }
 
+        //check if fields of createAUtotest are okey to send to database
+        public bool[] createAutoTestConfirmation(String lesson, int difficulty, int category)
+        {
+            bool[] errors = {false, false, false};
+            /*
+             errors[0] -> no lesson has choosen
+             errors[1] -> no difficulty levels have choosen
+             errors[2] -> no categories have choosen                          
+             */
 
+            if (lesson.Equals("") || lesson == null
+)
+                errors[0] = true;
+            if (difficulty == 0)
+                errors[1] = true;
+            if (category == 0)
+                errors[2] = true;
+
+            return errors;
+        }
+
+        //check if fields of createLesson are okey to send to database
+        public bool[] createLessonConfirmation(String title, String[] category)
+        {
+            bool[] errors = {false, false};
+            /*
+             errors[0] -> emprty title lesson
+             errors[1] -> one or more categories are empty
+            */
+
+            if (String.IsNullOrEmpty(title) || String.IsNullOrWhiteSpace(title))
+                errors[0] = true;
+
+            for (int i = 0; i < category.Length; i++)
+            {
+                if(String.IsNullOrWhiteSpace(category[i]) || String.IsNullOrEmpty(category[i]))
+                {
+                    errors[1] = true;
+                    break;
+                }
+            }
+
+            return errors;
+        }
     }
 }
