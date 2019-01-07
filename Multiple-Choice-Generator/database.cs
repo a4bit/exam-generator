@@ -20,7 +20,7 @@ namespace Multiple_Choice_Generator
         {
             
         }
-
+        //Συνδέση με βάση δεδομένων
         public bool connection()
         {
             string conn = "SERVER=" + server + ";" + "DATABASE=" + db + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";charset=utf8;";
@@ -52,39 +52,7 @@ namespace Multiple_Choice_Generator
             }
         }
 
-
-        public List<string>[] qUsers()
-        {
-            if (connection() == true)
-            {
-                List<string>[] list = new List<string>[6];
-                list[0] = new List<string>();
-                list[1] = new List<string>();
-                list[2] = new List<string>();
-                list[3] = new List<string>();
-                list[4] = new List<string>();
-                list[5] = new List<string>();
-
-                string query = "Select * From users";
-                MySqlCommand cmd = new MySqlCommand(query, dbcon);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    list[0].Add(dataReader["username"] + "");
-                    list[1].Add(dataReader["password"] + "");
-                    list[2].Add(dataReader["surname"] + "");
-                    list[3].Add(dataReader["name"] + "");
-                    list[4].Add(dataReader["email"] + "");
-                    list[5].Add(dataReader["school"] + "");
-                }
-                dataReader.Close();
-                return list;
-            }
-            else
-                return null;
-        }
-
+        //Σύνδεση χρήστη και επιστροφή των στοιχείων του σε λιστα
         public List<string> login(string username, string password)
         {
             int exist = 0;
@@ -116,6 +84,7 @@ namespace Multiple_Choice_Generator
                 return null;
         }
 
+        //Επιστροφή των τίτλων των μαθημάτων του συνδεδεμένου χρήστη σε λιστα
         public List<string> qLessons(string username)
         {
             int exist = 0;
@@ -142,6 +111,34 @@ namespace Multiple_Choice_Generator
                 return null;
         }
 
+        //Επιστροφή των ενοτήτων ενός μαθήματος του συνδεδεμένου χρήστη σε λιστα
+        public List<string> qUnits(string owner, string lesson)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+
+                string query = "Select * From units where owner='" + owner + "' and lesson='" + lesson + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["name"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
+        //Καταχώρηση ερώτησης στην βάση
         public int iQuestion(string username, string question, string lesson, string unit, int dif)
         {
             if (connection() == true)
@@ -174,7 +171,8 @@ namespace Multiple_Choice_Generator
                 return 0;
             
         }
-
+        
+        //Βοηθητική συνάρτηση που μετατρέπει το όνομα της ενότητας σε id
         public int convertUnit(string name, string owner, string lesson)
         {
             if (connection() == true)

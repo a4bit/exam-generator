@@ -607,8 +607,14 @@ namespace Multiple_Choice_Generator
             }
             else
             {
+                //Ενα παράδειγμα με λιστες
+                List<string> lessons = new List<string>();
+                List<string> units = new List<string>();
+                lessons = db.qLessons(user.ElementAt(0));
+                units = db.qUnits(user.ElementAt(0), lessons.ElementAt(0));
+
                 //code for send to database
-                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", "Δίκτυα", "Επίπεδο Εφαρμογής", difficulty);
+                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", lessons.ElementAt(0), units.ElementAt(0), difficulty);
                 if (check == 1)
                     MessageBox.Show("Η ερώτηση καταχωρήθηκε!!");
                 else if (check == 0)
