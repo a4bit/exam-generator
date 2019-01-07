@@ -19,9 +19,18 @@ namespace Multiple_Choice_Generator
 
         private void loginConfigButton_Click(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Hide();
+            database db = new database();
+            List<string> list = new List<string>();
+            list = db.login(loginUsernameTextbox.Text, loginPasswordTextbox.Text);
+            if (list == null)
+                MessageBox.Show("Λάθος κωδικός ή όνομα χρήστη!!");
+            else
+            {
+                MessageBox.Show("Επιτυχής σύνδεση " + list.ElementAt(0));
+                Form1 main = new Form1(list);
+                main.Show();
+                this.Hide();
+            }
         }
 
         //CODE LINKLABEL FOR NAVIGATE TO SIGNUP URL

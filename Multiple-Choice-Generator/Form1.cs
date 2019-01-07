@@ -4,20 +4,29 @@
 
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Multiple_Choice_Generator.Properties;
 using System.Media;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Multiple_Choice_Generator
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {            
+        database db = new database();
+        List<string> user = new List<string>();
+
+
+        public Form1(List<string> a)
+        {
             InitializeComponent();
+            user = a;
             this.DoubleBuffered = true; //fix gradiend resize problem
-            temp = panel1;            
+            temp = panel1;
         }
 
         Panel temp; //which of main panels is visible now
@@ -599,7 +608,20 @@ namespace Multiple_Choice_Generator
             else
             {
                 //code for send to database
+                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", "Δίκτυα", "Επίπεδο Εφαρμογής", difficulty);
+                if (check == 1)
+                    MessageBox.Show("Η ερώτηση καταχωρήθηκε!!");
+                else if (check == 0)
+                    MessageBox.Show("Αδυναμία σύνδεσης στη βάση!!");
+                else if (check == -1)
+                    MessageBox.Show("Δεν υπάρχει η ενότητα!!");
+                else
+                    MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
             }
+
+            
+
+           
 
         }        
         //change image when mouse enter

@@ -82,5 +82,15 @@ namespace Multiple_Choice_Generator.Properties {
                 this["Maximized"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=dblabs.it.teithe.gr;user id=it154551;password=123456;database=it154551")]
+        public string it154551ConnectionString {
+            get {
+                return ((string)(this["it154551ConnectionString"]));
+            }
+        }
     }
 }

@@ -1,0 +1,203 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+
+namespace Multiple_Choice_Generator
+{
+    public class database
+    {
+        
+        string server = "dblabs.it.teithe.gr";
+        string db = "it154551";
+        string uid = "it154551";
+        string password = "123456";
+        MySqlConnection dbcon = null;
+
+        public database()
+        {
+            
+        }
+
+        public bool connection()
+        {
+            string conn = "SERVER=" + server + ";" + "DATABASE=" + db + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";charset=utf8;";
+            dbcon = new MySqlConnection(conn);
+            try
+            {
+                dbcon.Open();
+                Console.WriteLine("Επιτυχής σύνδεση στην βάση " + db + " του σέρβερ " + server + "!!!");
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //When handling errors, you can your application's response based 
+                //on the error number.
+                //The two most common error numbers when connecting are as follows:
+                //0: Cannot connect to server.
+                //1045: Invalid user name and/or password.
+                switch (ex.Number)
+                {
+                    case 1045:
+                        Console.WriteLine("Δεν μπόρεσε να συνδεθεί στον σέρβερ!!");
+                        break;
+
+                    case 0:
+                        Console.WriteLine("Λάθος όνομα χρήστη και/ή κωδικός του σερβερ!!!");
+                        break;
+                }
+                return false;
+            }
+        }
+
+
+        public List<string>[] qUsers()
+        {
+            if (connection() == true)
+            {
+                List<string>[] list = new List<string>[6];
+                list[0] = new List<string>();
+                list[1] = new List<string>();
+                list[2] = new List<string>();
+                list[3] = new List<string>();
+                list[4] = new List<string>();
+                list[5] = new List<string>();
+
+                string query = "Select * From users";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["username"] + "");
+                    list[1].Add(dataReader["password"] + "");
+                    list[2].Add(dataReader["surname"] + "");
+                    list[3].Add(dataReader["name"] + "");
+                    list[4].Add(dataReader["email"] + "");
+                    list[5].Add(dataReader["school"] + "");
+                }
+                dataReader.Close();
+                return list;
+            }
+            else
+                return null;
+        }
+
+        public List<string> login(string username, string password)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+
+                string query = "Select * From users where username='" + username + "' and password='" + password + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["username"] + "");
+                    list.Add(dataReader["password"] + "");
+                    list.Add(dataReader["surname"] + "");
+                    list.Add(dataReader["name"] + "");
+                    list.Add(dataReader["email"] + "");
+                    list.Add(dataReader["school"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 1)
+                    return list;
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        public List<string> qLessons(string username)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+
+                string query = "Select * From lessons where owner='" + username + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["name"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
+        public int iQuestion(string username, string question, string lesson, string unit, int dif)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    List<string> list = new List<string>();
+                    int id = convertUnit(unit, username, lesson);
+                    if (id == -2)
+                        return 0;
+                    else if (id == -1)
+                        return -1;
+                    else
+                    {
+                        string query = "Insert into questions values (NULL, '" + question + "', '" + username + "', '" + lesson + "', " + id + ", " + dif + ")";
+                        Console.WriteLine(query);
+                        MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+            
+        }
+
+        public int convertUnit(string name, string owner, string lesson)
+        {
+            if (connection() == true)
+            {
+                int exist=0;
+                int id = 0;
+                string query = "Select id From units where name='" + name + "' and owner='" + owner + "' and lesson='" + lesson + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    id = int.Parse(dataReader["id"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return -1;
+                else
+                    return id;
+            }
+            else
+                return -2;
+        }
+    }
+}
