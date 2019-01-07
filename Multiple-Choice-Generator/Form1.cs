@@ -426,6 +426,24 @@ namespace Multiple_Choice_Generator
         #endregion
 
 
+        #region METHODS OF showQuestionsPanel
+        //-----------------------------------------------------------------------
+        //code showQuestionsFilterConfButton
+        private void showQuestionsFilterConfButton_Click(object sender, EventArgs e)
+        {
+            filtersButtonFlag = 'S';
+            filtersTimer.Start();
+        }
+
+        //open filter panel of showQuestionPanel
+        private void showQuestionsFilterButton_Click(object sender, EventArgs e)
+        {
+            this.filtersButtonFlag = 'S';
+            filtersTimer.Start();
+        }
+        #endregion
+
+
         #region METHODS OF createQuestionPanel
         //set richTextBox test to webBrowser
         private void richTextBox1_TextChanged_1(object sender, EventArgs e)
@@ -460,7 +478,7 @@ namespace Multiple_Choice_Generator
                 this.createQuestionPanel.Controls.Add(textboxes[n]);
                 this.textboxes[n].Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                 | System.Windows.Forms.AnchorStyles.Right)));
-                this.textboxes[n].Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));                
+                this.textboxes[n].Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
                 this.textboxes[n].Location = new System.Drawing.Point(createQuestionTextBox2.Location.X, textboxY+54);                 
                 this.textboxes[n].Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
                 this.textboxes[n].Multiline = true;
@@ -587,78 +605,127 @@ namespace Multiple_Choice_Generator
         //change image when mouse enter
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_plus_enter;
         }
 
         //reset image when mouse leave
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            this.createTextboxPictureBox.Image = Resources.icon_plus;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_plus;
         }
 
         //set image when mouse is down
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.createTextboxPictureBox.Image = Resources.icon_plus_pressed;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_plus_pressed;
         }
 
         //change img when mouse is up
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (this.createTextboxPictureBox.ClientRectangle.Contains(this.createTextboxPictureBox.PointToClient(Cursor.Position)))
-                this.createTextboxPictureBox.Image = Resources.icon_plus_enter;
-            else
-                this.createTextboxPictureBox.Image = Resources.icon_plus;
+            PictureBox temp = (PictureBox)sender;
+                temp.Image = Resources.icon_plus;
 
         }
 
         //change img when mouse enter
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
-            this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_negative_enter;
         }
 
         //change img when mouse leave
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
+            PictureBox temp = (PictureBox)sender;
             this.deleteTextboxPictureBox.Image = Resources.icon_negative;
         }
 
         //change img when mouse is down
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
-            this.deleteTextboxPictureBox.Image = Resources.icon_negative_press;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_negative_press;
         }
 
         //change img ehen mouse is up
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
-            if (this.deleteTextboxPictureBox.ClientRectangle.Contains(this.deleteTextboxPictureBox.PointToClient(Cursor.Position)))
-                this.deleteTextboxPictureBox.Image = Resources.icon_negative_enter;
+            PictureBox temp = (PictureBox)sender;
+            temp.Image = Resources.icon_negative;
+        }
+
+        #endregion
+
+        #region METHODS OF createLessonPanel
+        //methods of add and delete buttons for change the image (eg mouseover) are on createQuestionPanel region cause they first created there!
+
+        TextBox[] categoryTextbox;  //array for categories we create dynamicily
+        int categoryCount = 0;  //current categories
+        int maxCategories = 100;    //max number of categories we can create
+
+        //code for add category textbox and move buttons
+        private void createLessonAddPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //code for delete category textbox and move buttons
+        private void createLessonDeletePictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //code fore createLesson Config Button
+        private void createLessonConfButton_Click(object sender, EventArgs e)
+        {
+            //get fields
+            String title = this.createLessonTitleTextbox.Text;  //get  title
+            String description = this.createLessonDescriptionTextbox.Text;  //get description
+
+            //get categories
+            String[] category = new string[categoryCount];
+            for(int i=0; i<categoryCount; i++)
+            {
+                category[i] = this.categoryTextbox[i].Text;
+            }
+
+            //call confirmation for createLesson to check if fields are okey
+            bool[] errors = myutils.createLessonConfirmation(title, category);
+
+            bool checkflag = false; //flag=true if there are errors, else flag=false
+            createLessonErrorLabel.Text = "";
+            createLessonErrorLabel.Visible = false;
+            createLessonErrorTitleLabel.Visible = false;
+
+            if (errors[0])
+            {
+                checkflag = true;
+                createLessonErrorLabel.Text += "Ο τίτλος είναι κενός, συμπληρώστε τον και ξαναπροσπαθήστε.\n";
+            }
+            if (errors[1])
+            {
+                checkflag = true;
+                createLessonErrorLabel.Text += "Ο τίτλος είναι κενός, συμπληρώστε τον και ξαναπροσπαθήστε.\n";
+            }
+
+            if (checkflag)
+            {
+                this.createLessonErrorTitleLabel.Visible = true;
+                this.createLessonErrorLabel.Visible = true;
+            }
             else
-                this.deleteTextboxPictureBox.Image = Resources.icon_negative;
+            {
+                // all good, code for send to database
+            }
+
         }
 
         #endregion
-
-
-        #region METHODS OF showQuestionsPanel
-        //-----------------------------------------------------------------------
-        //code showQuestionsFilterConfButton
-        private void showQuestionsFilterConfButton_Click(object sender, EventArgs e)
-        {
-            filtersButtonFlag = 'S';
-            filtersTimer.Start();
-        }
-
-        //open filter panel of showQuestionPanel
-        private void showQuestionsFilterButton_Click(object sender, EventArgs e)
-        {
-            this.filtersButtonFlag = 'S';
-            filtersTimer.Start();
-        }
-        #endregion
-
 
         #region METHODS OF createManualTestPanel
 
@@ -705,6 +772,67 @@ namespace Multiple_Choice_Generator
             
         }
 
+        #endregion
+
+        #region METHODS OF createAutoTestPanel
+        private void createAutoTestConfButton_Click(object sender, EventArgs e)
+        {
+            bool errorflag = false; //flag for errors
+            createAutoTestErrorsTitleLabel.Visible = false;
+            createAutoTestErrorsLabel.Visible = false;
+            createAutoTestErrorsLabel.Text = "";            
+
+            //get fields
+            String lesson = this.createAutoTestLessonComboBox.Text;//get lesson
+            int number = Convert.ToInt32(createAutoTestNumericUpDown.Value);    //get number of questions
+
+            //get difficulty checked
+            int difficultyCount = createAutoTestDifficultyCheckedListBox.CheckedIndices.Count;
+            String[] difficulty = new string[difficultyCount];
+            for (int i = 0; i < difficultyCount; i++)
+            {
+                difficulty[i] = createAutoTestDifficultyCheckedListBox.CheckedItems[i].ToString();
+            }
+
+            //get category checked
+            int categoryCount = this.createAutoTestCategoryCheckedListBox.CheckedIndices.Count;
+            String[] category = new string[categoryCount];
+            for (int i = 0; i < categoryCount; i++)
+            {
+                category[i] = createAutoTestCategoryCheckedListBox.CheckedItems[i].ToString();
+            }
+
+            //call confiration util method to check if all are okey
+            bool[] errors = myutils.createAutoTestConfirmation(lesson, difficultyCount, categoryCount);
+
+            if (errors[0])
+            {
+                errorflag = true;
+                this.createAutoTestErrorsLabel.Text += "Δεν έχετε επιλέξει μάθημα.\n";
+            }            
+            if (errors[1])
+            {
+                errorflag = true;
+                this.createAutoTestErrorsLabel.Text += "Πρέπει να διαλέξετε τουλάχιστον ένα επίπεδο δυσκολίας.\n";
+            }                
+            if (errors[2])
+            {
+                errorflag = true;
+                this.createAutoTestErrorsLabel.Text += "Πρέπει να επιλέξετε τουλάχιστον μία κατηγορία μαθήματος.\n";
+            }
+
+            //check if is is okey to send or do visible error labels
+            if (errorflag)
+            {
+                createAutoTestErrorsTitleLabel.Visible = true;
+                createAutoTestErrorsLabel.Visible = true;
+            }
+            else
+            {
+                //code to send to database
+            }
+           
+        }
         #endregion
 
 
@@ -827,9 +955,13 @@ namespace Multiple_Choice_Generator
         {
             konamiTextbox.Focus();
         }
-        #endregion 
 
 
 
+
+
+        #endregion
+
+       
     }
 }
