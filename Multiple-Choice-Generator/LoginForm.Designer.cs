@@ -40,12 +40,14 @@
             this.loginTitleLabel1 = new System.Windows.Forms.Label();
             this.loginUsernameTextbox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.errorLabel);
             this.panel1.Controls.Add(this.loginSignupLinkLabel);
             this.panel1.Controls.Add(this.loginSignupLabel);
             this.panel1.Controls.Add(this.loginConfigButton);
@@ -185,6 +187,16 @@
             this.panel2.Size = new System.Drawing.Size(342, 415);
             this.panel2.TabIndex = 1;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorLabel.Location = new System.Drawing.Point(8, 367);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(404, 23);
+            this.errorLabel.TabIndex = 10;
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Label loginPasswordLabel;
         private System.Windows.Forms.TextBox loginPasswordTextbox;
         private System.Windows.Forms.LinkLabel loginSignupLinkLabel;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
