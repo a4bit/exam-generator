@@ -84,6 +84,58 @@ namespace Multiple_Choice_Generator
                 return null;
         }
 
+        public List<string> qQuestions(string username, string lesson, string unit)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+                int unit_id = convertUnit(unit, username, lesson);
+                string query = "Select * From questions where owner='" + username + "' and lesson='" + lesson + "' and unit_id=" + unit_id ; 
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["text"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
+        public List<string> qAnswers(string question, string unit, string username, string lesson)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+                int id_que = convertQuestion(question, convertUnit(unit, username, lesson));
+                string query = "Select * From answers where id_q=" + id_que;
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["text"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
         //Επιστροφή των τίτλων των μαθημάτων του συνδεδεμένου χρήστη σε λιστα
         public List<string> qLessons(string username)
         {
@@ -179,6 +231,52 @@ namespace Multiple_Choice_Generator
             else
                 return 0;
 
+        }
+
+        public int iLesson(string username, string lesson)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Insert into lessons values ('" + lesson + "', '" + username + "')";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int iUnit(string unit, string username, string lesson)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Insert into units values (NULL, '" + unit + "', '" + username + "', '" + lesson + "')";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
         }
 
         public int iTest(List<string> list, string username, string lesson, string unit)
