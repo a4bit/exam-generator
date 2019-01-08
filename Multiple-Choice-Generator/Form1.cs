@@ -616,9 +616,7 @@ namespace Multiple_Choice_Generator
             {
                 //code for send to database
                 int check = db.iQuestion(user.ElementAt(0),question,lesson,category,difficulty);               
-                    
-                    
-
+                                        
                 if (check == 1)
                 {
                     //set some fields to blank
@@ -628,8 +626,7 @@ namespace Multiple_Choice_Generator
                     for (int i = 0; i < n; i++)
                         textboxes[i].Text = "";
                     
-
-                    MessageBox.Show("Η ερώτηση καταχωρήθηκε με επιτυχία!!");
+                    MessageBox.Show("Η ερώτηση καταχωρήθηκε με επιτυχία!");
                 } else if (check == 0)
                     createQuestionErrorsLabel.Text = "Αδυναμία σύνδεσης στη βάση!";
                 else if (check == -1)
