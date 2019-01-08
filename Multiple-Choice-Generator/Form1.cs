@@ -613,8 +613,13 @@ namespace Multiple_Choice_Generator
                 lessons = db.qLessons(user.ElementAt(0));
                 units = db.qUnits(user.ElementAt(0), lessons.ElementAt(0));
 
+
+                List<string> answerslist = new List<string>();
+                answerslist.Add("Προτόκωλλο");
+                answerslist.Add("Κλαδευτήρι");
+                answerslist.Add("Ραβδιστικό");
                 //code for send to database
-                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", lessons.ElementAt(0), units.ElementAt(0), difficulty);
+                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", answerslist, lessons.ElementAt(0), units.ElementAt(0), difficulty);
                 if (check == 1)
                     MessageBox.Show("Η ερώτηση καταχωρήθηκε!!");
                 else if (check == 0)
@@ -797,7 +802,24 @@ namespace Multiple_Choice_Generator
                 //call showDialog
             }
 
-            
+            List<string> que = new List<string>();
+            que.Add("Τί είναι το FTP;");
+            que.Add("Τί είναι το SMTP;");
+            que.Add("Τί είναι το HTTP;");
+
+            int check = db.iTest(que, user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής");
+
+            if (check == 1)
+                MessageBox.Show("Το διαγώνισμα καταχωρήθηκε!!");
+            else if (check == 0)
+                MessageBox.Show("Αδυναμία σύνδεσης στη βάση!!");
+            else if (check == -1)
+                MessageBox.Show("Δεν υπάρχει η ενότητα!!");
+            else if (check == -3)
+                MessageBox.Show("Δεν υπάρχει η ερώτηση!!");
+            else
+                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
+
         }
 
         #endregion
