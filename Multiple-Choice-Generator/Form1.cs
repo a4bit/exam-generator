@@ -12,6 +12,7 @@ using System.Media;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Multiple_Choice_Generator
 {
@@ -23,6 +24,7 @@ namespace Multiple_Choice_Generator
         private List<string> user = new List<string>();
         private List<string> lessons = new List<string>();
         private List<string> categories = new List<string>();
+        private List<string> questions = new List<string>();
 
         //object for Utils
         Utils myutils = new Utils();
@@ -76,8 +78,9 @@ namespace Multiple_Choice_Generator
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
 
-            //get lessons
-            lessons = db.qLessons(user.ElementAt(0));
+            //load lessons            
+            this.lessons = myutils.loadlessons(user.ElementAt(0));
+            this.questions = myutils.loadquestions(user.ElementAt(0));
 
         }
 
@@ -615,8 +618,16 @@ namespace Multiple_Choice_Generator
             else
             {
                 //code for send to database
-                int check = db.iQuestion(user.ElementAt(0),question,lesson,category,difficulty);               
-                                        
+                List<string> answerslist = new List<string>();
+                
+                answerslist.Add(this.createQuestionTextBox1.Text);
+                answerslist.Add(this.createQuestionTextBox2.Text);
+                for(int i=0; i<n; i++)
+                    answerslist.Add(this.textboxes[i].Text);
+
+                int check = db.iQuestion(user.ElementAt(0),question, answerslist, lesson, category,difficulty); //send to database
+
+
                 if (check == 1)
                 {
                     //set some fields to blank
@@ -697,6 +708,40 @@ namespace Multiple_Choice_Generator
             temp.Image = Resources.icon_negative;
         }
 
+        //load lessons when createQuestionPanel set Visible
+        private void createQuestionPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            Panel temp = (Panel)sender;
+            if (temp.Visible)
+            {
+                foreach (String lesson in this.lessons)
+                {
+                    this.createQuestionLessonCombobox.Items.Add(lesson);
+                }
+            }
+            else
+            {
+                //clear all
+                this.createQuestionLessonCombobox.Items.Clear();
+                this.createQuestionCategoryCombobox.Items.Clear();
+                this.createQuestionRadioButton1.Select();
+            }
+        }
+
+
+        //load categories when we choose lesson
+        private void createQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.createQuestionCategoryCombobox.Items.Clear();
+            String lesson = this.createQuestionLessonCombobox.Text;
+            //load categories
+            categories = myutils.loadcategories(user.ElementAt(0), lesson);
+            foreach (String category in this.categories)
+            {
+                this.createQuestionCategoryCombobox.Items.Add(category);
+            }
+        }
+
         #endregion
 
         #region METHODS OF createLessonPanel
@@ -760,7 +805,6 @@ namespace Multiple_Choice_Generator
             {
                 // all good, code for send to database
             }
-
         }
 
         #endregion
@@ -807,7 +851,24 @@ namespace Multiple_Choice_Generator
                 //call showDialog
             }
 
-            
+            List<string> que = new List<string>();
+            que.Add("Τί είναι το FTP;");
+            que.Add("Τί είναι το SMTP;");
+            que.Add("Τί είναι το HTTP;");
+
+            int check = db.iTest(que, user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής");
+
+            if (check == 1)
+                MessageBox.Show("Το διαγώνισμα καταχωρήθηκε!!");
+            else if (check == 0)
+                MessageBox.Show("Αδυναμία σύνδεσης στη βάση!!");
+            else if (check == -1)
+                MessageBox.Show("Δεν υπάρχει η ενότητα!!");
+            else if (check == -3)
+                MessageBox.Show("Δεν υπάρχει η ερώτηση!!");
+            else
+                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
+
         }
 
         #endregion
@@ -870,6 +931,19 @@ namespace Multiple_Choice_Generator
                 //code to send to database
             }
            
+        }
+
+        //fill lesson combobox
+        private void createAutoTestPanel_VisibleChanged(object sender, EventArgs e)
+        {            
+            Panel temp = (Panel)sender;
+
+
+                foreach (String lesson in this.lessons)
+                {
+                    this.createQuestionLessonCombobox.Items.Add(lesson);
+                }
+            
         }
         #endregion
 
@@ -1001,40 +1075,10 @@ namespace Multiple_Choice_Generator
 
         #endregion
 
-        //load lessons when createQuestionPanel set Visible
-        private void createQuestionPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            Panel temp = (Panel)sender;
-            if (temp.Visible)
-            {
-                this.createQuestionLessonCombobox.Items.Clear();    //clear all items
-                //load lessons  
-                lessons = db.qLessons(user.ElementAt(0));
-                foreach (String lesson in this.lessons)
-                {
-                    this.createQuestionLessonCombobox.Items.Add(lesson);
-                }
-            }
-            else
-            {                
-                //clear all
-                this.createQuestionCategoryCombobox.Items.Clear();
-                this.createQuestionCategoryCombobox.Items.Clear();
-                this.createQuestionRadioButton1.Select();
-            }
-        }
 
-        //load categories when we choose lesson
-        private void createQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            this.createQuestionCategoryCombobox.Items.Clear();
-            String lesson = this.createQuestionLessonCombobox.Text;
-            //load categories
-            categories = db.qUnits(user.ElementAt(0),lesson);
-            foreach (String category in this.categories)
-            {
-                this.createQuestionCategoryCombobox.Items.Add(category);
-            }
-        }
+
+
+        
+
     }
 }

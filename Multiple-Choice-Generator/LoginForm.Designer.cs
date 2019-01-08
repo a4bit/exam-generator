@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.loginSignupLinkLabel = new System.Windows.Forms.LinkLabel();
             this.loginSignupLabel = new System.Windows.Forms.Label();
             this.loginConfigButton = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.loginTitleLabel1 = new System.Windows.Forms.Label();
             this.loginUsernameTextbox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 418);
             this.panel1.TabIndex = 0;
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorLabel.Location = new System.Drawing.Point(8, 367);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(404, 23);
+            this.errorLabel.TabIndex = 10;
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginSignupLinkLabel
             // 
@@ -133,6 +143,7 @@
             this.loginPasswordTextbox.ForeColor = System.Drawing.Color.DimGray;
             this.loginPasswordTextbox.Location = new System.Drawing.Point(81, 215);
             this.loginPasswordTextbox.Name = "loginPasswordTextbox";
+            this.loginPasswordTextbox.PasswordChar = '*';
             this.loginPasswordTextbox.Size = new System.Drawing.Size(251, 24);
             this.loginPasswordTextbox.TabIndex = 4;
             // 
@@ -186,16 +197,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(342, 415);
             this.panel2.TabIndex = 1;
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorLabel.Location = new System.Drawing.Point(8, 367);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(404, 23);
-            this.errorLabel.TabIndex = 10;
-            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 

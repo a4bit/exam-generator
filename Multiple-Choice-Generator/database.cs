@@ -84,6 +84,58 @@ namespace Multiple_Choice_Generator
                 return null;
         }
 
+        public List<string> qQuestions(string username, string lesson, string unit)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+                int unit_id = convertUnit(unit, username, lesson);
+                string query = "Select * From questions where owner='" + username + "' and lesson='" + lesson + "' and unit_id=" + unit_id ; 
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["text"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
+        public List<string> qAnswers(string question, string unit, string username, string lesson)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string> list = new List<string>();
+                int id_que = convertQuestion(question, convertUnit(unit, username, lesson));
+                string query = "Select * From answers where id_q=" + id_que;
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["text"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
         //Επιστροφή των τίτλων των μαθημάτων του συνδεδεμένου χρήστη σε λιστα
         public List<string> qLessons(string username)
         {
@@ -138,26 +190,35 @@ namespace Multiple_Choice_Generator
                 return null;
         }
 
-        //Καταχώρηση ερώτησης στην βάση
-        public int iQuestion(string username, string question, string lesson, string unit, int dif)
+        //Καταχώρηση ερώτησης στην βάση + τις απαντησεις της
+        public int iQuestion(string username, string question, List<string> answers, string lesson, string unit, int dif)
         {
             if (connection() == true)
             {
                 try
                 {
                     List<string> list = new List<string>();
-                    int id = convertUnit(unit, username, lesson);
-                    if (id == -2)
+                    int unit_id = convertUnit(unit, username, lesson);
+                    if (unit_id == -2)
                         return 0;
-                    else if (id == -1)
+                    else if (unit_id == -1)
                         return -1;
                     else
                     {
-                        string query = "Insert into questions values (NULL, '" + question + "', '" + username + "', '" + lesson + "', " + id + ", " + dif + ")";
+                        string query = "Insert into questions values (NULL, '" + question + "', '" + username + "', '" + lesson + "', " + unit_id + ", " + dif + ")";
                         Console.WriteLine(query);
                         MySqlCommand cmd = new MySqlCommand(query, dbcon);
 
                         cmd.ExecuteNonQuery();
+
+                        int id_que = convertQuestion(question,unit_id);
+                        query = "";
+                        for (int i=0; i < answers.Count; i++)
+                        {
+                            query = "Insert into answers values(NULL, '" + answers.ElementAt(i) + "', " + id_que + ", 0)";
+                            cmd = new MySqlCommand(query, dbcon);
+                            cmd.ExecuteNonQuery();
+                        }
                         return 1;
                     }
                 }
@@ -169,9 +230,99 @@ namespace Multiple_Choice_Generator
             }
             else
                 return 0;
-            
+
         }
-        
+
+        public int iLesson(string username, string lesson)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Insert into lessons values ('" + lesson + "', '" + username + "')";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int iUnit(string unit, string username, string lesson)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Insert into units values (NULL, '" + unit + "', '" + username + "', '" + lesson + "')";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int iTest(List<string> list, string username, string lesson, string unit)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    int unit_id = convertUnit(unit, username, lesson);
+                    int question = 0;
+                    if (unit_id == -2)
+                        return 0;
+                    else if (unit_id == -1)
+                        return -1;
+                    else
+                    {
+                        string query = "select max(id) from tests";
+                        MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                        int id = int.Parse(cmd.ExecuteScalar() + "") + 1;
+                        
+                        for (int i=0; i < list.Count; i++)
+                        {
+                            question = convertQuestion(list.ElementAt(i), unit_id);
+                            if (question == -3)
+                                return -3;
+                            query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "')";
+                            Console.WriteLine(query);
+                            cmd = new MySqlCommand(query, dbcon);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                       
+                        return 1;
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+
+        }
+
         //Βοηθητική συνάρτηση που μετατρέπει το όνομα της ενότητας σε id
         public int convertUnit(string name, string owner, string lesson)
         {
@@ -191,6 +342,31 @@ namespace Multiple_Choice_Generator
                 dataReader.Close();
                 if (exist == 0)
                     return -1;
+                else
+                    return id;
+            }
+            else
+                return -2;
+        }
+
+        public int convertQuestion(string text, int unit)
+        {
+            if (connection() == true)
+            {
+                int exist = 0;
+                int id = 0;
+                string query = "Select id From questions where text='" + text + "' and unit_id='" + unit + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    id = int.Parse(dataReader["id"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return -3;
                 else
                     return id;
             }

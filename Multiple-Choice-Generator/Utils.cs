@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Multiple_Choice_Generator
@@ -77,6 +78,39 @@ namespace Multiple_Choice_Generator
             }
 
             return errors;
+        }
+
+        database db = new database();
+
+        //reutn lessons
+        public List<string> loadlessons(String user)
+        {            
+            List<string> lessons = new List<string>();
+
+            //get lessons
+            lessons = db.qLessons(user);
+
+            return lessons;
+        }
+
+        //return categories
+        public List<string> loadcategories(String user, String lesson)
+        {
+            List<string> categories = new List<string>();
+
+            //get categories from db
+            categories = db.qUnits(user, lesson);
+
+            return categories;
+        }
+
+        public List<string> loadquestions(string v)
+        {
+            List<string> questions = new List<string>();
+
+            //questions = db.qQuestions()
+
+            return questions;
         }
     }
 }
