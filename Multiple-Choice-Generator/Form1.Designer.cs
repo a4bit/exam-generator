@@ -107,7 +107,7 @@ namespace Multiple_Choice_Generator
             this.showQuestionsFilterButton = new System.Windows.Forms.Button();
             this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
             this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
@@ -118,8 +118,8 @@ namespace Multiple_Choice_Generator
             this.createManualTestFilterPanel = new System.Windows.Forms.Panel();
             this.createManualTestFilterConfButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox6 = new System.Windows.Forms.CheckedListBox();
+            this.createManualTestDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.createManualTestCatagoryCheckbox = new System.Windows.Forms.CheckedListBox();
             this.createTestFilterButton = new System.Windows.Forms.Button();
             this.createManualTestSearchTextbox = new System.Windows.Forms.TextBox();
             this.createManualTestConfButton = new System.Windows.Forms.Button();
@@ -540,7 +540,6 @@ namespace Multiple_Choice_Generator
             this.createQuestionPanel.Size = new System.Drawing.Size(962, 583);
             this.createQuestionPanel.TabIndex = 5;
             this.createQuestionPanel.Visible = false;
-            this.createQuestionPanel.VisibleChanged += new System.EventHandler(this.createQuestionPanel_VisibleChanged);
             this.createQuestionPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
             // label18
@@ -839,12 +838,12 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.createManualTestPanel);
+            this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
-            this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.editQuestionPanel);
-            this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.createTestPanel);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Location = new System.Drawing.Point(223, 53);
@@ -875,7 +874,6 @@ namespace Multiple_Choice_Generator
             this.createAutoTestPanel.Size = new System.Drawing.Size(962, 583);
             this.createAutoTestPanel.TabIndex = 17;
             this.createAutoTestPanel.Visible = false;
-            this.createAutoTestPanel.VisibleChanged += new System.EventHandler(this.createAutoTestPanel_VisibleChanged);
             this.createAutoTestPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
             // createAutoTestErrorsTitleLabel
@@ -949,14 +947,6 @@ namespace Multiple_Choice_Generator
             this.createAutoTestCategoryCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAutoTestCategoryCheckedListBox.FormattingEnabled = true;
             this.createAutoTestCategoryCheckedListBox.IntegralHeight = false;
-            this.createAutoTestCategoryCheckedListBox.Items.AddRange(new object[] {
-            "Παραδειγμα1",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2",
-            "Παράδειγμα2"});
             this.createAutoTestCategoryCheckedListBox.Location = new System.Drawing.Point(45, 262);
             this.createAutoTestCategoryCheckedListBox.MultiColumn = true;
             this.createAutoTestCategoryCheckedListBox.Name = "createAutoTestCategoryCheckedListBox";
@@ -985,6 +975,7 @@ namespace Multiple_Choice_Generator
             this.createAutoTestLessonComboBox.Name = "createAutoTestLessonComboBox";
             this.createAutoTestLessonComboBox.Size = new System.Drawing.Size(888, 32);
             this.createAutoTestLessonComboBox.TabIndex = 4;
+            this.createAutoTestLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.createAutoTestLessonComboBox_SelectionChangeCommitted);
             // 
             // createAutoTestDifficultyCheckedListBox
             // 
@@ -1197,6 +1188,7 @@ namespace Multiple_Choice_Generator
             this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterPanel);
             this.showQuestionsPanel.Controls.Add(this.textBox6);
             this.showQuestionsPanel.Controls.Add(this.showQuestionDataGridView);
+            this.showQuestionsPanel.Controls.Add(this.showQuestionLessonCombobox);
             this.showQuestionsPanel.Location = new System.Drawing.Point(0, 0);
             this.showQuestionsPanel.Name = "showQuestionsPanel";
             this.showQuestionsPanel.Size = new System.Drawing.Size(962, 583);
@@ -1225,7 +1217,6 @@ namespace Multiple_Choice_Generator
             | System.Windows.Forms.AnchorStyles.Left)));
             this.showQuestionsFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
             this.showQuestionsFilterPanel.Controls.Add(this.showQuestionsFilterConfButton);
-            this.showQuestionsFilterPanel.Controls.Add(this.comboBox4);
             this.showQuestionsFilterPanel.Controls.Add(this.label14);
             this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox3);
             this.showQuestionsFilterPanel.Controls.Add(this.checkedListBox4);
@@ -1250,15 +1241,16 @@ namespace Multiple_Choice_Generator
             this.showQuestionsFilterConfButton.UseVisualStyleBackColor = false;
             this.showQuestionsFilterConfButton.Click += new System.EventHandler(this.showQuestionsFilterConfButton_Click);
             // 
-            // comboBox4
+            // showQuestionLessonCombobox
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(17, 49);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(212, 32);
-            this.comboBox4.TabIndex = 1;
-            this.toolTip.SetToolTip(this.comboBox4, "Επιλέξτε μάθημα.");
+            this.showQuestionLessonCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.showQuestionLessonCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showQuestionLessonCombobox.FormattingEnabled = true;
+            this.showQuestionLessonCombobox.Location = new System.Drawing.Point(45, 31);
+            this.showQuestionLessonCombobox.Name = "showQuestionLessonCombobox";
+            this.showQuestionLessonCombobox.Size = new System.Drawing.Size(460, 32);
+            this.showQuestionLessonCombobox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.showQuestionLessonCombobox, "Επιλέξτε μάθημα.");
             // 
             // label14
             // 
@@ -1279,7 +1271,7 @@ namespace Multiple_Choice_Generator
             "Εύκολες",
             "Μεσαίες",
             "Δύσκολες"});
-            this.checkedListBox3.Location = new System.Drawing.Point(17, 87);
+            this.checkedListBox3.Location = new System.Drawing.Point(18, 45);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(127, 76);
             this.checkedListBox3.TabIndex = 2;
@@ -1292,9 +1284,9 @@ namespace Multiple_Choice_Generator
             this.checkedListBox4.CheckOnClick = true;
             this.checkedListBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Location = new System.Drawing.Point(16, 177);
+            this.checkedListBox4.Location = new System.Drawing.Point(16, 139);
             this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(213, 346);
+            this.checkedListBox4.Size = new System.Drawing.Size(213, 384);
             this.checkedListBox4.TabIndex = 4;
             this.toolTip.SetToolTip(this.checkedListBox4, "Επιλέξτε ενότητες.");
             // 
@@ -1354,8 +1346,8 @@ namespace Multiple_Choice_Generator
             this.createManualTestFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
             this.createManualTestFilterPanel.Controls.Add(this.createManualTestFilterConfButton);
             this.createManualTestFilterPanel.Controls.Add(this.label17);
-            this.createManualTestFilterPanel.Controls.Add(this.checkedListBox5);
-            this.createManualTestFilterPanel.Controls.Add(this.checkedListBox6);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestDifficultyCheckbox);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestCatagoryCheckbox);
             this.createManualTestFilterPanel.Location = new System.Drawing.Point(0, 0);
             this.createManualTestFilterPanel.Name = "createManualTestFilterPanel";
             this.createManualTestFilterPanel.Size = new System.Drawing.Size(0, 583);
@@ -1387,33 +1379,33 @@ namespace Multiple_Choice_Generator
             this.label17.TabIndex = 5;
             this.label17.Text = "Φίλτρα";
             // 
-            // checkedListBox5
+            // createManualTestDifficultyCheckbox
             // 
-            this.checkedListBox5.CheckOnClick = true;
-            this.checkedListBox5.ColumnWidth = 90;
-            this.checkedListBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox5.Items.AddRange(new object[] {
+            this.createManualTestDifficultyCheckbox.CheckOnClick = true;
+            this.createManualTestDifficultyCheckbox.ColumnWidth = 90;
+            this.createManualTestDifficultyCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestDifficultyCheckbox.Items.AddRange(new object[] {
             "Εύκολες",
             "Μεσαίες",
             "Δύσκολες"});
-            this.checkedListBox5.Location = new System.Drawing.Point(16, 36);
-            this.checkedListBox5.Name = "checkedListBox5";
-            this.checkedListBox5.Size = new System.Drawing.Size(127, 76);
-            this.checkedListBox5.TabIndex = 2;
-            this.toolTip.SetToolTip(this.checkedListBox5, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
+            this.createManualTestDifficultyCheckbox.Location = new System.Drawing.Point(16, 36);
+            this.createManualTestDifficultyCheckbox.Name = "createManualTestDifficultyCheckbox";
+            this.createManualTestDifficultyCheckbox.Size = new System.Drawing.Size(127, 76);
+            this.createManualTestDifficultyCheckbox.TabIndex = 2;
+            this.toolTip.SetToolTip(this.createManualTestDifficultyCheckbox, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
             // 
-            // checkedListBox6
+            // createManualTestCatagoryCheckbox
             // 
-            this.checkedListBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.createManualTestCatagoryCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkedListBox6.CheckOnClick = true;
-            this.checkedListBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.checkedListBox6.FormattingEnabled = true;
-            this.checkedListBox6.Location = new System.Drawing.Point(16, 120);
-            this.checkedListBox6.Name = "checkedListBox6";
-            this.checkedListBox6.Size = new System.Drawing.Size(213, 403);
-            this.checkedListBox6.TabIndex = 4;
-            this.toolTip.SetToolTip(this.checkedListBox6, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
+            this.createManualTestCatagoryCheckbox.CheckOnClick = true;
+            this.createManualTestCatagoryCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestCatagoryCheckbox.FormattingEnabled = true;
+            this.createManualTestCatagoryCheckbox.Location = new System.Drawing.Point(16, 120);
+            this.createManualTestCatagoryCheckbox.Name = "createManualTestCatagoryCheckbox";
+            this.createManualTestCatagoryCheckbox.Size = new System.Drawing.Size(213, 403);
+            this.createManualTestCatagoryCheckbox.TabIndex = 4;
+            this.toolTip.SetToolTip(this.createManualTestCatagoryCheckbox, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
             // 
             // createTestFilterButton
             // 
@@ -1495,6 +1487,7 @@ namespace Multiple_Choice_Generator
             // 
             this.createManualTestComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.createManualTestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createManualTestComboBox.FormattingEnabled = true;
             this.createManualTestComboBox.Location = new System.Drawing.Point(45, 39);
@@ -1713,7 +1706,7 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel showQuestionsPanel;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox showQuestionLessonCombobox;
         private System.Windows.Forms.DataGridView showQuestionDataGridView;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button createAutoTestConfButton;
@@ -1735,8 +1728,8 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Panel createManualTestFilterPanel;
         private System.Windows.Forms.Button createManualTestFilterConfButton;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.CheckedListBox checkedListBox5;
-        private System.Windows.Forms.CheckedListBox checkedListBox6;
+        private System.Windows.Forms.CheckedListBox createManualTestDifficultyCheckbox;
+        private System.Windows.Forms.CheckedListBox createManualTestCatagoryCheckbox;
         private System.Windows.Forms.Button createTestFilterButton;
         private System.Windows.Forms.TextBox createManualTestSearchTextbox;
         private System.Windows.Forms.NumericUpDown createAutoTestNumericUpDown;

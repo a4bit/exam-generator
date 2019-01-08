@@ -78,10 +78,31 @@ namespace Multiple_Choice_Generator
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
 
-            //load lessons            
-            this.lessons = myutils.loadlessons(user.ElementAt(0));
+            
             this.questions = myutils.loadquestions(user.ElementAt(0));
 
+            //call loadLessons
+            this.loadLessons();
+
+        }
+
+        //LOAD LESSONS FROM DATABASE AND FILL COMBOBOXES
+        private void loadLessons()
+        {
+            //load lessons            
+            this.lessons = myutils.loadlessons(user.ElementAt(0));
+
+            this.createAutoTestLessonComboBox.Items.Clear();
+            this.createQuestionLessonCombobox.Items.Clear();
+            this.createManualTestComboBox.Items.Clear();
+            this.showQuestionLessonCombobox.Items.Clear();
+            foreach (String lesson in this.lessons)
+            {
+                this.createAutoTestLessonComboBox.Items.Add(lesson);
+                this.createQuestionLessonCombobox.Items.Add(lesson);
+                this.createManualTestComboBox.Items.Add(lesson);
+                this.showQuestionLessonCombobox.Items.Add(lesson);
+            }   
         }
 
 
@@ -708,25 +729,6 @@ namespace Multiple_Choice_Generator
             temp.Image = Resources.icon_negative;
         }
 
-        //load lessons when createQuestionPanel set Visible
-        private void createQuestionPanel_VisibleChanged(object sender, EventArgs e)
-        {
-            Panel temp = (Panel)sender;
-            if (temp.Visible)
-            {
-                foreach (String lesson in this.lessons)
-                {
-                    this.createQuestionLessonCombobox.Items.Add(lesson);
-                }
-            }
-            else
-            {
-                //clear all
-                this.createQuestionLessonCombobox.Items.Clear();
-                this.createQuestionCategoryCombobox.Items.Clear();
-                this.createQuestionRadioButton1.Select();
-            }
-        }
 
 
         //load categories when we choose lesson
@@ -837,21 +839,33 @@ namespace Multiple_Choice_Generator
                 this.createTestFilterButton.Enabled = true;
                 this.createManualTestComboBox.Enabled = false;
                 this.createManualTestLessonButton.Text = "Αλλαγή";
+
+                //load categories when we choose lesson
+                categories = myutils.loadcategories(user.ElementAt(0), this.createManualTestComboBox.Text);
+                this.createManualTestCatagoryCheckbox.Items.Clear();
+                foreach (String category in categories)
+                {
+                    this.createManualTestCatagoryCheckbox.Items.Add(category);
+                }
             }
             //call showDialog and reset
             else
             {
+                this.createManualTestDataGridView.Enabled = false;
+                this.createManualTestConfButton.Enabled = false;
+                this.createManualTestSearchTextbox.Enabled = false;
+                this.createTestFilterButton.Enabled = false;
+                this.createManualTestComboBox.Enabled = true;
+                this.createManualTestLessonButton.Text = "Επιλογή";
                 //if filter panel is open then close it
                 if (createManualQuestionFilterFlag)
                 {
                     filtersButtonFlag = 'C';
                     filtersTimer.Start();
-                }
-
-                //call showDialog
+                }                
             }
-
-            List<string> que = new List<string>();
+            //call showDialog
+            /*List<string> que = new List<string>();
             que.Add("Τί είναι το FTP;");
             que.Add("Τί είναι το SMTP;");
             que.Add("Τί είναι το HTTP;");
@@ -867,9 +881,11 @@ namespace Multiple_Choice_Generator
             else if (check == -3)
                 MessageBox.Show("Δεν υπάρχει η ερώτηση!!");
             else
-                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
+                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");*/
 
         }
+
+
 
         #endregion
 
@@ -933,17 +949,18 @@ namespace Multiple_Choice_Generator
            
         }
 
-        //fill lesson combobox
-        private void createAutoTestPanel_VisibleChanged(object sender, EventArgs e)
-        {            
-            Panel temp = (Panel)sender;
 
+        //load categories when we select lesson in createAutoTestPanel
+        private void createAutoTestLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.createAutoTestCategoryCheckedListBox.Items.Clear();
+            //load categories
+            categories = myutils.loadcategories(user.ElementAt(0), this.createAutoTestLessonComboBox.Text);
+            foreach (String category in categories)
+            {
+                this.createAutoTestCategoryCheckedListBox.Items.Add(category);
+            }
 
-                foreach (String lesson in this.lessons)
-                {
-                    this.createQuestionLessonCombobox.Items.Add(lesson);
-                }
-            
         }
         #endregion
 
@@ -1070,15 +1087,8 @@ namespace Multiple_Choice_Generator
 
 
 
-
-
-
         #endregion
 
-
-
-
         
-
     }
 }
