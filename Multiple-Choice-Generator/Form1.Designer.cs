@@ -126,7 +126,6 @@ namespace Multiple_Choice_Generator
             this.createManualTestLessonButton = new System.Windows.Forms.Button();
             this.createManualTestComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.showQuestionsPanel = new System.Windows.Forms.Panel();
             this.showQuestionsFilterButton = new System.Windows.Forms.Button();
             this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
@@ -143,8 +142,6 @@ namespace Multiple_Choice_Generator
             this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.multipleDataSet = new Multiple_Choice_Generator.multipleDataSet();
             this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.createLessonPanel = new System.Windows.Forms.Panel();
             this.createLessonCategoryTextbox = new System.Windows.Forms.TextBox();
             this.createLessonErrorTitleLabel = new System.Windows.Forms.Label();
@@ -167,12 +164,11 @@ namespace Multiple_Choice_Generator
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.questionsTableAdapter = new Multiple_Choice_Generator.multipleDataSetTableAdapters.questionsTableAdapter();
-<<<<<<< HEAD
+
             this.multipleDataSet1 = new Multiple_Choice_Generator.multipleDataSet1();
             this.questionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.questionsTableAdapter1 = new Multiple_Choice_Generator.multipleDataSet1TableAdapters.questionsTableAdapter();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -188,32 +184,26 @@ namespace Multiple_Choice_Generator
             this.mainPanel.SuspendLayout();
             this.createAutoTestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).BeginInit();
-<<<<<<< HEAD
-            this.createManualTestPanel.SuspendLayout();
-            this.createManualTestFilterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+
+
             this.showQuestionsPanel.SuspendLayout();
             this.showQuestionsFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).BeginInit();
-<<<<<<< HEAD
-=======
+
             this.createManualTestPanel.SuspendLayout();
             this.createManualTestFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+
             this.createLessonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).BeginInit();
             this.createTestPanel.SuspendLayout();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).BeginInit();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -890,11 +880,10 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
+
             this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
@@ -909,8 +898,7 @@ namespace Multiple_Choice_Generator
             this.mainPanel.TabIndex = 0;
             // 
             // createAutoTestPanel
-<<<<<<< HEAD
-=======
+
             // 
             this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -1085,7 +1073,6 @@ namespace Multiple_Choice_Generator
             this.toolTip.SetToolTip(this.label10, "Επιλέξτε το μάθημα του διαγωνίσματος.");
             // 
             // showQuestionsPanel
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             // 
             this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -1213,7 +1200,6 @@ namespace Multiple_Choice_Generator
             // 
             // createAutoTestDifficultyCheckedListBox
             // 
-<<<<<<< HEAD
             this.createAutoTestDifficultyCheckedListBox.CheckOnClick = true;
             this.createAutoTestDifficultyCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAutoTestDifficultyCheckedListBox.HorizontalExtent = 70;
@@ -1637,73 +1623,6 @@ namespace Multiple_Choice_Generator
             this.que_dif.HeaderText = "Δυσκολία";
             this.que_dif.Name = "que_dif";
             this.que_dif.ReadOnly = true;
-=======
-            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showQuestionDataGridView.AutoGenerateColumns = false;
-            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.que_name,
-            this.que_lesson,
-            this.que_unit,
-            this.que_dif});
-            this.showQuestionDataGridView.DataSource = this.questionsBindingSource;
-            this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
-            this.showQuestionDataGridView.Name = "showQuestionDataGridView";
-            this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 482);
-            this.showQuestionDataGridView.TabIndex = 0;
-            // 
-            // que_name
-            // 
-            this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.que_name.FillWeight = 200F;
-            this.que_name.HeaderText = "Ερώτηση";
-            this.que_name.Name = "que_name";
-            this.que_name.ReadOnly = true;
-            // 
-            // que_lesson
-            // 
-            this.que_lesson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.que_lesson.HeaderText = "Μάθημα";
-            this.que_lesson.Name = "que_lesson";
-            this.que_lesson.ReadOnly = true;
-            // 
-            // que_unit
-            // 
-            this.que_unit.HeaderText = "Ενότητα";
-            this.que_unit.Name = "que_unit";
-            this.que_unit.ReadOnly = true;
-            this.que_unit.Width = 150;
-            // 
-            // que_dif
-            // 
-            this.que_dif.HeaderText = "Δυσκολία";
-            this.que_dif.Name = "que_dif";
-            this.que_dif.ReadOnly = true;
-            // 
-            // questionsBindingSource
-            // 
-            this.questionsBindingSource.DataMember = "questions";
-            this.questionsBindingSource.DataSource = this.multipleDataSet;
-            // 
-            // multipleDataSet
-            // 
-            this.multipleDataSet.DataSetName = "multipleDataSet";
-            this.multipleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // showQuestionLessonCombobox
-            // 
-            this.showQuestionLessonCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.showQuestionLessonCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.showQuestionLessonCombobox.FormattingEnabled = true;
-            this.showQuestionLessonCombobox.Location = new System.Drawing.Point(45, 31);
-            this.showQuestionLessonCombobox.Name = "showQuestionLessonCombobox";
-            this.showQuestionLessonCombobox.Size = new System.Drawing.Size(460, 32);
-            this.showQuestionLessonCombobox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.showQuestionLessonCombobox, "Επιλέξτε μάθημα.");
-            this.showQuestionLessonCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             // 
             // questionsBindingSource
             // 
@@ -2149,7 +2068,6 @@ namespace Multiple_Choice_Generator
             // 
             this.questionsTableAdapter.ClearBeforeFill = true;
             // 
-<<<<<<< HEAD
             // multipleDataSet1
             // 
             this.multipleDataSet1.DataSetName = "multipleDataSet1";
@@ -2164,8 +2082,6 @@ namespace Multiple_Choice_Generator
             // 
             this.questionsTableAdapter1.ClearBeforeFill = true;
             // 
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2205,14 +2121,11 @@ namespace Multiple_Choice_Generator
             this.createAutoTestPanel.ResumeLayout(false);
             this.createAutoTestPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).EndInit();
-<<<<<<< HEAD
             this.createManualTestPanel.ResumeLayout(false);
             this.createManualTestPanel.PerformLayout();
             this.createManualTestFilterPanel.ResumeLayout(false);
             this.createManualTestFilterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.showQuestionsPanel.ResumeLayout(false);
             this.showQuestionsPanel.PerformLayout();
             this.showQuestionsFilterPanel.ResumeLayout(false);
@@ -2220,25 +2133,19 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).EndInit();
-<<<<<<< HEAD
-=======
             this.createManualTestPanel.ResumeLayout(false);
             this.createManualTestPanel.PerformLayout();
             this.createManualTestFilterPanel.ResumeLayout(false);
             this.createManualTestFilterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.createLessonPanel.ResumeLayout(false);
             this.createLessonPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).EndInit();
             this.createTestPanel.ResumeLayout(false);
             this.createTestPanel.PerformLayout();
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).EndInit();
-=======
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).EndInit();        
             this.ResumeLayout(false);
 
         }

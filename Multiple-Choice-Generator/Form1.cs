@@ -913,11 +913,6 @@ namespace Multiple_Choice_Generator
 
 
                 int check = db.iLesson(user.ElementAt(0), title, description);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
 
                 if (check == 1)
                 {
