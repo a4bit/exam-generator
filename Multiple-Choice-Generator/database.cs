@@ -10,16 +10,16 @@ namespace Multiple_Choice_Generator
     public class database
     {
         //Aetos database
-        //string server = "dblabs.it.teithe.gr";
-        //string db = "it154551";
-        //string uid = "it154551";
-        //string password = "123456";
+        string server = "dblabs.it.teithe.gr";
+        string db = "it154551";
+        string uid = "it154551";
+        string password = "123456";
 
         //local database
-        private string server = "localhost";
-        private string db = "multiple";
-        private string uid = "root";
-        private string password = "";
+        //private string server = "localhost";
+        //private string db = "multiple";
+        //private string uid = "root";
+        //private string password = "";
         MySqlConnection dbcon = null;
 
         public database()
@@ -370,7 +370,7 @@ namespace Multiple_Choice_Generator
                 return 0;
         }
 
-        public int iTest(List<string> questions, string username, string lesson, List<string> units)
+        public int iTest(List<string> questions, string username, string lesson, string name)
         {
             if (connection() == true)
             {
@@ -381,26 +381,25 @@ namespace Multiple_Choice_Generator
                     string query = "select max(id) from tests";
                     MySqlCommand cmd = new MySqlCommand(query, dbcon);
                     int id = int.Parse(cmd.ExecuteScalar() + "") + 1;
-                        
+                    Console.WriteLine(questions.Count.ToString());    
                     for (int i=0; i < questions.Count; i++)
                     {
-                        int unit_id = convertUnit(units.ElementAt(i), username, lesson);
 
-                        if (unit_id == -2)
-                            return 0;
-                        else if (unit_id == -1)
-                            return -1;
-                        else
-                        {
+                        
+                            string queryUnit = "select unit_id from questions where id=" + question;
+                            MySqlCommand cmdUnit = new MySqlCommand(query, dbcon);
+                            int unit_id = int.Parse(cmdUnit.ExecuteScalar() + "");
+
                             question = convertQuestion(questions.ElementAt(i), unit_id);
                             if (question == -3)
                                 return -2;
-                            query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "')";
+                            
+                            query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "', '" + name + "')";
                             Console.WriteLine(query);
                             cmd = new MySqlCommand(query, dbcon);
 
                             cmd.ExecuteNonQuery();
-                        }
+                        
                     }
                        
                     return 1;

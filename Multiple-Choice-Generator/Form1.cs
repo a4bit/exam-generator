@@ -1128,7 +1128,7 @@ namespace Multiple_Choice_Generator
 
                 //μεχρι εδω καλα
 
-                int check = db.iTest(questions, user.ElementAt(0), lesson, units);
+                int check = db.iTest(questions, user.ElementAt(0), lesson, "Τεστ2");
 
                 if (check == 1)
                 {
