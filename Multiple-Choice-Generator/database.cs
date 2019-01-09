@@ -41,11 +41,11 @@ namespace Multiple_Choice_Generator
                 switch (ex.Number)
                 {
                     case 1045:
-                        Console.WriteLine("Δεν μπόρεσε να συνδεθεί στον σέρβερ!!");
+                        Console.WriteLine("Λάθος όνομα χρήστη και/ή κωδικός του σερβερ!!!");
                         break;
 
                     case 0:
-                        Console.WriteLine("Λάθος όνομα χρήστη και/ή κωδικός του σερβερ!!!");
+                        Console.WriteLine("Δεν μπόρεσε να συνδεθεί στον σέρβερ!!");
                         break;
                 }
                 return false;
@@ -301,7 +301,7 @@ namespace Multiple_Choice_Generator
                         {
                             question = convertQuestion(list.ElementAt(i), unit_id);
                             if (question == -3)
-                                return -3;
+                                return -2;
                             query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "')";
                             Console.WriteLine(query);
                             cmd = new MySqlCommand(query, dbcon);
@@ -321,7 +321,112 @@ namespace Multiple_Choice_Generator
             else
                 return 0;
 
+            
         }
+
+        public int uUser(string username, string surname, string name, string email, string school, string gender, string birth)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Update users set surname='" + surname + "', name='" + name + "', email='" + email + "', school='" + school + "', gender='" + gender + "', birth='" + birth + "' where username='" + username + "'";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int uLesson(string username, string newname, string oldname)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Update lessons set name='" + newname + "' where owner='" + username + "' and name='" + oldname + "'";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int uUnit(string username, string lesson, string newname, string oldname)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    int id = convertUnit(oldname,username,lesson);
+                    string query = "Update units set name='" + newname + "' where id=" + id;
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int uQuestion(string username, string lesson, string unit, string newname, string oldname, List<string> newanswers, List<string> oldanswers)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    int id_unit = convertUnit(unit, username, lesson);
+                    int id_que = convertQuestion(oldname,id_unit);
+                    string query = "Update questions set text='" + newname + "' where id=" + id_que;
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+
+                    for(int i=0; i < oldanswers.Count; i++)
+                    {
+                        query = "Update answers set text='" + newanswers.ElementAt(i) + "' where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
+                        cmd = new MySqlCommand(query, dbcon);
+                        cmd.ExecuteNonQuery();
+                    }
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+
 
         //Βοηθητική συνάρτηση που μετατρέπει το όνομα της ενότητας σε id
         public int convertUnit(string name, string owner, string lesson)
