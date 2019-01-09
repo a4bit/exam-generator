@@ -9,21 +9,17 @@ namespace Multiple_Choice_Generator
 {
     public class database
     {
-        private String team = "PAOK";
-
-
-
-
+        //Aetos database
         //string server = "dblabs.it.teithe.gr";
         //string db = "it154551";
         //string uid = "it154551";
         //string password = "123456";
 
-
-        string server = "localhost";
-        string db = "multiple";
-        string uid = "root";
-        string password = "";
+        //local database
+        private string server = "localhost";
+        private string db = "multiple";
+        private string uid = "root";
+        private string password = "";
         MySqlConnection dbcon = null;
 
         public database()

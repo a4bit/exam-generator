@@ -126,22 +126,6 @@ namespace Multiple_Choice_Generator
             this.createManualTestLessonButton = new System.Windows.Forms.Button();
             this.createManualTestComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.showQuestionsPanel = new System.Windows.Forms.Panel();
-            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
-            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
-            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.showQuestionDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.showQuestionCategoryCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
-            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.multipleDataSet = new Multiple_Choice_Generator.multipleDataSet();
-            this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
             this.createLessonPanel = new System.Windows.Forms.Panel();
             this.createLessonCategoryTextbox = new System.Windows.Forms.TextBox();
             this.createLessonErrorTitleLabel = new System.Windows.Forms.Label();
@@ -2144,8 +2128,7 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).EndInit();
             this.createTestPanel.ResumeLayout(false);
             this.createTestPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).EndInit();        
+            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).EndInit();      
             this.ResumeLayout(false);
 
         }

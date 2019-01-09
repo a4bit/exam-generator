@@ -533,7 +533,7 @@ namespace Multiple_Choice_Generator
         TextBox[] textboxes = new TextBox[maxAnswers];    //array with textboxes (first and second textboxes don't content in array) 
         int n = 0;        
         int textboxY; //last textbox height location
-        bool flagerrorsVisible = false;  //need this flag for corrext errors location
+       // bool flagerrorsVisible = false;  //need this flag for corrext errors location
 
         //create textboxes when pess the button createTextBoxButton
         private void createTextBoxButton_Click(object sender, EventArgs e)
