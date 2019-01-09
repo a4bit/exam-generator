@@ -105,18 +105,27 @@ namespace Multiple_Choice_Generator
         }
 
         //return filter questions
-        public List<string> loadquestions(String user, String lesson, String[] categories, List<int> diff)
+        public List<string> loadquestions(String user, String lesson, List<string> categories, List<int> diff)
         {
             List<string> questions = new List<string>();
             
-            for(int i=0; i<categories.Length; i++){
+            foreach(String category in categories){
                 foreach(int differ in diff)
                 {
-                    questions.AddRange(db.qQuestions(user, lesson, categories[i], differ));
+                    try
+                    {
+                        questions.AddRange(db.qQuestions(user, lesson, category, differ));
+                    }
+                    catch
+                    {
+                        questions.Clear();
+                        questions.Add("Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα.");
+                    }
+                    
                 }              
             }            
 
-            return questions;
+            return questions;   //return all questions with my filters
         }
 
         //return questions
