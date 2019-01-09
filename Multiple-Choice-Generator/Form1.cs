@@ -885,7 +885,6 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
-                
             }
 
         }

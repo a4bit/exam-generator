@@ -165,7 +165,7 @@ insert into answers values(null, 'Σωστή απάντηση για ουρές', 4, 1);
 
 insert into answers values(null, 'Λάθος απάντηση για ουρές', 4, 0);
 
-insert into tests values (1,1,'trixas',1,'Δίκτυα')
+insert into tests values (1,1,'trixas',1,'Δίκτυα');
 
 
 
