@@ -849,7 +849,8 @@ namespace Multiple_Choice_Generator
         {
             //get fields
             String title = this.createLessonTitleTextbox.Text;  //get  title
-            String description = this.createLessonDescriptionTextbox.Text;  //get description            
+            String description = this.createLessonDescriptionTextbox.Text;  //get description   
+            
 
             //get categories
             String[] category = new string[categoryCount];
@@ -885,6 +886,41 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
+<<<<<<< HEAD
+=======
+                int check = db.iLesson(user.ElementAt(0), title);
+
+                if (check == 1)
+                {
+                    check = db.iUnit(this.createLessonCategoryTextbox.Text, user.ElementAt(0), title);
+                    for (int i = 0; i < createLessonCategoriesCount; i++)
+                    {
+                        check = db.iUnit(this.createLessonCategoriesTextboxes[i].Text, user.ElementAt(0), title);
+                    }
+
+                    MessageBox.Show("Το μάθημα καταχωρήθηκε!");                    
+
+                    //delete all fields
+                    this.createLessonCategoryTextbox.Text = "";
+                    this.createLessonDescriptionTextbox.Text = "";
+                    this.createLessonTitleTextbox.Text = "";
+                    for (int i = 0; i < createLessonCategoriesCount; i++)
+                    {
+                        this.createLessonCategoriesTextboxes[i].Text = "";                                              
+                    }                   
+
+                }
+                else
+                {
+                    //errors
+                    this.createLessonErrorLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
+                    this.createLessonErrorLabel.Visible = true;
+                    this.createLessonErrorTitleLabel.Visible = true;                    
+                }
+                this.loadLessons();
+
+
+>>>>>>> 78ed10543d684a542bd0fadc4c16891b7f07d81c
             }
 
         }
