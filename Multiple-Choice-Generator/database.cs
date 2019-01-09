@@ -147,6 +147,7 @@ namespace Multiple_Choice_Generator
             int exist = 0;
             if (connection() == true)
             {
+                Console.WriteLine("Unit: " + unit);
                 List<string>[] list = new List<string>[4];
                 list[0] = new List<string>();
                 list[1] = new List<string>();
@@ -156,7 +157,7 @@ namespace Multiple_Choice_Generator
                 string query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
                 MySqlCommand cmd = new MySqlCommand(query, dbcon);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
+                Console.WriteLine(query);
                 while (dataReader.Read())
                 {
                     list[0].Add(dataReader["text"] + "");
