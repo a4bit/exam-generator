@@ -144,36 +144,58 @@ namespace Multiple_Choice_Generator
 
         public List<string>[] qQuestionsMore(string username, string lesson, string unit, int dif)
         {
-            int exist = 0;
-            if (connection() == true)
-            {
-                Console.WriteLine("Unit: " + unit);
-                List<string>[] list = new List<string>[4];
-                list[0] = new List<string>();
-                list[1] = new List<string>();
-                list[2] = new List<string>();
-                list[3] = new List<string>();
-                int unit_id = convertUnit(unit, username, lesson);
-                string query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
-                MySqlCommand cmd = new MySqlCommand(query, dbcon);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                Console.WriteLine(query);
-                while (dataReader.Read())
+                Console.WriteLine(dif);
+                int exist = 0;
+                if (connection() == true)
                 {
-                    list[0].Add(dataReader["text"] + "");
-                    list[1].Add(dataReader["lesson"] + "");
-                    list[2].Add(dataReader["name"] + "");
-                    list[3].Add(dataReader["dif"] + "");
-                    exist++;
+                    List<string>[] list = new List<string>[4];
+                    list[0] = new List<string>();
+                    list[1] = new List<string>();
+                    list[2] = new List<string>();
+                    list[3] = new List<string>();
+                    string query = "";
+                    if ((!unit.Equals("")) && (dif != 0))
+                    {
+                        int unit_id = convertUnit(unit, username, lesson);
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
+                        Console.WriteLine("Μπήκε στο 1");
+                    }
+                    else if(unit.Equals(""))
+                    {
+                        Console.WriteLine("Μπήκε στο 2");
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.dif=" + dif;
+                    }
+                    else if(dif==0)
+                    {
+                        Console.WriteLine("Μπήκε στο 3");
+                        int unit_id = convertUnit(unit, username, lesson);
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Μπήκε στο 4");
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "'";
+                    }
+
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    Console.WriteLine(query);
+                    while (dataReader.Read())
+                    {
+                        list[0].Add(dataReader["text"] + "");
+                        list[1].Add(dataReader["lesson"] + "");
+                        list[2].Add(dataReader["name"] + "");
+                        list[3].Add(dataReader["dif"] + "");
+                        exist++;
+                    }
+                    dataReader.Close();
+                    if (exist == 0)
+                        return null;
+                    else
+                        return list;
                 }
-                dataReader.Close();
-                if (exist == 0)
-                    return null;
                 else
-                    return list;
-            }
-            else
-                return null;
+                    return null;
         }
 
         public List<string> qAnswers(string question, string unit, string username, string lesson)
