@@ -79,7 +79,6 @@ namespace Multiple_Choice_Generator
             this.newsTimer.Start();
 
             
-            this.questions = myutils.loadquestions(user.ElementAt(0));
 
             //call loadLessons
             this.loadLessons();
@@ -1055,9 +1054,44 @@ namespace Multiple_Choice_Generator
                 createAutoTestErrorsTitleLabel.Visible = true;
                 createAutoTestErrorsLabel.Visible = true;
             }
-            else
+            else //code to send to database
             {
-                //code to send to database
+                //find questions
+                List<string> units = this.createAutoTestCategoryCheckedListBox.CheckedItems.OfType<string>().ToList();
+                List<string> diffString = this.createAutoTestDifficultyCheckedListBox.CheckedItems.OfType<string>().ToList();
+                List<int> diff = new List<int>();
+                foreach(String checkedItem in diffString)
+                {
+                    if (checkedItem.Equals("Εύκολες"))
+                        diff.Add(1);
+                    else if(checkedItem.Equals("Δύσκολες"))
+                        diff.Add(3);
+                    else
+                        diff.Add(2);
+                }
+                   
+
+                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,category,diff);
+                
+                //μεχρι εδω καλα
+
+                int check = db.iTest(questions, user.ElementAt(0), lesson, units);
+
+                if (check == 1)
+                {
+                    MessageBox.Show("Το διαγώνισμα δημιουργήθηκε");
+                    this.createAutoTestDifficultyCheckedListBox.SelectedItems.Clear();
+                    this.createAutoTestCategoryCheckedListBox.SelectedItems.Clear();
+                }
+                else
+                {
+                    this.createAutoTestErrorsLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
+                    this.createAutoTestErrorsLabel.Visible = true;
+                    this.createAutoTestErrorsTitleLabel.Visible = true;
+                }
+                
+                
+               
                 
             }
            
