@@ -377,22 +377,32 @@ namespace Multiple_Choice_Generator
                 try
                 {
                     int question = 0;
-                    
+                    int unit_id = 0;
                     string query = "select max(id) from tests";
                     MySqlCommand cmd = new MySqlCommand(query, dbcon);
                     int id = int.Parse(cmd.ExecuteScalar() + "") + 1;
                     Console.WriteLine(questions.Count.ToString());    
                     for (int i=0; i < questions.Count; i++)
                     {
+                            string queryUnit = "select unit_id, id from questions where text='" + questions.ElementAt(i) + "' and owner='" + username + "'";
+                            MySqlCommand cmdUnit = new MySqlCommand(queryUnit, dbcon);
+                            MySqlDataReader dataReader = cmdUnit.ExecuteReader();
+                            int exist = 0;
+                            while (dataReader.Read())
+                            {
+                                unit_id = int.Parse(dataReader["unit_id"] + "");
+                                question = int.Parse(dataReader["id"] + ""); 
+                                exist++;
+                            }
+                            dataReader.Close();
+                            if (question == 0)
+                                return -2;
 
-                        
-                            string queryUnit = "select unit_id from questions where id=" + question;
-                            MySqlCommand cmdUnit = new MySqlCommand(query, dbcon);
-                            int unit_id = int.Parse(cmdUnit.ExecuteScalar() + "");
+                            Console.WriteLine("Unit: " +unit_id);
+                            Console.WriteLine("Question: " + question);
 
                             question = convertQuestion(questions.ElementAt(i), unit_id);
-                            if (question == -3)
-                                return -2;
+                            
                             
                             query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "', '" + name + "')";
                             Console.WriteLine(query);
