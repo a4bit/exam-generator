@@ -1058,7 +1058,7 @@ namespace Multiple_Choice_Generator
             else
             {
                 //code to send to database
-                db.i
+                
             }
            
         }
