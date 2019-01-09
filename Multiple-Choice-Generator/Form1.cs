@@ -787,9 +787,7 @@ namespace Multiple_Choice_Generator
         #region METHODS OF createLessonPanel
         //methods of add and delete buttons for change the image (eg mouseover) are on createQuestionPanel region cause they first created there!
 
-        TextBox[] categoryTextbox;  //array for categories we create dynamicily
         int categoryCount = 0;  //current categories
-        int maxCategories = 100;    //max number of categories we can create
 
         //code for add category textbox and move buttons
         TextBox[] createLessonCategoriesTextboxes = new TextBox[50];
