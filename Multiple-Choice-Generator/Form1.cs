@@ -494,7 +494,7 @@ namespace Multiple_Choice_Generator
             }
 
             List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 1);
             for (int i=0; i < viewQuestions[0].Count; i++)
             {
                 showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
@@ -910,12 +910,11 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
-<<<<<<< HEAD
+
 
                 int check = db.iLesson(user.ElementAt(0), title, description);
-=======
-                int check = db.iLesson(user.ElementAt(0), title);
->>>>>>> 9fc65142b385004d3918a721b4ce347523f91b67
+
+
 
                 if (check == 1)
                 {
@@ -1101,8 +1100,11 @@ namespace Multiple_Choice_Generator
                 }
                    
 
-                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,category,diff);
-                
+                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,category,diff); //get questions with filters
+
+                questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take random questions
+
+
                 //μεχρι εδω καλα
 
                 int check = db.iTest(questions, user.ElementAt(0), lesson, units);
@@ -1118,11 +1120,7 @@ namespace Multiple_Choice_Generator
                     this.createAutoTestErrorsLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
                     this.createAutoTestErrorsLabel.Visible = true;
                     this.createAutoTestErrorsTitleLabel.Visible = true;
-                }
-                
-                
-               
-                
+                }  
             }
            
         }

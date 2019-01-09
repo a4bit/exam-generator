@@ -9,20 +9,17 @@ namespace Multiple_Choice_Generator
 {
     public class database
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> 6deaad58eedc80346cb51fe90c3f20f9ad71a02e
+
+
+
 
         //string server = "dblabs.it.teithe.gr";
         //string db = "it154551";
         //string uid = "it154551";
         //string password = "123456";
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6deaad58eedc80346cb51fe90c3f20f9ad71a02e
         string server = "localhost";
         string db = "multiple";
         string uid = "root";
