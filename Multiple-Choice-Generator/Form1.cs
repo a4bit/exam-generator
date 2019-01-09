@@ -57,7 +57,9 @@ namespace Multiple_Choice_Generator
         int movY;
         //load my screen and workingarea location
         private void Form1_Load(object sender, EventArgs e)
-        {        
+        {
+            // TODO: This line of code loads data into the 'multipleDataSet.questions' table. You can move, or remove it, as needed.
+            this.questionsTableAdapter.Fill(this.multipleDataSet.questions);
             //load my screen and workingarea location
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
 
@@ -491,6 +493,29 @@ namespace Multiple_Choice_Generator
             {
                 this.showQuestionCategoryCheckbox.Items.Add(category);
             }
+
+            List<string>[] viewQuestions = new List<string>[4];
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
+            for (int i=0; i < viewQuestions[0].Count; i++)
+            {
+                showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
+                showQuestionDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
+                showQuestionDataGridView.Rows[i].Cells[2].Value = viewQuestions[2].ElementAt(i);
+                switch(int.Parse(viewQuestions[3].ElementAt(i)))
+                {
+                    case 1:
+                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Εύκολη";
+                        break;
+                    case 2:
+                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Μέτρια";
+                        break;
+                    case 3:
+                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Δύσκολη";
+                        break;
+                }
+                
+            }
+
         }
         #endregion
 
@@ -886,9 +911,8 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
-<<<<<<< HEAD
-=======
-                int check = db.iLesson(user.ElementAt(0), title);
+
+                int check = db.iLesson(user.ElementAt(0), title, description);
 
                 if (check == 1)
                 {
@@ -920,7 +944,6 @@ namespace Multiple_Choice_Generator
                 this.loadLessons();
 
 
->>>>>>> 78ed10543d684a542bd0fadc4c16891b7f07d81c
             }
 
         }

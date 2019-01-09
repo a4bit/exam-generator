@@ -9,16 +9,12 @@ namespace Multiple_Choice_Generator
 {
     public class database
     {
-<<<<<<< HEAD
-        
-=======
 
         //string server = "dblabs.it.teithe.gr";
         //string db = "it154551";
         //string uid = "it154551";
         //string password = "123456";
 
->>>>>>> 78ed10543d684a542bd0fadc4c16891b7f07d81c
         string server = "localhost";
         string db = "multiple";
         string uid = "root";
@@ -133,6 +129,39 @@ namespace Multiple_Choice_Generator
                 while (dataReader.Read())
                 {
                     list.Add(dataReader["text"] + "");
+                    exist++;
+                }
+                dataReader.Close();
+                if (exist == 0)
+                    return null;
+                else
+                    return list;
+            }
+            else
+                return null;
+        }
+
+        public List<string>[] qQuestionsMore(string username, string lesson, string unit, int dif)
+        {
+            int exist = 0;
+            if (connection() == true)
+            {
+                List<string>[] list = new List<string>[4];
+                list[0] = new List<string>();
+                list[1] = new List<string>();
+                list[2] = new List<string>();
+                list[3] = new List<string>();
+                int unit_id = convertUnit(unit, username, lesson);
+                string query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["text"] + "");
+                    list[1].Add(dataReader["lesson"] + "");
+                    list[2].Add(dataReader["name"] + "");
+                    list[3].Add(dataReader["dif"] + "");
                     exist++;
                 }
                 dataReader.Close();
@@ -294,13 +323,13 @@ namespace Multiple_Choice_Generator
 
         }
 
-        public int iLesson(string username, string lesson)
+        public int iLesson(string username, string lesson, string desc)
         {
             if (connection() == true)
             {
                 try
                 {
-                    string query = "Insert into lessons values ('" + lesson + "', '" + username + "')";
+                    string query = "Insert into lessons values ('" + lesson + "', '" + username + "', '" + desc +"')";
                     Console.WriteLine(query);
                     MySqlCommand cmd = new MySqlCommand(query, dbcon);
 
