@@ -497,6 +497,7 @@ namespace Multiple_Choice_Generator
 
             List<string>[] viewQuestions = new List<string>[4];
             viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
+            //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
             for (int i=0; i < viewQuestions[0].Count; i++)
             {
                 showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
@@ -873,18 +874,18 @@ namespace Multiple_Choice_Generator
         {
             //get fields
             String title = this.createLessonTitleTextbox.Text;  //get  title
-            String description = this.createLessonDescriptionTextbox.Text;  //get description   
-            
+            String description = this.createLessonDescriptionTextbox.Text;  //get description
 
-            //get categories
-            String[] category = new string[categoryCount];
-            for(int i=0; i<categoryCount; i++)
+            //get categories            
+            String[] tempcategories = new string[this.createLessonCategoriesCount + 1];
+            tempcategories[0] = this.createLessonCategoryTextbox.Text;
+            for(int i=0; i< this.createLessonCategoriesCount; i++)
             {
-                category[i] = this.createLessonCategoriesTextboxes[i].Text;
+                tempcategories[i+1] = this.createLessonCategoriesTextboxes[i].Text;               
             }
 
             //call confirmation for createLesson to check if fields are okey
-            bool[] errors = myutils.createLessonConfirmation(title, category);
+            bool[] errors = myutils.createLessonConfirmation(title, tempcategories);
 
             bool checkflag = false; //flag=true if there are errors, else flag=false
             createLessonErrorLabel.Text = "";
@@ -901,6 +902,7 @@ namespace Multiple_Choice_Generator
                 checkflag = true;
                 createLessonErrorLabel.Text += "Μία ή περισσότερες κατηγορίες είναι κενές, συμπληρώστε ή διαγράψτε τες και ξαναπροσπαθήστε.\n";
             }
+            
 
             if (checkflag)
             {
@@ -910,8 +912,6 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
-
-
                 int check = db.iLesson(user.ElementAt(0), title, description);
 
                 if (check == 1)
@@ -921,7 +921,6 @@ namespace Multiple_Choice_Generator
                     {
                         check = db.iUnit(this.createLessonCategoriesTextboxes[i].Text, user.ElementAt(0), title);
                     }
-
                     MessageBox.Show("Το μάθημα καταχωρήθηκε!");                    
 
                     //delete all fields
@@ -1123,7 +1122,7 @@ namespace Multiple_Choice_Generator
                     questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take N random questions 
 
                     //μεχρι εδω καλα
-                    int check = db.iTest(questions, user.ElementAt(0), lesson, categories);
+                    int check = db.iTest(questions, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
 
                     if (check == 1)
                     {
@@ -1148,7 +1147,7 @@ namespace Multiple_Choice_Generator
         private void createAutoTestLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.createAutoTestCategoryCheckedListBox.Items.Clear();
-            //load categories
+            //load categories            
             categories = myutils.loadcategories(user.ElementAt(0), this.createAutoTestLessonComboBox.Text);
             foreach (String category in categories)
             {

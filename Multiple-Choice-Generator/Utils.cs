@@ -10,7 +10,6 @@ namespace Multiple_Choice_Generator
 {
     class Utils
     {
-
         //check if fields of createQuestion are okey to send to database
         public bool[] createQuestionConfirmation(String question, String lesson, String category, int difficulty, String[] answers)
         {
@@ -62,21 +61,24 @@ namespace Multiple_Choice_Generator
             bool[] errors = {false, false};
             /*
              errors[0] -> emprty title lesson
-             errors[1] -> one or more categories are empty
+             errors[1] -> one or more categories are empty             
             */
 
+            //check if title is empty or blank
             if (String.IsNullOrEmpty(title) || String.IsNullOrWhiteSpace(title))
                 errors[0] = true;
 
-            for (int i = 0; i < category.Length; i++)
-            {
-                if(String.IsNullOrWhiteSpace(category[i]) || String.IsNullOrEmpty(category[i]))
+            //check if one or more categories are empty or blank            
+                for (int i = 0; i < category.Length; i++)
                 {
-                    errors[1] = true;
-                    break;
+                    if (String.IsNullOrWhiteSpace(category[i]) || String.IsNullOrEmpty(category[i]))
+                    {
+                        errors[1] = true;
+                        break;
+                    }
                 }
-            }
-
+            
+            
             return errors;
         }
 
@@ -93,14 +95,14 @@ namespace Multiple_Choice_Generator
             return lessons;
         }
 
+
+
         //return categories
         public List<string> loadcategories(String user, String lesson)
         {
             List<string> categories = new List<string>();
-
-            //get categories from db
-            categories = db.qUnits(user, lesson);
-
+            categories =  db.qUnits(user, lesson);
+            
             return categories;
         }
 

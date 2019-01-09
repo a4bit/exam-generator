@@ -50,7 +50,7 @@ namespace Multiple_Choice_Generator
         //CODE LINKLABEL FOR NAVIGATE TO SIGNUP URL
         private void LoginSignupLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("www.google.com");   //navigate to URL
+            System.Diagnostics.Process.Start("https://users.it.teithe.gr/~it154453/exam-generator-website1/register.php");   //navigate to URL
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
