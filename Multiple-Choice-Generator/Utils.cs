@@ -104,13 +104,21 @@ namespace Multiple_Choice_Generator
             return categories;
         }
 
-        public List<string> loadquestions(string v)
+        //return filter questions
+        public List<string> loadquestions(String user, String lesson, String[] categories, List<int> diff)
         {
             List<string> questions = new List<string>();
-
-            //questions = db.qQuestions()
+            
+            for(int i=0; i<categories.Length; i++){
+                foreach(int differ in diff)
+                {
+                    questions.AddRange(db.qQuestions(user, lesson, categories[i], differ));
+                }              
+            }            
 
             return questions;
         }
+
+        //return questions
     }
 }

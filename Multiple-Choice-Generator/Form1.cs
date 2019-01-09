@@ -83,7 +83,6 @@ namespace Multiple_Choice_Generator
             this.newsTimer.Start();
 
             
-            this.questions = myutils.loadquestions(user.ElementAt(0));
 
             //call loadLessons
             this.loadLessons();
@@ -497,7 +496,7 @@ namespace Multiple_Choice_Generator
             }
 
             List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
             for (int i=0; i < viewQuestions[0].Count; i++)
             {
                 showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
@@ -914,6 +913,11 @@ namespace Multiple_Choice_Generator
 
 
                 int check = db.iLesson(user.ElementAt(0), title, description);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
 
                 if (check == 1)
                 {
@@ -1105,10 +1109,44 @@ namespace Multiple_Choice_Generator
                 createAutoTestErrorsTitleLabel.Visible = true;
                 createAutoTestErrorsLabel.Visible = true;
             }
-            else
+            else //code to send to database
             {
-                //code to send to database
-                
+                //find questions
+                List<string> units = this.createAutoTestCategoryCheckedListBox.CheckedItems.OfType<string>().ToList();
+                List<string> diffString = this.createAutoTestDifficultyCheckedListBox.CheckedItems.OfType<string>().ToList();
+                List<int> diff = new List<int>();
+                foreach(String checkedItem in diffString)
+                {
+                    if (checkedItem.Equals("Εύκολες"))
+                        diff.Add(1);
+                    else if(checkedItem.Equals("Δύσκολες"))
+                        diff.Add(3);
+                    else
+                        diff.Add(2);
+                }
+                   
+
+                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,category,diff); //get questions with filters
+
+                questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take random questions
+
+
+                //μεχρι εδω καλα
+
+                int check = db.iTest(questions, user.ElementAt(0), lesson, units);
+
+                if (check == 1)
+                {
+                    MessageBox.Show("Το διαγώνισμα δημιουργήθηκε");
+                    this.createAutoTestDifficultyCheckedListBox.SelectedItems.Clear();
+                    this.createAutoTestCategoryCheckedListBox.SelectedItems.Clear();
+                }
+                else
+                {
+                    this.createAutoTestErrorsLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
+                    this.createAutoTestErrorsLabel.Visible = true;
+                    this.createAutoTestErrorsTitleLabel.Visible = true;
+                }  
             }
            
         }
