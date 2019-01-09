@@ -1058,6 +1058,7 @@ namespace Multiple_Choice_Generator
             else
             {
                 //code to send to database
+                db.i
             }
            
         }
@@ -1200,8 +1201,12 @@ namespace Multiple_Choice_Generator
 
 
 
+
         #endregion
 
-        
+        private void createManualTestConfButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
