@@ -494,7 +494,7 @@ namespace Multiple_Choice_Generator
             }
 
             List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 1);
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
             for (int i=0; i < viewQuestions[0].Count; i++)
             {
                 showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
