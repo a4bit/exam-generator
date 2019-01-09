@@ -119,9 +119,32 @@ namespace Multiple_Choice_Generator
             this.createManualTestConfButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.createManualTestDataGridView = new System.Windows.Forms.DataGridView();
+            this.mantest_que = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mantest_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mantest_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mantest_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.createManualTestLessonButton = new System.Windows.Forms.Button();
             this.createManualTestComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+            this.showQuestionsPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
+            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.showQuestionDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.showQuestionCategoryCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
+            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.multipleDataSet = new Multiple_Choice_Generator.multipleDataSet();
+            this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.createLessonPanel = new System.Windows.Forms.Panel();
             this.createLessonCategoryTextbox = new System.Windows.Forms.TextBox();
             this.createLessonErrorTitleLabel = new System.Windows.Forms.Label();
@@ -144,6 +167,12 @@ namespace Multiple_Choice_Generator
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.questionsTableAdapter = new Multiple_Choice_Generator.multipleDataSetTableAdapters.questionsTableAdapter();
+<<<<<<< HEAD
+            this.multipleDataSet1 = new Multiple_Choice_Generator.multipleDataSet1();
+            this.questionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.questionsTableAdapter1 = new Multiple_Choice_Generator.multipleDataSet1TableAdapters.questionsTableAdapter();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -159,18 +188,32 @@ namespace Multiple_Choice_Generator
             this.mainPanel.SuspendLayout();
             this.createAutoTestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).BeginInit();
+<<<<<<< HEAD
+            this.createManualTestPanel.SuspendLayout();
+            this.createManualTestFilterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.showQuestionsPanel.SuspendLayout();
             this.showQuestionsFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).BeginInit();
+<<<<<<< HEAD
+=======
             this.createManualTestPanel.SuspendLayout();
             this.createManualTestFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.createLessonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).BeginInit();
             this.createTestPanel.SuspendLayout();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).BeginInit();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -847,6 +890,11 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
+            this.mainPanel.Controls.Add(this.createManualTestPanel);
+            this.mainPanel.Controls.Add(this.createAutoTestPanel);
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
@@ -861,6 +909,8 @@ namespace Multiple_Choice_Generator
             this.mainPanel.TabIndex = 0;
             // 
             // createAutoTestPanel
+<<<<<<< HEAD
+=======
             // 
             this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -1035,6 +1085,403 @@ namespace Multiple_Choice_Generator
             this.toolTip.SetToolTip(this.label10, "Επιλέξτε το μάθημα του διαγωνίσματος.");
             // 
             // showQuestionsPanel
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
+            // 
+            this.createAutoTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestPanel.AutoScroll = true;
+            this.createAutoTestPanel.AutoScrollMinSize = new System.Drawing.Size(0, 500);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestErrorsTitleLabel);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestErrorsLabel);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestNumericUpDown);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestConfButton);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestCategoryCheckedListBox);
+            this.createAutoTestPanel.Controls.Add(this.label13);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestLessonComboBox);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestDifficultyCheckedListBox);
+            this.createAutoTestPanel.Controls.Add(this.label12);
+            this.createAutoTestPanel.Controls.Add(this.label11);
+            this.createAutoTestPanel.Controls.Add(this.label10);
+            this.createAutoTestPanel.Location = new System.Drawing.Point(0, 0);
+            this.createAutoTestPanel.Name = "createAutoTestPanel";
+            this.createAutoTestPanel.Size = new System.Drawing.Size(962, 583);
+            this.createAutoTestPanel.TabIndex = 17;
+            this.createAutoTestPanel.Visible = false;
+            this.createAutoTestPanel.Click += new System.EventHandler(this.setfocus_Click);
+            // 
+            // createAutoTestErrorsTitleLabel
+            // 
+            this.createAutoTestErrorsTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createAutoTestErrorsTitleLabel.AutoSize = true;
+            this.createAutoTestErrorsTitleLabel.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestErrorsTitleLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.createAutoTestErrorsTitleLabel.Location = new System.Drawing.Point(45, 484);
+            this.createAutoTestErrorsTitleLabel.Name = "createAutoTestErrorsTitleLabel";
+            this.createAutoTestErrorsTitleLabel.Size = new System.Drawing.Size(371, 18);
+            this.createAutoTestErrorsTitleLabel.TabIndex = 20;
+            this.createAutoTestErrorsTitleLabel.Text = "Βρέθηκαν σφάλματα. Προσπαθήστε ξανά.";
+            this.createAutoTestErrorsTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createAutoTestErrorsTitleLabel.Visible = false;
+            // 
+            // createAutoTestErrorsLabel
+            // 
+            this.createAutoTestErrorsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestErrorsLabel.AutoEllipsis = true;
+            this.createAutoTestErrorsLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestErrorsLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.createAutoTestErrorsLabel.Location = new System.Drawing.Point(45, 502);
+            this.createAutoTestErrorsLabel.Name = "createAutoTestErrorsLabel";
+            this.createAutoTestErrorsLabel.Size = new System.Drawing.Size(678, 78);
+            this.createAutoTestErrorsLabel.TabIndex = 19;
+            this.createAutoTestErrorsLabel.Visible = false;
+            // 
+            // createAutoTestNumericUpDown
+            // 
+            this.createAutoTestNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
+            this.createAutoTestNumericUpDown.Location = new System.Drawing.Point(45, 130);
+            this.createAutoTestNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.createAutoTestNumericUpDown.Name = "createAutoTestNumericUpDown";
+            this.createAutoTestNumericUpDown.Size = new System.Drawing.Size(88, 29);
+            this.createAutoTestNumericUpDown.TabIndex = 10;
+            this.createAutoTestNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // createAutoTestConfButton
+            // 
+            this.createAutoTestConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestConfButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.createAutoTestConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createAutoTestConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestConfButton.ForeColor = System.Drawing.Color.White;
+            this.createAutoTestConfButton.Location = new System.Drawing.Point(751, 487);
+            this.createAutoTestConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.createAutoTestConfButton.Name = "createAutoTestConfButton";
+            this.createAutoTestConfButton.Size = new System.Drawing.Size(182, 60);
+            this.createAutoTestConfButton.TabIndex = 9;
+            this.createAutoTestConfButton.Text = "Δημιουργία";
+            this.createAutoTestConfButton.UseVisualStyleBackColor = false;
+            this.createAutoTestConfButton.Click += new System.EventHandler(this.createAutoTestConfButton_Click);
+            // 
+            // createAutoTestCategoryCheckedListBox
+            // 
+            this.createAutoTestCategoryCheckedListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestCategoryCheckedListBox.CheckOnClick = true;
+            this.createAutoTestCategoryCheckedListBox.ColumnWidth = 200;
+            this.createAutoTestCategoryCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestCategoryCheckedListBox.FormattingEnabled = true;
+            this.createAutoTestCategoryCheckedListBox.IntegralHeight = false;
+            this.createAutoTestCategoryCheckedListBox.Location = new System.Drawing.Point(45, 262);
+            this.createAutoTestCategoryCheckedListBox.MultiColumn = true;
+            this.createAutoTestCategoryCheckedListBox.Name = "createAutoTestCategoryCheckedListBox";
+            this.createAutoTestCategoryCheckedListBox.Size = new System.Drawing.Size(888, 210);
+            this.createAutoTestCategoryCheckedListBox.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(42, 238);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 18);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Ενότητες:";
+            this.toolTip.SetToolTip(this.label13, "Επιλέξτε από ποιές ενότητες θα υπάρχουν ερωτήσεις.");
+            // 
+            // createAutoTestLessonComboBox
+            // 
+            this.createAutoTestLessonComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestLessonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.createAutoTestLessonComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestLessonComboBox.FormattingEnabled = true;
+            this.createAutoTestLessonComboBox.Location = new System.Drawing.Point(45, 66);
+            this.createAutoTestLessonComboBox.Name = "createAutoTestLessonComboBox";
+            this.createAutoTestLessonComboBox.Size = new System.Drawing.Size(888, 32);
+            this.createAutoTestLessonComboBox.TabIndex = 4;
+            this.createAutoTestLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.createAutoTestLessonComboBox_SelectionChangeCommitted);
+            // 
+            // createAutoTestDifficultyCheckedListBox
+            // 
+<<<<<<< HEAD
+            this.createAutoTestDifficultyCheckedListBox.CheckOnClick = true;
+            this.createAutoTestDifficultyCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestDifficultyCheckedListBox.HorizontalExtent = 70;
+            this.createAutoTestDifficultyCheckedListBox.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μεσαίες",
+            "Δύσκολες"});
+            this.createAutoTestDifficultyCheckedListBox.Location = new System.Drawing.Point(45, 195);
+            this.createAutoTestDifficultyCheckedListBox.MultiColumn = true;
+            this.createAutoTestDifficultyCheckedListBox.Name = "createAutoTestDifficultyCheckedListBox";
+            this.createAutoTestDifficultyCheckedListBox.Size = new System.Drawing.Size(369, 28);
+            this.createAutoTestDifficultyCheckedListBox.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(42, 109);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(186, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Αριθμός ερωτήσεων:";
+            this.toolTip.SetToolTip(this.label12, "Επιλέξτε τον αριθμό ερωτήσεων του διαγωνίσματος.");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(42, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 18);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Δυσκολία:";
+            this.toolTip.SetToolTip(this.label11, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα υπάρχουν ερωτήσεις.");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(42, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 18);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Μάθημα:";
+            this.toolTip.SetToolTip(this.label10, "Επιλέξτε το μάθημα του διαγωνίσματος.");
+            // 
+            // createManualTestPanel
+            // 
+            this.createManualTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestPanel.Controls.Add(this.createManualTestFilterPanel);
+            this.createManualTestPanel.Controls.Add(this.createTestFilterButton);
+            this.createManualTestPanel.Controls.Add(this.createManualTestSearchTextbox);
+            this.createManualTestPanel.Controls.Add(this.createManualTestConfButton);
+            this.createManualTestPanel.Controls.Add(this.label16);
+            this.createManualTestPanel.Controls.Add(this.createManualTestDataGridView);
+            this.createManualTestPanel.Controls.Add(this.createManualTestLessonButton);
+            this.createManualTestPanel.Controls.Add(this.createManualTestComboBox);
+            this.createManualTestPanel.Controls.Add(this.label15);
+            this.createManualTestPanel.Location = new System.Drawing.Point(0, 0);
+            this.createManualTestPanel.Name = "createManualTestPanel";
+            this.createManualTestPanel.Size = new System.Drawing.Size(962, 583);
+            this.createManualTestPanel.TabIndex = 18;
+            this.createManualTestPanel.Visible = false;
+            this.createManualTestPanel.Click += new System.EventHandler(this.setfocus_Click);
+            // 
+            // createManualTestFilterPanel
+            // 
+            this.createManualTestFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestFilterConfButton);
+            this.createManualTestFilterPanel.Controls.Add(this.label17);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestDifficultyCheckbox);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestCatagoryCheckbox);
+            this.createManualTestFilterPanel.Location = new System.Drawing.Point(0, 0);
+            this.createManualTestFilterPanel.Name = "createManualTestFilterPanel";
+            this.createManualTestFilterPanel.Size = new System.Drawing.Size(0, 583);
+            this.createManualTestFilterPanel.TabIndex = 13;
+            // 
+            // createManualTestFilterConfButton
+            // 
+            this.createManualTestFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.createManualTestFilterConfButton.FlatAppearance.BorderSize = 0;
+            this.createManualTestFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createManualTestFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestFilterConfButton.ForeColor = System.Drawing.Color.White;
+            this.createManualTestFilterConfButton.Location = new System.Drawing.Point(16, 541);
+            this.createManualTestFilterConfButton.Name = "createManualTestFilterConfButton";
+            this.createManualTestFilterConfButton.Size = new System.Drawing.Size(212, 35);
+            this.createManualTestFilterConfButton.TabIndex = 6;
+            this.createManualTestFilterConfButton.Text = "Εφαρμογή";
+            this.createManualTestFilterConfButton.UseVisualStyleBackColor = false;
+            this.createManualTestFilterConfButton.Click += new System.EventHandler(this.createManualTestFilterConfButton_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(14, 13);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 23);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Φίλτρα";
+            // 
+            // createManualTestDifficultyCheckbox
+            // 
+            this.createManualTestDifficultyCheckbox.CheckOnClick = true;
+            this.createManualTestDifficultyCheckbox.ColumnWidth = 90;
+            this.createManualTestDifficultyCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestDifficultyCheckbox.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μεσαίες",
+            "Δύσκολες"});
+            this.createManualTestDifficultyCheckbox.Location = new System.Drawing.Point(16, 36);
+            this.createManualTestDifficultyCheckbox.Name = "createManualTestDifficultyCheckbox";
+            this.createManualTestDifficultyCheckbox.Size = new System.Drawing.Size(127, 76);
+            this.createManualTestDifficultyCheckbox.TabIndex = 2;
+            this.toolTip.SetToolTip(this.createManualTestDifficultyCheckbox, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
+            // 
+            // createManualTestCatagoryCheckbox
+            // 
+            this.createManualTestCatagoryCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestCatagoryCheckbox.CheckOnClick = true;
+            this.createManualTestCatagoryCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestCatagoryCheckbox.FormattingEnabled = true;
+            this.createManualTestCatagoryCheckbox.Location = new System.Drawing.Point(16, 120);
+            this.createManualTestCatagoryCheckbox.Name = "createManualTestCatagoryCheckbox";
+            this.createManualTestCatagoryCheckbox.Size = new System.Drawing.Size(213, 403);
+            this.createManualTestCatagoryCheckbox.TabIndex = 4;
+            this.toolTip.SetToolTip(this.createManualTestCatagoryCheckbox, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
+            // 
+            // createTestFilterButton
+            // 
+            this.createTestFilterButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.createTestFilterButton.Enabled = false;
+            this.createTestFilterButton.FlatAppearance.BorderSize = 0;
+            this.createTestFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createTestFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createTestFilterButton.ForeColor = System.Drawing.Color.White;
+            this.createTestFilterButton.Location = new System.Drawing.Point(0, 195);
+            this.createTestFilterButton.Name = "createTestFilterButton";
+            this.createTestFilterButton.Size = new System.Drawing.Size(32, 149);
+            this.createTestFilterButton.TabIndex = 12;
+            this.createTestFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
+            this.createTestFilterButton.UseVisualStyleBackColor = false;
+            this.createTestFilterButton.Click += new System.EventHandler(this.createTestFilterButton_Click);
+            // 
+            // createManualTestSearchTextbox
+            // 
+            this.createManualTestSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestSearchTextbox.Enabled = false;
+            this.createManualTestSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestSearchTextbox.Location = new System.Drawing.Point(609, 94);
+            this.createManualTestSearchTextbox.Name = "createManualTestSearchTextbox";
+            this.createManualTestSearchTextbox.Size = new System.Drawing.Size(322, 29);
+            this.createManualTestSearchTextbox.TabIndex = 11;
+            // 
+            // createManualTestConfButton
+            // 
+            this.createManualTestConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestConfButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.createManualTestConfButton.Enabled = false;
+            this.createManualTestConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createManualTestConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestConfButton.ForeColor = System.Drawing.Color.White;
+            this.createManualTestConfButton.Location = new System.Drawing.Point(751, 512);
+            this.createManualTestConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.createManualTestConfButton.Name = "createManualTestConfButton";
+            this.createManualTestConfButton.Size = new System.Drawing.Size(182, 60);
+            this.createManualTestConfButton.TabIndex = 10;
+            this.createManualTestConfButton.Text = "Δημιουργία";
+            this.createManualTestConfButton.UseVisualStyleBackColor = false;
+            this.createManualTestConfButton.Click += new System.EventHandler(this.createManualTestConfButton_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(42, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 18);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Ερωτήσεις:";
+            this.toolTip.SetToolTip(this.label16, "Επιλέξτε τις ερωτήσεις που θα υπάρχουν στο διαγώνισμα.");
+            // 
+            // createManualTestDataGridView
+            // 
+            this.createManualTestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestDataGridView.AutoGenerateColumns = false;
+            this.createManualTestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.createManualTestDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mantest_que,
+            this.mantest_unit,
+            this.mantest_dif,
+            this.mantest_check});
+            this.createManualTestDataGridView.DataSource = this.questionsBindingSource1;
+            this.createManualTestDataGridView.Enabled = false;
+            this.createManualTestDataGridView.Location = new System.Drawing.Point(45, 129);
+            this.createManualTestDataGridView.Name = "createManualTestDataGridView";
+            this.createManualTestDataGridView.Size = new System.Drawing.Size(888, 376);
+            this.createManualTestDataGridView.TabIndex = 8;
+            // 
+            // mantest_que
+            // 
+            this.mantest_que.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mantest_que.HeaderText = "Ερώτηση";
+            this.mantest_que.Name = "mantest_que";
+            this.mantest_que.ReadOnly = true;
+            // 
+            // mantest_unit
+            // 
+            this.mantest_unit.HeaderText = "Ενότητα";
+            this.mantest_unit.Name = "mantest_unit";
+            this.mantest_unit.ReadOnly = true;
+            this.mantest_unit.Width = 150;
+            // 
+            // mantest_dif
+            // 
+            this.mantest_dif.HeaderText = "Δυσκολία";
+            this.mantest_dif.Name = "mantest_dif";
+            this.mantest_dif.ReadOnly = true;
+            // 
+            // mantest_check
+            // 
+            this.mantest_check.HeaderText = "Επιλογή";
+            this.mantest_check.Name = "mantest_check";
+            // 
+            // createManualTestLessonButton
+            // 
+            this.createManualTestLessonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestLessonButton.Location = new System.Drawing.Point(797, 39);
+            this.createManualTestLessonButton.Name = "createManualTestLessonButton";
+            this.createManualTestLessonButton.Size = new System.Drawing.Size(136, 32);
+            this.createManualTestLessonButton.TabIndex = 7;
+            this.createManualTestLessonButton.Text = "Επιλογή";
+            this.createManualTestLessonButton.UseVisualStyleBackColor = true;
+            this.createManualTestLessonButton.Click += new System.EventHandler(this.createManualTestLessonButton_Click);
+            // 
+            // createManualTestComboBox
+            // 
+            this.createManualTestComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.createManualTestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestComboBox.FormattingEnabled = true;
+            this.createManualTestComboBox.Location = new System.Drawing.Point(45, 39);
+            this.createManualTestComboBox.Name = "createManualTestComboBox";
+            this.createManualTestComboBox.Size = new System.Drawing.Size(746, 32);
+            this.createManualTestComboBox.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(42, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 18);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Μάθημα:";
+            this.toolTip.SetToolTip(this.label15, "Επιλέξτε το μάθημα του διαγωνίσματος.");
+            // 
+            // showQuestionsPanel
             // 
             this.showQuestionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -1190,6 +1637,73 @@ namespace Multiple_Choice_Generator
             this.que_dif.HeaderText = "Δυσκολία";
             this.que_dif.Name = "que_dif";
             this.que_dif.ReadOnly = true;
+=======
+            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionDataGridView.AutoGenerateColumns = false;
+            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.que_name,
+            this.que_lesson,
+            this.que_unit,
+            this.que_dif});
+            this.showQuestionDataGridView.DataSource = this.questionsBindingSource;
+            this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
+            this.showQuestionDataGridView.Name = "showQuestionDataGridView";
+            this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 482);
+            this.showQuestionDataGridView.TabIndex = 0;
+            // 
+            // que_name
+            // 
+            this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_name.FillWeight = 200F;
+            this.que_name.HeaderText = "Ερώτηση";
+            this.que_name.Name = "que_name";
+            this.que_name.ReadOnly = true;
+            // 
+            // que_lesson
+            // 
+            this.que_lesson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_lesson.HeaderText = "Μάθημα";
+            this.que_lesson.Name = "que_lesson";
+            this.que_lesson.ReadOnly = true;
+            // 
+            // que_unit
+            // 
+            this.que_unit.HeaderText = "Ενότητα";
+            this.que_unit.Name = "que_unit";
+            this.que_unit.ReadOnly = true;
+            this.que_unit.Width = 150;
+            // 
+            // que_dif
+            // 
+            this.que_dif.HeaderText = "Δυσκολία";
+            this.que_dif.Name = "que_dif";
+            this.que_dif.ReadOnly = true;
+            // 
+            // questionsBindingSource
+            // 
+            this.questionsBindingSource.DataMember = "questions";
+            this.questionsBindingSource.DataSource = this.multipleDataSet;
+            // 
+            // multipleDataSet
+            // 
+            this.multipleDataSet.DataSetName = "multipleDataSet";
+            this.multipleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // showQuestionLessonCombobox
+            // 
+            this.showQuestionLessonCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.showQuestionLessonCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showQuestionLessonCombobox.FormattingEnabled = true;
+            this.showQuestionLessonCombobox.Location = new System.Drawing.Point(45, 31);
+            this.showQuestionLessonCombobox.Name = "showQuestionLessonCombobox";
+            this.showQuestionLessonCombobox.Size = new System.Drawing.Size(460, 32);
+            this.showQuestionLessonCombobox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.showQuestionLessonCombobox, "Επιλέξτε μάθημα.");
+            this.showQuestionLessonCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             // 
             // questionsBindingSource
             // 
@@ -1213,194 +1727,172 @@ namespace Multiple_Choice_Generator
             this.toolTip.SetToolTip(this.showQuestionLessonCombobox, "Επιλέξτε μάθημα.");
             this.showQuestionLessonCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
             // 
-            // createManualTestPanel
+            // createLessonPanel
             // 
-            this.createManualTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.createLessonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestPanel.Controls.Add(this.createManualTestFilterPanel);
-            this.createManualTestPanel.Controls.Add(this.createTestFilterButton);
-            this.createManualTestPanel.Controls.Add(this.createManualTestSearchTextbox);
-            this.createManualTestPanel.Controls.Add(this.createManualTestConfButton);
-            this.createManualTestPanel.Controls.Add(this.label16);
-            this.createManualTestPanel.Controls.Add(this.createManualTestDataGridView);
-            this.createManualTestPanel.Controls.Add(this.createManualTestLessonButton);
-            this.createManualTestPanel.Controls.Add(this.createManualTestComboBox);
-            this.createManualTestPanel.Controls.Add(this.label15);
-            this.createManualTestPanel.Location = new System.Drawing.Point(0, 0);
-            this.createManualTestPanel.Name = "createManualTestPanel";
-            this.createManualTestPanel.Size = new System.Drawing.Size(962, 583);
-            this.createManualTestPanel.TabIndex = 18;
-            this.createManualTestPanel.Visible = false;
-            this.createManualTestPanel.Click += new System.EventHandler(this.setfocus_Click);
+            this.createLessonPanel.AutoScroll = true;
+            this.createLessonPanel.AutoScrollMinSize = new System.Drawing.Size(0, 583);
+            this.createLessonPanel.Controls.Add(this.createLessonCategoryTextbox);
+            this.createLessonPanel.Controls.Add(this.createLessonErrorTitleLabel);
+            this.createLessonPanel.Controls.Add(this.createLessonErrorLabel);
+            this.createLessonPanel.Controls.Add(this.createLessonConfButton);
+            this.createLessonPanel.Controls.Add(this.createLessonDeletePictureBox);
+            this.createLessonPanel.Controls.Add(this.createLessonAddPictureBox);
+            this.createLessonPanel.Controls.Add(this.createLessonDescriptionTextbox);
+            this.createLessonPanel.Controls.Add(this.createLessonTitleTextbox);
+            this.createLessonPanel.Controls.Add(this.label8);
+            this.createLessonPanel.Controls.Add(this.label7);
+            this.createLessonPanel.Controls.Add(this.label6);
+            this.createLessonPanel.Location = new System.Drawing.Point(0, 0);
+            this.createLessonPanel.Name = "createLessonPanel";
+            this.createLessonPanel.Size = new System.Drawing.Size(962, 583);
+            this.createLessonPanel.TabIndex = 16;
+            this.createLessonPanel.Visible = false;
+            this.createLessonPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
-            // createManualTestFilterPanel
+            // createLessonCategoryTextbox
             // 
-            this.createManualTestFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestFilterConfButton);
-            this.createManualTestFilterPanel.Controls.Add(this.label17);
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestDifficultyCheckbox);
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestCatagoryCheckbox);
-            this.createManualTestFilterPanel.Location = new System.Drawing.Point(0, 0);
-            this.createManualTestFilterPanel.Name = "createManualTestFilterPanel";
-            this.createManualTestFilterPanel.Size = new System.Drawing.Size(0, 583);
-            this.createManualTestFilterPanel.TabIndex = 13;
-            // 
-            // createManualTestFilterConfButton
-            // 
-            this.createManualTestFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.createManualTestFilterConfButton.FlatAppearance.BorderSize = 0;
-            this.createManualTestFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createManualTestFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestFilterConfButton.ForeColor = System.Drawing.Color.White;
-            this.createManualTestFilterConfButton.Location = new System.Drawing.Point(16, 541);
-            this.createManualTestFilterConfButton.Name = "createManualTestFilterConfButton";
-            this.createManualTestFilterConfButton.Size = new System.Drawing.Size(212, 35);
-            this.createManualTestFilterConfButton.TabIndex = 6;
-            this.createManualTestFilterConfButton.Text = "Εφαρμογή";
-            this.createManualTestFilterConfButton.UseVisualStyleBackColor = false;
-            this.createManualTestFilterConfButton.Click += new System.EventHandler(this.createManualTestFilterConfButton_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(14, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 23);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Φίλτρα";
-            // 
-            // createManualTestDifficultyCheckbox
-            // 
-            this.createManualTestDifficultyCheckbox.CheckOnClick = true;
-            this.createManualTestDifficultyCheckbox.ColumnWidth = 90;
-            this.createManualTestDifficultyCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestDifficultyCheckbox.Items.AddRange(new object[] {
-            "Εύκολες",
-            "Μεσαίες",
-            "Δύσκολες"});
-            this.createManualTestDifficultyCheckbox.Location = new System.Drawing.Point(16, 36);
-            this.createManualTestDifficultyCheckbox.Name = "createManualTestDifficultyCheckbox";
-            this.createManualTestDifficultyCheckbox.Size = new System.Drawing.Size(127, 76);
-            this.createManualTestDifficultyCheckbox.TabIndex = 2;
-            this.toolTip.SetToolTip(this.createManualTestDifficultyCheckbox, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
-            // 
-            // createManualTestCatagoryCheckbox
-            // 
-            this.createManualTestCatagoryCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestCatagoryCheckbox.CheckOnClick = true;
-            this.createManualTestCatagoryCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestCatagoryCheckbox.FormattingEnabled = true;
-            this.createManualTestCatagoryCheckbox.Location = new System.Drawing.Point(16, 120);
-            this.createManualTestCatagoryCheckbox.Name = "createManualTestCatagoryCheckbox";
-            this.createManualTestCatagoryCheckbox.Size = new System.Drawing.Size(213, 403);
-            this.createManualTestCatagoryCheckbox.TabIndex = 4;
-            this.toolTip.SetToolTip(this.createManualTestCatagoryCheckbox, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
-            // 
-            // createTestFilterButton
-            // 
-            this.createTestFilterButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.createTestFilterButton.Enabled = false;
-            this.createTestFilterButton.FlatAppearance.BorderSize = 0;
-            this.createTestFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createTestFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createTestFilterButton.ForeColor = System.Drawing.Color.White;
-            this.createTestFilterButton.Location = new System.Drawing.Point(0, 195);
-            this.createTestFilterButton.Name = "createTestFilterButton";
-            this.createTestFilterButton.Size = new System.Drawing.Size(32, 149);
-            this.createTestFilterButton.TabIndex = 12;
-            this.createTestFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
-            this.createTestFilterButton.UseVisualStyleBackColor = false;
-            this.createTestFilterButton.Click += new System.EventHandler(this.createTestFilterButton_Click);
-            // 
-            // createManualTestSearchTextbox
-            // 
-            this.createManualTestSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestSearchTextbox.Enabled = false;
-            this.createManualTestSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestSearchTextbox.Location = new System.Drawing.Point(609, 94);
-            this.createManualTestSearchTextbox.Name = "createManualTestSearchTextbox";
-            this.createManualTestSearchTextbox.Size = new System.Drawing.Size(322, 29);
-            this.createManualTestSearchTextbox.TabIndex = 11;
-            // 
-            // createManualTestConfButton
-            // 
-            this.createManualTestConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestConfButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.createManualTestConfButton.Enabled = false;
-            this.createManualTestConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createManualTestConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestConfButton.ForeColor = System.Drawing.Color.White;
-            this.createManualTestConfButton.Location = new System.Drawing.Point(751, 512);
-            this.createManualTestConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.createManualTestConfButton.Name = "createManualTestConfButton";
-            this.createManualTestConfButton.Size = new System.Drawing.Size(182, 60);
-            this.createManualTestConfButton.TabIndex = 10;
-            this.createManualTestConfButton.Text = "Δημιουργία";
-            this.createManualTestConfButton.UseVisualStyleBackColor = false;
-            this.createManualTestConfButton.Click += new System.EventHandler(this.createManualTestConfButton_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(42, 108);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 18);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Ερωτήσεις:";
-            this.toolTip.SetToolTip(this.label16, "Επιλέξτε τις ερωτήσεις που θα υπάρχουν στο διαγώνισμα.");
-            // 
-            // createManualTestDataGridView
-            // 
-            this.createManualTestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.createLessonCategoryTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.createManualTestDataGridView.Enabled = false;
-            this.createManualTestDataGridView.Location = new System.Drawing.Point(45, 129);
-            this.createManualTestDataGridView.Name = "createManualTestDataGridView";
-            this.createManualTestDataGridView.Size = new System.Drawing.Size(888, 376);
-            this.createManualTestDataGridView.TabIndex = 8;
+            this.createLessonCategoryTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonCategoryTextbox.Location = new System.Drawing.Point(41, 252);
+            this.createLessonCategoryTextbox.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
+            this.createLessonCategoryTextbox.MaxLength = 100;
+            this.createLessonCategoryTextbox.Name = "createLessonCategoryTextbox";
+            this.createLessonCategoryTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.createLessonCategoryTextbox.Size = new System.Drawing.Size(888, 33);
+            this.createLessonCategoryTextbox.TabIndex = 25;
             // 
-            // createManualTestLessonButton
+            // createLessonErrorTitleLabel
             // 
-            this.createManualTestLessonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestLessonButton.Location = new System.Drawing.Point(797, 39);
-            this.createManualTestLessonButton.Name = "createManualTestLessonButton";
-            this.createManualTestLessonButton.Size = new System.Drawing.Size(136, 32);
-            this.createManualTestLessonButton.TabIndex = 7;
-            this.createManualTestLessonButton.Text = "Επιλογή";
-            this.createManualTestLessonButton.UseVisualStyleBackColor = true;
-            this.createManualTestLessonButton.Click += new System.EventHandler(this.createManualTestLessonButton_Click);
+            this.createLessonErrorTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createLessonErrorTitleLabel.AutoSize = true;
+            this.createLessonErrorTitleLabel.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonErrorTitleLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.createLessonErrorTitleLabel.Location = new System.Drawing.Point(40, 316);
+            this.createLessonErrorTitleLabel.Name = "createLessonErrorTitleLabel";
+            this.createLessonErrorTitleLabel.Size = new System.Drawing.Size(371, 18);
+            this.createLessonErrorTitleLabel.TabIndex = 24;
+            this.createLessonErrorTitleLabel.Text = "Βρέθηκαν σφάλματα. Προσπαθήστε ξανά.";
+            this.createLessonErrorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.createLessonErrorTitleLabel.Visible = false;
             // 
-            // createManualTestComboBox
+            // createLessonErrorLabel
             // 
-            this.createManualTestComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.createLessonErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.createManualTestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestComboBox.FormattingEnabled = true;
-            this.createManualTestComboBox.Location = new System.Drawing.Point(45, 39);
-            this.createManualTestComboBox.Name = "createManualTestComboBox";
-            this.createManualTestComboBox.Size = new System.Drawing.Size(746, 32);
-            this.createManualTestComboBox.TabIndex = 6;
+            this.createLessonErrorLabel.AutoEllipsis = true;
+            this.createLessonErrorLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonErrorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.createLessonErrorLabel.Location = new System.Drawing.Point(40, 334);
+            this.createLessonErrorLabel.Name = "createLessonErrorLabel";
+            this.createLessonErrorLabel.Size = new System.Drawing.Size(678, 78);
+            this.createLessonErrorLabel.TabIndex = 23;
+            this.createLessonErrorLabel.Visible = false;
             // 
-            // label15
+            // createLessonConfButton
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(42, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 18);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Μάθημα:";
-            this.toolTip.SetToolTip(this.label15, "Επιλέξτε το μάθημα του διαγωνίσματος.");
+            this.createLessonConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createLessonConfButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.createLessonConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createLessonConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonConfButton.ForeColor = System.Drawing.Color.White;
+            this.createLessonConfButton.Location = new System.Drawing.Point(751, 360);
+            this.createLessonConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.createLessonConfButton.Name = "createLessonConfButton";
+            this.createLessonConfButton.Size = new System.Drawing.Size(182, 60);
+            this.createLessonConfButton.TabIndex = 22;
+            this.createLessonConfButton.Text = "Καταχώρηση";
+            this.createLessonConfButton.UseVisualStyleBackColor = false;
+            this.createLessonConfButton.Click += new System.EventHandler(this.createLessonConfButton_Click);
+            // 
+            // createLessonDeletePictureBox
+            // 
+            this.createLessonDeletePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createLessonDeletePictureBox.Enabled = false;
+            this.createLessonDeletePictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_negative;
+            this.createLessonDeletePictureBox.Location = new System.Drawing.Point(820, 295);
+            this.createLessonDeletePictureBox.Name = "createLessonDeletePictureBox";
+            this.createLessonDeletePictureBox.Size = new System.Drawing.Size(50, 50);
+            this.createLessonDeletePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.createLessonDeletePictureBox.TabIndex = 21;
+            this.createLessonDeletePictureBox.TabStop = false;
+            this.createLessonDeletePictureBox.Click += new System.EventHandler(this.createLessonDeletePictureBox_Click);
+            this.createLessonDeletePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.createLessonDeletePictureBox.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.createLessonDeletePictureBox.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.createLessonDeletePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            // 
+            // createLessonAddPictureBox
+            // 
+            this.createLessonAddPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createLessonAddPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.icon_plus;
+            this.createLessonAddPictureBox.Location = new System.Drawing.Point(883, 295);
+            this.createLessonAddPictureBox.Name = "createLessonAddPictureBox";
+            this.createLessonAddPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.createLessonAddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.createLessonAddPictureBox.TabIndex = 20;
+            this.createLessonAddPictureBox.TabStop = false;
+            this.createLessonAddPictureBox.Click += new System.EventHandler(this.createLessonAddPictureBox_Click);
+            this.createLessonAddPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.createLessonAddPictureBox.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.createLessonAddPictureBox.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.createLessonAddPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // createLessonDescriptionTextbox
+            // 
+            this.createLessonDescriptionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createLessonDescriptionTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonDescriptionTextbox.Location = new System.Drawing.Point(41, 121);
+            this.createLessonDescriptionTextbox.MaxLength = 100;
+            this.createLessonDescriptionTextbox.Multiline = true;
+            this.createLessonDescriptionTextbox.Name = "createLessonDescriptionTextbox";
+            this.createLessonDescriptionTextbox.Size = new System.Drawing.Size(890, 89);
+            this.createLessonDescriptionTextbox.TabIndex = 4;
+            // 
+            // createLessonTitleTextbox
+            // 
+            this.createLessonTitleTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createLessonTitleTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createLessonTitleTextbox.Location = new System.Drawing.Point(41, 52);
+            this.createLessonTitleTextbox.Name = "createLessonTitleTextbox";
+            this.createLessonTitleTextbox.Size = new System.Drawing.Size(890, 33);
+            this.createLessonTitleTextbox.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label8.Location = new System.Drawing.Point(37, 226);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 23);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Ενότητες";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label7.Location = new System.Drawing.Point(37, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(248, 23);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Περιγραφή μαθήματος";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label6.Location = new System.Drawing.Point(37, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(202, 23);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Τίτλος Μαθήματος";
+            this.toolTip.SetToolTip(this.label6, "Γράψτε τον τίτλο του μαθήματος που θα δημιουργήσετε.");
             // 
             // createLessonPanel
             // 
@@ -1657,6 +2149,23 @@ namespace Multiple_Choice_Generator
             // 
             this.questionsTableAdapter.ClearBeforeFill = true;
             // 
+<<<<<<< HEAD
+            // multipleDataSet1
+            // 
+            this.multipleDataSet1.DataSetName = "multipleDataSet1";
+            this.multipleDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // questionsBindingSource1
+            // 
+            this.questionsBindingSource1.DataMember = "questions";
+            this.questionsBindingSource1.DataSource = this.multipleDataSet1;
+            // 
+            // questionsTableAdapter1
+            // 
+            this.questionsTableAdapter1.ClearBeforeFill = true;
+            // 
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1696,6 +2205,14 @@ namespace Multiple_Choice_Generator
             this.createAutoTestPanel.ResumeLayout(false);
             this.createAutoTestPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).EndInit();
+<<<<<<< HEAD
+            this.createManualTestPanel.ResumeLayout(false);
+            this.createManualTestPanel.PerformLayout();
+            this.createManualTestFilterPanel.ResumeLayout(false);
+            this.createManualTestFilterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.showQuestionsPanel.ResumeLayout(false);
             this.showQuestionsPanel.PerformLayout();
             this.showQuestionsFilterPanel.ResumeLayout(false);
@@ -1703,17 +2220,25 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).EndInit();
+<<<<<<< HEAD
+=======
             this.createManualTestPanel.ResumeLayout(false);
             this.createManualTestPanel.PerformLayout();
             this.createManualTestFilterPanel.ResumeLayout(false);
             this.createManualTestFilterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.createLessonPanel.ResumeLayout(false);
             this.createLessonPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).EndInit();
             this.createTestPanel.ResumeLayout(false);
             this.createTestPanel.PerformLayout();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource1)).EndInit();
+=======
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
             this.ResumeLayout(false);
 
         }
@@ -1832,6 +2357,13 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.DataGridViewTextBoxColumn que_lesson;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_dif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_que;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_dif;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn mantest_check;
+        private multipleDataSet1 multipleDataSet1;
+        private System.Windows.Forms.BindingSource questionsBindingSource1;
+        private multipleDataSet1TableAdapters.questionsTableAdapter questionsTableAdapter1;
     }
 }
 

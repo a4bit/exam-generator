@@ -58,6 +58,8 @@ namespace Multiple_Choice_Generator
         //load my screen and workingarea location
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'multipleDataSet1.questions' table. You can move, or remove it, as needed.
+            this.questionsTableAdapter1.Fill(this.multipleDataSet1.questions);
             // TODO: This line of code loads data into the 'multipleDataSet.questions' table. You can move, or remove it, as needed.
             this.questionsTableAdapter.Fill(this.multipleDataSet.questions);
             //load my screen and workingarea location
@@ -913,8 +915,11 @@ namespace Multiple_Choice_Generator
 
 
                 int check = db.iLesson(user.ElementAt(0), title, description);
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 33f7115c35ea2a491f7edec82e429d0730f94ce5
 
                 if (check == 1)
                 {
@@ -1005,6 +1010,29 @@ namespace Multiple_Choice_Generator
                     filtersTimer.Start();
                 }                
             }
+
+            List<string>[] viewQuestions = new List<string>[4];
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
+            for (int i = 0; i < viewQuestions[0].Count; i++)
+            {
+                
+                createManualTestDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
+                createManualTestDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
+                switch (int.Parse(viewQuestions[3].ElementAt(i)))
+                {
+                    case 1:
+                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Εύκολη";
+                        break;
+                    case 2:
+                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Μέτρια";
+                        break;
+                    case 3:
+                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Δύσκολη";
+                        break;
+                }
+
+            }
+
             //call showDialog
             /*List<string> que = new List<string>();
             que.Add("Τί είναι το FTP;");
