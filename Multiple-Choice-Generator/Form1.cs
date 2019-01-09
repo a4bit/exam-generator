@@ -12,13 +12,22 @@ using System.Media;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Multiple_Choice_Generator
 {
     public partial class Form1 : Form
     {
         database db = new database();
-        List<string> user = new List<string>();
+
+        //lists from database
+        private List<string> user = new List<string>();
+        private List<string> lessons = new List<string>();
+        private List<string> categories = new List<string>();
+        private List<string> questions = new List<string>();
+
+        //object for Utils
+        Utils myutils = new Utils();
 
 
         public Form1(List<string> a)
@@ -37,9 +46,7 @@ namespace Multiple_Choice_Generator
             "Multiple Choice Generator, η καλύτερη πλατφόρμα για δημιουργία, αποθήκευση και οργάνωση ερωτήσεων και διαγωνισμάτων πολλαπλής επιλογής.",
             "Μπορείτε να πραγματοποιήσετε αλλαγές στην εμφάνιση του συστήματος από τις ρυθμίσεις.",
             "Μπορείτε να κάνετε αλλαγές στα προσωπικά σας στοιχεία από τις ρυθμίσεις."};
-
-        //object for Utils
-        Utils myutils = new Utils();
+        
 
 
 
@@ -71,7 +78,31 @@ namespace Multiple_Choice_Generator
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
 
+            
+            this.questions = myutils.loadquestions(user.ElementAt(0));
 
+            //call loadLessons
+            this.loadLessons();
+
+        }
+
+        //LOAD LESSONS FROM DATABASE AND FILL COMBOBOXES
+        private void loadLessons()
+        {
+            //load lessons            
+            this.lessons = myutils.loadlessons(user.ElementAt(0));
+
+            this.createAutoTestLessonComboBox.Items.Clear();
+            this.createQuestionLessonCombobox.Items.Clear();
+            this.createManualTestComboBox.Items.Clear();
+            this.showQuestionLessonCombobox.Items.Clear();
+            foreach (String lesson in this.lessons)
+            {
+                this.createAutoTestLessonComboBox.Items.Add(lesson);
+                this.createQuestionLessonCombobox.Items.Add(lesson);
+                this.createManualTestComboBox.Items.Add(lesson);
+                this.showQuestionLessonCombobox.Items.Add(lesson);
+            }   
         }
 
 
@@ -607,27 +638,33 @@ namespace Multiple_Choice_Generator
             }
             else
             {
-                //Ενα παράδειγμα με λιστες
-                List<string> lessons = new List<string>();
-                List<string> units = new List<string>();
-                lessons = db.qLessons(user.ElementAt(0));
-                units = db.qUnits(user.ElementAt(0), lessons.ElementAt(0));
-
-
-                List<string> answerslist = new List<string>();
-                answerslist.Add("Προτόκωλλο");
-                answerslist.Add("Κλαδευτήρι");
-                answerslist.Add("Ραβδιστικό");
                 //code for send to database
-                int check = db.iQuestion(user.ElementAt(0), "Τί είναι το FTP;", answerslist, lessons.ElementAt(0), units.ElementAt(0), difficulty);
+                List<string> answerslist = new List<string>();
+                
+                answerslist.Add(this.createQuestionTextBox1.Text);
+                answerslist.Add(this.createQuestionTextBox2.Text);
+                for(int i=0; i<n; i++)
+                    answerslist.Add(this.textboxes[i].Text);
+
+                int check = db.iQuestion(user.ElementAt(0),question, answerslist, lesson, category,difficulty); //send to database
+
+
                 if (check == 1)
-                    MessageBox.Show("Η ερώτηση καταχωρήθηκε!!");
-                else if (check == 0)
-                    MessageBox.Show("Αδυναμία σύνδεσης στη βάση!!");
+                {
+                    //set some fields to blank
+                    this.createQuestionRichTextBox.Text = "";
+                    this.createQuestionTextBox1.Text = "";
+                    this.createQuestionTextBox2.Text = "";
+                    for (int i = 0; i < n; i++)
+                        textboxes[i].Text = "";
+                    
+                    MessageBox.Show("Η ερώτηση καταχωρήθηκε με επιτυχία!");
+                } else if (check == 0)
+                    createQuestionErrorsLabel.Text = "Αδυναμία σύνδεσης στη βάση!";
                 else if (check == -1)
-                    MessageBox.Show("Δεν υπάρχει η ενότητα!!");
+                    createQuestionErrorsLabel.Text = "Δεν υπάρχει η ενότητα!";
                 else
-                    MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
+                    createQuestionErrorsLabel.Text = "Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!";
             }
 
             
@@ -690,6 +727,21 @@ namespace Multiple_Choice_Generator
         {
             PictureBox temp = (PictureBox)sender;
             temp.Image = Resources.icon_negative;
+        }
+
+
+
+        //load categories when we choose lesson
+        private void createQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.createQuestionCategoryCombobox.Items.Clear();
+            String lesson = this.createQuestionLessonCombobox.Text;
+            //load categories
+            categories = myutils.loadcategories(user.ElementAt(0), lesson);
+            foreach (String category in this.categories)
+            {
+                this.createQuestionCategoryCombobox.Items.Add(category);
+            }
         }
 
         #endregion
@@ -788,21 +840,33 @@ namespace Multiple_Choice_Generator
                 this.createTestFilterButton.Enabled = true;
                 this.createManualTestComboBox.Enabled = false;
                 this.createManualTestLessonButton.Text = "Αλλαγή";
+
+                //load categories when we choose lesson
+                categories = myutils.loadcategories(user.ElementAt(0), this.createManualTestComboBox.Text);
+                this.createManualTestCatagoryCheckbox.Items.Clear();
+                foreach (String category in categories)
+                {
+                    this.createManualTestCatagoryCheckbox.Items.Add(category);
+                }
             }
             //call showDialog and reset
             else
             {
+                this.createManualTestDataGridView.Enabled = false;
+                this.createManualTestConfButton.Enabled = false;
+                this.createManualTestSearchTextbox.Enabled = false;
+                this.createTestFilterButton.Enabled = false;
+                this.createManualTestComboBox.Enabled = true;
+                this.createManualTestLessonButton.Text = "Επιλογή";
                 //if filter panel is open then close it
                 if (createManualQuestionFilterFlag)
                 {
                     filtersButtonFlag = 'C';
                     filtersTimer.Start();
-                }
-
-                //call showDialog
+                }                
             }
-
-            List<string> que = new List<string>();
+            //call showDialog
+            /*List<string> que = new List<string>();
             que.Add("Τί είναι το FTP;");
             que.Add("Τί είναι το SMTP;");
             que.Add("Τί είναι το HTTP;");
@@ -818,9 +882,11 @@ namespace Multiple_Choice_Generator
             else if (check == -3)
                 MessageBox.Show("Δεν υπάρχει η ερώτηση!!");
             else
-                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");
+                MessageBox.Show("Υπήρξε πρόβλημα. Δεν καταχωρήθηκε η ερώτηση!!");*/
 
         }
+
+
 
         #endregion
 
@@ -882,6 +948,20 @@ namespace Multiple_Choice_Generator
                 //code to send to database
             }
            
+        }
+
+
+        //load categories when we select lesson in createAutoTestPanel
+        private void createAutoTestLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.createAutoTestCategoryCheckedListBox.Items.Clear();
+            //load categories
+            categories = myutils.loadcategories(user.ElementAt(0), this.createAutoTestLessonComboBox.Text);
+            foreach (String category in categories)
+            {
+                this.createAutoTestCategoryCheckedListBox.Items.Add(category);
+            }
+
         }
         #endregion
 
@@ -1008,10 +1088,8 @@ namespace Multiple_Choice_Generator
 
 
 
-
-
         #endregion
 
-       
+        
     }
 }

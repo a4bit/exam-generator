@@ -19,18 +19,32 @@ namespace Multiple_Choice_Generator
 
         private void loginConfigButton_Click(object sender, EventArgs e)
         {
-            database db = new database();
-            List<string> list = new List<string>();
-            list = db.login(loginUsernameTextbox.Text, loginPasswordTextbox.Text);
-            if (list == null)
-                MessageBox.Show("Λάθος κωδικός ή όνομα χρήστη!!");
+            errorLabel.Text = "";   //delete errors in label
+            String username = this.loginUsernameTextbox.Text;
+            String password = this.loginPasswordTextbox.Text;
+
+            if(String.IsNullOrEmpty(username) || String.IsNullOrWhiteSpace(username) || String.IsNullOrEmpty(password) || String.IsNullOrWhiteSpace(password))
+            {
+                //error in login cause blank fields
+                errorLabel.Text = "Συμπληρώστε τα απαιτούμενα πεδία και ξαναπροσπαθήστε.";
+            }
             else
             {
-                MessageBox.Show("Επιτυχής σύνδεση " + list.ElementAt(0));
-                Form1 main = new Form1(list);
-                main.Show();
-                this.Hide();
+                //send to database
+                database db = new database();
+                List<string> list = new List<string>();
+                list = db.login(username, password);
+                if (list == null)
+                    errorLabel.Text = "Λάθος κωδικός ή όνομα χρήστη. Προσπαθήστε ξανά.";
+                else
+                {
+                    Form1 main = new Form1(list);
+                    main.Show();
+                    this.Hide();
+                }
             }
+
+           
         }
 
         //CODE LINKLABEL FOR NAVIGATE TO SIGNUP URL
