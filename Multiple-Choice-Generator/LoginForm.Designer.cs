@@ -41,7 +41,11 @@
             this.loginTitleLabel1 = new System.Windows.Forms.Label();
             this.loginUsernameTextbox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.titleL = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -193,10 +197,34 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.titleL);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(342, 415);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Multiple_Choice_Generator.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 198);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // titleL
+            // 
+            this.titleL.BackColor = System.Drawing.Color.Transparent;
+            this.titleL.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.titleL.ForeColor = System.Drawing.Color.White;
+            this.titleL.Location = new System.Drawing.Point(34, 215);
+            this.titleL.Name = "titleL";
+            this.titleL.Size = new System.Drawing.Size(275, 109);
+            this.titleL.TabIndex = 13;
+            this.titleL.Text = "Multiple Choice\r\nGenerator";
+            this.titleL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
@@ -211,6 +239,8 @@
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +260,7 @@
         private System.Windows.Forms.TextBox loginPasswordTextbox;
         private System.Windows.Forms.LinkLabel loginSignupLinkLabel;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label titleL;
     }
 }
