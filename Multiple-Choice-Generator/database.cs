@@ -144,7 +144,6 @@ namespace Multiple_Choice_Generator
 
         public List<string>[] qQuestionsMore(string username, string lesson, string unit, int dif)
         {
-                Console.WriteLine(dif);
                 int exist = 0;
                 if (connection() == true)
                 {
@@ -160,10 +159,10 @@ namespace Multiple_Choice_Generator
                         query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
                         Console.WriteLine("Μπήκε στο 1");
                     }
-                    else if(unit.Equals(""))
+                    else if(unit.Equals("") && dif==0)
                     {
                         Console.WriteLine("Μπήκε στο 2");
-                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.dif=" + dif;
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "'";
                     }
                     else if(dif==0)
                     {
@@ -174,10 +173,11 @@ namespace Multiple_Choice_Generator
                     else
                     {
                         Console.WriteLine("Μπήκε στο 4");
-                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "'";
-                    }
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.dif=" + dif;
+                    }   
 
-                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     Console.WriteLine(query);
                     while (dataReader.Read())
