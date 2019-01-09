@@ -481,6 +481,17 @@ namespace Multiple_Choice_Generator
             this.filtersButtonFlag = 'S';
             filtersTimer.Start();
         }
+
+        private void showQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.showQuestionCategoryCheckbox.Items.Clear();
+            categories = myutils.loadcategories(user.ElementAt(0), this.showQuestionLessonCombobox.Text);
+
+            foreach(String category in categories)
+            {
+                this.showQuestionCategoryCheckbox.Items.Add(category);
+            }
+        }
         #endregion
 
 
@@ -754,15 +765,83 @@ namespace Multiple_Choice_Generator
         int maxCategories = 100;    //max number of categories we can create
 
         //code for add category textbox and move buttons
+        TextBox[] createLessonCategoriesTextboxes = new TextBox[50];
+        int createLessonCategoriesMax = 50;
+        int createLessonCategoriesCount = 0;
         private void createLessonAddPictureBox_Click(object sender, EventArgs e)
         {
+            if(createLessonCategoriesCount < createLessonCategoriesMax)
+            {
 
+                //get last textbox Y
+                int textboxY;
+                if (createLessonCategoriesCount > 0)
+                    textboxY = this.createLessonCategoriesTextboxes[createLessonCategoriesCount - 1].Location.Y;
+                else
+                    textboxY = this.createLessonCategoryTextbox.Location.Y;
+
+                //create category textbox
+                createLessonCategoriesTextboxes[createLessonCategoriesCount] = new TextBox();
+                this.createLessonPanel.Controls.Add(createLessonCategoriesTextboxes[createLessonCategoriesCount]);
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Location = new System.Drawing.Point(41, textboxY + 36);
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].MaxLength = 100;
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Name = "createLessonCategoryTextbox" + (this.createLessonCategoriesCount + 2);                
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].Size = new System.Drawing.Size(this.createLessonCategoryTextbox.Size.Width, this.createLessonCategoryTextbox.Size.Height);
+                createLessonCategoriesTextboxes[createLessonCategoriesCount].TabIndex = this.createLessonCategoriesCount + 3;
+
+                createLessonCategoriesCount++;  //count++
+
+                //move objects down
+                this.createLessonDeletePictureBox.Location = new Point(this.createLessonDeletePictureBox.Location.X, this.createLessonDeletePictureBox.Location.Y + 36); //move delete button
+                this.createLessonAddPictureBox.Location = new Point(this.createLessonAddPictureBox.Location.X, this.createLessonAddPictureBox.Location.Y + 36);  //move add button
+                this.createLessonErrorLabel.Location = new Point(this.createLessonErrorLabel.Location.X, this.createLessonErrorLabel.Location.Y + 36);     //move error label
+                this.createLessonErrorTitleLabel.Location = new Point(this.createLessonErrorTitleLabel.Location.X, this.createLessonErrorTitleLabel.Location.Y + 36);       //move error titlelabel
+                this.createLessonConfButton.Location = new Point(this.createLessonConfButton.Location.X, this.createLessonConfButton.Location.Y + 36);     //move config
+
+
+                //enable delete button if it's not
+                if (!this.createLessonDeletePictureBox.Enabled)
+                    this.createLessonDeletePictureBox.Enabled = true;
+
+                //disable when count = max number
+                if (createLessonCategoriesCount == createLessonCategoriesMax)
+                    this.createLessonAddPictureBox.Enabled = false;
+            }
         }
 
         //code for delete category textbox and move buttons
         private void createLessonDeletePictureBox_Click(object sender, EventArgs e)
         {
+            if (this.createLessonCategoriesCount > 0)
+            {
+                this.createLessonCategoriesCount--;
 
+                //delete last textbox
+                this.createLessonCategoriesTextboxes[this.createLessonCategoriesCount].Dispose();
+                this.createLessonCategoriesTextboxes[this.createLessonCategoriesCount] = null;
+
+                //move objects up
+                this.createLessonDeletePictureBox.Location = new Point(this.createLessonDeletePictureBox.Location.X, this.createLessonDeletePictureBox.Location.Y - 36); //move delete button
+                this.createLessonAddPictureBox.Location = new Point(this.createLessonAddPictureBox.Location.X, this.createLessonAddPictureBox.Location.Y - 36);  //move add button
+                this.createLessonErrorLabel.Location = new Point(this.createLessonErrorLabel.Location.X, this.createLessonErrorLabel.Location.Y - 36);     //move error label
+                this.createLessonErrorTitleLabel.Location = new Point(this.createLessonErrorTitleLabel.Location.X, this.createLessonErrorTitleLabel.Location.Y - 36);       //move error titlelabel
+                this.createLessonConfButton.Location = new Point(this.createLessonConfButton.Location.X, createLessonConfButton.Location.Y - 36);     //move config button
+
+
+                //enable add category button if it's not
+                if (!this.createLessonAddPictureBox.Enabled)
+                    createLessonAddPictureBox.Enabled = true;
+
+
+                //disable when you have 1 category
+                if (this.createLessonCategoriesCount == 0)
+                    this.createLessonDeletePictureBox.Enabled = false;
+
+            }
         }
 
         //code fore createLesson Config Button
@@ -770,13 +849,13 @@ namespace Multiple_Choice_Generator
         {
             //get fields
             String title = this.createLessonTitleTextbox.Text;  //get  title
-            String description = this.createLessonDescriptionTextbox.Text;  //get description
+            String description = this.createLessonDescriptionTextbox.Text;  //get description            
 
             //get categories
             String[] category = new string[categoryCount];
             for(int i=0; i<categoryCount; i++)
             {
-                category[i] = this.categoryTextbox[i].Text;
+                category[i] = this.createLessonCategoriesTextboxes[i].Text;
             }
 
             //call confirmation for createLesson to check if fields are okey
@@ -795,7 +874,7 @@ namespace Multiple_Choice_Generator
             if (errors[1])
             {
                 checkflag = true;
-                createLessonErrorLabel.Text += "Ο τίτλος είναι κενός, συμπληρώστε τον και ξαναπροσπαθήστε.\n";
+                createLessonErrorLabel.Text += "Μία ή περισσότερες κατηγορίες είναι κενές, συμπληρώστε ή διαγράψτε τες και ξαναπροσπαθήστε.\n";
             }
 
             if (checkflag)
@@ -806,6 +885,7 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
+                
             }
         }
 
@@ -949,7 +1029,6 @@ namespace Multiple_Choice_Generator
            
         }
 
-
         //load categories when we select lesson in createAutoTestPanel
         private void createAutoTestLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -1084,6 +1163,7 @@ namespace Multiple_Choice_Generator
         {
             konamiTextbox.Focus();
         }
+
 
 
 
