@@ -847,11 +847,11 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.createAutoTestPanel);
+            this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
-            this.mainPanel.Controls.Add(this.createAutoTestPanel);
-            this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.createTestPanel);
             this.mainPanel.Controls.Add(this.panel1);
@@ -973,6 +973,7 @@ namespace Multiple_Choice_Generator
             // 
             // showQuestionDataGridView
             // 
+<<<<<<< HEAD
             this.showQuestionDataGridView.AutoGenerateColumns = false;
             this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -981,6 +982,12 @@ namespace Multiple_Choice_Generator
             this.que_unit,
             this.que_dif});
             this.showQuestionDataGridView.DataSource = this.questionsBindingSource;
+=======
+            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+>>>>>>> 9fc65142b385004d3918a721b4ce347523f91b67
             this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
             this.showQuestionDataGridView.Name = "showQuestionDataGridView";
             this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 482);
@@ -1469,6 +1476,7 @@ namespace Multiple_Choice_Generator
             this.createManualTestConfButton.TabIndex = 10;
             this.createManualTestConfButton.Text = "Δημιουργία";
             this.createManualTestConfButton.UseVisualStyleBackColor = false;
+            this.createManualTestConfButton.Click += new System.EventHandler(this.createManualTestConfButton_Click);
             // 
             // label16
             // 

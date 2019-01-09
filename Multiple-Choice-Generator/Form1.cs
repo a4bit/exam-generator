@@ -911,8 +911,12 @@ namespace Multiple_Choice_Generator
             else
             {
                 // all good, code for send to database
+<<<<<<< HEAD
 
                 int check = db.iLesson(user.ElementAt(0), title, description);
+=======
+                int check = db.iLesson(user.ElementAt(0), title);
+>>>>>>> 9fc65142b385004d3918a721b4ce347523f91b67
 
                 if (check == 1)
                 {
@@ -1084,6 +1088,7 @@ namespace Multiple_Choice_Generator
             else
             {
                 //code to send to database
+                
             }
            
         }
@@ -1226,8 +1231,12 @@ namespace Multiple_Choice_Generator
 
 
 
+
         #endregion
 
-        
+        private void createManualTestConfButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
