@@ -122,6 +122,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="multipleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>multipleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,6 +171,17 @@
     </None>
     <None Include="it154551DataSet.xss">
       <DependentUpon>it154551DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="multipleDataSet.xsc">
+      <DependentUpon>multipleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="multipleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>multipleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="multipleDataSet.xss">
+      <DependentUpon>multipleDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

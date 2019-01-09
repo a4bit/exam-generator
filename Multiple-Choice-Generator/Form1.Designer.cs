@@ -137,6 +137,13 @@ namespace Multiple_Choice_Generator
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.multipleDataSet = new Multiple_Choice_Generator.multipleDataSet();
+            this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionsTableAdapter = new Multiple_Choice_Generator.multipleDataSetTableAdapters.questionsTableAdapter();
+            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -162,6 +169,8 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).BeginInit();
             this.createTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -966,6 +975,7 @@ namespace Multiple_Choice_Generator
             // 
             // createAutoTestLessonComboBox
             // 
+<<<<<<< HEAD
             this.createAutoTestLessonComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.createAutoTestLessonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -976,6 +986,27 @@ namespace Multiple_Choice_Generator
             this.createAutoTestLessonComboBox.Size = new System.Drawing.Size(888, 32);
             this.createAutoTestLessonComboBox.TabIndex = 4;
             this.createAutoTestLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.createAutoTestLessonComboBox_SelectionChangeCommitted);
+=======
+<<<<<<< HEAD
+            this.showQuestionDataGridView.AutoGenerateColumns = false;
+            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.que_name,
+            this.que_lesson,
+            this.que_unit,
+            this.que_dif});
+            this.showQuestionDataGridView.DataSource = this.questionsBindingSource;
+=======
+            this.showQuestionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+>>>>>>> 9fc65142b385004d3918a721b4ce347523f91b67
+            this.showQuestionDataGridView.Location = new System.Drawing.Point(45, 65);
+            this.showQuestionDataGridView.Name = "showQuestionDataGridView";
+            this.showQuestionDataGridView.Size = new System.Drawing.Size(888, 482);
+            this.showQuestionDataGridView.TabIndex = 0;
+>>>>>>> 6deaad58eedc80346cb51fe90c3f20f9ad71a02e
             // 
             // createAutoTestDifficultyCheckedListBox
             // 
@@ -1599,6 +1630,48 @@ namespace Multiple_Choice_Generator
             this.sleepTimer.Interval = 5000;
             this.sleepTimer.Tick += new System.EventHandler(this.sleepTimer_Tick);
             // 
+            // multipleDataSet
+            // 
+            this.multipleDataSet.DataSetName = "multipleDataSet";
+            this.multipleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // questionsBindingSource
+            // 
+            this.questionsBindingSource.DataMember = "questions";
+            this.questionsBindingSource.DataSource = this.multipleDataSet;
+            // 
+            // questionsTableAdapter
+            // 
+            this.questionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // que_name
+            // 
+            this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_name.FillWeight = 200F;
+            this.que_name.HeaderText = "Ερώτηση";
+            this.que_name.Name = "que_name";
+            this.que_name.ReadOnly = true;
+            // 
+            // que_lesson
+            // 
+            this.que_lesson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_lesson.HeaderText = "Μάθημα";
+            this.que_lesson.Name = "que_lesson";
+            this.que_lesson.ReadOnly = true;
+            // 
+            // que_unit
+            // 
+            this.que_unit.HeaderText = "Ενότητα";
+            this.que_unit.Name = "que_unit";
+            this.que_unit.ReadOnly = true;
+            this.que_unit.Width = 150;
+            // 
+            // que_dif
+            // 
+            this.que_dif.HeaderText = "Δυσκολία";
+            this.que_dif.Name = "que_dif";
+            this.que_dif.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1654,6 +1727,8 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).EndInit();
             this.createTestPanel.ResumeLayout(false);
             this.createTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.multipleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1765,6 +1840,13 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Label createLessonErrorTitleLabel;
         private System.Windows.Forms.Label createLessonErrorLabel;
         private System.Windows.Forms.TextBox createLessonCategoryTextbox;
+        private multipleDataSet multipleDataSet;
+        private System.Windows.Forms.BindingSource questionsBindingSource;
+        private multipleDataSetTableAdapters.questionsTableAdapter questionsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn que_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn que_lesson;
+        private System.Windows.Forms.DataGridViewTextBoxColumn que_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn que_dif;
     }
 }
 

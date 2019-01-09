@@ -92,5 +92,15 @@ namespace Multiple_Choice_Generator.Properties {
                 return ((string)(this["it154551ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;database=multiple")]
+        public string multipleConnectionString {
+            get {
+                return ((string)(this["multipleConnectionString"]));
+            }
+        }
     }
 }
