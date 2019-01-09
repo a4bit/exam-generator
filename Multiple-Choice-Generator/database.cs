@@ -9,7 +9,7 @@ namespace Multiple_Choice_Generator
 {
     public class database
     {
-
+        private String team = "PAOK";
 
 
 
