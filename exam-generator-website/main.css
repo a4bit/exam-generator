@@ -81,6 +81,11 @@ li {
   width: 45%;
 }
 
+.screenshot img {
+  width: 430px;
+  height: 320px;
+}
+
 .info {
   vertical-align: top;
   font-weight: 300;
@@ -143,6 +148,11 @@ li {
 
 .about .screenshot {
   width: 10%;
+}
+
+.about .screenshot img {
+  width: 180px;
+  height: 120px;
 }
 
 .footer {

@@ -8,17 +8,9 @@
 
     $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
     $statement = $conn->prepare($sql);
-    $statement ? $statement->bind_param("sss", $username, $email, $hash) : die("sql syntax error");
+    $statement ? $statement->bind_param("sss", $username, $hash, $email) : die("sql syntax error");
     $statement ? $statement->execute()       : die("sql bind error");
     $statement -> close();
-
-    // $sql = sprintf("INSERT INTO users (username, password, email) VALUES (
-    //   '%s', '%s', '%s'
-    // )", mysqli_real_escape_string($db, $username),
-    //     mysqli_real_escape_string($db, $hash),
-    //     mysqli_real_escape_string($db, $email));
-    // mysqli_query($db, $sql);
-    // mysqli_close($db);
     header('Location: index.html');
     exit();
   }
