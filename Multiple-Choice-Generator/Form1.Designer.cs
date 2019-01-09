@@ -151,6 +151,8 @@ namespace Multiple_Choice_Generator
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.questionsTableAdapter = new Multiple_Choice_Generator.multipleDataSetTableAdapters.questionsTableAdapter();
             this.questionsTableAdapter1 = new Multiple_Choice_Generator.multipleDataSet1TableAdapters.questionsTableAdapter();
+            this.label19 = new System.Windows.Forms.Label();
+            this.createAutoTestTitleTextbox = new System.Windows.Forms.TextBox();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -857,8 +859,8 @@ namespace Multiple_Choice_Generator
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
-            this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
+            this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createManualTestPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
             this.mainPanel.Controls.Add(this.editQuestionPanel);
@@ -1107,6 +1109,8 @@ namespace Multiple_Choice_Generator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.createAutoTestPanel.AutoScroll = true;
             this.createAutoTestPanel.AutoScrollMinSize = new System.Drawing.Size(0, 500);
+            this.createAutoTestPanel.Controls.Add(this.createAutoTestTitleTextbox);
+            this.createAutoTestPanel.Controls.Add(this.label19);
             this.createAutoTestPanel.Controls.Add(this.createAutoTestErrorsTitleLabel);
             this.createAutoTestPanel.Controls.Add(this.createAutoTestErrorsLabel);
             this.createAutoTestPanel.Controls.Add(this.createAutoTestNumericUpDown);
@@ -1155,7 +1159,7 @@ namespace Multiple_Choice_Generator
             // createAutoTestNumericUpDown
             // 
             this.createAutoTestNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.createAutoTestNumericUpDown.Location = new System.Drawing.Point(45, 130);
+            this.createAutoTestNumericUpDown.Location = new System.Drawing.Point(48, 190);
             this.createAutoTestNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1196,17 +1200,17 @@ namespace Multiple_Choice_Generator
             this.createAutoTestCategoryCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.createAutoTestCategoryCheckedListBox.FormattingEnabled = true;
             this.createAutoTestCategoryCheckedListBox.IntegralHeight = false;
-            this.createAutoTestCategoryCheckedListBox.Location = new System.Drawing.Point(45, 262);
+            this.createAutoTestCategoryCheckedListBox.Location = new System.Drawing.Point(48, 322);
             this.createAutoTestCategoryCheckedListBox.MultiColumn = true;
             this.createAutoTestCategoryCheckedListBox.Name = "createAutoTestCategoryCheckedListBox";
-            this.createAutoTestCategoryCheckedListBox.Size = new System.Drawing.Size(888, 210);
+            this.createAutoTestCategoryCheckedListBox.Size = new System.Drawing.Size(888, 150);
             this.createAutoTestCategoryCheckedListBox.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(42, 238);
+            this.label13.Location = new System.Drawing.Point(45, 298);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 18);
             this.label13.TabIndex = 6;
@@ -1218,11 +1222,11 @@ namespace Multiple_Choice_Generator
             this.createAutoTestLessonComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.createAutoTestLessonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.createAutoTestLessonComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestLessonComboBox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F);
             this.createAutoTestLessonComboBox.FormattingEnabled = true;
-            this.createAutoTestLessonComboBox.Location = new System.Drawing.Point(45, 66);
+            this.createAutoTestLessonComboBox.Location = new System.Drawing.Point(48, 126);
             this.createAutoTestLessonComboBox.Name = "createAutoTestLessonComboBox";
-            this.createAutoTestLessonComboBox.Size = new System.Drawing.Size(888, 32);
+            this.createAutoTestLessonComboBox.Size = new System.Drawing.Size(888, 33);
             this.createAutoTestLessonComboBox.TabIndex = 4;
             this.createAutoTestLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.createAutoTestLessonComboBox_SelectionChangeCommitted);
             // 
@@ -1235,7 +1239,7 @@ namespace Multiple_Choice_Generator
             "Εύκολες",
             "Μεσαίες",
             "Δύσκολες"});
-            this.createAutoTestDifficultyCheckedListBox.Location = new System.Drawing.Point(45, 195);
+            this.createAutoTestDifficultyCheckedListBox.Location = new System.Drawing.Point(48, 255);
             this.createAutoTestDifficultyCheckedListBox.MultiColumn = true;
             this.createAutoTestDifficultyCheckedListBox.Name = "createAutoTestDifficultyCheckedListBox";
             this.createAutoTestDifficultyCheckedListBox.Size = new System.Drawing.Size(369, 28);
@@ -1245,7 +1249,7 @@ namespace Multiple_Choice_Generator
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(42, 109);
+            this.label12.Location = new System.Drawing.Point(45, 169);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(186, 18);
             this.label12.TabIndex = 2;
@@ -1256,7 +1260,7 @@ namespace Multiple_Choice_Generator
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(42, 174);
+            this.label11.Location = new System.Drawing.Point(45, 234);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(95, 18);
             this.label11.TabIndex = 1;
@@ -1267,7 +1271,7 @@ namespace Multiple_Choice_Generator
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(42, 45);
+            this.label10.Location = new System.Drawing.Point(45, 105);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 18);
             this.label10.TabIndex = 0;
@@ -1712,6 +1716,30 @@ namespace Multiple_Choice_Generator
             // 
             this.questionsTableAdapter1.ClearBeforeFill = true;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(45, 43);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(200, 18);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "Τίτλος Διαγωνίσματος:";
+            this.toolTip.SetToolTip(this.label19, "Επιλέξτε το μάθημα του διαγωνίσματος.");
+            // 
+            // createAutoTestTitleTextbox
+            // 
+            this.createAutoTestTitleTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAutoTestTitleTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createAutoTestTitleTextbox.Location = new System.Drawing.Point(48, 64);
+            this.createAutoTestTitleTextbox.Margin = new System.Windows.Forms.Padding(22, 3, 22, 3);
+            this.createAutoTestTitleTextbox.MaxLength = 300;
+            this.createAutoTestTitleTextbox.Name = "createAutoTestTitleTextbox";
+            this.createAutoTestTitleTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.createAutoTestTitleTextbox.Size = new System.Drawing.Size(888, 33);
+            this.createAutoTestTitleTextbox.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1896,6 +1924,8 @@ namespace Multiple_Choice_Generator
         private multipleDataSet1 multipleDataSet1;
         private System.Windows.Forms.BindingSource questionsBindingSource1;
         private multipleDataSet1TableAdapters.questionsTableAdapter questionsTableAdapter1;
+        private System.Windows.Forms.TextBox createAutoTestTitleTextbox;
+        private System.Windows.Forms.Label label19;
     }
 }
 

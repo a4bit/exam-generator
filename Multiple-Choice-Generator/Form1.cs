@@ -1051,9 +1051,12 @@ namespace Multiple_Choice_Generator
 
         #endregion
 
+
         #region METHODS OF createAutoTestPanel
+        //create Auto test conf button
         private void createAutoTestConfButton_Click(object sender, EventArgs e)
         {
+            //set false errors
             bool errorflag = false; //flag for errors
             createAutoTestErrorsTitleLabel.Visible = false;
             createAutoTestErrorsLabel.Visible = false;
@@ -1062,25 +1065,24 @@ namespace Multiple_Choice_Generator
             //get fields
             String lesson = this.createAutoTestLessonComboBox.Text;//get lesson
             int number = Convert.ToInt32(createAutoTestNumericUpDown.Value);    //get number of questions
+            String title = this.createAutoTestTitleTextbox.Text;    //get tiitle lesson
 
-            //get difficulty checked
-            int difficultyCount = createAutoTestDifficultyCheckedListBox.CheckedIndices.Count;
-            String[] difficulty = new string[difficultyCount];
-            for (int i = 0; i < difficultyCount; i++)
+            //get categories and difficulty levels
+            List<string> categories = this.createAutoTestCategoryCheckedListBox.CheckedItems.OfType<string>().ToList();
+            List<string> diffString = this.createAutoTestDifficultyCheckedListBox.CheckedItems.OfType<string>().ToList();
+            List<int> diff = new List<int>();
+            foreach (String checkedItem in diffString)
             {
-                difficulty[i] = createAutoTestDifficultyCheckedListBox.CheckedItems[i].ToString();
-            }
-
-            //get category checked
-            int categoryCount = this.createAutoTestCategoryCheckedListBox.CheckedIndices.Count;
-            String[] category = new string[categoryCount];
-            for (int i = 0; i < categoryCount; i++)
-            {
-                category[i] = createAutoTestCategoryCheckedListBox.CheckedItems[i].ToString();
+                if (checkedItem.Equals("Εύκολες"))
+                    diff.Add(1);
+                else if (checkedItem.Equals("Δύσκολες"))
+                    diff.Add(3);
+                else
+                    diff.Add(2);
             }
 
             //call confiration util method to check if all are okey
-            bool[] errors = myutils.createAutoTestConfirmation(lesson, difficultyCount, categoryCount);
+            bool[] errors = myutils.createAutoTestConfirmation(lesson, diff.Count, categories.Count);
 
             if (errors[0])
             {
@@ -1104,44 +1106,40 @@ namespace Multiple_Choice_Generator
                 createAutoTestErrorsTitleLabel.Visible = true;
                 createAutoTestErrorsLabel.Visible = true;
             }
-            else //code to send to database
+            else //οκευ, code to send to database
             {
                 //find questions
-                List<string> units = this.createAutoTestCategoryCheckedListBox.CheckedItems.OfType<string>().ToList();
-                List<string> diffString = this.createAutoTestDifficultyCheckedListBox.CheckedItems.OfType<string>().ToList();
-                List<int> diff = new List<int>();
-                foreach(String checkedItem in diffString)
+                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,categories,diff); //get questions with filters
+
+                //check if there are questions to create the test
+                if (questions.Count == 1 && questions.ElementAt(0).Equals("Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα."))
                 {
-                    if (checkedItem.Equals("Εύκολες"))
-                        diff.Add(1);
-                    else if(checkedItem.Equals("Δύσκολες"))
-                        diff.Add(3);
-                    else
-                        diff.Add(2);
-                }
-                   
-
-                List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,category,diff); //get questions with filters
-
-                questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take random questions
-
-
-                //μεχρι εδω καλα
-
-                int check = db.iTest(questions, user.ElementAt(0), lesson, "Τεστ2");
-
-                if (check == 1)
-                {
-                    MessageBox.Show("Το διαγώνισμα δημιουργήθηκε");
-                    this.createAutoTestDifficultyCheckedListBox.SelectedItems.Clear();
-                    this.createAutoTestCategoryCheckedListBox.SelectedItems.Clear();
+                    this.createAutoTestErrorsLabel.Text = "Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα.";
+                    this.createAutoTestErrorsLabel.Visible = true;
+                    this.createAutoTestErrorsTitleLabel.Visible = true;
                 }
                 else
                 {
-                    this.createAutoTestErrorsLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
-                    this.createAutoTestErrorsLabel.Visible = true;
-                    this.createAutoTestErrorsTitleLabel.Visible = true;
-                }  
+                    questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take N random questions 
+
+                    //μεχρι εδω καλα
+                    int check = db.iTest(questions, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
+
+                    if (check == 1)
+                    {
+                        MessageBox.Show("Το διαγώνισμα δημιουργήθηκε");
+                        this.createAutoTestDifficultyCheckedListBox.SelectedItems.Clear();
+                        this.createAutoTestCategoryCheckedListBox.SelectedItems.Clear();
+                        this.createAutoTestTitleTextbox.Text = "";
+                        this.createAutoTestNumericUpDown.Value = 1;
+                    }
+                    else
+                    {
+                        this.createAutoTestErrorsLabel.Text = "Υπήρξε πρόβλημα, προσπαθήστε ξανά.";
+                        this.createAutoTestErrorsLabel.Visible = true;
+                        this.createAutoTestErrorsTitleLabel.Visible = true;
+                    }
+                } 
             }
            
         }
