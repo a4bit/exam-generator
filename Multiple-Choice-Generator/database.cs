@@ -384,7 +384,7 @@ namespace Multiple_Choice_Generator
                     Console.WriteLine(questions.Count.ToString());    
                     for (int i=0; i < questions.Count; i++)
                     {
-                            string queryUnit = "select unit_id, id from questions where text='" + questions.ElementAt(i) + "' and owner='" + username + "'";
+                            string queryUnit = "select unit_id, id from questions where text='" + questions.ElementAt(i) + "' and owner='" + username + "' and lesson='" + lesson + "'";
                             MySqlCommand cmdUnit = new MySqlCommand(queryUnit, dbcon);
                             MySqlDataReader dataReader = cmdUnit.ExecuteReader();
                             int exist = 0;
