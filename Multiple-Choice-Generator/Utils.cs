@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Multiple_Choice_Generator
 {
@@ -130,6 +132,35 @@ namespace Multiple_Choice_Generator
             return questions;   //return all questions with my filters
         }
 
-        //return questions
+        //return a string list with checked items of checkedlistbox
+        public List<String> getStringCheckedList(CheckedListBox list)
+        {
+            List<string> checkedList = new List<string>();
+
+            foreach(String checkedItem in list.CheckedIndices)
+            {
+                checkedList.Add(checkedItem);
+            }
+
+            return checkedList;
+        }
+
+        public List<int> getIntCheckedList(CheckedListBox list)
+        {
+            List<int> checkedList = new List<int>();
+
+            foreach (int checkedItem in list.CheckedIndices)
+            {
+                if(checkedItem.Equals("Εύκολες"))
+                    checkedList.Add(1);
+                else if(checkedItem.Equals("Μεσαίες"))
+                    checkedList.Add(2);
+                else
+                    checkedList.Add(3);
+            }
+
+            return checkedList;
+        }
+
     }
 }

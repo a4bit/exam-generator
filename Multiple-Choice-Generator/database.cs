@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,10 @@ namespace Multiple_Choice_Generator
     public class database
     {
         //Aetos database
-        string server = "dblabs.it.teithe.gr";
-        string db = "it154551";
-        string uid = "it154551";
-        string password = "123456";
+        private readonly string server = "dblabs.it.teithe.gr";
+        private readonly string db = "it154551";
+        private readonly string uid = "it154551";
+        private readonly string password = "123456";
 
         //local database
         //private string server = "localhost";
