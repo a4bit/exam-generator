@@ -495,27 +495,37 @@ namespace Multiple_Choice_Generator
                 this.showQuestionCategoryCheckbox.Items.Add(category);
             }
             List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
+
             //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
-            for (int i=0; i < viewQuestions[0].Count; i++)
+            try
             {
-                showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
-                showQuestionDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
-                showQuestionDataGridView.Rows[i].Cells[2].Value = viewQuestions[2].ElementAt(i);
-                switch(int.Parse(viewQuestions[3].ElementAt(i)))
+                viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
+                for (int i = 0; i < viewQuestions[0].Count; i++)
                 {
-                    case 1:
-                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Εύκολη";
-                        break;
-                    case 2:
-                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Μέτρια";
-                        break;
-                    case 3:
-                        showQuestionDataGridView.Rows[i].Cells[3].Value = "Δύσκολη";
-                        break;
+                    showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
+                    showQuestionDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
+                    showQuestionDataGridView.Rows[i].Cells[2].Value = viewQuestions[2].ElementAt(i);
+                    switch (int.Parse(viewQuestions[3].ElementAt(i)))
+                    {
+                        case 1:
+                            showQuestionDataGridView.Rows[i].Cells[3].Value = "Εύκολη";
+                            break;
+                        case 2:
+                            showQuestionDataGridView.Rows[i].Cells[3].Value = "Μέτρια";
+                            break;
+                        case 3:
+                            showQuestionDataGridView.Rows[i].Cells[3].Value = "Δύσκολη";
+                            break;
+                    }
                 }
+            }
+            catch
+            {
                 
             }
+            
+            
+
 
         }
         #endregion
@@ -1284,6 +1294,11 @@ namespace Multiple_Choice_Generator
         #endregion
 
         private void createManualTestConfButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showQuestionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
