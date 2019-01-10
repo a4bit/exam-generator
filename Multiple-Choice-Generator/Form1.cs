@@ -59,9 +59,9 @@ namespace Multiple_Choice_Generator
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'multipleDataSet1.questions' table. You can move, or remove it, as needed.
-            this.questionsTableAdapter1.Fill(this.multipleDataSet1.questions);
+            //this.questionsTableAdapter1.Fill(this.multipleDataSet1.questions);
             // TODO: This line of code loads data into the 'multipleDataSet.questions' table. You can move, or remove it, as needed.
-            this.questionsTableAdapter.Fill(this.multipleDataSet.questions);
+            //this.questionsTableAdapter.Fill(this.multipleDataSet.questions);
             //load my screen and workingarea location
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
 
@@ -499,7 +499,9 @@ namespace Multiple_Choice_Generator
             //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
             try
             {
-                viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
+                List<string> pao = new List<string>();
+                List<int> difs = new List<int>();
+                viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, pao, difs);
                 for (int i = 0; i < viewQuestions[0].Count; i++)
                 {
                     showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
@@ -521,10 +523,12 @@ namespace Multiple_Choice_Generator
             }
             catch
             {
-                
+
             }
-            
-            
+
+
+
+
 
 
         }
@@ -1013,7 +1017,9 @@ namespace Multiple_Choice_Generator
             }
 
             List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
+            List<int> difs = new List<int>();
+            List<string> pao = new List<string>();
+            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", pao, difs);
             for (int i = 0; i < viewQuestions[0].Count; i++)
             {
                 
