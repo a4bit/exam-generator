@@ -144,35 +144,58 @@ namespace Multiple_Choice_Generator
 
         public List<string>[] qQuestionsMore(string username, string lesson, string unit, int dif)
         {
-            int exist = 0;
-            if (connection() == true)
-            {
-                List<string>[] list = new List<string>[4];
-                list[0] = new List<string>();
-                list[1] = new List<string>();
-                list[2] = new List<string>();
-                list[3] = new List<string>();
-                int unit_id = convertUnit(unit, username, lesson);
-                string query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
-                MySqlCommand cmd = new MySqlCommand(query, dbcon);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
+                int exist = 0;
+                if (connection() == true)
                 {
-                    list[0].Add(dataReader["text"] + "");
-                    list[1].Add(dataReader["lesson"] + "");
-                    list[2].Add(dataReader["name"] + "");
-                    list[3].Add(dataReader["dif"] + "");
-                    exist++;
+                    List<string>[] list = new List<string>[4];
+                    list[0] = new List<string>();
+                    list[1] = new List<string>();
+                    list[2] = new List<string>();
+                    list[3] = new List<string>();
+                    string query = "";
+                    if ((!unit.Equals("")) && (dif != 0))
+                    {
+                        int unit_id = convertUnit(unit, username, lesson);
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id + " and Q.dif=" + dif;
+                        Console.WriteLine("Μπήκε στο 1");
+                    }
+                    else if(unit.Equals("") && dif==0)
+                    {
+                        Console.WriteLine("Μπήκε στο 2");
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "'";
+                    }
+                    else if(dif==0)
+                    {
+                        Console.WriteLine("Μπήκε στο 3");
+                        int unit_id = convertUnit(unit, username, lesson);
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.unit_id=" + unit_id;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Μπήκε στο 4");
+                        query = "Select Q.*, U.name From questions Q JOIN units U ON Q.unit_id=U.id where Q.owner='" + username + "' and Q.lesson='" + lesson + "' and Q.dif=" + dif;
+                    }   
+
+
+                MySqlCommand cmd = new MySqlCommand(query, dbcon);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    Console.WriteLine(query);
+                    while (dataReader.Read())
+                    {
+                        list[0].Add(dataReader["text"] + "");
+                        list[1].Add(dataReader["lesson"] + "");
+                        list[2].Add(dataReader["name"] + "");
+                        list[3].Add(dataReader["dif"] + "");
+                        exist++;
+                    }
+                    dataReader.Close();
+                    if (exist == 0)
+                        return null;
+                    else
+                        return list;
                 }
-                dataReader.Close();
-                if (exist == 0)
-                    return null;
                 else
-                    return list;
-            }
-            else
-                return null;
+                    return null;
         }
 
         public List<string> qAnswers(string question, string unit, string username, string lesson)
@@ -377,22 +400,32 @@ namespace Multiple_Choice_Generator
                 try
                 {
                     int question = 0;
-                    
+                    int unit_id = 0;
                     string query = "select max(id) from tests";
                     MySqlCommand cmd = new MySqlCommand(query, dbcon);
                     int id = int.Parse(cmd.ExecuteScalar() + "") + 1;
                     Console.WriteLine(questions.Count.ToString());    
                     for (int i=0; i < questions.Count; i++)
                     {
+                            string queryUnit = "select unit_id, id from questions where text='" + questions.ElementAt(i) + "' and owner='" + username + "' and lesson='" + lesson + "'";
+                            MySqlCommand cmdUnit = new MySqlCommand(queryUnit, dbcon);
+                            MySqlDataReader dataReader = cmdUnit.ExecuteReader();
+                            int exist = 0;
+                            while (dataReader.Read())
+                            {
+                                unit_id = int.Parse(dataReader["unit_id"] + "");
+                                question = int.Parse(dataReader["id"] + ""); 
+                                exist++;
+                            }
+                            dataReader.Close();
+                            if (question == 0)
+                                return -2;
 
-                        
-                            string queryUnit = "select unit_id from questions where id=" + question;
-                            MySqlCommand cmdUnit = new MySqlCommand(query, dbcon);
-                            int unit_id = int.Parse(cmdUnit.ExecuteScalar() + "");
+                            Console.WriteLine("Unit: " +unit_id);
+                            Console.WriteLine("Question: " + question);
 
                             question = convertQuestion(questions.ElementAt(i), unit_id);
-                            if (question == -3)
-                                return -2;
+                            
                             
                             query = "Insert into tests values (" + id + ", " + question + ", '" + username + "', " + unit_id + ", '" + lesson + "', '" + name + "')";
                             Console.WriteLine(query);

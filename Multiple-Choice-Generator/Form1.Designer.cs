@@ -858,11 +858,11 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.createLessonPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
-            this.mainPanel.Controls.Add(this.createQuestionPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
+            this.mainPanel.Controls.Add(this.createQuestionPanel);
             this.mainPanel.Controls.Add(this.createManualTestPanel);
+            this.mainPanel.Controls.Add(this.createLessonPanel);
             this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.createTestPanel);
             this.mainPanel.Controls.Add(this.panel1);

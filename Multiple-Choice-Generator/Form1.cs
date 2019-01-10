@@ -494,7 +494,6 @@ namespace Multiple_Choice_Generator
             {
                 this.showQuestionCategoryCheckbox.Items.Add(category);
             }
-
             List<string>[] viewQuestions = new List<string>[4];
             viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, this.showQuestionCategoryCheckbox.Text, 2);
             //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
