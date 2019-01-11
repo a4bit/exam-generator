@@ -84,6 +84,12 @@ namespace Multiple_Choice_Generator
             //call loadLessons
             this.loadLessons();
 
+            //declare teamViewQuestion array of list
+            tempViewQuestions[0] = new List<string>();
+            tempViewQuestions[1] = new List<string>();
+            tempViewQuestions[2] = new List<string>();
+            tempViewQuestions[3] = new List<string>();
+
         }
 
         //LOAD LESSONS FROM DATABASE AND FILL COMBOBOXES
@@ -466,14 +472,153 @@ namespace Multiple_Choice_Generator
         #endregion
 
 
-        #region METHODS OF showQuestionsPanel
-        //-----------------------------------------------------------------------
+        #region METHODS OF showQuestionsPanel        
         //code showQuestionsFilterConfButton
+        int countRow = 0; //count for add questions to row (dld einai h seira poy 8a ginei add)
         private void showQuestionsFilterConfButton_Click(object sender, EventArgs e)
         {
+            this.showQuestionErrorLabel.Visible = false;
+            checkedUnits = myutils.getStringCheckedList(this.showQuestionCategoryCheckbox); //get checked items in string list
+            checkedDifficulty = myutils.getStringCheckedList(this.showQuestionDifficultyCheckbox); //get checked items in int list     
+            countRow = 0;
+
+            this.showQuestionDataGridView.Rows.Clear(); //delete rows 
+
+            //clear tempViewQuestions
+            this.tempViewQuestions[0].Clear();
+            this.tempViewQuestions[1].Clear();
+            this.tempViewQuestions[2].Clear();
+            this.tempViewQuestions[3].Clear();
+
+            this.showQuestionsSearchTextbox.Text = ""; //delete search box text
+
+
+            if (this.checkedUnits.Count != 0 && this.checkedDifficulty.Count != 0)    //both filters used
+            {
+                foreach (String checkedFieldU in this.checkedUnits)  //foreach element in checkedUnit list
+                {
+                    foreach (String checkedFieldD in this.checkedDifficulty)  //foreach element in checkedUnit list
+                    {
+                        String temp = "0";
+
+                        if (checkedFieldD.Equals("Εύκολες"))
+                            temp = "1";
+                        else if (checkedFieldD.Equals("Μέτριες"))
+                            temp = "2";
+                        else if (checkedFieldD.Equals("Δύσκολες"))
+                            temp = "3";
+
+                        for (int i = 0; i < viewQuestions[0].Count; i++)    //for every question
+                        {
+                            if (viewQuestions[3].ElementAt(i).Equals(temp) && viewQuestions[2].ElementAt(i).Equals(checkedFieldU)) //if checkedField == unit   then...
+                            {
+                                addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, countRow, i);    //call method to add question
+                                countRow++;
+                            }
+                        }
+                    }                   
+                }
+            }
+            else //one of the filters used
+            {
+                if (this.checkedUnits.Count != 0)  //only unit filters
+                {
+                    foreach (String checkedField in this.checkedUnits)  //foreach element in checkedUnit list
+                    {
+                        for (int i = 0; i < viewQuestions[0].Count; i++)    //for every question
+                        {
+                            if (viewQuestions[2].ElementAt(i).Equals(checkedField))  //if checkedField == unit   then...
+                            {
+                                addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, countRow, i);    //call method to add question
+                                countRow++;
+                            }
+                        }
+                    }
+                } else if (this.checkedDifficulty.Count != 0)   //only difficulty filter
+                {
+                    foreach (String checkedField in this.checkedDifficulty)  //foreach element in checkedUnit list
+                    {
+                        String temp = "0";
+
+                        if (checkedField.Equals("Εύκολες"))
+                            temp = "1";
+                        else if (checkedField.Equals("Μέτριες"))
+                            temp = "2";
+                        else if (checkedField.Equals("Δύσκολες"))
+                            temp = "3";
+
+
+                        for (int i = 0; i < viewQuestions[0].Count; i++)    //for every question
+                        {
+                            if (viewQuestions[3].ElementAt(i).Equals(temp)) //if checkedField == unit   then...
+                            {                                
+                                addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, countRow, i);    //call method to add question
+                                countRow++;
+                            }
+                        }
+                    }
+                } else  //no filters
+                {
+                    for (int i = 0; i < viewQuestions[0].Count; i++)    //for every question
+                    {                            
+                        addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, i, i);    //call method to add question
+                        countRow++;
+                    }
+                }
+            }
+
             filtersButtonFlag = 'S';
             filtersTimer.Start();
         }
+
+
+        //add question to the showQuestionDataGridView
+        //η πρώτη μεταβλητή ειναι για το με ποια λιστα θα γεμισουμε το gridview, η δευτερη ειναι για το ποιο gridview θα γεμισουμε, η τρίτη είναι σε ποια σειρα βρισκόμαστε και η τεταρτη ειναι ποιο element θα παρουμε
+        //χρησιμοποιούμε το tempViewQuestion για να κανει search τις φιλτραρισμένες ερωτήσεις
+        public void addQuestionToDataGridView(List<string>[] list, DataGridView dgv, int count, int i)
+        {
+            try
+            {
+                this.showQuestionDataGridView.Rows.Add();
+                dgv.Rows[count].Cells[0].Value = list[0].ElementAt(i);
+                dgv.Rows[count].Cells[1].Value = list[1].ElementAt(i);
+                dgv.Rows[count].Cells[2].Value = list[2].ElementAt(i);
+                switch (int.Parse(list[3].ElementAt(i)))
+                {
+                    case 1:
+                        dgv.Rows[count].Cells[3].Value = "Εύκολη";
+                        break;
+                    case 2:
+                        dgv.Rows[count].Cells[3].Value = "Μέτρια";
+                        break;
+                    case 3:
+                        dgv.Rows[count].Cells[3].Value = "Δύσκολη";
+                        break;
+                }
+
+                if (!list.SequenceEqual(this.tempViewQuestions))
+                {
+                    this.tempViewQuestions[0].Add(this.viewQuestions[0].ElementAt(i));
+                    this.tempViewQuestions[1].Add(this.viewQuestions[1].ElementAt(i));
+                    this.tempViewQuestions[2].Add(this.viewQuestions[2].ElementAt(i));
+                    this.tempViewQuestions[3].Add(this.viewQuestions[3].ElementAt(i));
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        //close filter panel when pess comboboxx
+        private void showQuestionLessonCombobox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (this.showQuestionsFilterPanel.Size.Width > 0)
+            {
+                filtersButtonFlag = 'S';
+                filtersTimer.Start();
+            }
+        }
+
 
         //open filter panel of showQuestionPanel
         private void showQuestionsFilterButton_Click(object sender, EventArgs e)
@@ -487,71 +632,81 @@ namespace Multiple_Choice_Generator
         }
 
         //fill datagrid view and units
+        List<string> checkedUnits = new List<string>(); //list with checked categoreis
+        List<string> checkedDifficulty = new List<string>();  //list with cheked difficulty levels
+        List<string>[] viewQuestions = new List<string>[4]; //list[] where will have the data of datagridview
+        List<string>[] tempViewQuestions = new List<string>[4]; //list[] where will have the afterfilter questions          
         private void showQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
+        {            
+            //clear previus diff levels
+            foreach (int i in this.showQuestionDifficultyCheckbox.CheckedIndices)
+            {
+                this.showQuestionDifficultyCheckbox.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
             //load units on checkbox
-            this.showQuestionCategoryCheckbox.Items.Clear();
+            this.showQuestionCategoryCheckbox.Items.Clear();    //clear previus units
+            this.showQuestionDifficultyCheckbox.SelectedItems.Clear();  //clear previus dif levels
             categories = myutils.loadcategories(user.ElementAt(0), this.showQuestionLessonCombobox.Text);
 
             foreach(String category in categories)
             {
                 this.showQuestionCategoryCheckbox.Items.Add(category);      //add unit in checkbox
-            }
-
-            List<string> checkedUnits = new List<string>(); //list with checked categoreis
-            List<int> checkedDifficulty = new List<int>();  //list with cheked difficulty levels
-
-            checkedUnits = myutils.getStringCheckedList(this.showQuestionCategoryCheckbox); //get checked items in string list
-            checkedDifficulty = myutils.getIntCheckedList(this.showQuestionDifficultyCheckbox); //get checked items in int list
-            
-
-            List<string>[] viewQuestions = new List<string>[4]; //list[] where will have the data of datagridview
+            }                               
 
             this.showQuestionDataGridView.Rows.Clear(); //remove all rows
 
             //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
             try
             {
-                /*//call method to take questions
-                if(checkedDifficulty.Count == 0 && checkedUnits.Count == 0)
-                    viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text); //no filters
-                else if(checkedDifficulty.Count == 0 && checkedUnits.Count != 0)
-                    viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, checkedUnits); //filters only for units
-                else if(checkedUnits.Count !=0 && checkedUnits.Count == 0)
-                    viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, checkedDifficulty); //filters only for diff
-                else
-                    viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text, checkedUnits, checkedDifficulty); //filters for both of them
-                */
+                //call method to take questions
+                viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text); //no filters                
+                
+                
+
                 for (int i = 0; i < viewQuestions[0].Count; i++)
-                 {
-                     this.showQuestionDataGridView.Rows.Add();
-                     showQuestionDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
-                     showQuestionDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
-                     showQuestionDataGridView.Rows[i].Cells[2].Value = viewQuestions[2].ElementAt(i);
-                     switch (int.Parse(viewQuestions[3].ElementAt(i)))
-                     {
-                         case 1:
-                             showQuestionDataGridView.Rows[i].Cells[3].Value = "Εύκολη";
-                             break;
-                         case 2:
-                             showQuestionDataGridView.Rows[i].Cells[3].Value = "Μέτρια";
-                             break;
-                         case 3:
-                             showQuestionDataGridView.Rows[i].Cells[3].Value = "Δύσκολη";
-                             break;
-                     }
-                 }                 
+                {
+                    this.addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, i, i);
+                }                
             }
             catch
             {
                 this.showQuestionErrorLabel.Text = "Δεν υπάρχουν ερωτήσεις σε αυτό το μάθημα με αυτά τα φίλτρα. Προσπαθήστε ξανά.";
+            }            
+        }
+
+        //search on questions
+        private void showQuestionsSearchTextbox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox temp = (TextBox)sender;
+
+            this.showQuestionDataGridView.Rows.Clear(); //clear rows
+
+
+            if (String.IsNullOrEmpty(temp.Text) || String.IsNullOrWhiteSpace(temp.Text))
+            {
+                for(int i=0; i<this.tempViewQuestions[0].Count; i++)
+                {
+                    this.addQuestionToDataGridView(this.tempViewQuestions, this.showQuestionDataGridView, i, i);
+                }
             }
-            
+            else   //search when textbox isn't empty or blank
+            {
+                List<string> newlist = myutils.searchTextBox(this.tempViewQuestions, temp.Text);//call method to return list with correct questions
+                this.countRow = 0;
 
-
-
-
-            
+                for (int i = 0; i < this.tempViewQuestions[0].Count; i++)
+                {
+                    foreach (String obj2 in newlist)
+                    {
+                        if (obj2.Equals(this.tempViewQuestions[0].ElementAt(i)))
+                        {
+                            addQuestionToDataGridView(this.tempViewQuestions, this.showQuestionDataGridView, countRow, i);
+                            countRow++;
+                        }
+                    }
+                }
+            }
 
 
         }
@@ -1038,27 +1193,9 @@ namespace Multiple_Choice_Generator
                 }                
             }
 
-            List<string>[] viewQuestions = new List<string>[4];
-            viewQuestions = db.qQuestionsMore(user.ElementAt(0), "Δίκτυα", "Επίπεδο Εφαρμογής", 1);
-            for (int i = 0; i < viewQuestions[0].Count; i++)
-            {
-                
-                createManualTestDataGridView.Rows[i].Cells[0].Value = viewQuestions[0].ElementAt(i);
-                createManualTestDataGridView.Rows[i].Cells[1].Value = viewQuestions[1].ElementAt(i);
-                switch (int.Parse(viewQuestions[3].ElementAt(i)))
-                {
-                    case 1:
-                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Εύκολη";
-                        break;
-                    case 2:
-                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Μέτρια";
-                        break;
-                    case 3:
-                        createManualTestDataGridView.Rows[i].Cells[2].Value = "Δύσκολη";
-                        break;
-                }
-
-            }
+            
+            
+            
 
             //call showDialog
             /*List<string> que = new List<string>();
@@ -1329,16 +1466,8 @@ namespace Multiple_Choice_Generator
 
         }
 
-        private void showQuestionsSearchTextbox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            String word = tb.Text;
 
-            BindingSource bs = new BindingSource();
-            bs.DataSource = this.showQuestionDataGridView.DataSource;
 
-            bs.Filter = string.Format("que LIKE '%{0}%'", word);
-            this.showQuestionDataGridView.DataSource = bs;
-        }
+       
     }
 }

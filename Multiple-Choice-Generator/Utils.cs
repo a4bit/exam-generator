@@ -137,19 +137,20 @@ namespace Multiple_Choice_Generator
         {
             List<string> checkedList = new List<string>();
 
-            foreach(String checkedItem in list.CheckedIndices)
-            {
-                checkedList.Add(checkedItem);
+            foreach(String checkedItem in list.CheckedItems)
+            {                
+                checkedList.Add(checkedItem.ToString());
             }
 
             return checkedList;
         }
 
+        //return int list for difficulty
         public List<int> getIntCheckedList(CheckedListBox list)
         {
             List<int> checkedList = new List<int>();
 
-            foreach (int checkedItem in list.CheckedIndices)
+            foreach (String checkedItem in list.CheckedItems)
             {
                 if(checkedItem.Equals("Εύκολες"))
                     checkedList.Add(1);
@@ -161,6 +162,36 @@ namespace Multiple_Choice_Generator
 
             return checkedList;
         }
+
+       //return a list with searching list
+       public List<string> searchTextBox(List<string>[] list, String text)
+        {
+            List<string> newlist = new List<string>();
+            try
+            {
+                newlist = list[0].FindAll(x => x.Contains(text));
+            }
+            catch { }
+            return newlist;
+        }
+
+        //clear a array string list
+        public List<string>[] getClearArrayList(List<string>[] list)
+        {
+            int columns = list.Length;
+
+            try
+            {
+            for (int i = 0; i < columns; i++)
+                list[i].Clear();
+
+            return list;
+            }catch
+            {
+                return list;
+            }
+        }
+
 
     }
 }
