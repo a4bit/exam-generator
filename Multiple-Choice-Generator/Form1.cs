@@ -669,9 +669,10 @@ namespace Multiple_Choice_Generator
             {
                 //call method to take questions
                 viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text); //no filters                
-                
-                
 
+                for (int i = 0; i < 4; i++)
+                    this.tempViewQuestions[i].Clear();
+                
                 for (int i = 0; i < viewQuestions[0].Count; i++)
                 {
                     this.addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, i, i);
@@ -715,8 +716,28 @@ namespace Multiple_Choice_Generator
                     }
                 }
             }
+        }
 
+        //open questionForm
+        private void showQuestionDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            try
+            {
+                String questionCell = this.showQuestionDataGridView[0, e.RowIndex].Value.ToString(); //take row's question
+                String lessonCell = this.showQuestionDataGridView[1, e.RowIndex].Value.ToString(); //take row's lesson
+                String unitCell = this.showQuestionDataGridView[2, e.RowIndex].Value.ToString(); //take row's unit
+                String diffCell = this.showQuestionDataGridView[3, e.RowIndex].Value.ToString(); //take row's diff level
 
+                //open ShowQuestionForm
+                ShowQuestionForm question = new ShowQuestionForm(questionCell, lessonCell, unitCell, diffCell, user.ElementAt(0));
+                question.Show();
+
+            }
+            catch
+            {
+                Console.Write("Πατήθηκε header");
+            }
         }
         #endregion
 
@@ -1230,7 +1251,6 @@ namespace Multiple_Choice_Generator
 
         #endregion
 
-
         #region METHODS OF createAutoTestPanel
         //create Auto test conf button
         private void createAutoTestConfButton_Click(object sender, EventArgs e)
@@ -1335,6 +1355,10 @@ namespace Multiple_Choice_Generator
             }
 
         }
+        #endregion
+
+        #region METHOS OF editLessonsPanel
+       
         #endregion
 
 
@@ -1469,32 +1493,8 @@ namespace Multiple_Choice_Generator
 
         }
 
-        private void showQuestionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
 
-        //open questionForm
-        private void showQuestionDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            try
-            {
-                String questionCell = this.showQuestionDataGridView[0, e.RowIndex].Value.ToString(); //take row's question
-                String lessonCell= this.showQuestionDataGridView[1, e.RowIndex].Value.ToString(); //take row's lesson
-                String unitCell = this.showQuestionDataGridView[2, e.RowIndex].Value.ToString(); //take row's unit
-                String diffCell = this.showQuestionDataGridView[3, e.RowIndex].Value.ToString(); //take row's diff level
-
-                //open ShowQuestionForm
-                ShowQuestionForm question = new ShowQuestionForm(questionCell, lessonCell, unitCell,diffCell);
-                question.Show();
-                
-            }
-            catch
-            {
-                Console.Write("Πατήθηκε header");
-            }
-        }
+        
     }
 }

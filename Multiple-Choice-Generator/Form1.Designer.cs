@@ -32,6 +32,11 @@ namespace Multiple_Choice_Generator
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -154,6 +159,13 @@ namespace Multiple_Choice_Generator
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.editLessonsPanel = new System.Windows.Forms.Panel();
+            this.editLessonDataGridViewPanel = new System.Windows.Forms.Panel();
+            this.editLessonsDataGridView = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -180,6 +192,9 @@ namespace Multiple_Choice_Generator
             this.createManualTestFilterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
             this.createTestPanel.SuspendLayout();
+            this.editLessonsPanel.SuspendLayout();
+            this.editLessonDataGridViewPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -856,6 +871,7 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Controls.Add(this.editLessonsPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
@@ -918,23 +934,23 @@ namespace Multiple_Choice_Generator
             this.showQuestionDataGridView.AllowUserToAddRows = false;
             this.showQuestionDataGridView.AllowUserToDeleteRows = false;
             this.showQuestionDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
-            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.showQuestionDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
             this.showQuestionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.showQuestionDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.showQuestionDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.showQuestionDataGridView.ColumnHeadersHeight = 38;
             this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -942,14 +958,14 @@ namespace Multiple_Choice_Generator
             this.que_lesson,
             this.que_unit,
             this.que_dif});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.showQuestionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showQuestionDataGridView.EnableHeadersVisualStyles = false;
             this.showQuestionDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -959,12 +975,12 @@ namespace Multiple_Choice_Generator
             this.showQuestionDataGridView.ReadOnly = true;
             this.showQuestionDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.showQuestionDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(2);
+            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.showQuestionDataGridView.RowTemplate.Height = 30;
             this.showQuestionDataGridView.RowTemplate.ReadOnly = true;
             this.showQuestionDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -977,8 +993,8 @@ namespace Multiple_Choice_Generator
             // 
             this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.que_name.DataPropertyName = "que";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            this.que_name.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
+            this.que_name.DefaultCellStyle = dataGridViewCellStyle8;
             this.que_name.FillWeight = 200F;
             this.que_name.HeaderText = "Ερώτηση";
             this.que_name.MinimumWidth = 397;
@@ -1784,6 +1800,122 @@ namespace Multiple_Choice_Generator
             this.sleepTimer.Interval = 5000;
             this.sleepTimer.Tick += new System.EventHandler(this.sleepTimer_Tick);
             // 
+            // editLessonsPanel
+            // 
+            this.editLessonsPanel.Controls.Add(this.textBox1);
+            this.editLessonsPanel.Controls.Add(this.editLessonDataGridViewPanel);
+            this.editLessonsPanel.Location = new System.Drawing.Point(0, 0);
+            this.editLessonsPanel.Name = "editLessonsPanel";
+            this.editLessonsPanel.Size = new System.Drawing.Size(962, 583);
+            this.editLessonsPanel.TabIndex = 21;
+            this.editLessonsPanel.Visible = false;
+            // 
+            // editLessonDataGridViewPanel
+            // 
+            this.editLessonDataGridViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editLessonDataGridViewPanel.Controls.Add(this.editLessonsDataGridView);
+            this.editLessonDataGridViewPanel.Location = new System.Drawing.Point(30, 50);
+            this.editLessonDataGridViewPanel.Name = "editLessonDataGridViewPanel";
+            this.editLessonDataGridViewPanel.Size = new System.Drawing.Size(906, 502);
+            this.editLessonDataGridViewPanel.TabIndex = 9;
+            // 
+            // editLessonsDataGridView
+            // 
+            this.editLessonsDataGridView.AllowUserToAddRows = false;
+            this.editLessonsDataGridView.AllowUserToDeleteRows = false;
+            this.editLessonsDataGridView.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            this.editLessonsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.editLessonsDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
+            this.editLessonsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editLessonsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.editLessonsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editLessonsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.editLessonsDataGridView.ColumnHeadersHeight = 38;
+            this.editLessonsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.editLessonsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.editLessonsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.editLessonsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editLessonsDataGridView.EnableHeadersVisualStyles = false;
+            this.editLessonsDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.editLessonsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.editLessonsDataGridView.MultiSelect = false;
+            this.editLessonsDataGridView.Name = "editLessonsDataGridView";
+            this.editLessonsDataGridView.ReadOnly = true;
+            this.editLessonsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.editLessonsDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            this.editLessonsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.editLessonsDataGridView.RowTemplate.Height = 30;
+            this.editLessonsDataGridView.RowTemplate.ReadOnly = true;
+            this.editLessonsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editLessonsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.editLessonsDataGridView.Size = new System.Drawing.Size(906, 502);
+            this.editLessonsDataGridView.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox1.Location = new System.Drawing.Point(614, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(322, 29);
+            this.textBox1.TabIndex = 10;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "que";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn1.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Μάθημα";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 397;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Ενότητες";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Αριθμός ερωτήσεων";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1841,6 +1973,10 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
             this.createTestPanel.ResumeLayout(false);
             this.createTestPanel.PerformLayout();
+            this.editLessonsPanel.ResumeLayout(false);
+            this.editLessonsPanel.PerformLayout();
+            this.editLessonDataGridViewPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1964,6 +2100,13 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.DataGridViewTextBoxColumn que_unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_dif;
         private System.Windows.Forms.Label showQuestionErrorLabel;
+        private System.Windows.Forms.Panel editLessonsPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel editLessonDataGridViewPanel;
+        private System.Windows.Forms.DataGridView editLessonsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 
