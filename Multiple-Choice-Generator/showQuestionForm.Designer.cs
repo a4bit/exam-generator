@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.questionLabel = new System.Windows.Forms.Label();
             this.lessonTitleLabel = new System.Windows.Forms.Label();
             this.diffTitleLabel = new System.Windows.Forms.Label();
@@ -119,11 +119,11 @@
             this.showAnswersDataGridView.AllowUserToAddRows = false;
             this.showAnswersDataGridView.AllowUserToDeleteRows = false;
             this.showAnswersDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            this.showAnswersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal;
+            this.showAnswersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.showAnswersDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
             this.showAnswersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.showAnswersDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -132,14 +132,14 @@
             this.showAnswersDataGridView.ColumnHeadersVisible = false;
             this.showAnswersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Questions});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showAnswersDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showAnswersDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.showAnswersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showAnswersDataGridView.GridColor = System.Drawing.Color.DimGray;
             this.showAnswersDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -151,7 +151,7 @@
             this.showAnswersDataGridView.RowTemplate.ReadOnly = true;
             this.showAnswersDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.showAnswersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.showAnswersDataGridView.Size = new System.Drawing.Size(713, 150);
+            this.showAnswersDataGridView.Size = new System.Drawing.Size(713, 61);
             this.showAnswersDataGridView.TabIndex = 16;
             // 
             // Questions
@@ -163,6 +163,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.closeButton);
             this.panel1.Controls.Add(this.questionLabel);
             this.panel1.Controls.Add(this.answersLabel);
             this.panel1.Controls.Add(this.infoPanel);
@@ -175,7 +176,6 @@
             // 
             // infoPanel
             // 
-            this.infoPanel.Controls.Add(this.closeButton);
             this.infoPanel.Controls.Add(this.diffLabel);
             this.infoPanel.Controls.Add(this.unitLabel);
             this.infoPanel.Controls.Add(this.lessonLabel);
@@ -184,16 +184,17 @@
             this.infoPanel.Controls.Add(this.unitTitleLabel);
             this.infoPanel.Location = new System.Drawing.Point(36, 318);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(716, 200);
+            this.infoPanel.Size = new System.Drawing.Size(729, 200);
             this.infoPanel.TabIndex = 19;
             // 
             // closeButton
             // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.BackColor = System.Drawing.Color.Red;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(597, 155);
+            this.closeButton.Location = new System.Drawing.Point(646, 470);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(119, 45);
             this.closeButton.TabIndex = 21;
@@ -235,7 +236,7 @@
             this.showAnswersPanel.Controls.Add(this.showAnswersDataGridView);
             this.showAnswersPanel.Location = new System.Drawing.Point(39, 157);
             this.showAnswersPanel.Name = "showAnswersPanel";
-            this.showAnswersPanel.Size = new System.Drawing.Size(713, 150);
+            this.showAnswersPanel.Size = new System.Drawing.Size(713, 61);
             this.showAnswersPanel.TabIndex = 17;
             // 
             // ShowQuestionForm

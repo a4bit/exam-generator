@@ -33,11 +33,10 @@ namespace Multiple_Choice_Generator
         
         private void ShowQuestionForm_Load(object sender, EventArgs e)
         {
-            this.MaximizeBox = false;   //set maximized button disable
+            this.MaximizeBox = false;   //set maximized button disable            
 
             this.questionTextbox.Text = this.question;    //set question Textbox
-
-            this.lessonLabel.Text = this.lesson;
+            this.lessonLabel.Text = this.lesson;    //set lessons
 
 
             this.unitLabel.Text = this.unit;        //set unit
@@ -66,9 +65,7 @@ namespace Multiple_Choice_Generator
             {
                 Console.Write("error on fill answers");
             }
-            
-
-            
+        
         }
 
         private void closeButton_Click(object sender, EventArgs e)
