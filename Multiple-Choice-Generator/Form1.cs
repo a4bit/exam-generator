@@ -102,13 +102,21 @@ namespace Multiple_Choice_Generator
             this.createQuestionLessonCombobox.Items.Clear();
             this.createManualTestComboBox.Items.Clear();
             this.showQuestionLessonCombobox.Items.Clear();
-            foreach (String lesson in this.lessons)
+            try
             {
-                this.createAutoTestLessonComboBox.Items.Add(lesson);
-                this.createQuestionLessonCombobox.Items.Add(lesson);
-                this.createManualTestComboBox.Items.Add(lesson);
-                this.showQuestionLessonCombobox.Items.Add(lesson);
-            }   
+                foreach (String lesson in this.lessons)
+                {
+                    this.createAutoTestLessonComboBox.Items.Add(lesson);
+                    this.createQuestionLessonCombobox.Items.Add(lesson);
+                    this.createManualTestComboBox.Items.Add(lesson);
+                    this.showQuestionLessonCombobox.Items.Add(lesson);
+                }
+            }
+            catch
+            {
+                Console.Write("No lessons");
+            }
+            
         }
 
 
@@ -1467,7 +1475,26 @@ namespace Multiple_Choice_Generator
         }
 
 
+        //open questionForm
+        private void showQuestionDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            try
+            {
+                String questionCell = this.showQuestionDataGridView[0, e.RowIndex].Value.ToString(); //take row's question
+                String lessonCell= this.showQuestionDataGridView[1, e.RowIndex].Value.ToString(); //take row's lesson
+                String unitCell = this.showQuestionDataGridView[2, e.RowIndex].Value.ToString(); //take row's unit
+                String diffCell = this.showQuestionDataGridView[3, e.RowIndex].Value.ToString(); //take row's diff level
 
-       
+                //open ShowQuestionForm
+                ShowQuestionForm question = new ShowQuestionForm(questionCell, lessonCell, unitCell,diffCell);
+                question.Show();
+                
+            }
+            catch
+            {
+                Console.Write("Πατήθηκε header");
+            }
+        }
     }
 }

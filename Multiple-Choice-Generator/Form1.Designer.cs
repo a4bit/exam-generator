@@ -32,11 +32,11 @@ namespace Multiple_Choice_Generator
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.leftmenuP = new System.Windows.Forms.Panel();
             this.newsLabel = new System.Windows.Forms.Label();
             this.helpB = new System.Windows.Forms.Button();
@@ -86,8 +86,13 @@ namespace Multiple_Choice_Generator
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.showQuestionsPanel = new System.Windows.Forms.Panel();
+            this.showQuestionErrorLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
+            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.showQuestionsFilterButton = new System.Windows.Forms.Button();
             this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
             this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
@@ -149,11 +154,6 @@ namespace Multiple_Choice_Generator
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.showQuestionErrorLabel = new System.Windows.Forms.Label();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -889,6 +889,19 @@ namespace Multiple_Choice_Generator
             this.showQuestionsPanel.Visible = false;
             this.showQuestionsPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
+            // showQuestionErrorLabel
+            // 
+            this.showQuestionErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showQuestionErrorLabel.AutoEllipsis = true;
+            this.showQuestionErrorLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showQuestionErrorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.showQuestionErrorLabel.Location = new System.Drawing.Point(48, 555);
+            this.showQuestionErrorLabel.Name = "showQuestionErrorLabel";
+            this.showQuestionErrorLabel.Size = new System.Drawing.Size(881, 21);
+            this.showQuestionErrorLabel.TabIndex = 24;
+            this.showQuestionErrorLabel.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -905,23 +918,23 @@ namespace Multiple_Choice_Generator
             this.showQuestionDataGridView.AllowUserToAddRows = false;
             this.showQuestionDataGridView.AllowUserToDeleteRows = false;
             this.showQuestionDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
-            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.showQuestionDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
             this.showQuestionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.showQuestionDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.showQuestionDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.showQuestionDataGridView.ColumnHeadersHeight = 38;
             this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -929,14 +942,14 @@ namespace Multiple_Choice_Generator
             this.que_lesson,
             this.que_unit,
             this.que_dif});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.showQuestionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showQuestionDataGridView.EnableHeadersVisualStyles = false;
             this.showQuestionDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -946,19 +959,54 @@ namespace Multiple_Choice_Generator
             this.showQuestionDataGridView.ReadOnly = true;
             this.showQuestionDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.showQuestionDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
-            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.showQuestionDataGridView.RowTemplate.Height = 30;
             this.showQuestionDataGridView.RowTemplate.ReadOnly = true;
             this.showQuestionDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.showQuestionDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.showQuestionDataGridView.Size = new System.Drawing.Size(886, 482);
             this.showQuestionDataGridView.TabIndex = 0;
-            this.showQuestionDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showQuestionDataGridView_CellContentClick);
+            this.showQuestionDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showQuestionDataGridView_CellDoubleClick);
+            // 
+            // que_name
+            // 
+            this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_name.DataPropertyName = "que";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            this.que_name.DefaultCellStyle = dataGridViewCellStyle3;
+            this.que_name.FillWeight = 200F;
+            this.que_name.HeaderText = "Ερώτηση";
+            this.que_name.MinimumWidth = 397;
+            this.que_name.Name = "que_name";
+            this.que_name.ReadOnly = true;
+            // 
+            // que_lesson
+            // 
+            this.que_lesson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.que_lesson.HeaderText = "Μάθημα";
+            this.que_lesson.MinimumWidth = 150;
+            this.que_lesson.Name = "que_lesson";
+            this.que_lesson.ReadOnly = true;
+            // 
+            // que_unit
+            // 
+            this.que_unit.HeaderText = "Ενότητα";
+            this.que_unit.MinimumWidth = 150;
+            this.que_unit.Name = "que_unit";
+            this.que_unit.ReadOnly = true;
+            this.que_unit.Width = 150;
+            // 
+            // que_dif
+            // 
+            this.que_dif.HeaderText = "Δυσκολία";
+            this.que_dif.MinimumWidth = 100;
+            this.que_dif.Name = "que_dif";
+            this.que_dif.ReadOnly = true;
             // 
             // showQuestionsFilterButton
             // 
@@ -1736,54 +1784,6 @@ namespace Multiple_Choice_Generator
             this.sleepTimer.Interval = 5000;
             this.sleepTimer.Tick += new System.EventHandler(this.sleepTimer_Tick);
             // 
-            // que_dif
-            // 
-            this.que_dif.HeaderText = "Δυσκολία";
-            this.que_dif.MinimumWidth = 100;
-            this.que_dif.Name = "que_dif";
-            this.que_dif.ReadOnly = true;
-            // 
-            // que_unit
-            // 
-            this.que_unit.HeaderText = "Ενότητα";
-            this.que_unit.MinimumWidth = 150;
-            this.que_unit.Name = "que_unit";
-            this.que_unit.ReadOnly = true;
-            this.que_unit.Width = 150;
-            // 
-            // que_lesson
-            // 
-            this.que_lesson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.que_lesson.HeaderText = "Μάθημα";
-            this.que_lesson.MinimumWidth = 150;
-            this.que_lesson.Name = "que_lesson";
-            this.que_lesson.ReadOnly = true;
-            // 
-            // que_name
-            // 
-            this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.que_name.DataPropertyName = "que";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Transparent;
-            this.que_name.DefaultCellStyle = dataGridViewCellStyle13;
-            this.que_name.FillWeight = 200F;
-            this.que_name.HeaderText = "Ερώτηση";
-            this.que_name.MinimumWidth = 397;
-            this.que_name.Name = "que_name";
-            this.que_name.ReadOnly = true;
-            // 
-            // showQuestionErrorLabel
-            // 
-            this.showQuestionErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showQuestionErrorLabel.AutoEllipsis = true;
-            this.showQuestionErrorLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.showQuestionErrorLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.showQuestionErrorLabel.Location = new System.Drawing.Point(48, 555);
-            this.showQuestionErrorLabel.Name = "showQuestionErrorLabel";
-            this.showQuestionErrorLabel.Size = new System.Drawing.Size(881, 21);
-            this.showQuestionErrorLabel.TabIndex = 24;
-            this.showQuestionErrorLabel.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1794,6 +1794,7 @@ namespace Multiple_Choice_Generator
             this.Controls.Add(this.createSubMenuP);
             this.Controls.Add(this.leftmenuP);
             this.Controls.Add(this.mainPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 506);
             this.Name = "Form1";
             this.Text = "Multiple Choice Exam Generator";
