@@ -19,6 +19,7 @@ namespace Multiple_Choice_Generator
         private String unit;
         private String diff;
         private List<string> answers;
+        private int rows;
         private Form1 father;
         private database db = new database();
 
@@ -73,6 +74,12 @@ namespace Multiple_Choice_Generator
             {
                 this.editQuestionsDataGridView.Rows.Add(answer);
             }
+
+            //load rows
+            rows = this.answers.Count;
+
+            if (rows == 6)
+                this.editQuestionsDataGridView.AllowUserToAddRows = false;
 
             
 
@@ -189,31 +196,72 @@ namespace Multiple_Choice_Generator
 
                 //check if there is empty title question
                 if (String.IsNullOrEmpty(this.questionTextbox.Text) || String.IsNullOrWhiteSpace(this.questionTextbox.Text))
-                    errors[2] = true;                
+                    errors[2] = true;
 
-                   
-                
-                
-                
-                
-                
-                
-                //getanswers
+                //checkif there are errors
+                bool errorFlag = false;
 
-
-                //check question rename
-                if (!this.questionTextbox.Text.Equals(this.question))
+                foreach(bool f in errors)
                 {
-                    //check = db.uQuestion(user, lesson, unit, this.questionTextbox.Text, this.question, this.answers);
+                    if (f)
+                    {
+                        errorFlag = true;
+                    }
                 }
 
-                //checkerrors
-                if (errors[0])
-                    this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε λιγότερες από 2 ερωτήσεις";
-                else if (errors[1])
-                    this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενή απάντηση";
-                else if (errors[2])
-                    this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενό τίτλο ερώτησης.";
+                if (errorFlag)
+                {
+                    List<string> newAnswers = new List<string>();
+
+                    //get answers
+                    for(int i = 0; i<this.editQuestionsDataGridView.Rows.Count - 1; i++)
+                    {
+                        newAnswers.Add(this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString());
+                    }
+
+                    //check if answers are same
+                    foreach(String obj in newAnswers)
+                    {
+                        foreach(String obj2 in newAnswers)
+                        {
+                            if (obj.Equals(obj2))
+                                errors[3] = true;
+                        }
+                    }
+
+                    if (errors[3])  //there are errors
+                    {
+                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε ίδιες ερωτήσεις.";
+                        this.errorsLabel.Visible = true;
+                        this.errorTittleLabel.Visible = true;
+                    }
+                    else    //everythinkg okey go to database
+                    {
+                        //check question rename
+                        if (!this.questionTextbox.Text.Equals(this.question))
+                        {
+                           // check = db.uQuestion(user, lesson, unit, this.questionTextbox.Text,  this.question, this.diff, this.answers);
+                        }
+                    }
+                        
+                }
+                else
+                {
+                    if (errors[0])
+                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε λιγότερες από 2 ερωτήσεις";
+                    if (errors[1])
+                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενή απάντηση";
+                    if (errors[2])
+                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενό τίτλο ερώτησης.";
+
+                    this.errorsLabel.Visible = true;
+                    this.errorTittleLabel.Visible = true;
+                }
+                
+
+
+
+               
             }
             conf.Dispose();
         }
@@ -227,8 +275,45 @@ namespace Multiple_Choice_Generator
 
         private void editQuestionsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.editQuestionsDataGridView.Rows.Count > 10)
-                this.editQuestionsDataGridView.AllowUserToAddRows = false;               
+            Font strikout = new System.Drawing.Font("Verdana", 12F, (System.Drawing.FontStyle.Regular | System.Drawing.FontStyle.Strikeout), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            Font normal = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+
+            //strickout or not
+            if (e.ColumnIndex == 1)
+            {
+                //check if checkbox is checked or not
+                bool flag = false;
+                try
+                {
+                    flag = (bool)this.editQuestionsDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                }
+                catch
+                { }
+
+                if (flag)
+                {
+                    this.editQuestionsDataGridView.Rows[e.RowIndex].Cells[1].Value = false;
+                    this.editQuestionsDataGridView.Rows[e.RowIndex].Cells[0].Style.Font = normal;
+                }
+                else
+                {
+                    this.editQuestionsDataGridView.Rows[e.RowIndex].Cells[1].Value = true;
+                    this.editQuestionsDataGridView.Rows[e.RowIndex].Cells[0].Style.Font = strikout;
+                }
+            }
+        }
+
+        //add row
+        private void editQuestionsDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            rows++;
+        }
+
+        //check if rows are 6 then disable addrow
+        private void editQuestionsDataGridView_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (rows >= 6 && this.editQuestionsDataGridView.AllowUserToAddRows)
+                this.editQuestionsDataGridView.AllowUserToAddRows = false;
         }
     }
 }

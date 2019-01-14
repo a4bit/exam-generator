@@ -1439,7 +1439,7 @@ namespace Multiple_Choice_Generator
             }
 
             //call confiration util method to check if all are okey
-            bool[] errors = myutils.createAutoTestConfirmation(lesson, diff.Count, categories.Count);
+            bool[] errors = myutils.createAutoTestConfirmation(lesson, diff.Count, categories.Count, this.createAutoTestTitleTextbox.Text);
 
             if (errors[0])
             {
@@ -1455,6 +1455,11 @@ namespace Multiple_Choice_Generator
             {
                 errorflag = true;
                 this.createAutoTestErrorsLabel.Text += "Πρέπει να επιλέξετε τουλάχιστον μία κατηγορία μαθήματος.\n";
+            }
+            if (errors[3])
+            {
+                errorflag = true;
+                this.createAutoTestErrorsLabel.Text += "Δε μπορείτε να καταηγορήσετε κενό τίτλο.\n";
             }
 
             //check if is is okey to send or do visible error labels
@@ -1477,10 +1482,19 @@ namespace Multiple_Choice_Generator
                 }
                 else
                 {
-                   
-                    questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take N random questions 
+                    //get random questions
+                    List<string> test = new List<string>();
 
-                    int check = db.iTest(questions, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
+                    Random rand = new Random();
+
+                    for(int i=0; i<number; i++)
+                    {
+                        int index = rand.Next(0, questions.Count);
+                        test.Add(questions.ElementAt(index));
+                        questions.RemoveAt(index);
+                    }
+
+                    int check = db.iTest(test, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
 
                     if (check == 1)
                     {

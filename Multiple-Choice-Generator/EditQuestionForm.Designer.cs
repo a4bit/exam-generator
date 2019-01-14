@@ -320,6 +320,8 @@
             this.editQuestionsDataGridView.Size = new System.Drawing.Size(813, 108);
             this.editQuestionsDataGridView.TabIndex = 18;
             this.editQuestionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.editQuestionsDataGridView_CellContentClick);
+            this.editQuestionsDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.editQuestionsDataGridView_CellLeave);
+            this.editQuestionsDataGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.editQuestionsDataGridView_RowsAdded);
             // 
             // unitCol
             // 

@@ -244,24 +244,25 @@ namespace Multiple_Choice_Generator
                 
         }
 
+        //checkbox code
         private void unitsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //fonts
-            Font strikout = new Font("Verdana", 12F, (System.Drawing.FontStyle.Regular | System.Drawing.FontStyle.Strikeout), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            Font normal = new Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-
-            //check if checkbox is checked or not
-            bool flag = false;
-            try
-            {
-                flag = (bool)this.unitsDataGridView.Rows[e.RowIndex].Cells[1].Value;
-            }
-            catch
-            {  }
+            Font strikout = new System.Drawing.Font("Verdana", 12F, (System.Drawing.FontStyle.Regular | System.Drawing.FontStyle.Strikeout), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            Font normal = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
 
             //strickout or not
             if (e.ColumnIndex == 1)
             {
+                //check if checkbox is checked or not
+                bool flag = false;
+                try
+                {
+                    flag = (bool)this.unitsDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                }
+                catch
+                { }
+
                 if (flag)
                 {
                     this.unitsDataGridView.Rows[e.RowIndex].Cells[1].Value = false;

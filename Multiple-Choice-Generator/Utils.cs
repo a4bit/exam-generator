@@ -42,13 +42,14 @@ namespace Multiple_Choice_Generator
         }
 
         //check if fields of createAUtotest are okey to send to database
-        public bool[] createAutoTestConfirmation(String lesson, int difficulty, int category)
+        public bool[] createAutoTestConfirmation(String lesson, int difficulty, int category, String title)
         {
-            bool[] errors = {false, false, false};
+            bool[] errors = {false, false, false, false};
             /*
              errors[0] -> no lesson has choosen
              errors[1] -> no difficulty levels have choosen
-             errors[2] -> no categories have choosen                          
+             errors[2] -> no categories have choosen  
+             errors[3] -> empty title
              */
 
             if (lesson.Equals("") || lesson == null
@@ -58,6 +59,8 @@ namespace Multiple_Choice_Generator
                 errors[1] = true;
             if (category == 0)
                 errors[2] = true;
+            if (String.IsNullOrEmpty(title) || String.IsNullOrWhiteSpace(title))
+                errors[3] = true;
 
             return errors;
         }
