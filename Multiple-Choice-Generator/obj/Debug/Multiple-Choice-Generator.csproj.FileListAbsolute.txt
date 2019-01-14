@@ -187,3 +187,37 @@ C:\Users\Tzel\source\repos\new\exam-generator\Multiple-Choice-Generator\bin\Debu
 C:\Users\Tzel\source\repos\new\exam-generator\Multiple-Choice-Generator\bin\Debug\Multiple Choice Exam Generator.pdb
 C:\Users\Tzel\source\repos\new\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple Choice Exam Generator.exe
 C:\Users\Tzel\source\repos\new\exam-generator\Multiple-Choice-Generator\obj\Debug\Multiple Choice Exam Generator.pdb
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\Multiple Choice Exam Generator.exe.config
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\Multiple Choice Exam Generator.exe
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\Multiple Choice Exam Generator.pdb
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\Animator.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\GeoAPI.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\NetTopologySuite.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\PowerCollections.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.ProductCenter.exe
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.Styles.Gradient.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\GeoAPI.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\MySql.Data.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\NetTopologySuite.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\PowerCollections.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\ThinkGeo.MapSuite.Styles.Gradient.xml
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csprojAssemblyReference.cache
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.ConfigForm.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.Form1.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.infoForm.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.LoginForm.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.Properties.Resources.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.settingsForm.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple_Choice_Generator.ShowQuestionForm.resources
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.GenerateResource.cache
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CoreCompileInputs.cache
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple-Choice-Generator.csproj.CopyComplete
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple Choice Exam Generator.exe
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\obj\Debug\Multiple Choice Exam Generator.pdb
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\itextsharp.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\itextsharp.pdfa.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\itextsharp.xtra.dll
+C:\Users\a4bit\source\repos\exam-generator2\Multiple-Choice-Generator\bin\Debug\itextsharp.xml

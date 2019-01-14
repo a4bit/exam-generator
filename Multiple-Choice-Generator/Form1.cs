@@ -14,11 +14,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Data;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Rectangle = System.Drawing.Rectangle;
 
 namespace Multiple_Choice_Generator
 {
+   
     public partial class Form1 : Form
     {
+        
         database db = new database();
 
         //lists from database
@@ -300,14 +306,14 @@ namespace Multiple_Choice_Generator
         private void topmenu_MouseEnter(object sender, EventArgs e)
         {
             Label temp = (Label)sender;
-                temp.Font = new Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
+                temp.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
         }
 
         //reset font when leave
         private void topmenu_MouseLeave(object sender, EventArgs e)
         {
             Label temp = (Label)sender;
-            temp.Font = new Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
+            temp.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));            
         }
 
         //change color when click in top bar menu
@@ -1493,8 +1499,35 @@ namespace Multiple_Choice_Generator
 
         }
 
+        private void testB_Click(object sender, EventArgs e)
+        {
+            this.testPanel.Visible = true;
+            this.temp.Visible = false;
+        }
 
+        private void showQuestionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35); 
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Multiple choice test.pdf", FileMode.Create));  //Δημιουργώ το pdf και το αποθηκεύω με το όνομα που θέλω 
+            doc.Open();   //ανοίγω το doc
+            Paragraph paragraph = new Paragraph("Test  . \n Test");  // γράφω το τι θα περιέχει το pdf σε μια παράγραφο
+            doc.Add(paragraph);   //προσθέτο το περιεχόμενο στο πδφ
+            doc.Close();  //κλείνο το doc
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

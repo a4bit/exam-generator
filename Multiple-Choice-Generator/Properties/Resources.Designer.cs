@@ -160,6 +160,36 @@ namespace Multiple_Choice_Generator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] itextsharp {
+            get {
+                object obj = ResourceManager.GetObject("itextsharp", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] itextsharp_pdfa {
+            get {
+                object obj = ResourceManager.GetObject("itextsharp_pdfa", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] itextsharp_xtra {
+            get {
+                object obj = ResourceManager.GetObject("itextsharp_xtra", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
