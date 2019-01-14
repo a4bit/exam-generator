@@ -212,12 +212,21 @@ namespace Multiple_Choice_Generator
                 if (!errorFlag)
                 {
                     List<string> newAnswers = new List<string>();
+                    int newAnswersCount = this.editQuestionsDataGridView.Rows.Count;
 
                     //get answers
-                    for(int i = 0; i<this.editQuestionsDataGridView.Rows.Count; i++)
-                    {
-                            newAnswers.Add(this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString());
-                    }
+
+                        for (int i = 0; i < this.editQuestionsDataGridView.Rows.Count - 1; i++)
+                        {
+                        bool tempFlag = Convert.ToBoolean(this.editQuestionsDataGridView.Rows[i].Cells[1].Value);
+                            if(!(tempFlag))
+                                newAnswers.Add(this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString());
+                        }
+
+                        
+                    
+
+                    
 
                     //check if answers are same
                     foreach(String obj in newAnswers)

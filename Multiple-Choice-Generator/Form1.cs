@@ -155,7 +155,7 @@ namespace Multiple_Choice_Generator
                 for (int i = 0; i < this.tests.Count; i++)
                 {
                     this.showTestsDataGridView.Rows.Add();
-                    this.showTestsDataGridView.Rows[i].Cells[0].Value = this.tests.ElementAt(i);
+                    this.showTestsDataGridView.Rows[i].Cells[0].Value = this.tests.ElementAt(i);;
                 }
             }
                 
@@ -333,7 +333,7 @@ namespace Multiple_Choice_Generator
             else if (!editflag)
             {
                 editSubMenuP.Height += 21;
-                if (editSubMenuP.Height == 105)
+                if (editSubMenuP.Height == 63)
                 {
                     timer2.Stop();
                     editflag = true;
@@ -1797,5 +1797,16 @@ namespace Multiple_Choice_Generator
             this.temp = this.showTestsPanel;
         }
 
+        private void showTestsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //pdf
+            if (e.ColumnIndex == 1)
+            {
+
+            }else if(e.ColumnIndex == 2)    //ektypwsi
+            {
+
+            }
+        }
     }
 }
