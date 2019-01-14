@@ -1760,7 +1760,14 @@ namespace Multiple_Choice_Generator
             using (MemoryStream ms = new MemoryStream())
             {
                 var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
-                pdf.Save(new FileStream("Multiple choice test5.pdf", FileMode.Create));
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.Filter = "PDF|*.pdf";
+                savefile.Title = "Αποθήκευση διαγωνίσματος " + name + " σε pdf αρχείο";
+                savefile.FileName = name + ".pdf";
+                try
+                { savefile.ShowDialog(); }
+                catch { }
+                pdf.Save(new FileStream(savefile.FileName, FileMode.Create));
                 Console.WriteLine("mphke");
             }
         }
