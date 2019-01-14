@@ -58,18 +58,6 @@
     <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
     </Reference>
-    <Reference Include="IronPdf">
-      <HintPath>..\..\..\IronPdf\bin\IronPdf.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\Isharp\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp.pdfa">
-      <HintPath>..\..\..\Isharp\itextsharp.pdfa.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp.xtra">
-      <HintPath>..\..\..\Isharp\itextsharp.xtra.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-MicrosoftSqlServerTypes.10.4.0\lib\net45\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>

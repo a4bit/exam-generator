@@ -185,6 +185,8 @@ namespace Multiple_Choice_Generator
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -894,8 +896,8 @@ namespace Multiple_Choice_Generator
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.createTestPanel);
+            this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.editLessonsPanel);
             this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
@@ -2168,6 +2170,14 @@ namespace Multiple_Choice_Generator
             this.sleepTimer.Interval = 5000;
             this.sleepTimer.Tick += new System.EventHandler(this.sleepTimer_Tick);
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2379,6 +2389,8 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.TextBox editQuestionSearchTextbox;
         private System.Windows.Forms.ComboBox editQuestionLessonsCombobox;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }
 
