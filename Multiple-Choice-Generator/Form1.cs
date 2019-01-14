@@ -14,11 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Data;
-using IronPdf;
 using System.IO;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using Rectangle = System.Drawing.Rectangle;
 
 namespace Multiple_Choice_Generator
