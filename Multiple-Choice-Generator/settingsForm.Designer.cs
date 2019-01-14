@@ -138,7 +138,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label12.Location = new System.Drawing.Point(23, 286);
+            this.label12.Location = new System.Drawing.Point(23, 304);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(134, 18);
             this.label12.TabIndex = 20;
@@ -147,10 +147,10 @@
             // settingsSchoolTextbox
             // 
             this.settingsSchoolTextbox.Enabled = false;
-            this.settingsSchoolTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsSchoolTextbox.Location = new System.Drawing.Point(163, 283);
+            this.settingsSchoolTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsSchoolTextbox.Location = new System.Drawing.Point(163, 296);
             this.settingsSchoolTextbox.Name = "settingsSchoolTextbox";
-            this.settingsSchoolTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsSchoolTextbox.Size = new System.Drawing.Size(414, 33);
             this.settingsSchoolTextbox.TabIndex = 19;
             // 
             // settingsConfButton
@@ -192,10 +192,10 @@
             // 
             this.settingsGenderRadioButton2.AutoSize = true;
             this.settingsGenderRadioButton2.Enabled = false;
-            this.settingsGenderRadioButton2.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsGenderRadioButton2.Location = new System.Drawing.Point(265, 322);
+            this.settingsGenderRadioButton2.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsGenderRadioButton2.Location = new System.Drawing.Point(265, 335);
             this.settingsGenderRadioButton2.Name = "settingsGenderRadioButton2";
-            this.settingsGenderRadioButton2.Size = new System.Drawing.Size(88, 22);
+            this.settingsGenderRadioButton2.Size = new System.Drawing.Size(102, 29);
             this.settingsGenderRadioButton2.TabIndex = 16;
             this.settingsGenderRadioButton2.TabStop = true;
             this.settingsGenderRadioButton2.Text = "Γυναίκα";
@@ -205,10 +205,10 @@
             // 
             this.settingsGenderRadioButton1.AutoSize = true;
             this.settingsGenderRadioButton1.Enabled = false;
-            this.settingsGenderRadioButton1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsGenderRadioButton1.Location = new System.Drawing.Point(163, 322);
+            this.settingsGenderRadioButton1.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsGenderRadioButton1.Location = new System.Drawing.Point(163, 335);
             this.settingsGenderRadioButton1.Name = "settingsGenderRadioButton1";
-            this.settingsGenderRadioButton1.Size = new System.Drawing.Size(81, 22);
+            this.settingsGenderRadioButton1.Size = new System.Drawing.Size(97, 29);
             this.settingsGenderRadioButton1.TabIndex = 15;
             this.settingsGenderRadioButton1.TabStop = true;
             this.settingsGenderRadioButton1.Text = "Άντρας";
@@ -217,11 +217,11 @@
             // settingsBirthTextBox
             // 
             this.settingsBirthTextBox.Enabled = false;
-            this.settingsBirthTextBox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsBirthTextBox.Location = new System.Drawing.Point(163, 250);
+            this.settingsBirthTextBox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsBirthTextBox.Location = new System.Drawing.Point(163, 256);
             this.settingsBirthTextBox.Mask = "00/00/0000";
             this.settingsBirthTextBox.Name = "settingsBirthTextBox";
-            this.settingsBirthTextBox.Size = new System.Drawing.Size(100, 27);
+            this.settingsBirthTextBox.Size = new System.Drawing.Size(100, 33);
             this.settingsBirthTextBox.TabIndex = 14;
             this.settingsBirthTextBox.Text = "21081997";
             this.settingsBirthTextBox.ValidatingType = typeof(System.DateTime);
@@ -230,7 +230,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label6.Location = new System.Drawing.Point(100, 322);
+            this.label6.Location = new System.Drawing.Point(100, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 18);
             this.label6.TabIndex = 13;
@@ -240,7 +240,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label3.Location = new System.Drawing.Point(34, 253);
+            this.label3.Location = new System.Drawing.Point(34, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 18);
             this.label3.TabIndex = 12;
@@ -250,7 +250,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label4.Location = new System.Drawing.Point(81, 188);
+            this.label4.Location = new System.Drawing.Point(81, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 18);
             this.label4.TabIndex = 10;
@@ -259,17 +259,17 @@
             // settingsLastnameTextbox
             // 
             this.settingsLastnameTextbox.Enabled = false;
-            this.settingsLastnameTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsLastnameTextbox.Location = new System.Drawing.Point(163, 184);
+            this.settingsLastnameTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsLastnameTextbox.Location = new System.Drawing.Point(163, 178);
             this.settingsLastnameTextbox.Name = "settingsLastnameTextbox";
-            this.settingsLastnameTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsLastnameTextbox.Size = new System.Drawing.Size(414, 33);
             this.settingsLastnameTextbox.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label5.Location = new System.Drawing.Point(89, 220);
+            this.label5.Location = new System.Drawing.Point(89, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 8;
@@ -278,17 +278,17 @@
             // settingsFirstnameTextbox
             // 
             this.settingsFirstnameTextbox.Enabled = false;
-            this.settingsFirstnameTextbox.Font = new System.Drawing.Font("Verdana", 12F);
+            this.settingsFirstnameTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
             this.settingsFirstnameTextbox.Location = new System.Drawing.Point(163, 217);
             this.settingsFirstnameTextbox.Name = "settingsFirstnameTextbox";
-            this.settingsFirstnameTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsFirstnameTextbox.Size = new System.Drawing.Size(414, 33);
             this.settingsFirstnameTextbox.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(97, 114);
+            this.label1.Location = new System.Drawing.Point(97, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 18);
             this.label1.TabIndex = 4;
@@ -297,10 +297,10 @@
             // settingsEmailTextbox
             // 
             this.settingsEmailTextbox.Enabled = false;
-            this.settingsEmailTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsEmailTextbox.Location = new System.Drawing.Point(163, 110);
+            this.settingsEmailTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
+            this.settingsEmailTextbox.Location = new System.Drawing.Point(163, 116);
             this.settingsEmailTextbox.Name = "settingsEmailTextbox";
-            this.settingsEmailTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsEmailTextbox.Size = new System.Drawing.Size(414, 33);
             this.settingsEmailTextbox.TabIndex = 3;
             // 
             // label14
@@ -316,10 +316,10 @@
             // settingsUsernameTextbox
             // 
             this.settingsUsernameTextbox.Enabled = false;
-            this.settingsUsernameTextbox.Font = new System.Drawing.Font("Verdana", 12F);
+            this.settingsUsernameTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
             this.settingsUsernameTextbox.Location = new System.Drawing.Point(163, 77);
             this.settingsUsernameTextbox.Name = "settingsUsernameTextbox";
-            this.settingsUsernameTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsUsernameTextbox.Size = new System.Drawing.Size(414, 33);
             this.settingsUsernameTextbox.TabIndex = 0;
             // 
             // mainPanel

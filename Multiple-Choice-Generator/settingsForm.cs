@@ -134,46 +134,52 @@ namespace Multiple_Choice_Generator
 
         private void settingsConfButton_Click(object sender, EventArgs e)
         {
-            if (settingsEmailTextbox.Text.Contains("@"))
+            ConfigForm conf = new ConfigForm("Είστει σίγουρος ότι θέλετε να πραγματοποιήσετε τις αλλαγές;\nΑυτό το βήμα είναι οριστικό.", "Ακύρωση", "Επιβεβαίωση", Color.LimeGreen, "Επεξεργασία Προσωπικών Στοιχείων");
+            
+            if(conf.ShowDialog(this) == DialogResult.OK)
             {
-                if (settingsEmailTextbox.Text.Contains("."))
+                if (settingsEmailTextbox.Text.Contains("@"))
                 {
-                    List<string> listUpdatedUser = new List<string>();
-                    listUpdatedUser.Add(this.user.ElementAt(0));
-                    listUpdatedUser.Add(this.user.ElementAt(1));
-                    listUpdatedUser.Add(settingsLastnameTextbox.Text);
-                    listUpdatedUser.Add(settingsFirstnameTextbox.Text);
-                    listUpdatedUser.Add(settingsEmailTextbox.Text);
-                    if (settingsGenderRadioButton1.Checked == true)
-                        listUpdatedUser.Add("Άντρας");
-                    else
-                        listUpdatedUser.Add("Γυναίκα");
-                    listUpdatedUser.Add(settingsBirthTextBox.Text);
-                    listUpdatedUser.Add(settingsSchoolTextbox.Text);
-                    father.setUser(listUpdatedUser);
-
-                    int i = db.uUser(listUpdatedUser.ElementAt(0), listUpdatedUser.ElementAt(2), listUpdatedUser.ElementAt(3), listUpdatedUser.ElementAt(4), listUpdatedUser.ElementAt(7), listUpdatedUser.ElementAt(5), listUpdatedUser.ElementAt(6));
-                    if (i == 1)
+                    if (settingsEmailTextbox.Text.Contains("."))
                     {
-                        this.settingsEmailTextbox.Enabled = false;
-                        this.settingsFirstnameTextbox.Enabled = false;
-                        this.settingsLastnameTextbox.Enabled = false;
-                        this.settingsGenderRadioButton1.Enabled = false;
-                        this.settingsGenderRadioButton2.Enabled = false;
-                        this.settingsBirthTextBox.Enabled = false;
-                        this.settingsConfButton.Enabled = false;
-                        this.settingsSchoolTextbox.Enabled = false;
-                        this.settingsEditButton.Text = "Επεξεργασία";
-                        MessageBox.Show("Τα στοιχεία σας ενημερώθηκαν με επιτυχία!");
+                        List<string> listUpdatedUser = new List<string>();
+                        listUpdatedUser.Add(this.user.ElementAt(0));
+                        listUpdatedUser.Add(this.user.ElementAt(1));
+                        listUpdatedUser.Add(settingsLastnameTextbox.Text);
+                        listUpdatedUser.Add(settingsFirstnameTextbox.Text);
+                        listUpdatedUser.Add(settingsEmailTextbox.Text);
+                        if (settingsGenderRadioButton1.Checked == true)
+                            listUpdatedUser.Add("Άντρας");
+                        else
+                            listUpdatedUser.Add("Γυναίκα");
+                        listUpdatedUser.Add(settingsBirthTextBox.Text);
+                        listUpdatedUser.Add(settingsSchoolTextbox.Text);
+                        father.setUser(listUpdatedUser);
+
+                        int i = db.uUser(listUpdatedUser.ElementAt(0), listUpdatedUser.ElementAt(2), listUpdatedUser.ElementAt(3), listUpdatedUser.ElementAt(4), listUpdatedUser.ElementAt(7), listUpdatedUser.ElementAt(5), listUpdatedUser.ElementAt(6));
+                        if (i == 1)
+                        {
+                            this.settingsEmailTextbox.Enabled = false;
+                            this.settingsFirstnameTextbox.Enabled = false;
+                            this.settingsLastnameTextbox.Enabled = false;
+                            this.settingsGenderRadioButton1.Enabled = false;
+                            this.settingsGenderRadioButton2.Enabled = false;
+                            this.settingsBirthTextBox.Enabled = false;
+                            this.settingsConfButton.Enabled = false;
+                            this.settingsSchoolTextbox.Enabled = false;
+                            this.settingsEditButton.Text = "Επεξεργασία";
+                            MessageBox.Show("Τα στοιχεία σας ενημερώθηκαν με επιτυχία!");
+                        }
+                        else
+                            MessageBox.Show("Κάτι πήγε στραβά!! :(");
                     }
-                    else
-                        MessageBox.Show("Κάτι πήγε στραβά!! :(");
+                }
+                else
+                {
+                    MessageBox.Show("Παρακαλούμε δώστε ενα έγκυρο email όπως example@gmail.com");
                 }
             }
-            else
-            {
-                MessageBox.Show("Παρακαλούμε δώστε ενα έγκυρο email όπως example@gmail.com");
-            }
+            
             
         }
     }

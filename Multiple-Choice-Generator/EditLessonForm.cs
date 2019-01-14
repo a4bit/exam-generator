@@ -109,12 +109,12 @@ namespace Multiple_Choice_Generator
                     if(!(String.IsNullOrEmpty(newTitle) || String.IsNullOrWhiteSpace(newTitle)))    //if title is empty then don't call database
                     {
                         check = 0;
-                        check = db.uLesson(user, this.descriptionTextbox.Text, this.lessonTextbox.Text, lesson);
+                        check = db.uLesson(user, this.descriptionTextbox.Text, this.lessonTextbox.Text, lesson);                       
                         if (check == 1) //everything was okey
                         {
                             this.lesson = newTitle;
                             this.desc = newDesc;
-                        }
+                        }                        
                     }
                     else
                     {

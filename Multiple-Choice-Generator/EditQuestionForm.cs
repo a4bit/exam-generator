@@ -237,10 +237,29 @@ namespace Multiple_Choice_Generator
                     }
                     else    //everythinkg okey go to database
                     {
+                        int diffLevel;
+                        //take diff
+                        if (this.diff.Equals("Εύκολη"))
+                            diffLevel = 1;
+                        else if (this.diff.Equals("Μέτρια"))
+                            diffLevel = 1;
+                        else
+                            diffLevel = 3;
+
                         //check question rename
-                        if (!this.questionTextbox.Text.Equals(this.question))
+                        check = db.uQuestion(user, lesson, this.unitsComboBox.Text ,unit, this.questionTextbox.Text,  this.question, diffLevel, newAnswers, this.answers);
+                        Console.WriteLine(check);
+                        if(check == 1)
                         {
-                           // check = db.uQuestion(user, lesson, unit, this.questionTextbox.Text,  this.question, this.diff, this.answers);
+                            MessageBox.Show("Η επεξεργασία ερώτησης ήταν επιτυχής");
+                            this.Close();
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            this.errorsLabel.Text = "Κάτι πήγε στραβά στην επεξεργασία, δοκιμάστε ξανά";
+                            this.errorsLabel.Visible = true;
+                            this.errorTittleLabel.Visible = true;
                         }
                     }
                         
