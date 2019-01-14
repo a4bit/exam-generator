@@ -198,7 +198,7 @@
             this.okButton.TabIndex = 25;
             this.okButton.Text = "Επιβεβαίωση";
             this.okButton.UseVisualStyleBackColor = false;
-            this.okButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // deleteLessonButton
             // 
