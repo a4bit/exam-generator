@@ -1703,6 +1703,19 @@ namespace Multiple_Choice_Generator
 
         private void button3_Click(object sender, EventArgs e)
         {
+            WebBrowser myWebBrowser = new WebBrowser();
+            myWebBrowser.DocumentText = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
+                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
+                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
+                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
+                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
+                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
+                                               "</p></div>" +
+                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
+                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
+                                               "</div></div>";
+            MessageBox.Show("Θα εκτυπωθεί το τεστ με όνομα !!");
+            myWebBrowser.ShowPrintPreviewDialog();
             string html = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
                                                "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
                                                "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
@@ -1719,6 +1732,11 @@ namespace Multiple_Choice_Generator
                 pdf.Save(new FileStream("Multiple choice test.pdf", FileMode.Create));
                 Console.WriteLine("mphke");
             }
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
         }
     }
 }
