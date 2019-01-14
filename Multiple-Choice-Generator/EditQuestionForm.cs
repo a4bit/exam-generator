@@ -181,13 +181,13 @@ namespace Multiple_Choice_Generator
                     }
                 }
 
-                if (numberCount - 1 - delCount < 2)
+                if (this.editQuestionsDataGridView.Rows.Count - 1 - delCount < 2)
                     errors[0] = true;
 
                 //check if there is empty answer
                 for(int i=0; i<this.editQuestionsDataGridView.Rows.Count-1; i++)
                 {
-                    String temptxt = (String)this.editQuestionsDataGridView.Rows[i].Cells[0].Value;
+                    String temptxt = this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString();
                     if (String.IsNullOrEmpty(temptxt) || String.IsNullOrWhiteSpace(temptxt))
                     {
                         errors[1] = true;
@@ -209,14 +209,14 @@ namespace Multiple_Choice_Generator
                     }
                 }
 
-                if (errorFlag)
+                if (!errorFlag)
                 {
                     List<string> newAnswers = new List<string>();
 
                     //get answers
-                    for(int i = 0; i<this.editQuestionsDataGridView.Rows.Count - 1; i++)
+                    for(int i = 0; i<this.editQuestionsDataGridView.Rows.Count; i++)
                     {
-                        newAnswers.Add(this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString());
+                            newAnswers.Add(this.editQuestionsDataGridView.Rows[i].Cells[0].Value.ToString());
                     }
 
                     //check if answers are same
@@ -224,14 +224,14 @@ namespace Multiple_Choice_Generator
                     {
                         foreach(String obj2 in newAnswers)
                         {
-                            if (obj.Equals(obj2))
+                            if (obj.Equals(obj2) && !obj.Equals("") && obj != obj2)
                                 errors[3] = true;
                         }
                     }
 
                     if (errors[3])  //there are errors
                     {
-                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε ίδιες ερωτήσεις.";
+                        this.errorsLabel.Text += "Δε μπορείτε να καταχορήσετε ίδιες ερωτήσεις.";
                         this.errorsLabel.Visible = true;
                         this.errorTittleLabel.Visible = true;
                     }
@@ -239,48 +239,72 @@ namespace Multiple_Choice_Generator
                     {
                         int diffLevel;
                         //take diff
-                        if (this.diff.Equals("Εύκολη"))
+                        if (this.diffRadioButton1.Checked)
                             diffLevel = 1;
-                        else if (this.diff.Equals("Μέτρια"))
-                            diffLevel = 1;
+                        else if (this.diffRadioButton2.Checked)
+                            diffLevel = 2;
                         else
                             diffLevel = 3;
 
-                        //check question rename
-                        check = db.uQuestion(user, lesson, this.unitsComboBox.Text ,unit, this.questionTextbox.Text,  this.question, diffLevel, newAnswers, this.answers);
-                        Console.WriteLine(check);
-                        if(check == 1)
+                        //new count of answer
+                        if(newAnswers.Count < this.answers.Count)
                         {
+                            int x = this.answers.Count - newAnswers.Count;
+                            for (int i = 0; i < x; i++)
+                            {
+                                db.dAnswer(this.user, this.lesson, this.unit, this.question, this.answers.ElementAt(0));
+                                this.answers.RemoveAt(0);
+                            }
+                        }else if(newAnswers.Count > this.answers.Count)
+                        {
+                            int x = newAnswers.Count - this.answers.Count;
+                            for (int i = 0; i < x; i++)
+                            {
+                                this.answers.Add("new temp answer" + i);
+                                db.iAnswer(this.user, this.lesson, this.unit, this.question, "new temp answer" + i);
+                            }
+                        }                        
+
+
+                        if (!this.question.Equals(this.questionTextbox.Text))
+                        {
+                            //check question rename
+                            check = db.uQuestion(user, lesson, this.unitsComboBox.Text, this.unit, this.questionTextbox.Text, this.question, diffLevel, newAnswers, this.answers);                            
+                        }
+                        else
+                        {
+                            check = db.uQuestionWithoutName(user, lesson, this.unitsComboBox.Text, this.unit, this.question, diffLevel, newAnswers, this.answers);
+                        }
+
+                        if (check == 1)
+                        {
+                            father.loadQuestions();
                             MessageBox.Show("Η επεξεργασία ερώτησης ήταν επιτυχής");
                             this.Close();
                             this.Dispose();
                         }
                         else
                         {
-                            this.errorsLabel.Text = "Κάτι πήγε στραβά στην επεξεργασία, δοκιμάστε ξανά";
+                            this.errorsLabel.Text += "Κάτι πήγε στραβά στην επεξεργασία ερώτησης, δοκιμάστε ξανά";
                             this.errorsLabel.Visible = true;
                             this.errorTittleLabel.Visible = true;
                         }
+
                     }
                         
                 }
                 else
                 {
                     if (errors[0])
-                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε λιγότερες από 2 ερωτήσεις";
+                        this.errorsLabel.Text += "Δε μπορείτε να καταχορήσετε λιγότερες από 2 ερωτήσεις";
                     if (errors[1])
-                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενή απάντηση";
+                        this.errorsLabel.Text += "Δε μπορείτε να καταχορήσετε κενή απάντηση";
                     if (errors[2])
-                        this.errorsLabel.Text = "Δε μπορείτε να καταχορήσετε κενό τίτλο ερώτησης.";
+                        this.errorsLabel.Text += "Δε μπορείτε να καταχορήσετε κενό τίτλο ερώτησης.";
 
                     this.errorsLabel.Visible = true;
                     this.errorTittleLabel.Visible = true;
                 }
-                
-
-
-
-               
             }
             conf.Dispose();
         }

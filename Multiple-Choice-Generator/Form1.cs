@@ -28,6 +28,7 @@ namespace Multiple_Choice_Generator
         private List<string> lessons = new List<string>();
         private List<string> categories = new List<string>();
         private List<string> questions = new List<string>();
+        private List<string> tests = new List<string>();
 
         //object for Utils
         Utils myutils = new Utils();
@@ -122,6 +123,7 @@ namespace Multiple_Choice_Generator
             this.createManualTestComboBox.Items.Clear();
             this.showQuestionLessonCombobox.Items.Clear();
             this.editQuestionLessonsCombobox.Items.Clear();
+            this.showTestsLessonComboBox.Items.Clear();
             try
             {
                 foreach (String lesson in this.lessons)
@@ -131,6 +133,7 @@ namespace Multiple_Choice_Generator
                     this.createManualTestComboBox.Items.Add(lesson);
                     this.showQuestionLessonCombobox.Items.Add(lesson);
                     this.editQuestionLessonsCombobox.Items.Add(lesson);
+                    this.showTestsLessonComboBox.Items.Add(lesson);
                 }
             }
             catch
@@ -139,6 +142,26 @@ namespace Multiple_Choice_Generator
             }
 
             this.fillLessonDataGridView(this.editLessonsDataGridView, this.lessons);
+        }
+
+        public void fillTestDataGridView(String lesson)
+        {
+            this.tests = db.qTest(user.ElementAt(0), lesson);
+            this.showTestsDataGridView.Rows.Clear();
+
+            //check if tests are not empty or empty
+            if((this.tests != null) && (this.tests.Any()))
+            {
+                for (int i = 0; i < this.tests.Count; i++)
+                {
+                    this.showTestsDataGridView.Rows.Add();
+                    this.showTestsDataGridView.Rows[i].Cells[0].Value = this.tests.ElementAt(i);
+                }
+            }
+                
+           
+
+            
         }
 
 
@@ -751,10 +774,18 @@ namespace Multiple_Choice_Generator
 
             categories = myutils.loadcategories(user.ElementAt(0), combo.Text);
 
-            foreach(String category in categories)
+            try
             {
-                categorieschecklistbox.Items.Add(category);      //add unit in checkbox
+                foreach (String category in categories)
+                {
+                    categorieschecklistbox.Items.Add(category);      //add unit in checkbox
+                }
             }
+            catch
+            {
+                //no categories
+            }
+           
 
             dgv.Rows.Clear(); //remove all rows
 
@@ -1752,5 +1783,19 @@ namespace Multiple_Choice_Generator
         {
 
         }
+
+        private void showTestsLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.fillTestDataGridView(this.showTestsLessonComboBox.Text);
+        }
+
+        //showtests
+        private void testB_Click(object sender, EventArgs e)
+        {
+            this.temp.Visible = false;
+            this.showTestsPanel.Visible = true;
+            this.temp = this.showTestsPanel;
+        }
+
     }
 }

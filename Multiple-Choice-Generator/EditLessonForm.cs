@@ -104,7 +104,7 @@ namespace Multiple_Choice_Generator
                 
 
                 //change title and desc                
-                if (!this.lesson.Equals(newTitle) || !this.desc.Equals(newDesc))
+                if (!this.lesson.Equals(newTitle))
                 {
                     if(!(String.IsNullOrEmpty(newTitle) || String.IsNullOrWhiteSpace(newTitle)))    //if title is empty then don't call database
                     {
@@ -114,11 +114,31 @@ namespace Multiple_Choice_Generator
                         {
                             this.lesson = newTitle;
                             this.desc = newDesc;
-                        }                        
+                        }
+                        else if (check == -5)
+                        {
+                            errorsLabel.Text = "Υπάρχει ήδη μάθημα με αυτόν τον τίτλο.\n";
+                            closeFlag = false;
+                        }
                     }
                     else
                     {
                         errorsLabel.Text = "Δεν μπορείτε να εισάγεται κενό τίτλο μαθήματος!\n";
+                        closeFlag = false;
+                    }
+                }
+                else
+                {
+                    check = 0;
+                    check = db.uLesson(user, this.descriptionTextbox.Text, lesson);
+                    if (check == 1) //everything was okey
+                    {
+                        this.lesson = newTitle;
+                        this.desc = newDesc;
+                    }
+                    else
+                    {
+                        errorsLabel.Text = "Κάτι πήγε στραβά στην επεξεργασία περιγραφής.\n";
                         closeFlag = false;
                     }
                     
@@ -183,17 +203,14 @@ namespace Multiple_Choice_Generator
                             closeFlag = false;
                             errorsLabel.Text += "Δε μπορείτε να αποθηκεύσετε κενό τίτλο ενότητας.\n";
                         }                                                                   
-
-                        
                     }
                 }
-
-
 
                 father.loadLessons();   //load lessons, refresh them
 
                 if (closeFlag)  //all good
                 {
+                    MessageBox.Show("Η επεξεργασία μαθήμητος πραγματοποιήθηκε με επιτυχία.");
                     this.Close();
                     this.Dispose();
                 }

@@ -790,6 +790,29 @@ namespace Multiple_Choice_Generator
                 return 0;
         }
 
+        public int uLesson(string username, string desc, string name)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    string query = "Update lessons set description='" + desc + "' where owner='" + username + "' and name='" + name + "'";
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
         public int uUnit(string username, string lesson, string newname, string oldname)
         {
             if (connection() == true)
@@ -848,7 +871,7 @@ namespace Multiple_Choice_Generator
                     dataReader.Close();
                     if (exist != 0)
                         return -5;
-                    string query = "Update questions set text='" + newname + "' where id=" + id_que;
+                    string query = "Update questions set text='" + newname + "', dif=" + dif + " where id=" + id_que;
                     Console.WriteLine(query);
                     MySqlCommand cmd = new MySqlCommand(query, dbcon);
 
@@ -856,7 +879,7 @@ namespace Multiple_Choice_Generator
 
                     for(int i=0; i < oldanswers.Count; i++)
                     {
-                        query = "Update answers set text='" + newanswers.ElementAt(i) + "', dif=" + dif + " where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
+                        query = "Update answers set text='" + newanswers.ElementAt(i) + "' where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
                         cmd = new MySqlCommand(query, dbcon);
                         cmd.ExecuteNonQuery();
                     }
@@ -903,6 +926,7 @@ namespace Multiple_Choice_Generator
                     for (int i = 0; i < oldanswers.Count; i++)
                     {
                         query = "Update answers set text='" + newanswers.ElementAt(i) + "' where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
+                        Console.WriteLine(query);
                         cmd = new MySqlCommand(query, dbcon);
                         cmd.ExecuteNonQuery();
                     }
@@ -918,7 +942,74 @@ namespace Multiple_Choice_Generator
                 return 0;
         }
 
-        public int uAnswer(string username, string lesson, string unit, string question, string newname, string oldname)
+        public int uQuestionWithoutName(string username, string lesson, string unit, string name, int dif, List<string> newanswers, List<string> oldanswers)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    int id_unit = convertUnit(unit, username, lesson);
+                    int id_que = convertQuestion(name, id_unit, username, lesson);
+                    string query = "Update questions set dif=" + dif + " where id=" + id_que;
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+
+                    for (int i = 0; i < oldanswers.Count; i++)
+                    {
+                        query = "Update answers set text='" + newanswers.ElementAt(i) + "' where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
+                        cmd = new MySqlCommand(query, dbcon);
+                        cmd.ExecuteNonQuery();
+                    }
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+        public int uQuestionWithoutName(string username, string lesson, string newunit, string oldunit, string name, int dif, List<string> newanswers, List<string> oldanswers)
+        {
+            if (connection() == true)
+            {
+                try
+                {
+                    int exist = 0;
+                    int id_unit = convertUnit(newunit, username, lesson);
+                    int id_unitold = convertUnit(oldunit, username, lesson);
+                    int id_que = convertQuestion(name, id_unitold, username, lesson);
+                    
+                    string query = "Update questions set unit_id=" + id_unit + ", dif=" + dif + " where id=" + id_que;
+                    Console.WriteLine(query);
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon);
+
+                    cmd.ExecuteNonQuery();
+
+                    for (int i = 0; i < oldanswers.Count; i++)
+                    {
+                        query = "Update answers set text='" + newanswers.ElementAt(i) + "' where id_q=" + id_que + " and text='" + oldanswers.ElementAt(i) + "'";
+                        cmd = new MySqlCommand(query, dbcon);
+                        cmd.ExecuteNonQuery();
+                    }
+                    return 1;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return 2;
+                }
+            }
+            else
+                return 0;
+        }
+
+            public int uAnswer(string username, string lesson, string unit, string question, string newname, string oldname)
         {
             if (connection() == true)
             {
