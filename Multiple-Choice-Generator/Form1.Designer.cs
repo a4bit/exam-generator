@@ -2193,7 +2193,7 @@ namespace Multiple_Choice_Generator
             // 
             // printDocument
             // 
-            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            
             // 
             // showTestsPanel
             // 
