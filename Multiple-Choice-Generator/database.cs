@@ -827,7 +827,7 @@ namespace Multiple_Choice_Generator
                 return 0;
         }
 
-        public int uQuestion(string username, string lesson, string unit, string newname, string oldname, string dif, List<string> newanswers, List<string> oldanswers)
+        public int uQuestion(string username, string lesson, string unit, string newname, string oldname, int dif, List<string> newanswers, List<string> oldanswers)
         {
             if (connection() == true)
             {
@@ -872,7 +872,7 @@ namespace Multiple_Choice_Generator
                 return 0;
         }
 
-        public int uQuestion(string username, string lesson, string newunit, string oldunit, string newname, string oldname, string dif, List<string> newanswers, List<string> oldanswers)
+        public int uQuestion(string username, string lesson, string newunit, string oldunit, string newname, string oldname, int dif, List<string> newanswers, List<string> oldanswers)
         {
             if (connection() == true)
             {
