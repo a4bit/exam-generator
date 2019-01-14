@@ -1816,15 +1816,23 @@ namespace Multiple_Choice_Generator
                 answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
                 Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
                 html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
-                        "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
-                foreach (string answer in answers)
+                       "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
+                try
                 {
-                    html += "<li>" + answer + "</li>";
-                    Console.WriteLine(answer);
+                    foreach (string answer in answers)
+                    {
+                        html += "<li>" + answer + "</li>";
+                        Console.WriteLine(answer);
+                    }
+                    html += "</ol>" +
+                           "</li>";
+                    answers.Clear();
                 }
-                html += "</ol>" +
-                       "</li>";
-                answers.Clear();
+                catch
+                {
+
+                }
+                
             }
             html += "</ol>" +
                     "</div> ";
@@ -1868,14 +1876,22 @@ namespace Multiple_Choice_Generator
                 Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
                 html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
                         "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
-                foreach (string answer in answers)
+                try
                 {
-                    html += "<li>" + answer + "</li>";
-                    Console.WriteLine(answer);
+                    foreach (string answer in answers)
+                    {
+                        html += "<li>" + answer + "</li>";
+                        Console.WriteLine(answer);
+                    }
+                    html += "</ol>" +
+                           "</li>";
+                    answers.Clear();
                 }
-                html += "</ol>" +
-                       "</li>";
-                answers.Clear();
+                catch
+                {
+
+                }
+                
             }
             html += "</ol>" +
                     "</div> ";
