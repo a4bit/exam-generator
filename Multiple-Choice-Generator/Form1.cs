@@ -1797,6 +1797,94 @@ namespace Multiple_Choice_Generator
             this.temp = this.showTestsPanel;
         }
 
+        private void test_pdf(string lesson, string name)
+        {
+            //Το foreach γινεται για την προβολή των απαντησεων της ερωτησης. Η ερωστηση ειναι το questions[0].ElementAt(i) (για την i ερωτηση) και οι απαντησεις της μεσα στο foreach η μεταβλητη answer ειναι η καθε απαντηση της
+            List<string>[] questions = new List<string>[3];
+            List<string> answers = new List<string>();
+            string html = "<div style =\"text-align: left; display: inline-block; font-family: Arial, serif; font-weight: bold;\">" +
+                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"C:\\Users\\Τρίχας\\Desktop\\gitafter\\exam-generator\\Multiple-Choice-Generator\\Resources\\logo.png\" alt=\"logo\"></div>" +
+                                        "<h3>" + user.ElementAt(7) + "</h3>" +
+                                        "Μάθημα: " + lesson + "<br><br>Καθηγητής: " + user.ElementAt(2) + " " + user.ElementAt(3) + "<br><br>Ονοματεπώνυμο:" +
+                                        "</div>" +
+                                        "<div style=\"font-family: Arial, serif; display:block\">" +
+                                        "<ol>";
+            questions = db.qTest(user.ElementAt(0), lesson, name);
+            for (int i = 0; i < questions[0].Count; i++)
+            {
+                html += "<li style=\"margin-top: 20px;\">";
+                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
+                Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
+                html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
+                        "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
+                foreach (string answer in answers)
+                {
+                    html += "<li>" + answer + "</li>";
+                    Console.WriteLine(answer);
+                }
+                html += "</ol>" +
+                       "</li>";
+                answers.Clear();
+            }
+            html += "</ol>" +
+                    "</div> ";
+            WebBrowser myWebBrowser = new WebBrowser();
+            myWebBrowser.DocumentText = html;
+            Console.WriteLine(html);
+            MessageBox.Show("Θέλετε να αποθηκεύσετε το τεστ με όνομα " + name + ";");
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.Filter = "PDF|*.pdf";
+                savefile.Title = "Αποθήκευση διαγωνίσματος " + name + " σε pdf αρχείο";
+                savefile.FileName = name + ".pdf";
+                try
+                { savefile.ShowDialog(); }
+                catch { }
+                pdf.Save(new FileStream(savefile.FileName, FileMode.Create));
+                Console.WriteLine("mphke");
+            }
+        }
+
+        private void test_print(string lesson, string name)
+        {
+            //Το foreach γινεται για την προβολή των απαντησεων της ερωτησης. Η ερωστηση ειναι το questions[0].ElementAt(i) (για την i ερωτηση) και οι απαντησεις της μεσα στο foreach η μεταβλητη answer ειναι η καθε απαντηση της
+            List<string>[] questions = new List<string>[3];
+            List<string> answers = new List<string>();
+            string html = "<div style =\"text-align: left; display: inline-block; font-family: Arial, serif; font-weight: bold;\">" +
+                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"C:\\Users\\Τρίχας\\Desktop\\gitafter\\exam-generator\\Multiple-Choice-Generator\\Resources\\logo.png\" alt=\"logo\"></div>" +
+                                        "<h3>" + user.ElementAt(7) + "</h3>" +
+                                        "Μάθημα: " + lesson + "<br><br>Καθηγητής: " + user.ElementAt(2) + " " + user.ElementAt(3) + "<br><br>Ονοματεπώνυμο:" +
+                                        "</div>" +
+                                        "<div style=\"font-family: Arial, serif; display:block\">" +
+                                        "<ol>";
+            questions = db.qTest(user.ElementAt(0), lesson, name);
+            for (int i = 0; i < questions[0].Count; i++)
+            {
+                html += "<li style=\"margin-top: 20px;\">";
+                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
+                Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
+                html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
+                        "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
+                foreach (string answer in answers)
+                {
+                    html += "<li>" + answer + "</li>";
+                    Console.WriteLine(answer);
+                }
+                html += "</ol>" +
+                       "</li>";
+                answers.Clear();
+            }
+            html += "</ol>" +
+                    "</div> ";
+            WebBrowser myWebBrowser = new WebBrowser();
+            myWebBrowser.DocumentText = html;
+            Console.WriteLine(html);
+            MessageBox.Show("Θέλετε να εκτυπώσετε το τεστ με όνομα " + name + ";");
+            myWebBrowser.ShowPrintPreviewDialog();
+        }
         private void showTestsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //pdf
