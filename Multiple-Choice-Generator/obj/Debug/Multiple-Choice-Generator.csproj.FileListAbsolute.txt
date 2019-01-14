@@ -281,10 +281,6 @@ C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\Google.Protobuf.dll
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\HtmlRenderer.dll
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\HtmlRenderer.PdfSharp.dll
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\IronPdf.dll
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\itextsharp.dll
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\itextsharp.pdfa.dll
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\itextsharp.xtra.dll
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\MySql.Data.dll
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\NetTopologySuite.dll
@@ -297,8 +293,6 @@ C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\GeoAPI.xml
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\HtmlRenderer.pdb
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\HtmlRenderer.PdfSharp.pdb
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\IronPdf.xml
-C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\itextsharp.xml
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\MySql.Data.xml
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\NetTopologySuite.xml
 C:\Users\Τρίχας\Desktop\gitafter\exam-generator\Multiple-Choice-Generator\bin\Debug\PdfSharp.xml

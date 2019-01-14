@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.loginSignupLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -48,7 +49,6 @@
             this.findusLabel = new System.Windows.Forms.Label();
             this.titleL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,6 +78,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 418);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(137, 355);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ξέχασα τον κωδικό μου";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -175,6 +187,7 @@
             this.loginPasswordTextbox.PasswordChar = '*';
             this.loginPasswordTextbox.Size = new System.Drawing.Size(223, 24);
             this.loginPasswordTextbox.TabIndex = 4;
+            this.loginPasswordTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTextbox_KeyPress);
             // 
             // loginUsernameSeperator
             // 
@@ -218,6 +231,7 @@
             this.loginUsernameTextbox.Name = "loginUsernameTextbox";
             this.loginUsernameTextbox.Size = new System.Drawing.Size(251, 24);
             this.loginUsernameTextbox.TabIndex = 0;
+            this.loginUsernameTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginUsernameTextbox_KeyPress);
             // 
             // panel2
             // 
@@ -304,18 +318,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(137, 355);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Ξέχασα τον κωδικό μου";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginForm
             // 

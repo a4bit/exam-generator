@@ -21,32 +21,7 @@ namespace Multiple_Choice_Generator
 
         private void loginConfigButton_Click(object sender, EventArgs e)
         {
-            errorLabel.Text = "";   //delete errors in label
-            String username = this.loginUsernameTextbox.Text;
-            String password = this.loginPasswordTextbox.Text;
-
-            if(String.IsNullOrEmpty(username) || String.IsNullOrWhiteSpace(username) || String.IsNullOrEmpty(password) || String.IsNullOrWhiteSpace(password))
-            {
-                //error in login cause blank fields
-                errorLabel.Text = "Συμπληρώστε τα απαιτούμενα πεδία και ξαναπροσπαθήστε.";
-            }
-            else
-            {
-                //send to database
-                database db = new database();
-                List<string> list = new List<string>();
-                list = db.login(username, password);
-                if (list == null)
-                    errorLabel.Text = "Λάθος κωδικός ή όνομα χρήστη. Προσπαθήστε ξανά.";
-                else
-                {
-                    Form1 main = new Form1(list);
-                    main.Show();
-                    this.Hide();
-                }
-            }
-
-           
+            loginFunction();           
         }
 
         //CODE LINKLABEL FOR NAVIGATE TO SIGNUP URL
@@ -179,6 +154,50 @@ namespace Multiple_Choice_Generator
             }
             else
                 MessageBox.Show("Δεν δώσατε όνομα χρήστη στο πεδίο!");
+        }
+
+        private void loginUsernameTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                loginFunction();
+            }
+        }
+
+        private void loginFunction()
+        {
+            errorLabel.Text = "";   //delete errors in label
+            String username = this.loginUsernameTextbox.Text;
+            String password = this.loginPasswordTextbox.Text;
+
+            if (String.IsNullOrEmpty(username) || String.IsNullOrWhiteSpace(username) || String.IsNullOrEmpty(password) || String.IsNullOrWhiteSpace(password))
+            {
+                //error in login cause blank fields
+                errorLabel.Text = "Συμπληρώστε τα απαιτούμενα πεδία και ξαναπροσπαθήστε.";
+            }
+            else
+            {
+                //send to database
+                database db = new database();
+                List<string> list = new List<string>();
+                list = db.login(username, password);
+                if (list == null)
+                    errorLabel.Text = "Λάθος κωδικός ή όνομα χρήστη. Προσπαθήστε ξανά.";
+                else
+                {
+                    Form1 main = new Form1(list);
+                    main.Show();
+                    this.Hide();
+                }
+            }
+        }
+
+        private void loginPasswordTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loginFunction();
+            }
         }
     }
 }
