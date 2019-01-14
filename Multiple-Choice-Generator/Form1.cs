@@ -1717,40 +1717,52 @@ namespace Multiple_Choice_Generator
 
         private void button3_Click(object sender, EventArgs e)
         {
+            print_pdf("Δίκτυα", "test2");
+        }
+        
+        private void print_pdf(string lesson, string name)
+        {
+            //Το foreach γινεται για την προβολή των απαντησεων της ερωτησης. Η ερωστηση ειναι το questions[0].ElementAt(i) (για την i ερωτηση) και οι απαντησεις της μεσα στο foreach η μεταβλητη answer ειναι η καθε απαντηση της
+            List<string>[] questions = new List<string>[3];
+            List<string> answers = new List<string>();
+            string html = "<div style =\"text-align: left; display: inline-block; font-family: Arial, serif; font-weight: bold;\">" +
+                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"C:\\Users\\Τρίχας\\Desktop\\gitafter\\exam-generator\\Multiple-Choice-Generator\\Resources\\logo.png\" alt=\"logo\"></div>" +
+                                        "<h3>" + user.ElementAt(7) + "</h3>" +
+                                        "Μάθημα: " + lesson + "<br><br>Καθηγητής: " + user.ElementAt(2) + " " + user.ElementAt(3) + "<br><br>Ονοματεπώνυμο:" +
+                                        "</div>"+
+                                        "<div style=\"font-family: Arial, serif; display:block\">" +
+                                        "<ol>";
+            questions = db.qTest(user.ElementAt(0), lesson, name);
+            for (int i = 0; i < questions[0].Count; i++)
+            {
+                html += "<li style=\"margin-top: 20px;\">";
+                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
+                Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
+                html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
+                        "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
+                foreach (string answer in answers)
+                {
+                    html += "<li>" + answer + "</li>";
+                    Console.WriteLine(answer);
+                }
+                html +="</ol>" +
+                       "</li>";
+                answers.Clear();
+            }
+            html += "</ol>" +
+                    "</div> ";
             WebBrowser myWebBrowser = new WebBrowser();
-            myWebBrowser.DocumentText = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
-                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
-                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
-                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
-                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
-                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
-                                               "</p></div>" +
-                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
-                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
-                                               "</div></div>";
+            myWebBrowser.DocumentText = html;
+            Console.WriteLine(html);
             MessageBox.Show("Θα εκτυπωθεί το τεστ με όνομα !!");
             myWebBrowser.ShowPrintPreviewDialog();
-            string html = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
-                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
-                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
-                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
-                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
-                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
-                                               "</p></div>" +
-                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
-                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
-                                               "</div></div>";
+
             using (MemoryStream ms = new MemoryStream())
             {
                 var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
-                pdf.Save(new FileStream("Multiple choice test.pdf", FileMode.Create));
+                pdf.Save(new FileStream("Multiple choice test5.pdf", FileMode.Create));
                 Console.WriteLine("mphke");
             }
-        }
-
-        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-
         }
     }
 }
