@@ -19,14 +19,19 @@ namespace Multiple_Choice_Generator
              errors[0] -> question text is empty             
              errors[1] -> lesson text is empty
              errors[2] -> one or more answers are empty, null or only whitespace
+             errrors[3] -> category is empty
              */
-            bool[] errors = {false, false, false};                                       
+            bool[] errors = {false, false, false, false};                                       
 
             if (String.IsNullOrEmpty(question) || String.IsNullOrWhiteSpace(question))  //need upgrading
                 errors[0] = true;
+
             if(lesson.Equals(""))
                 errors[1] = true;
-            
+
+            if (String.IsNullOrEmpty(category) || String.IsNullOrWhiteSpace(category))
+                errors[3] = true;
+
             for(int i=0; i<answers.Length; i++)
             {
                 if (String.IsNullOrEmpty(answers[i]) || string.IsNullOrWhiteSpace(answers[i]))
@@ -122,8 +127,7 @@ namespace Multiple_Choice_Generator
                     }
                     catch
                     {
-                        questions.Clear();
-                        questions.Add("Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα.");
+                        //δεν υπήρχαν αρκετες ερωτήσεις
                     }
                     
                 }              

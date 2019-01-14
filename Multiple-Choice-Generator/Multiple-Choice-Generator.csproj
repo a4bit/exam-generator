@@ -52,17 +52,23 @@
       <HintPath>..\packages\MapSuiteDependency-GeoAPI.10.4.0\lib\net45\GeoAPI.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
-    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\itextsharp.dll</HintPath>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp.xtra, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    <Reference Include="IronPdf">
+      <HintPath>..\..\..\IronPdf\bin\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Isharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Isharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\Isharp\itextsharp.xtra.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-MicrosoftSqlServerTypes.10.4.0\lib\net45\Microsoft.SqlServer.Types.dll</HintPath>
@@ -70,6 +76,12 @@
     <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.4.0\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
     <Reference Include="PowerCollections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2573bf8a1bdddcd5, processorArchitecture=MSIL">
       <HintPath>..\packages\MapSuiteDependency-NetTopologySuite.10.4.0\lib\net45\PowerCollections.dll</HintPath>
@@ -114,6 +126,18 @@
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="database.cs" />
+    <Compile Include="EditLessonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditLessonForm.Designer.cs">
+      <DependentUpon>EditLessonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQuestionForm.Designer.cs">
+      <DependentUpon>EditQuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +178,12 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditLessonForm.resx">
+      <DependentUpon>EditLessonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditQuestionForm.resx">
+      <DependentUpon>EditQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -222,6 +252,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
@@ -261,13 +292,16 @@
     <None Include="Resources\exe_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="itextsharp.xtra.dll" />
+    <None Include="Resources\look.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="itextsharp.pdfa.dll" />
+    <None Include="Resources\facebook.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="itextsharp.dll" />
+    <None Include="Resources\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\ThinkGeo.MapSuite.10.4.0\build\net45\ThinkGeo.MapSuite.targets" Condition="Exists('..\packages\ThinkGeo.MapSuite.10.4.0\build\net45\ThinkGeo.MapSuite.targets')" />

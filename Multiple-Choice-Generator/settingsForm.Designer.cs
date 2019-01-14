@@ -32,34 +32,34 @@
             this.systemButton = new System.Windows.Forms.Button();
             this.personalButton = new System.Windows.Forms.Button();
             this.personalPanel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.settingsSchoolTextbox = new System.Windows.Forms.TextBox();
             this.settingsConfButton = new System.Windows.Forms.Button();
+            this.settingsEditButton = new System.Windows.Forms.Button();
             this.settingsGenderRadioButton2 = new System.Windows.Forms.RadioButton();
             this.settingsGenderRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.settingsBirthTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.settingsLastnameTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.settingsFirstnameTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.settingsPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.settingsEmailTextbox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.settingsUsernameTextbox = new System.Windows.Forms.TextBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.systemPanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.OSLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.changeThemeButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.OSLabel = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.settingsEditButton = new System.Windows.Forms.Button();
             this.leftPanel.SuspendLayout();
             this.personalPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -112,19 +112,19 @@
             this.personalPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.personalPanel.Controls.Add(this.label12);
+            this.personalPanel.Controls.Add(this.settingsSchoolTextbox);
             this.personalPanel.Controls.Add(this.settingsConfButton);
             this.personalPanel.Controls.Add(this.settingsEditButton);
             this.personalPanel.Controls.Add(this.settingsGenderRadioButton2);
             this.personalPanel.Controls.Add(this.settingsGenderRadioButton1);
-            this.personalPanel.Controls.Add(this.maskedTextBox);
+            this.personalPanel.Controls.Add(this.settingsBirthTextBox);
             this.personalPanel.Controls.Add(this.label6);
             this.personalPanel.Controls.Add(this.label3);
             this.personalPanel.Controls.Add(this.label4);
             this.personalPanel.Controls.Add(this.settingsLastnameTextbox);
             this.personalPanel.Controls.Add(this.label5);
             this.personalPanel.Controls.Add(this.settingsFirstnameTextbox);
-            this.personalPanel.Controls.Add(this.label2);
-            this.personalPanel.Controls.Add(this.settingsPasswordTextbox);
             this.personalPanel.Controls.Add(this.label1);
             this.personalPanel.Controls.Add(this.settingsEmailTextbox);
             this.personalPanel.Controls.Add(this.label14);
@@ -134,10 +134,29 @@
             this.personalPanel.Size = new System.Drawing.Size(601, 458);
             this.personalPanel.TabIndex = 15;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label12.Location = new System.Drawing.Point(23, 286);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(134, 18);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Σχολή-Σχολέιο:";
+            // 
+            // settingsSchoolTextbox
+            // 
+            this.settingsSchoolTextbox.Enabled = false;
+            this.settingsSchoolTextbox.Font = new System.Drawing.Font("Verdana", 12F);
+            this.settingsSchoolTextbox.Location = new System.Drawing.Point(163, 283);
+            this.settingsSchoolTextbox.Name = "settingsSchoolTextbox";
+            this.settingsSchoolTextbox.Size = new System.Drawing.Size(414, 27);
+            this.settingsSchoolTextbox.TabIndex = 19;
+            // 
             // settingsConfButton
             // 
             this.settingsConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsConfButton.BackColor = System.Drawing.Color.GreenYellow;
+            this.settingsConfButton.BackColor = System.Drawing.Color.LimeGreen;
             this.settingsConfButton.Enabled = false;
             this.settingsConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
@@ -149,13 +168,32 @@
             this.settingsConfButton.TabIndex = 18;
             this.settingsConfButton.Text = "Εφαρμογή";
             this.settingsConfButton.UseVisualStyleBackColor = false;
+            this.settingsConfButton.Click += new System.EventHandler(this.settingsConfButton_Click);
+            // 
+            // settingsEditButton
+            // 
+            this.settingsEditButton.BackColor = System.Drawing.Color.Gold;
+            this.settingsEditButton.FlatAppearance.BorderSize = 0;
+            this.settingsEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsEditButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.settingsEditButton.ForeColor = System.Drawing.Color.White;
+            this.settingsEditButton.Image = global::Multiple_Choice_Generator.Properties.Resources.edit1;
+            this.settingsEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsEditButton.Location = new System.Drawing.Point(434, 20);
+            this.settingsEditButton.Name = "settingsEditButton";
+            this.settingsEditButton.Size = new System.Drawing.Size(143, 40);
+            this.settingsEditButton.TabIndex = 17;
+            this.settingsEditButton.Text = "Επεξεργασία";
+            this.settingsEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.settingsEditButton.UseVisualStyleBackColor = false;
+            this.settingsEditButton.Click += new System.EventHandler(this.button5_Click);
             // 
             // settingsGenderRadioButton2
             // 
             this.settingsGenderRadioButton2.AutoSize = true;
             this.settingsGenderRadioButton2.Enabled = false;
             this.settingsGenderRadioButton2.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsGenderRadioButton2.Location = new System.Drawing.Point(264, 313);
+            this.settingsGenderRadioButton2.Location = new System.Drawing.Point(265, 322);
             this.settingsGenderRadioButton2.Name = "settingsGenderRadioButton2";
             this.settingsGenderRadioButton2.Size = new System.Drawing.Size(88, 22);
             this.settingsGenderRadioButton2.TabIndex = 16;
@@ -168,7 +206,7 @@
             this.settingsGenderRadioButton1.AutoSize = true;
             this.settingsGenderRadioButton1.Enabled = false;
             this.settingsGenderRadioButton1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsGenderRadioButton1.Location = new System.Drawing.Point(164, 311);
+            this.settingsGenderRadioButton1.Location = new System.Drawing.Point(163, 322);
             this.settingsGenderRadioButton1.Name = "settingsGenderRadioButton1";
             this.settingsGenderRadioButton1.Size = new System.Drawing.Size(81, 22);
             this.settingsGenderRadioButton1.TabIndex = 15;
@@ -176,22 +214,23 @@
             this.settingsGenderRadioButton1.Text = "Άντρας";
             this.settingsGenderRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox
+            // settingsBirthTextBox
             // 
-            this.maskedTextBox.Enabled = false;
-            this.maskedTextBox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.maskedTextBox.Location = new System.Drawing.Point(164, 274);
-            this.maskedTextBox.Mask = "00/00/0000";
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(100, 27);
-            this.maskedTextBox.TabIndex = 14;
-            this.maskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.settingsBirthTextBox.Enabled = false;
+            this.settingsBirthTextBox.Font = new System.Drawing.Font("Verdana", 12F);
+            this.settingsBirthTextBox.Location = new System.Drawing.Point(163, 250);
+            this.settingsBirthTextBox.Mask = "00/00/0000";
+            this.settingsBirthTextBox.Name = "settingsBirthTextBox";
+            this.settingsBirthTextBox.Size = new System.Drawing.Size(100, 27);
+            this.settingsBirthTextBox.TabIndex = 14;
+            this.settingsBirthTextBox.Text = "21081997";
+            this.settingsBirthTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label6.Location = new System.Drawing.Point(100, 313);
+            this.label6.Location = new System.Drawing.Point(100, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 18);
             this.label6.TabIndex = 13;
@@ -201,7 +240,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label3.Location = new System.Drawing.Point(34, 277);
+            this.label3.Location = new System.Drawing.Point(34, 253);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 18);
             this.label3.TabIndex = 12;
@@ -211,7 +250,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label4.Location = new System.Drawing.Point(81, 245);
+            this.label4.Location = new System.Drawing.Point(81, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 18);
             this.label4.TabIndex = 10;
@@ -221,7 +260,7 @@
             // 
             this.settingsLastnameTextbox.Enabled = false;
             this.settingsLastnameTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsLastnameTextbox.Location = new System.Drawing.Point(163, 241);
+            this.settingsLastnameTextbox.Location = new System.Drawing.Point(163, 184);
             this.settingsLastnameTextbox.Name = "settingsLastnameTextbox";
             this.settingsLastnameTextbox.Size = new System.Drawing.Size(414, 27);
             this.settingsLastnameTextbox.TabIndex = 9;
@@ -230,7 +269,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label5.Location = new System.Drawing.Point(89, 211);
+            this.label5.Location = new System.Drawing.Point(89, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 8;
@@ -240,29 +279,10 @@
             // 
             this.settingsFirstnameTextbox.Enabled = false;
             this.settingsFirstnameTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsFirstnameTextbox.Location = new System.Drawing.Point(163, 208);
+            this.settingsFirstnameTextbox.Location = new System.Drawing.Point(163, 217);
             this.settingsFirstnameTextbox.Name = "settingsFirstnameTextbox";
             this.settingsFirstnameTextbox.Size = new System.Drawing.Size(414, 27);
             this.settingsFirstnameTextbox.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.Location = new System.Drawing.Point(76, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 18);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Κωδικός:";
-            // 
-            // settingsPasswordTextbox
-            // 
-            this.settingsPasswordTextbox.Enabled = false;
-            this.settingsPasswordTextbox.Font = new System.Drawing.Font("Verdana", 12F);
-            this.settingsPasswordTextbox.Location = new System.Drawing.Point(163, 143);
-            this.settingsPasswordTextbox.Name = "settingsPasswordTextbox";
-            this.settingsPasswordTextbox.Size = new System.Drawing.Size(414, 27);
-            this.settingsPasswordTextbox.TabIndex = 5;
             // 
             // label1
             // 
@@ -307,8 +327,8 @@
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.systemPanel);
             this.mainPanel.Controls.Add(this.personalPanel);
+            this.mainPanel.Controls.Add(this.systemPanel);
             this.mainPanel.Location = new System.Drawing.Point(196, 1);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(601, 458);
@@ -333,6 +353,77 @@
             this.systemPanel.Size = new System.Drawing.Size(604, 458);
             this.systemPanel.TabIndex = 1;
             this.systemPanel.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label11.Location = new System.Drawing.Point(33, 277);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(145, 23);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Ημερομηνία:";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic);
+            this.dateLabel.Location = new System.Drawing.Point(34, 311);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(15, 18);
+            this.dateLabel.TabIndex = 20;
+            this.dateLabel.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label10.Location = new System.Drawing.Point(34, 164);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 18);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "1.0.0.0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label9.Location = new System.Drawing.Point(33, 132);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(228, 23);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Έκδοση Εφαρμογής:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // OSLabel
+            // 
+            this.OSLabel.AutoSize = true;
+            this.OSLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.OSLabel.Location = new System.Drawing.Point(34, 241);
+            this.OSLabel.Name = "OSLabel";
+            this.OSLabel.Size = new System.Drawing.Size(15, 18);
+            this.OSLabel.TabIndex = 17;
+            this.OSLabel.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label8.Location = new System.Drawing.Point(33, 206);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(245, 23);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Λειτουργικό Σύστημα:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(33, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 23);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Θέμα:";
             // 
             // changeThemeButton
             // 
@@ -360,95 +451,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 26);
             this.comboBox1.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(33, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 23);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Θέμα:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label8.Location = new System.Drawing.Point(33, 206);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(245, 23);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Λειτουργικό Σύστημα:";
-            // 
-            // OSLabel
-            // 
-            this.OSLabel.AutoSize = true;
-            this.OSLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.OSLabel.Location = new System.Drawing.Point(34, 241);
-            this.OSLabel.Name = "OSLabel";
-            this.OSLabel.Size = new System.Drawing.Size(15, 18);
-            this.OSLabel.TabIndex = 17;
-            this.OSLabel.Text = "-";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label9.Location = new System.Drawing.Point(33, 132);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(228, 23);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Έκδοση Εφαρμογής:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label10.Location = new System.Drawing.Point(34, 164);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 18);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "1.0.0.0";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic);
-            this.dateLabel.Location = new System.Drawing.Point(34, 311);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(15, 18);
-            this.dateLabel.TabIndex = 20;
-            this.dateLabel.Text = "-";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label11.Location = new System.Drawing.Point(33, 277);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 23);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Ημερομηνία:";
-            // 
-            // settingsEditButton
-            // 
-            this.settingsEditButton.BackColor = System.Drawing.Color.Orange;
-            this.settingsEditButton.FlatAppearance.BorderSize = 0;
-            this.settingsEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsEditButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.settingsEditButton.ForeColor = System.Drawing.Color.White;
-            this.settingsEditButton.Image = global::Multiple_Choice_Generator.Properties.Resources.edit1;
-            this.settingsEditButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsEditButton.Location = new System.Drawing.Point(434, 20);
-            this.settingsEditButton.Name = "settingsEditButton";
-            this.settingsEditButton.Size = new System.Drawing.Size(143, 40);
-            this.settingsEditButton.TabIndex = 17;
-            this.settingsEditButton.Text = "Επεξεργασία";
-            this.settingsEditButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.settingsEditButton.UseVisualStyleBackColor = false;
-            this.settingsEditButton.Click += new System.EventHandler(this.button5_Click);
             // 
             // settingsForm
             // 
@@ -488,8 +490,6 @@
         private System.Windows.Forms.TextBox settingsLastnameTextbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox settingsFirstnameTextbox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox settingsPasswordTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox settingsEmailTextbox;
         private System.Windows.Forms.Label label6;
@@ -497,7 +497,7 @@
         private System.Windows.Forms.RadioButton settingsGenderRadioButton2;
         private System.Windows.Forms.RadioButton settingsGenderRadioButton1;
         private System.Windows.Forms.Button settingsConfButton;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox;
+        private System.Windows.Forms.MaskedTextBox settingsBirthTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label OSLabel;
@@ -506,5 +506,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox settingsSchoolTextbox;
     }
 }

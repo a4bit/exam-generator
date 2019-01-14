@@ -14,17 +14,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Data;
+using IronPdf;
 using System.IO;
+using iTextSharp.text.html.simpleparser;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Rectangle = System.Drawing.Rectangle;
 
 namespace Multiple_Choice_Generator
 {
-   
     public partial class Form1 : Form
     {
-        
         database db = new database();
 
         //lists from database
@@ -41,6 +41,13 @@ namespace Multiple_Choice_Generator
         {
             InitializeComponent();
             user = a;
+            this.DoubleBuffered = true; //fix gradiend resize problem
+            temp = panel1;
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
             this.DoubleBuffered = true; //fix gradiend resize problem
             temp = panel1;
         }
@@ -84,22 +91,32 @@ namespace Multiple_Choice_Generator
             //leftmenu news bar
             this.newsLabel.Text = newsArr[0];
             this.newsTimer.Start();
-
             
+            
+            this.loadLessons(); //call loadLessons            
 
-            //call loadLessons
-            this.loadLessons();
 
             //declare teamViewQuestion array of list
-            tempViewQuestions[0] = new List<string>();
-            tempViewQuestions[1] = new List<string>();
-            tempViewQuestions[2] = new List<string>();
-            tempViewQuestions[3] = new List<string>();
+            this.tempViewQuestions[0] = new List<string>();
+            this.tempViewQuestions[1] = new List<string>();
+            this.tempViewQuestions[2] = new List<string>();
+            this.tempViewQuestions[3] = new List<string>();
+
+            //declare teamViewQuestion array of list
+            this.tempViewQuestionsEQ[0] = new List<string>();
+            this.tempViewQuestionsEQ[1] = new List<string>();
+            this.tempViewQuestionsEQ[2] = new List<string>();
+            this.tempViewQuestionsEQ[3] = new List<string>();
 
         }
 
+        public void setUser(List<string> listUser)
+        {
+            this.user = listUser;
+        }
+
         //LOAD LESSONS FROM DATABASE AND FILL COMBOBOXES
-        private void loadLessons()
+        public void loadLessons()
         {
             //load lessons            
             this.lessons = myutils.loadlessons(user.ElementAt(0));
@@ -108,6 +125,7 @@ namespace Multiple_Choice_Generator
             this.createQuestionLessonCombobox.Items.Clear();
             this.createManualTestComboBox.Items.Clear();
             this.showQuestionLessonCombobox.Items.Clear();
+            this.editQuestionLessonsCombobox.Items.Clear();
             try
             {
                 foreach (String lesson in this.lessons)
@@ -116,13 +134,15 @@ namespace Multiple_Choice_Generator
                     this.createQuestionLessonCombobox.Items.Add(lesson);
                     this.createManualTestComboBox.Items.Add(lesson);
                     this.showQuestionLessonCombobox.Items.Add(lesson);
+                    this.editQuestionLessonsCombobox.Items.Add(lesson);
                 }
             }
             catch
             {
                 Console.Write("No lessons");
             }
-            
+
+            this.fillLessonDataGridView(this.editLessonsDataGridView, this.lessons);
         }
 
 
@@ -378,7 +398,7 @@ namespace Multiple_Choice_Generator
             }
             else
             {
-                sett = new settingsForm(this);
+                sett = new settingsForm(this, user);
                 sett.Show();
             }
         }
@@ -444,12 +464,19 @@ namespace Multiple_Choice_Generator
         //call editLessonPanel and close submenu
         private void editLessonL_Click(object sender, EventArgs e)
         {
+            this.temp.Visible = false;
+            this.editLessonsPanel.Visible = true;            
+            temp = this.editLessonsPanel;
+
             timer2.Start(); //close editSubMenuP
         }
 
         //call editQuestionPanel and close submenu
         private void editQuestionL_Click(object sender, EventArgs e)
         {
+            this.temp.Visible = false;
+            this.editQuestionPanel.Visible = true;
+            temp = this.editQuestionPanel;
             timer2.Start(); //close editSubMenuP
         }
 
@@ -503,6 +530,12 @@ namespace Multiple_Choice_Generator
             this.tempViewQuestions[1].Clear();
             this.tempViewQuestions[2].Clear();
             this.tempViewQuestions[3].Clear();
+
+            //clear tempViewQuestions
+            this.tempViewQuestionsEQ[0].Clear();
+            this.tempViewQuestionsEQ[1].Clear();
+            this.tempViewQuestionsEQ[2].Clear();
+            this.tempViewQuestionsEQ[3].Clear();
 
             this.showQuestionsSearchTextbox.Text = ""; //delete search box text
 
@@ -593,7 +626,7 @@ namespace Multiple_Choice_Generator
         {
             try
             {
-                this.showQuestionDataGridView.Rows.Add();
+                dgv.Rows.Add();
                 dgv.Rows[count].Cells[0].Value = list[0].ElementAt(i);
                 dgv.Rows[count].Cells[1].Value = list[1].ElementAt(i);
                 dgv.Rows[count].Cells[2].Value = list[2].ElementAt(i);
@@ -610,13 +643,29 @@ namespace Multiple_Choice_Generator
                         break;
                 }
 
-                if (!list.SequenceEqual(this.tempViewQuestions))
+                if (dgv.Name.Equals(this.showQuestionDataGridView.Name))
                 {
-                    this.tempViewQuestions[0].Add(this.viewQuestions[0].ElementAt(i));
-                    this.tempViewQuestions[1].Add(this.viewQuestions[1].ElementAt(i));
-                    this.tempViewQuestions[2].Add(this.viewQuestions[2].ElementAt(i));
-                    this.tempViewQuestions[3].Add(this.viewQuestions[3].ElementAt(i));
+                    if (!list.SequenceEqual(this.tempViewQuestions))
+                    {
+                        this.tempViewQuestions[0].Add(this.viewQuestions[0].ElementAt(i));
+                        this.tempViewQuestions[1].Add(this.viewQuestions[1].ElementAt(i));
+                        this.tempViewQuestions[2].Add(this.viewQuestions[2].ElementAt(i));
+                        this.tempViewQuestions[3].Add(this.viewQuestions[3].ElementAt(i));
+                    }
                 }
+                else if (dgv.Name.Equals(this.editQuestionGridView.Name))
+                {
+                    Console.WriteLine(dgv.Name.Equals(this.editQuestionGridViewPanel.Name));
+                    if (!list.SequenceEqual(this.tempViewQuestionsEQ))
+                    {
+                        this.tempViewQuestionsEQ[0].Add(this.viewQuestionsEQ[0].ElementAt(i));
+                        this.tempViewQuestionsEQ[1].Add(this.viewQuestionsEQ[1].ElementAt(i));
+                        this.tempViewQuestionsEQ[2].Add(this.viewQuestionsEQ[2].ElementAt(i));
+                        this.tempViewQuestionsEQ[3].Add(this.viewQuestionsEQ[3].ElementAt(i));
+                    }
+                }
+
+               
             }
             catch
             {
@@ -645,78 +694,168 @@ namespace Multiple_Choice_Generator
             filtersTimer.Start();
         }
 
-        //fill datagrid view and units
+        //fill datagrid view and units for showQuestions
         List<string> checkedUnits = new List<string>(); //list with checked categoreis
         List<string> checkedDifficulty = new List<string>();  //list with cheked difficulty levels
         List<string>[] viewQuestions = new List<string>[4]; //list[] where will have the data of datagridview
-        List<string>[] tempViewQuestions = new List<string>[4]; //list[] where will have the afterfilter questions          
+        List<string>[] tempViewQuestions = new List<string>[4]; //list[] where will have the afterfilter questions  
+
+        //fill datagrid view and units for 
+        List<string> checkedUnitsEQ = new List<string>(); //list with checked categoreis
+        List<string> checkedDifficultyEQ = new List<string>();  //list with cheked difficulty levels
+        List<string>[] viewQuestionsEQ = new List<string>[4]; //list[] where will have the data of datagridview
+        List<string>[] tempViewQuestionsEQ = new List<string>[4]; //list[] where will have the afterfilter questions  
         private void showQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e)
-        {            
-            //clear previus diff levels
-            foreach (int i in this.showQuestionDifficultyCheckbox.CheckedIndices)
+        {
+            ComboBox combo = (ComboBox)sender;
+            CheckedListBox categorieschecklistbox = null;
+            CheckedListBox diffchecklistbox = null;
+            DataGridView dgv = null;
+            Label errorLabel = null;
+            TextBox searchbox = null;
+            List<string> checkdunits = null;
+            List<string> checkedDifficulty = null;
+            List<string>[] viewQuestions = new List<string>[4];
+            List<string>[] tempViewQuestions = new List<string>[4];
+
+            if (combo.Name.Equals(this.showQuestionLessonCombobox.Name))    //show question
             {
-                this.showQuestionDifficultyCheckbox.SetItemCheckState(i, CheckState.Unchecked);
+                diffchecklistbox = this.showQuestionDifficultyCheckbox;
+                dgv = this.showQuestionDataGridView;
+                categorieschecklistbox = this.showQuestionCategoryCheckbox;
+                errorLabel = this.showQuestionErrorLabel;
+                checkdunits = this.checkedUnits;
+                checkedDifficulty = this.checkedDifficulty;
+                viewQuestions = this.viewQuestions;
+                tempViewQuestions = this.tempViewQuestions;
+                searchbox = this.showQuestionsSearchTextbox;
+            }
+            else if (combo.Name.Equals(this.editQuestionLessonsCombobox.Name))      //edit question
+            {
+                diffchecklistbox = this.editQuestionsDiffCheckListbox;
+                dgv = this.editQuestionGridView;
+                categorieschecklistbox = this.editQuestionsCategoryCheckListBox;
+                errorLabel = this.editQuestionsErrorLabel;
+                checkdunits = this.checkedUnitsEQ;
+                checkedDifficulty = this.checkedDifficultyEQ;
+                viewQuestions = this.viewQuestionsEQ;
+                tempViewQuestions = this.tempViewQuestionsEQ;
+                searchbox = this.editQuestionSearchTextbox;
+            }
+
+            //clear previus diff levels           
+            foreach (int i in diffchecklistbox.CheckedIndices)
+            {
+                diffchecklistbox.SetItemCheckState(i, CheckState.Unchecked);
             }
 
             //load units on checkbox
-            this.showQuestionCategoryCheckbox.Items.Clear();    //clear previus units
-            this.showQuestionDifficultyCheckbox.SelectedItems.Clear();  //clear previus dif levels
-            categories = myutils.loadcategories(user.ElementAt(0), this.showQuestionLessonCombobox.Text);
+            categorieschecklistbox.Items.Clear();    //clear previus units
+            diffchecklistbox.SelectedItems.Clear();  //clear previus dif levels
+
+            categories = myutils.loadcategories(user.ElementAt(0), combo.Text);
 
             foreach(String category in categories)
             {
-                this.showQuestionCategoryCheckbox.Items.Add(category);      //add unit in checkbox
-            }                               
+                categorieschecklistbox.Items.Add(category);      //add unit in checkbox
+            }
 
-            this.showQuestionDataGridView.Rows.Clear(); //remove all rows
+            dgv.Rows.Clear(); //remove all rows
 
             //an to viewQuestions einai null tote mh kaneis to for kai emfanisi minima oti de bre8ikan erwtiseis
             try
             {
                 //call method to take questions
-                viewQuestions = db.qQuestionsMore(user.ElementAt(0), this.showQuestionLessonCombobox.Text); //no filters                
+                viewQuestions = db.qQuestionsMore(user.ElementAt(0), combo.Text); //no filters                
 
-                for (int i = 0; i < 4; i++)
-                    this.tempViewQuestions[i].Clear();
-                
+                //save questions
+                if (combo.Name.Equals(this.showQuestionLessonCombobox.Name))    //show question
+                {
+                    this.viewQuestions = viewQuestions;
+
+                    for (int i = 0; i < 4; i++)
+                        this.tempViewQuestions[i].Clear();
+
+                    this.tempViewQuestions = tempViewQuestions;
+                }
+                else if (combo.Name.Equals(this.editQuestionLessonsCombobox.Name))      //edit question
+                {
+                    this.viewQuestionsEQ = viewQuestions;
+
+                    for (int i = 0; i < 4; i++)
+                        this.tempViewQuestionsEQ[i].Clear();
+
+                    this.tempViewQuestionsEQ = tempViewQuestions;
+                }
+
+                //clear textbox
+                searchbox.Text = "";
+
                 for (int i = 0; i < viewQuestions[0].Count; i++)
                 {
-                    this.addQuestionToDataGridView(this.viewQuestions, this.showQuestionDataGridView, i, i);
+                    this.addQuestionToDataGridView(viewQuestions, dgv, i, i);
                 }                
             }
             catch
             {
-                this.showQuestionErrorLabel.Text = "Δεν υπάρχουν ερωτήσεις σε αυτό το μάθημα με αυτά τα φίλτρα. Προσπαθήστε ξανά.";
+                errorLabel.Text = "Δεν υπάρχουν ερωτήσεις σε αυτό το μάθημα με αυτά τα φίλτρα. Προσπαθήστε ξανά.";
             }            
+        }
+
+        //call showQuestionLessonCombobox_SelectionChangeCommitted(object sender, EventArgs e) from edit question class
+        public void loadQuestions()
+        {
+            this.showQuestionLessonCombobox_SelectionChangeCommitted(this.editQuestionLessonsCombobox, null);
+            if(this.showQuestionLessonCombobox.Text.Equals(this.editQuestionLessonsCombobox.Text))
+                this.showQuestionLessonCombobox_SelectionChangeCommitted(this.showQuestionLessonCombobox, null);
         }
 
         //search on questions
         private void showQuestionsSearchTextbox_TextChanged(object sender, EventArgs e)
         {
-            TextBox temp = (TextBox)sender;
+            TextBox searchtextbox = (TextBox)sender;
+            DataGridView dgv = null;
+            List<string> checkdunits = null;
+            List<string> checkedDifficulty = null;
+            List<string>[] tempViewQuestions = new List<string>[4];
 
-            this.showQuestionDataGridView.Rows.Clear(); //clear rows
-
-
-            if (String.IsNullOrEmpty(temp.Text) || String.IsNullOrWhiteSpace(temp.Text))
+            if (searchtextbox.Name.Equals(this.showQuestionsSearchTextbox.Name))
             {
-                for(int i=0; i<this.tempViewQuestions[0].Count; i++)
+                dgv = this.showQuestionDataGridView;
+                checkdunits = this.checkedUnits;
+                checkedDifficulty = this.checkedDifficulty;
+                tempViewQuestions = this.tempViewQuestions;
+            }else if (searchtextbox.Name.Equals(this.editQuestionSearchTextbox.Name))
+            {
+                dgv = this.editQuestionGridView;
+                checkdunits = this.checkedUnitsEQ;
+                checkedDifficulty = this.checkedDifficultyEQ;
+                tempViewQuestions = this.tempViewQuestionsEQ;
+            }
+
+
+            dgv.Rows.Clear(); //clear rows
+            
+
+            if (String.IsNullOrEmpty(searchtextbox.Text) || String.IsNullOrWhiteSpace(searchtextbox.Text))
+            {
+                for(int i=0; i<tempViewQuestions[0].Count; i++)
                 {
-                    this.addQuestionToDataGridView(this.tempViewQuestions, this.showQuestionDataGridView, i, i);
+                    this.addQuestionToDataGridView(tempViewQuestions, dgv, i, i);
                 }
             }
             else   //search when textbox isn't empty or blank
             {
-                List<string> newlist = myutils.searchTextBox(this.tempViewQuestions, temp.Text);//call method to return list with correct questions
+                List<string> newlist = myutils.searchTextBox(tempViewQuestions, searchtextbox.Text);//call method to return list with correct questions
                 this.countRow = 0;
 
-                for (int i = 0; i < this.tempViewQuestions[0].Count; i++)
+                for (int i = 0; i < tempViewQuestions[0].Count; i++)
                 {
                     foreach (String obj2 in newlist)
                     {
-                        if (obj2.Equals(this.tempViewQuestions[0].ElementAt(i)))
+                        if (obj2.Equals(tempViewQuestions[0].ElementAt(i)))
                         {
-                            addQuestionToDataGridView(this.tempViewQuestions, this.showQuestionDataGridView, countRow, i);
+                            addQuestionToDataGridView(tempViewQuestions, dgv, countRow, i);
                             countRow++;
                         }
                     }
@@ -724,20 +863,28 @@ namespace Multiple_Choice_Generator
             }
         }
 
-        //open questionForm
+        //open questionForm edit or show
         private void showQuestionDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
             try
             {
-                String questionCell = this.showQuestionDataGridView[0, e.RowIndex].Value.ToString(); //take row's question
-                String lessonCell = this.showQuestionDataGridView[1, e.RowIndex].Value.ToString(); //take row's lesson
-                String unitCell = this.showQuestionDataGridView[2, e.RowIndex].Value.ToString(); //take row's unit
-                String diffCell = this.showQuestionDataGridView[3, e.RowIndex].Value.ToString(); //take row's diff level
+                String questionCell = dgv[0, e.RowIndex].Value.ToString(); //take row's question
+                String lessonCell = dgv[1, e.RowIndex].Value.ToString(); //take row's lesson
+                String unitCell = dgv[2, e.RowIndex].Value.ToString(); //take row's unit
+                String diffCell = dgv[3, e.RowIndex].Value.ToString(); //take row's diff level
 
                 //open ShowQuestionForm
-                ShowQuestionForm question = new ShowQuestionForm(questionCell, lessonCell, unitCell, diffCell, user.ElementAt(0));
-                question.Show();
+                if (dgv.Name.Equals(this.showQuestionDataGridView.Name))
+                {
+                    ShowQuestionForm question = new ShowQuestionForm(questionCell, lessonCell, unitCell, diffCell, user.ElementAt(0));
+                    question.Show();
+                }   else if (dgv.Name.Equals(this.editQuestionGridView.Name))
+                {
+                    EditQuestionForm question = new EditQuestionForm(user.ElementAt(0), questionCell, lessonCell, unitCell, diffCell, this);
+                    question.Show();
+                }
+                    
 
             }
             catch
@@ -892,6 +1039,11 @@ namespace Multiple_Choice_Generator
             {
                 checkflag = false;
                 createQuestionErrorsLabel.Text += "Δε μπορείτε να καταχωρήσετε κενή απάντηση, σβήστε την ή συμπληρώστε την.\n";
+            }
+            if (errors[3])
+            {
+                checkflag = false;
+                this.createQuestionErrorsLabel.Text += "Η ερώτηση σας πρέπει να ανείκει οπωσδίποτε σε μία ενότητα.";
             }
 
             if (!checkflag)
@@ -1316,8 +1468,8 @@ namespace Multiple_Choice_Generator
                 //find questions
                 List<string> questions = myutils.loadquestions(user.ElementAt(0),lesson,categories,diff); //get questions with filters
 
-                //check if there are questions to create the test
-                if (questions.Count == 1 && questions.ElementAt(0).Equals("Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα."))
+                //check if there are are enough questions to create test
+                if(questions.Count < number)
                 {
                     this.createAutoTestErrorsLabel.Text = "Δεν υπάρχουν αρκετές ερωτήσεις για την δημιουργία διαγωνίσματος με αυτό το μάθημα και αυτά τα φίλτρα.";
                     this.createAutoTestErrorsLabel.Visible = true;
@@ -1325,9 +1477,9 @@ namespace Multiple_Choice_Generator
                 }
                 else
                 {
+                   
                     questions.OrderBy(arg => Guid.NewGuid()).Take(number).ToList(); //take N random questions 
 
-                    //μεχρι εδω καλα
                     int check = db.iTest(questions, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
 
                     if (check == 1)
@@ -1344,7 +1496,9 @@ namespace Multiple_Choice_Generator
                         this.createAutoTestErrorsLabel.Visible = true;
                         this.createAutoTestErrorsTitleLabel.Visible = true;
                     }
-                } 
+                }
+
+                
             }
            
         }
@@ -1364,7 +1518,38 @@ namespace Multiple_Choice_Generator
         #endregion
 
         #region METHOS OF editLessonsPanel
-       
+        //open lesson editForm
+        private void editLessonsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;    //get datagridview
+
+            String lesson = dgv[0, e.RowIndex].Value.ToString();
+                
+            EditLessonForm form = new EditLessonForm(user.ElementAt(0), lesson, this);
+            form.Show();
+        }
+
+        //fill lesson DataGridView
+        private void fillLessonDataGridView(DataGridView dgv, List<string>list)
+        {
+            dgv.Rows.Clear();
+            
+            int i = 0;
+            try
+            {
+                foreach (String lesson in list)
+                {
+                    dgv.Rows.Add();
+                    dgv.Rows[i].Cells[0].Value = lesson;
+                    i++;
+                }
+            }
+            catch
+            {
+                Console.Write("No lessons.");
+            }
+           
+        }
         #endregion
 
 
@@ -1373,6 +1558,7 @@ namespace Multiple_Choice_Generator
         private char filtersButtonFlag; //flag to see which filter button pressed
         bool showQuestionFiltrerflag = false;  //flag to see if panel is open or not
         bool createManualQuestionFilterFlag = false; //flag to see if panel is open or not
+        bool editQuestionFilterFlag = false;    //flag to see if panel is open or not
         private void filtrersPanelTimer(object sender, EventArgs e)
         {
             //temps to code the right panel
@@ -1392,6 +1578,11 @@ namespace Multiple_Choice_Generator
                 tempPanel = this.createManualTestFilterPanel;
                 tempButton = this.createTestFilterButton;
                 tempFlag = this.createManualQuestionFilterFlag;
+            }else if(filtersButtonFlag == 'E')
+            {
+                tempPanel = this.editQuestionFilterPanel;
+                tempButton = this.editQuestionFilterButton;
+                tempFlag = this.editQuestionFilterFlag;
             }
 
             //if panel is open then close
@@ -1403,9 +1594,11 @@ namespace Multiple_Choice_Generator
                 {
                     filtersTimer.Stop();
                     if (filtersButtonFlag == 'S')
-                        showQuestionFiltrerflag = false;
-                    else
-                        createManualQuestionFilterFlag = false;
+                        this.showQuestionFiltrerflag = false;
+                    else if (filtersButtonFlag == 'C')
+                        this.createManualQuestionFilterFlag = false;
+                    else if (filtersButtonFlag == 'E')
+                        this.editQuestionFilterFlag = false; ;
 
                 }
             }
@@ -1419,9 +1612,11 @@ namespace Multiple_Choice_Generator
                 {
                     filtersTimer.Stop();
                     if (filtersButtonFlag == 'S')
-                        showQuestionFiltrerflag = true;
-                    else
-                        createManualQuestionFilterFlag = true;
+                        this.showQuestionFiltrerflag = true;
+                    else if (filtersButtonFlag == 'C')
+                        this.createManualQuestionFilterFlag = true;
+                    else if (filtersButtonFlag == 'E')
+                        this.editQuestionFilterFlag = true;
                 }
             }
         }
@@ -1499,35 +1694,35 @@ namespace Multiple_Choice_Generator
 
         }
 
-        private void testB_Click(object sender, EventArgs e)
+        //call filter effect panel of edit question
+        private void editQuestionFilterButton_Click(object sender, EventArgs e)
         {
-            this.testPanel.Visible = true;
-            this.temp.Visible = false;
-        }
+            Button temp = (Button)sender;
+            temp.BringToFront();
+            this.editQuestionFilterPanel.BringToFront();
 
-        private void showQuestionDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35); 
-            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Multiple choice test.pdf", FileMode.Create));  //Δημιουργώ το pdf και το αποθηκεύω με το όνομα που θέλω 
-            doc.Open();   //ανοίγω το doc
-            Paragraph paragraph = new Paragraph("Test  . \n Test");  // γράφω το τι θα περιέχει το pdf σε μια παράγραφο
-            doc.Add(paragraph);   //προσθέτο το περιεχόμενο στο πδφ
-            doc.Close();  //κλείνο το doc
+            this.filtersButtonFlag = 'E';
+            filtersTimer.Start();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string html = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
+                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
+                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
+                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
+                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
+                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
+                                               "</p></div>" +
+                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
+                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
+                                               "</div></div>";
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
+                pdf.Save(new FileStream("Multiple choice test.pdf", FileMode.Create));
+                Console.WriteLine("mphke");
+            }
         }
     }
 }

@@ -14,12 +14,14 @@ namespace Multiple_Choice_Generator
 {
     public partial class settingsForm : Form
     {
-
-        Form father;    //father form
-        public settingsForm(Form father)
+        database db = new database();
+        List<string> user = new List<string>();
+        Form1 father = new Form1();    //father form
+        public settingsForm(Form1 a, List<string> b)
         {
+            user = b;
             InitializeComponent();
-            this.father = father;
+            this.father = a;
             this.MaximizeBox = false;
         }
 
@@ -59,15 +61,14 @@ namespace Multiple_Choice_Generator
         {
             if(settingsConfButton.Enabled == false)
             {
-                this.settingsUsernameTextbox.Enabled = true;
                 this.settingsEmailTextbox.Enabled = true;
-                this.settingsPasswordTextbox.Enabled = true;
                 this.settingsFirstnameTextbox.Enabled = true;
                 this.settingsLastnameTextbox.Enabled = true;
                 this.settingsGenderRadioButton1.Enabled = true;
                 this.settingsGenderRadioButton2.Enabled = true;
-                this.maskedTextBox.Enabled = true;
+                this.settingsBirthTextBox.Enabled = true;
                 this.settingsConfButton.Enabled = true;
+                this.settingsSchoolTextbox.Enabled = true;
                 this.settingsEditButton.Text = "Ακύρωση";
                 
             } else
@@ -77,13 +78,13 @@ namespace Multiple_Choice_Generator
                 {
                     this.settingsUsernameTextbox.Enabled = false;
                     this.settingsEmailTextbox.Enabled = false;
-                    this.settingsPasswordTextbox.Enabled = false;
                     this.settingsFirstnameTextbox.Enabled = false;
                     this.settingsLastnameTextbox.Enabled = false;
                     this.settingsGenderRadioButton1.Enabled = false;
                     this.settingsGenderRadioButton2.Enabled = false;
-                    this.maskedTextBox.Enabled = false;
+                    this.settingsBirthTextBox.Enabled = false;
                     this.settingsConfButton.Enabled = false;
+                    this.settingsSchoolTextbox.Enabled = false;
                     this.settingsEditButton.Text = "Επεξεργασία";
                 }
                 configForm.Dispose();
@@ -113,11 +114,67 @@ namespace Multiple_Choice_Generator
         {
             this.OSLabel.Text = System.Environment.OSVersion.ToString();
             this.dateLabel.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            this.settingsUsernameTextbox.Text = this.user.ElementAt(0);
+            this.settingsEmailTextbox.Text = this.user.ElementAt(4);
+            this.settingsLastnameTextbox.Text = this.user.ElementAt(2);
+            this.settingsFirstnameTextbox.Text = this.user.ElementAt(3);
+            this.settingsBirthTextBox.Text = this.user.ElementAt(6);
+            this.settingsSchoolTextbox.Text = this.user.ElementAt(7);
+            if (user.ElementAt(5).Equals("Άντρας"))
+                settingsGenderRadioButton1.Checked = true;
+            else
+                settingsGenderRadioButton2.Checked = true;
+
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void settingsConfButton_Click(object sender, EventArgs e)
+        {
+            if (settingsEmailTextbox.Text.Contains("@"))
+            {
+                if (settingsEmailTextbox.Text.Contains("."))
+                {
+                    List<string> listUpdatedUser = new List<string>();
+                    listUpdatedUser.Add(this.user.ElementAt(0));
+                    listUpdatedUser.Add(this.user.ElementAt(1));
+                    listUpdatedUser.Add(settingsLastnameTextbox.Text);
+                    listUpdatedUser.Add(settingsFirstnameTextbox.Text);
+                    listUpdatedUser.Add(settingsEmailTextbox.Text);
+                    if (settingsGenderRadioButton1.Checked == true)
+                        listUpdatedUser.Add("Άντρας");
+                    else
+                        listUpdatedUser.Add("Γυναίκα");
+                    listUpdatedUser.Add(settingsBirthTextBox.Text);
+                    listUpdatedUser.Add(settingsSchoolTextbox.Text);
+                    father.setUser(listUpdatedUser);
+
+                    int i = db.uUser(listUpdatedUser.ElementAt(0), listUpdatedUser.ElementAt(2), listUpdatedUser.ElementAt(3), listUpdatedUser.ElementAt(4), listUpdatedUser.ElementAt(7), listUpdatedUser.ElementAt(5), listUpdatedUser.ElementAt(6));
+                    if (i == 1)
+                    {
+                        this.settingsEmailTextbox.Enabled = false;
+                        this.settingsFirstnameTextbox.Enabled = false;
+                        this.settingsLastnameTextbox.Enabled = false;
+                        this.settingsGenderRadioButton1.Enabled = false;
+                        this.settingsGenderRadioButton2.Enabled = false;
+                        this.settingsBirthTextBox.Enabled = false;
+                        this.settingsConfButton.Enabled = false;
+                        this.settingsSchoolTextbox.Enabled = false;
+                        this.settingsEditButton.Text = "Επεξεργασία";
+                        MessageBox.Show("Τα στοιχεία σας ενημερώθηκαν με επιτυχία!");
+                    }
+                    else
+                        MessageBox.Show("Κάτι πήγε στραβά!! :(");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Παρακαλούμε δώστε ενα έγκυρο email όπως example@gmail.com");
+            }
+            
         }
     }
 }

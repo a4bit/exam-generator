@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.loginSignupLinkLabel = new System.Windows.Forms.LinkLabel();
             this.loginSignupLabel = new System.Windows.Forms.Label();
@@ -41,16 +42,27 @@
             this.loginTitleLabel1 = new System.Windows.Forms.Label();
             this.loginUsernameTextbox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkedinPictureBox = new System.Windows.Forms.PictureBox();
+            this.twitterPictureBox = new System.Windows.Forms.PictureBox();
+            this.facebookPictureBox = new System.Windows.Forms.PictureBox();
+            this.findusLabel = new System.Windows.Forms.Label();
             this.titleL = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linkedinPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twitterPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facebookPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.errorLabel);
             this.panel1.Controls.Add(this.loginSignupLinkLabel);
             this.panel1.Controls.Add(this.loginSignupLabel);
@@ -66,6 +78,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 418);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Multiple_Choice_Generator.Properties.Resources.look;
+            this.pictureBox2.Location = new System.Drawing.Point(302, 211);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // errorLabel
             // 
@@ -148,7 +173,7 @@
             this.loginPasswordTextbox.Location = new System.Drawing.Point(81, 215);
             this.loginPasswordTextbox.Name = "loginPasswordTextbox";
             this.loginPasswordTextbox.PasswordChar = '*';
-            this.loginPasswordTextbox.Size = new System.Drawing.Size(251, 24);
+            this.loginPasswordTextbox.Size = new System.Drawing.Size(223, 24);
             this.loginPasswordTextbox.TabIndex = 4;
             // 
             // loginUsernameSeperator
@@ -197,6 +222,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.linkedinPictureBox);
+            this.panel2.Controls.Add(this.twitterPictureBox);
+            this.panel2.Controls.Add(this.facebookPictureBox);
+            this.panel2.Controls.Add(this.findusLabel);
             this.panel2.Controls.Add(this.titleL);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -204,27 +233,89 @@
             this.panel2.Size = new System.Drawing.Size(342, 415);
             this.panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // linkedinPictureBox
             // 
-            this.pictureBox1.Image = global::Multiple_Choice_Generator.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 198);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.linkedinPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.linkedin;
+            this.linkedinPictureBox.Location = new System.Drawing.Point(258, 355);
+            this.linkedinPictureBox.Name = "linkedinPictureBox";
+            this.linkedinPictureBox.Size = new System.Drawing.Size(45, 45);
+            this.linkedinPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.linkedinPictureBox.TabIndex = 17;
+            this.linkedinPictureBox.TabStop = false;
+            this.linkedinPictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+            this.linkedinPictureBox.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.linkedinPictureBox.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            // 
+            // twitterPictureBox
+            // 
+            this.twitterPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.twitter;
+            this.twitterPictureBox.Location = new System.Drawing.Point(149, 355);
+            this.twitterPictureBox.Name = "twitterPictureBox";
+            this.twitterPictureBox.Size = new System.Drawing.Size(45, 45);
+            this.twitterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.twitterPictureBox.TabIndex = 16;
+            this.twitterPictureBox.TabStop = false;
+            this.twitterPictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+            this.twitterPictureBox.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.twitterPictureBox.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            // 
+            // facebookPictureBox
+            // 
+            this.facebookPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.facebook;
+            this.facebookPictureBox.Location = new System.Drawing.Point(40, 355);
+            this.facebookPictureBox.Name = "facebookPictureBox";
+            this.facebookPictureBox.Size = new System.Drawing.Size(45, 45);
+            this.facebookPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.facebookPictureBox.TabIndex = 15;
+            this.facebookPictureBox.TabStop = false;
+            this.facebookPictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+            this.facebookPictureBox.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.facebookPictureBox.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            // 
+            // findusLabel
+            // 
+            this.findusLabel.AutoSize = true;
+            this.findusLabel.Font = new System.Drawing.Font("Microsoft YaHei Light", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.findusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.findusLabel.Location = new System.Drawing.Point(10, 333);
+            this.findusLabel.Name = "findusLabel";
+            this.findusLabel.Size = new System.Drawing.Size(75, 19);
+            this.findusLabel.TabIndex = 14;
+            this.findusLabel.Text = "Find us on:";
             // 
             // titleL
             // 
             this.titleL.BackColor = System.Drawing.Color.Transparent;
             this.titleL.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.titleL.ForeColor = System.Drawing.Color.White;
-            this.titleL.Location = new System.Drawing.Point(34, 215);
+            this.titleL.Location = new System.Drawing.Point(34, 184);
             this.titleL.Name = "titleL";
             this.titleL.Size = new System.Drawing.Size(275, 109);
             this.titleL.TabIndex = 13;
             this.titleL.Text = "Multiple Choice\r\nGenerator";
             this.titleL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Multiple_Choice_Generator.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 198);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(137, 355);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ξέχασα τον κωδικό μου";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginForm
             // 
@@ -239,7 +330,12 @@
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linkedinPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twitterPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facebookPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -262,5 +358,11 @@
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label titleL;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label findusLabel;
+        private System.Windows.Forms.PictureBox linkedinPictureBox;
+        private System.Windows.Forms.PictureBox twitterPictureBox;
+        private System.Windows.Forms.PictureBox facebookPictureBox;
+        private System.Windows.Forms.Label label1;
     }
 }
