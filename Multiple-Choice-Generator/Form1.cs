@@ -1906,12 +1906,12 @@ namespace Multiple_Choice_Generator
             //pdf
             if (e.ColumnIndex == 1)
             {
-                String pdf = this.showTestsDataGridView.Rows[e.RowIndex - 1].Cells[0].Value.ToString();
+                String pdf = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 this.test_pdf(this.showTestsLessonComboBox.Text, pdf);
             }else if(e.ColumnIndex == 2)    //ektypwsi
             {
-                String print = this.showTestsDataGridView.Rows[e.RowIndex-1].Cells[0].Value.ToString();
+                String print = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 this.test_print(this.showTestsLessonComboBox.Text, print);
                 Console.WriteLine(print);
             }
