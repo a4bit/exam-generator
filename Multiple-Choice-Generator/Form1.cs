@@ -1803,7 +1803,7 @@ namespace Multiple_Choice_Generator
             List<string>[] questions = new List<string>[3];
             List<string> answers = new List<string>();
             string html = "<div style =\"text-align: left; display: inline-block; font-family: Arial, serif; font-weight: bold;\">" +
-                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"C:\\Users\\Τρίχας\\Desktop\\gitafter\\exam-generator\\Multiple-Choice-Generator\\Resources\\logo.png\" alt=\"logo\"></div>" +
+                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"logo.png\" alt=\"logo\"></div>" +
                                         "<h3>" + user.ElementAt(7) + "</h3>" +
                                         "Μάθημα: " + lesson + "<br><br>Καθηγητής: " + user.ElementAt(2) + " " + user.ElementAt(3) + "<br><br>Ονοματεπώνυμο:" +
                                         "</div>" +
@@ -1813,7 +1813,7 @@ namespace Multiple_Choice_Generator
             for (int i = 0; i < questions[0].Count; i++)
             {
                 html += "<li style=\"margin-top: 20px;\">";
-                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
+                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), user.ElementAt(0), questions[2].ElementAt(i));
                 Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
                 html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
                        "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
@@ -1862,7 +1862,7 @@ namespace Multiple_Choice_Generator
             List<string>[] questions = new List<string>[3];
             List<string> answers = new List<string>();
             string html = "<div style =\"text-align: left; display: inline-block; font-family: Arial, serif; font-weight: bold;\">" +
-                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"C:\\Users\\Τρίχας\\Desktop\\gitafter\\exam-generator\\Multiple-Choice-Generator\\Resources\\logo.png\" alt=\"logo\"></div>" +
+                                        "<div style=\"position: absolute; text-align: right; margin-right: 50px; top: 0; right: 0\"><img height=\"110px\" width=\"110px\" style=\"margin-right: 50px;\" src=\"logo.png\" alt=\"logo\"></div>" +
                                         "<h3>" + user.ElementAt(7) + "</h3>" +
                                         "Μάθημα: " + lesson + "<br><br>Καθηγητής: " + user.ElementAt(2) + " " + user.ElementAt(3) + "<br><br>Ονοματεπώνυμο:" +
                                         "</div>" +
@@ -1872,7 +1872,7 @@ namespace Multiple_Choice_Generator
             for (int i = 0; i < questions[0].Count; i++)
             {
                 html += "<li style=\"margin-top: 20px;\">";
-                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
+                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), user.ElementAt(0), questions[2].ElementAt(i));
                 Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
                 html += "<h4>" + questions[0].ElementAt(i) + "</h4>" +
                         "<ol type =\"a\" style=\"font-weight:normal; margin-top: 10px\">";
