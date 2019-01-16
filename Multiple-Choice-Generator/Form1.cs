@@ -105,6 +105,8 @@ namespace Multiple_Choice_Generator
             this.tempViewQuestionsEQ[2] = new List<string>();
             this.tempViewQuestionsEQ[3] = new List<string>();
 
+            //user to label
+            this.userLabel.Text += this.user.ElementAt(0);
         }
 
         public void setUser(List<string> listUser)
