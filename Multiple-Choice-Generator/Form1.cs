@@ -39,14 +39,14 @@ namespace Multiple_Choice_Generator
             InitializeComponent();
             user = a;
             this.DoubleBuffered = true; //fix gradiend resize problem
-            temp = panel1;
+            temp = this.showTestsPanel;
         }
 
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true; //fix gradiend resize problem
-            temp = panel1;
+            temp = this.showTestsPanel;
         }
 
         Panel temp; //which of main panels is visible now
@@ -115,8 +115,16 @@ namespace Multiple_Choice_Generator
         //LOAD LESSONS FROM DATABASE AND FILL COMBOBOXES
         public void loadLessons()
         {
-            //load lessons            
-            this.lessons = myutils.loadlessons(user.ElementAt(0));
+            //load lessons     
+            try
+            {
+                this.lessons = myutils.loadlessons(user.ElementAt(0));
+            }
+            catch
+            {
+                //no lessons
+            }
+            
 
             this.createAutoTestLessonComboBox.Items.Clear();
             this.createQuestionLessonCombobox.Items.Clear();
@@ -140,6 +148,13 @@ namespace Multiple_Choice_Generator
             {
                 Console.Write("No lessons");
             }
+           
+            //delete datagridviews data
+            this.showQuestionDataGridView.Rows.Clear();
+            this.editLessonsDataGridView.Rows.Clear();
+            this.editQuestionGridView.Rows.Clear();
+            this.createManualTestDataGridView.Rows.Clear();
+
 
             this.fillLessonDataGridView(this.editLessonsDataGridView, this.lessons);
         }
@@ -175,7 +190,7 @@ namespace Multiple_Choice_Generator
 
 
 
-        //SELECTED THEME
+        //SELECTED THEME COLORS
         //-----------------------------------------------------------------------
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -550,11 +565,7 @@ namespace Multiple_Choice_Generator
             this.tempViewQuestions[2].Clear();
             this.tempViewQuestions[3].Clear();
 
-            //clear tempViewQuestions
-            this.tempViewQuestionsEQ[0].Clear();
-            this.tempViewQuestionsEQ[1].Clear();
-            this.tempViewQuestionsEQ[2].Clear();
-            this.tempViewQuestionsEQ[3].Clear();
+
 
             this.showQuestionsSearchTextbox.Text = ""; //delete search box text
 
@@ -1520,7 +1531,7 @@ namespace Multiple_Choice_Generator
                         test.Add(questions.ElementAt(index));
                         questions.RemoveAt(index);
                     }
-
+                    Console.WriteLine();
                     int check = db.iTest(test, user.ElementAt(0), lesson, this.createAutoTestTitleTextbox.Text);
 
                     if (check == 1)
@@ -1746,44 +1757,6 @@ namespace Multiple_Choice_Generator
             filtersTimer.Start();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            WebBrowser myWebBrowser = new WebBrowser();
-            myWebBrowser.DocumentText = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
-                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
-                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
-                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
-                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
-                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
-                                               "</p></div>" +
-                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
-                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
-                                               "</div></div>";
-            MessageBox.Show("Θα εκτυπωθεί το τεστ με όνομα !!");
-            myWebBrowser.ShowPrintPreviewDialog();
-            string html = "<div><div style=\"background-color:#2196F3; text-align: center; font-family: sans-serif; padding:20px;\">" +
-                                               "<img src=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/logo.png\">" +
-                                               "<h3 style=\"color: white\">Αγαπητέ κύριε " + "</h3>" +
-                                               "<p style=\"color: white; line-height: 1.3em\">Ο κωδικός πρόσβασης σας για την εφαρμογή <br> " +
-                                               "<a style=\"color: white\" href=\"https://users.it.teithe.gr/~it154453/exam-generator-website1/\">Multiple Choice Exam Generator</a>" +
-                                               " είναι <span style=\"display:block; font-weight: bold; margin: 10px; font-size:1.5em\">" +
-                                               "</p></div>" +
-                                               "<div style=\"background-color: #eee; padding: 10px; font-family: sans-serif; color: #333; font-size: .8em; text-align: center\">" +
-                                               "<p style=\"margin: 0\">Παρακαλούμε να μην απαντήσετε σε αυτό το email, καθώς δεν παρακολουθείται</p>" +
-                                               "</div></div>";
-            using (MemoryStream ms = new MemoryStream())
-            {
-                var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
-                pdf.Save(new FileStream("Multiple choice test.pdf", FileMode.Create));
-                Console.WriteLine("mphke");
-            }
-        }
-
-        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-
-        }
-
         private void showTestsLessonComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.fillTestDataGridView(this.showTestsLessonComboBox.Text);
@@ -1904,17 +1877,24 @@ namespace Multiple_Choice_Generator
         private void showTestsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //pdf
-            if (e.ColumnIndex == 1)
+            if(e.RowIndex != -1)
             {
-                String pdf = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                this.test_pdf(this.showTestsLessonComboBox.Text, pdf);
-            }else if(e.ColumnIndex == 2)    //ektypwsi
-            {
-                String print = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                this.test_print(this.showTestsLessonComboBox.Text, print);
-                Console.WriteLine(print);
+                    if (e.ColumnIndex == 1)
+                    {
+                        String pdf = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        this.test_pdf(this.showTestsLessonComboBox.Text, pdf);
+                    }
+                    else if (e.ColumnIndex == 2)    //print
+                    {
+                        String print = this.showTestsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        this.test_print(this.showTestsLessonComboBox.Text, print);
+                        Console.WriteLine(print);
+                    }
+               
             }
+           
         }
-    }
+
+
+    }    
 }

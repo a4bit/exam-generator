@@ -32,26 +32,31 @@ namespace Multiple_Choice_Generator
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.leftmenuP = new System.Windows.Forms.Panel();
             this.newsLabel = new System.Windows.Forms.Label();
             this.helpB = new System.Windows.Forms.Button();
@@ -98,51 +103,27 @@ namespace Multiple_Choice_Generator
             this.createQuestionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.showTestsPanel = new System.Windows.Forms.Panel();
-            this.showTestsLessonComboBox = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.showTestsDataGridView = new System.Windows.Forms.DataGridView();
-            this.showQuestionsPanel = new System.Windows.Forms.Panel();
-            this.showQuestionErrorLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
-            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
-            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
-            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.showQuestionDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.showQuestionCategoryCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.showQuestionsSearchTextbox = new System.Windows.Forms.TextBox();
-            this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
-            this.createTestPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.createAutoTestPanel = new System.Windows.Forms.Panel();
-            this.createAutoTestTitleTextbox = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.createAutoTestErrorsTitleLabel = new System.Windows.Forms.Label();
-            this.createAutoTestErrorsLabel = new System.Windows.Forms.Label();
-            this.createAutoTestNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.createAutoTestConfButton = new System.Windows.Forms.Button();
-            this.createAutoTestCategoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.createAutoTestLessonComboBox = new System.Windows.Forms.ComboBox();
-            this.createAutoTestDifficultyCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.editLessonsPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.editLessonDataGridViewPanel = new System.Windows.Forms.Panel();
-            this.editLessonsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createManualTestPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.createManualTestDGVPanel = new System.Windows.Forms.Panel();
+            this.createManualTestDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToTest = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.createManualTestFilterPanel = new System.Windows.Forms.Panel();
+            this.createManualTestFilterConfButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.createManualTestDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.createManualTestCatagoryCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.createTestFilterButton = new System.Windows.Forms.Button();
+            this.createManualTestSearchTextbox = new System.Windows.Forms.TextBox();
+            this.createManualTestConfButton = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.createManualTestLessonButton = new System.Windows.Forms.Button();
+            this.createManualTestComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.editQuestionPanel = new System.Windows.Forms.Panel();
             this.editQuestionsErrorLabel = new System.Windows.Forms.Label();
             this.editQuestionGridViewPanel = new System.Windows.Forms.Panel();
@@ -159,6 +140,52 @@ namespace Multiple_Choice_Generator
             this.editQuestionsCategoryCheckListBox = new System.Windows.Forms.CheckedListBox();
             this.editQuestionSearchTextbox = new System.Windows.Forms.TextBox();
             this.editQuestionLessonsCombobox = new System.Windows.Forms.ComboBox();
+            this.showQuestionsPanel = new System.Windows.Forms.Panel();
+            this.showQuestionErrorLabel = new System.Windows.Forms.Label();
+            this.showQuestionDGVPanel = new System.Windows.Forms.Panel();
+            this.showQuestionDataGridView = new System.Windows.Forms.DataGridView();
+            this.que_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_lesson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.que_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.showQuestionsFilterButton = new System.Windows.Forms.Button();
+            this.showQuestionsFilterPanel = new System.Windows.Forms.Panel();
+            this.showQuestionsFilterConfButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.showQuestionDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.showQuestionCategoryCheckbox = new System.Windows.Forms.CheckedListBox();
+            this.showQuestionsSearchTextbox = new System.Windows.Forms.TextBox();
+            this.showQuestionLessonCombobox = new System.Windows.Forms.ComboBox();
+            this.createAutoTestPanel = new System.Windows.Forms.Panel();
+            this.createAutoTestTitleTextbox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.createAutoTestErrorsTitleLabel = new System.Windows.Forms.Label();
+            this.createAutoTestErrorsLabel = new System.Windows.Forms.Label();
+            this.createAutoTestNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.createAutoTestConfButton = new System.Windows.Forms.Button();
+            this.createAutoTestCategoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.createAutoTestLessonComboBox = new System.Windows.Forms.ComboBox();
+            this.createAutoTestDifficultyCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.createTestPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.showTestsPanel = new System.Windows.Forms.Panel();
+            this.showTestsLessonComboBox = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.showTestsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editLessonsPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.editLessonDataGridViewPanel = new System.Windows.Forms.Panel();
+            this.editLessonsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createLessonPanel = new System.Windows.Forms.Panel();
             this.createLessonCategoryTextbox = new System.Windows.Forms.TextBox();
             this.createLessonErrorTitleLabel = new System.Windows.Forms.Label();
@@ -171,33 +198,12 @@ namespace Multiple_Choice_Generator
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.createManualTestPanel = new System.Windows.Forms.Panel();
-            this.createManualTestFilterPanel = new System.Windows.Forms.Panel();
-            this.createManualTestFilterConfButton = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.createManualTestDifficultyCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.createManualTestCatagoryCheckbox = new System.Windows.Forms.CheckedListBox();
-            this.createTestFilterButton = new System.Windows.Forms.Button();
-            this.createManualTestSearchTextbox = new System.Windows.Forms.TextBox();
-            this.createManualTestConfButton = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.createManualTestDataGridView = new System.Windows.Forms.DataGridView();
-            this.mantest_que = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mantest_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mantest_dif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mantest_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createManualTestLessonButton = new System.Windows.Forms.Button();
-            this.createManualTestComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.filtersTimer = new System.Windows.Forms.Timer(this.components);
             this.newsTimer = new System.Windows.Forms.Timer(this.components);
             this.sleepTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.leftmenuP.SuspendLayout();
             this.createSubMenuP.SuspendLayout();
             this.topmenuP.SuspendLayout();
@@ -211,29 +217,31 @@ namespace Multiple_Choice_Generator
             this.createQuestionsplitContainer.Panel2.SuspendLayout();
             this.createQuestionsplitContainer.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.showTestsPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showTestsDataGridView)).BeginInit();
-            this.showQuestionsPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
-            this.showQuestionsFilterPanel.SuspendLayout();
-            this.createTestPanel.SuspendLayout();
-            this.createAutoTestPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).BeginInit();
-            this.editLessonsPanel.SuspendLayout();
-            this.editLessonDataGridViewPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).BeginInit();
+            this.createManualTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.createManualTestDGVPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
+            this.createManualTestFilterPanel.SuspendLayout();
             this.editQuestionPanel.SuspendLayout();
             this.editQuestionGridViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editQuestionGridView)).BeginInit();
             this.editQuestionFilterPanel.SuspendLayout();
+            this.showQuestionsPanel.SuspendLayout();
+            this.showQuestionDGVPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).BeginInit();
+            this.showQuestionsFilterPanel.SuspendLayout();
+            this.createAutoTestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).BeginInit();
+            this.createTestPanel.SuspendLayout();
+            this.showTestsPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showTestsDataGridView)).BeginInit();
+            this.editLessonsPanel.SuspendLayout();
+            this.editLessonDataGridViewPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).BeginInit();
             this.createLessonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).BeginInit();
-            this.createManualTestPanel.SuspendLayout();
-            this.createManualTestFilterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // leftmenuP
@@ -509,6 +517,7 @@ namespace Multiple_Choice_Generator
             this.searchTB.Size = new System.Drawing.Size(293, 29);
             this.searchTB.TabIndex = 1;
             this.searchTB.Text = "Search...";
+            this.searchTB.Visible = false;
             this.searchTB.Enter += new System.EventHandler(this.searchTBPLaceholder_Enter);
             this.searchTB.Leave += new System.EventHandler(this.searchTBPlaceholder_Leave);
             // 
@@ -898,125 +907,561 @@ namespace Multiple_Choice_Generator
             this.toolTip.SetToolTip(this.label1, "Γράψτε την ερώτηση σας.\r\nΜπορείτε να χρησιμοποιήσετε και κώδικα HTML για διαμόρφω" +
         "ση του κειμένου.");
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(962, 583);
-            this.panel1.TabIndex = 15;
-            this.panel1.Visible = false;
-            // 
             // mainPanel
             // 
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.createTestPanel);
             this.mainPanel.Controls.Add(this.showTestsPanel);
+            this.mainPanel.Controls.Add(this.createTestPanel);
+            this.mainPanel.Controls.Add(this.createManualTestPanel);
+            this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.showQuestionsPanel);
             this.mainPanel.Controls.Add(this.createAutoTestPanel);
             this.mainPanel.Controls.Add(this.editLessonsPanel);
-            this.mainPanel.Controls.Add(this.editQuestionPanel);
             this.mainPanel.Controls.Add(this.createQuestionPanel);
             this.mainPanel.Controls.Add(this.createLessonPanel);
-            this.mainPanel.Controls.Add(this.createManualTestPanel);
-            this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Location = new System.Drawing.Point(223, 53);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(959, 583);
             this.mainPanel.TabIndex = 0;
             // 
-            // showTestsPanel
+            // createManualTestPanel
             // 
-            this.showTestsPanel.Controls.Add(this.showTestsLessonComboBox);
-            this.showTestsPanel.Controls.Add(this.panel3);
-            this.showTestsPanel.Location = new System.Drawing.Point(0, 0);
-            this.showTestsPanel.Name = "showTestsPanel";
-            this.showTestsPanel.Size = new System.Drawing.Size(962, 583);
-            this.showTestsPanel.TabIndex = 23;
-            this.showTestsPanel.Visible = false;
-            // 
-            // showTestsLessonComboBox
-            // 
-            this.showTestsLessonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.showTestsLessonComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.showTestsLessonComboBox.FormattingEnabled = true;
-            this.showTestsLessonComboBox.Location = new System.Drawing.Point(30, 27);
-            this.showTestsLessonComboBox.Name = "showTestsLessonComboBox";
-            this.showTestsLessonComboBox.Size = new System.Drawing.Size(460, 32);
-            this.showTestsLessonComboBox.TabIndex = 2;
-            this.toolTip.SetToolTip(this.showTestsLessonComboBox, "Επιλέξτε μάθημα.");
-            this.showTestsLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.showTestsLessonComboBox_SelectionChangeCommitted);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.createManualTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.showTestsDataGridView);
-            this.panel3.Location = new System.Drawing.Point(32, 65);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(906, 498);
-            this.panel3.TabIndex = 0;
+            this.createManualTestPanel.Controls.Add(this.pictureBox1);
+            this.createManualTestPanel.Controls.Add(this.createManualTestDGVPanel);
+            this.createManualTestPanel.Controls.Add(this.createManualTestFilterPanel);
+            this.createManualTestPanel.Controls.Add(this.createTestFilterButton);
+            this.createManualTestPanel.Controls.Add(this.createManualTestSearchTextbox);
+            this.createManualTestPanel.Controls.Add(this.createManualTestConfButton);
+            this.createManualTestPanel.Controls.Add(this.label16);
+            this.createManualTestPanel.Controls.Add(this.createManualTestLessonButton);
+            this.createManualTestPanel.Controls.Add(this.createManualTestComboBox);
+            this.createManualTestPanel.Controls.Add(this.label15);
+            this.createManualTestPanel.Location = new System.Drawing.Point(0, 0);
+            this.createManualTestPanel.Name = "createManualTestPanel";
+            this.createManualTestPanel.Size = new System.Drawing.Size(962, 583);
+            this.createManualTestPanel.TabIndex = 18;
+            this.createManualTestPanel.Visible = false;
+            this.createManualTestPanel.Click += new System.EventHandler(this.setfocus_Click);
             // 
-            // showTestsDataGridView
+            // pictureBox1
             // 
-            this.showTestsDataGridView.AllowUserToAddRows = false;
-            this.showTestsDataGridView.AllowUserToDeleteRows = false;
-            this.showTestsDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.Teal;
-            this.showTestsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
-            this.showTestsDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
-            this.showTestsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.showTestsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.showTestsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.showTestsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
-            this.showTestsDataGridView.ColumnHeadersHeight = 38;
-            this.showTestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.showTestsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showTestsDataGridView.DefaultCellStyle = dataGridViewCellStyle44;
-            this.showTestsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.showTestsDataGridView.EnableHeadersVisualStyles = false;
-            this.showTestsDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.showTestsDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.showTestsDataGridView.MultiSelect = false;
-            this.showTestsDataGridView.Name = "showTestsDataGridView";
-            this.showTestsDataGridView.ReadOnly = true;
-            this.showTestsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.showTestsDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(2);
-            this.showTestsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle45;
-            this.showTestsDataGridView.RowTemplate.Height = 30;
-            this.showTestsDataGridView.RowTemplate.ReadOnly = true;
-            this.showTestsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.showTestsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.showTestsDataGridView.Size = new System.Drawing.Size(906, 498);
-            this.showTestsDataGridView.TabIndex = 1;
-            this.showTestsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showTestsDataGridView_CellContentClick);
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Multiple_Choice_Generator.Properties.Resources.underConstruct;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(962, 583);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // createManualTestDGVPanel
+            // 
+            this.createManualTestDGVPanel.Controls.Add(this.createManualTestDataGridView);
+            this.createManualTestDGVPanel.Location = new System.Drawing.Point(51, 129);
+            this.createManualTestDGVPanel.Name = "createManualTestDGVPanel";
+            this.createManualTestDGVPanel.Size = new System.Drawing.Size(880, 364);
+            this.createManualTestDGVPanel.TabIndex = 14;
+            // 
+            // createManualTestDataGridView
+            // 
+            this.createManualTestDataGridView.AllowUserToAddRows = false;
+            this.createManualTestDataGridView.AllowUserToDeleteRows = false;
+            this.createManualTestDataGridView.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            this.createManualTestDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.createManualTestDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
+            this.createManualTestDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createManualTestDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.createManualTestDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.createManualTestDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.createManualTestDataGridView.ColumnHeadersHeight = 38;
+            this.createManualTestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.createManualTestDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.addToTest});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.createManualTestDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            this.createManualTestDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createManualTestDataGridView.EnableHeadersVisualStyles = false;
+            this.createManualTestDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.createManualTestDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.createManualTestDataGridView.MultiSelect = false;
+            this.createManualTestDataGridView.Name = "createManualTestDataGridView";
+            this.createManualTestDataGridView.ReadOnly = true;
+            this.createManualTestDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.createManualTestDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(2);
+            this.createManualTestDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.createManualTestDataGridView.RowTemplate.Height = 30;
+            this.createManualTestDataGridView.RowTemplate.ReadOnly = true;
+            this.createManualTestDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.createManualTestDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.createManualTestDataGridView.Size = new System.Drawing.Size(880, 364);
+            this.createManualTestDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "que";
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn5.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ερώτηση";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 397;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ενότητα";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Δυσκολία";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // addToTest
+            // 
+            this.addToTest.HeaderText = "Επιλογή";
+            this.addToTest.MinimumWidth = 70;
+            this.addToTest.Name = "addToTest";
+            this.addToTest.ReadOnly = true;
+            this.addToTest.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.addToTest.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.addToTest.Width = 70;
+            // 
+            // createManualTestFilterPanel
+            // 
+            this.createManualTestFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestFilterConfButton);
+            this.createManualTestFilterPanel.Controls.Add(this.label17);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestDifficultyCheckbox);
+            this.createManualTestFilterPanel.Controls.Add(this.createManualTestCatagoryCheckbox);
+            this.createManualTestFilterPanel.Location = new System.Drawing.Point(0, 0);
+            this.createManualTestFilterPanel.Name = "createManualTestFilterPanel";
+            this.createManualTestFilterPanel.Size = new System.Drawing.Size(0, 583);
+            this.createManualTestFilterPanel.TabIndex = 13;
+            // 
+            // createManualTestFilterConfButton
+            // 
+            this.createManualTestFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.createManualTestFilterConfButton.FlatAppearance.BorderSize = 0;
+            this.createManualTestFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createManualTestFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestFilterConfButton.ForeColor = System.Drawing.Color.White;
+            this.createManualTestFilterConfButton.Location = new System.Drawing.Point(16, 541);
+            this.createManualTestFilterConfButton.Name = "createManualTestFilterConfButton";
+            this.createManualTestFilterConfButton.Size = new System.Drawing.Size(212, 35);
+            this.createManualTestFilterConfButton.TabIndex = 6;
+            this.createManualTestFilterConfButton.Text = "Εφαρμογή";
+            this.createManualTestFilterConfButton.UseVisualStyleBackColor = false;
+            this.createManualTestFilterConfButton.Click += new System.EventHandler(this.createManualTestFilterConfButton_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(14, 13);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 23);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Φίλτρα";
+            // 
+            // createManualTestDifficultyCheckbox
+            // 
+            this.createManualTestDifficultyCheckbox.CheckOnClick = true;
+            this.createManualTestDifficultyCheckbox.ColumnWidth = 90;
+            this.createManualTestDifficultyCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestDifficultyCheckbox.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μεσαίες",
+            "Δύσκολες"});
+            this.createManualTestDifficultyCheckbox.Location = new System.Drawing.Point(16, 36);
+            this.createManualTestDifficultyCheckbox.Name = "createManualTestDifficultyCheckbox";
+            this.createManualTestDifficultyCheckbox.Size = new System.Drawing.Size(127, 76);
+            this.createManualTestDifficultyCheckbox.TabIndex = 2;
+            this.toolTip.SetToolTip(this.createManualTestDifficultyCheckbox, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
+            // 
+            // createManualTestCatagoryCheckbox
+            // 
+            this.createManualTestCatagoryCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.createManualTestCatagoryCheckbox.CheckOnClick = true;
+            this.createManualTestCatagoryCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestCatagoryCheckbox.FormattingEnabled = true;
+            this.createManualTestCatagoryCheckbox.Location = new System.Drawing.Point(16, 120);
+            this.createManualTestCatagoryCheckbox.Name = "createManualTestCatagoryCheckbox";
+            this.createManualTestCatagoryCheckbox.Size = new System.Drawing.Size(213, 403);
+            this.createManualTestCatagoryCheckbox.TabIndex = 4;
+            this.toolTip.SetToolTip(this.createManualTestCatagoryCheckbox, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
+            // 
+            // createTestFilterButton
+            // 
+            this.createTestFilterButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.createTestFilterButton.Enabled = false;
+            this.createTestFilterButton.FlatAppearance.BorderSize = 0;
+            this.createTestFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createTestFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createTestFilterButton.ForeColor = System.Drawing.Color.White;
+            this.createTestFilterButton.Location = new System.Drawing.Point(0, 195);
+            this.createTestFilterButton.Name = "createTestFilterButton";
+            this.createTestFilterButton.Size = new System.Drawing.Size(32, 149);
+            this.createTestFilterButton.TabIndex = 12;
+            this.createTestFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
+            this.createTestFilterButton.UseVisualStyleBackColor = false;
+            this.createTestFilterButton.Click += new System.EventHandler(this.createTestFilterButton_Click);
+            // 
+            // createManualTestSearchTextbox
+            // 
+            this.createManualTestSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestSearchTextbox.Enabled = false;
+            this.createManualTestSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestSearchTextbox.Location = new System.Drawing.Point(609, 94);
+            this.createManualTestSearchTextbox.Name = "createManualTestSearchTextbox";
+            this.createManualTestSearchTextbox.Size = new System.Drawing.Size(322, 29);
+            this.createManualTestSearchTextbox.TabIndex = 11;
+            // 
+            // createManualTestConfButton
+            // 
+            this.createManualTestConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestConfButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.createManualTestConfButton.Enabled = false;
+            this.createManualTestConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createManualTestConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestConfButton.ForeColor = System.Drawing.Color.White;
+            this.createManualTestConfButton.Location = new System.Drawing.Point(751, 512);
+            this.createManualTestConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.createManualTestConfButton.Name = "createManualTestConfButton";
+            this.createManualTestConfButton.Size = new System.Drawing.Size(182, 60);
+            this.createManualTestConfButton.TabIndex = 10;
+            this.createManualTestConfButton.Text = "Δημιουργία";
+            this.createManualTestConfButton.UseVisualStyleBackColor = false;
+            this.createManualTestConfButton.Click += new System.EventHandler(this.createManualTestConfButton_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Location = new System.Drawing.Point(42, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 18);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Ερωτήσεις:";
+            this.toolTip.SetToolTip(this.label16, "Επιλέξτε τις ερωτήσεις που θα υπάρχουν στο διαγώνισμα.");
+            // 
+            // createManualTestLessonButton
+            // 
+            this.createManualTestLessonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestLessonButton.Location = new System.Drawing.Point(797, 39);
+            this.createManualTestLessonButton.Name = "createManualTestLessonButton";
+            this.createManualTestLessonButton.Size = new System.Drawing.Size(136, 32);
+            this.createManualTestLessonButton.TabIndex = 7;
+            this.createManualTestLessonButton.Text = "Επιλογή";
+            this.createManualTestLessonButton.UseVisualStyleBackColor = true;
+            this.createManualTestLessonButton.Click += new System.EventHandler(this.createManualTestLessonButton_Click);
+            // 
+            // createManualTestComboBox
+            // 
+            this.createManualTestComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createManualTestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.createManualTestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.createManualTestComboBox.FormattingEnabled = true;
+            this.createManualTestComboBox.Location = new System.Drawing.Point(45, 39);
+            this.createManualTestComboBox.Name = "createManualTestComboBox";
+            this.createManualTestComboBox.Size = new System.Drawing.Size(746, 32);
+            this.createManualTestComboBox.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(42, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 18);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Μάθημα:";
+            this.toolTip.SetToolTip(this.label15, "Επιλέξτε το μάθημα του διαγωνίσματος.");
+            // 
+            // editQuestionPanel
+            // 
+            this.editQuestionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editQuestionPanel.AutoScroll = true;
+            this.editQuestionPanel.AutoScrollMinSize = new System.Drawing.Size(888, 0);
+            this.editQuestionPanel.Controls.Add(this.editQuestionsErrorLabel);
+            this.editQuestionPanel.Controls.Add(this.editQuestionGridViewPanel);
+            this.editQuestionPanel.Controls.Add(this.editQuestionFilterButton);
+            this.editQuestionPanel.Controls.Add(this.editQuestionFilterPanel);
+            this.editQuestionPanel.Controls.Add(this.editQuestionSearchTextbox);
+            this.editQuestionPanel.Controls.Add(this.editQuestionLessonsCombobox);
+            this.editQuestionPanel.Location = new System.Drawing.Point(0, 0);
+            this.editQuestionPanel.Name = "editQuestionPanel";
+            this.editQuestionPanel.Size = new System.Drawing.Size(962, 583);
+            this.editQuestionPanel.TabIndex = 22;
+            this.editQuestionPanel.Visible = false;
+            // 
+            // editQuestionsErrorLabel
+            // 
+            this.editQuestionsErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editQuestionsErrorLabel.AutoEllipsis = true;
+            this.editQuestionsErrorLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionsErrorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.editQuestionsErrorLabel.Location = new System.Drawing.Point(48, 555);
+            this.editQuestionsErrorLabel.Name = "editQuestionsErrorLabel";
+            this.editQuestionsErrorLabel.Size = new System.Drawing.Size(881, 21);
+            this.editQuestionsErrorLabel.TabIndex = 24;
+            this.editQuestionsErrorLabel.Visible = false;
+            // 
+            // editQuestionGridViewPanel
+            // 
+            this.editQuestionGridViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editQuestionGridViewPanel.Controls.Add(this.editQuestionGridView);
+            this.editQuestionGridViewPanel.Location = new System.Drawing.Point(45, 65);
+            this.editQuestionGridViewPanel.Name = "editQuestionGridViewPanel";
+            this.editQuestionGridViewPanel.Size = new System.Drawing.Size(886, 482);
+            this.editQuestionGridViewPanel.TabIndex = 8;
+            // 
+            // editQuestionGridView
+            // 
+            this.editQuestionGridView.AllowUserToAddRows = false;
+            this.editQuestionGridView.AllowUserToDeleteRows = false;
+            this.editQuestionGridView.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal;
+            this.editQuestionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.editQuestionGridView.BackgroundColor = System.Drawing.Color.DimGray;
+            this.editQuestionGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editQuestionGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.editQuestionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editQuestionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.editQuestionGridView.ColumnHeadersHeight = 38;
+            this.editQuestionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.editQuestionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxQuestions,
+            this.dataGridViewTextBoxLessons,
+            this.dataGridViewTextBoxUnits,
+            this.dataGridViewTextBoxDiff});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.editQuestionGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            this.editQuestionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editQuestionGridView.EnableHeadersVisualStyles = false;
+            this.editQuestionGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.editQuestionGridView.Location = new System.Drawing.Point(0, 0);
+            this.editQuestionGridView.MultiSelect = false;
+            this.editQuestionGridView.Name = "editQuestionGridView";
+            this.editQuestionGridView.ReadOnly = true;
+            this.editQuestionGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.editQuestionGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
+            this.editQuestionGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.editQuestionGridView.RowTemplate.Height = 30;
+            this.editQuestionGridView.RowTemplate.ReadOnly = true;
+            this.editQuestionGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.editQuestionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.editQuestionGridView.Size = new System.Drawing.Size(886, 482);
+            this.editQuestionGridView.TabIndex = 0;
+            this.editQuestionGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showQuestionDataGridView_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxQuestions
+            // 
+            this.dataGridViewTextBoxQuestions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxQuestions.DataPropertyName = "que";
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewTextBoxQuestions.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewTextBoxQuestions.FillWeight = 200F;
+            this.dataGridViewTextBoxQuestions.HeaderText = "Ερώτηση";
+            this.dataGridViewTextBoxQuestions.MinimumWidth = 397;
+            this.dataGridViewTextBoxQuestions.Name = "dataGridViewTextBoxQuestions";
+            this.dataGridViewTextBoxQuestions.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxLessons
+            // 
+            this.dataGridViewTextBoxLessons.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxLessons.HeaderText = "Μάθημα";
+            this.dataGridViewTextBoxLessons.MinimumWidth = 150;
+            this.dataGridViewTextBoxLessons.Name = "dataGridViewTextBoxLessons";
+            this.dataGridViewTextBoxLessons.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxUnits
+            // 
+            this.dataGridViewTextBoxUnits.HeaderText = "Ενότητα";
+            this.dataGridViewTextBoxUnits.MinimumWidth = 150;
+            this.dataGridViewTextBoxUnits.Name = "dataGridViewTextBoxUnits";
+            this.dataGridViewTextBoxUnits.ReadOnly = true;
+            this.dataGridViewTextBoxUnits.Width = 150;
+            // 
+            // dataGridViewTextBoxDiff
+            // 
+            this.dataGridViewTextBoxDiff.HeaderText = "Δυσκολία";
+            this.dataGridViewTextBoxDiff.MinimumWidth = 100;
+            this.dataGridViewTextBoxDiff.Name = "dataGridViewTextBoxDiff";
+            this.dataGridViewTextBoxDiff.ReadOnly = true;
+            // 
+            // editQuestionFilterButton
+            // 
+            this.editQuestionFilterButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.editQuestionFilterButton.FlatAppearance.BorderSize = 0;
+            this.editQuestionFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editQuestionFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionFilterButton.ForeColor = System.Drawing.Color.White;
+            this.editQuestionFilterButton.Location = new System.Drawing.Point(0, 195);
+            this.editQuestionFilterButton.Name = "editQuestionFilterButton";
+            this.editQuestionFilterButton.Size = new System.Drawing.Size(32, 149);
+            this.editQuestionFilterButton.TabIndex = 7;
+            this.editQuestionFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
+            this.editQuestionFilterButton.UseVisualStyleBackColor = false;
+            this.editQuestionFilterButton.Click += new System.EventHandler(this.editQuestionFilterButton_Click);
+            // 
+            // editQuestionFilterPanel
+            // 
+            this.editQuestionFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.editQuestionFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
+            this.editQuestionFilterPanel.Controls.Add(this.button4);
+            this.editQuestionFilterPanel.Controls.Add(this.label21);
+            this.editQuestionFilterPanel.Controls.Add(this.editQuestionsDiffCheckListbox);
+            this.editQuestionFilterPanel.Controls.Add(this.editQuestionsCategoryCheckListBox);
+            this.editQuestionFilterPanel.Location = new System.Drawing.Point(0, 0);
+            this.editQuestionFilterPanel.Name = "editQuestionFilterPanel";
+            this.editQuestionFilterPanel.Size = new System.Drawing.Size(0, 583);
+            this.editQuestionFilterPanel.TabIndex = 6;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.BackColor = System.Drawing.Color.YellowGreen;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(16, 541);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(212, 35);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Εφαρμογή";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label21.Location = new System.Drawing.Point(14, 13);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(83, 23);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Φίλτρα";
+            // 
+            // editQuestionsDiffCheckListbox
+            // 
+            this.editQuestionsDiffCheckListbox.CheckOnClick = true;
+            this.editQuestionsDiffCheckListbox.ColumnWidth = 90;
+            this.editQuestionsDiffCheckListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionsDiffCheckListbox.Items.AddRange(new object[] {
+            "Εύκολες",
+            "Μέτριες",
+            "Δύσκολες"});
+            this.editQuestionsDiffCheckListbox.Location = new System.Drawing.Point(18, 45);
+            this.editQuestionsDiffCheckListbox.Name = "editQuestionsDiffCheckListbox";
+            this.editQuestionsDiffCheckListbox.Size = new System.Drawing.Size(127, 76);
+            this.editQuestionsDiffCheckListbox.TabIndex = 2;
+            this.toolTip.SetToolTip(this.editQuestionsDiffCheckListbox, "Επιλέξτε τα επίπεδα δυσκολίας των ερωτήσεων που θα εμφανιστούν.");
+            // 
+            // editQuestionsCategoryCheckListBox
+            // 
+            this.editQuestionsCategoryCheckListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.editQuestionsCategoryCheckListBox.CheckOnClick = true;
+            this.editQuestionsCategoryCheckListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionsCategoryCheckListBox.FormattingEnabled = true;
+            this.editQuestionsCategoryCheckListBox.Location = new System.Drawing.Point(16, 139);
+            this.editQuestionsCategoryCheckListBox.Name = "editQuestionsCategoryCheckListBox";
+            this.editQuestionsCategoryCheckListBox.Size = new System.Drawing.Size(213, 384);
+            this.editQuestionsCategoryCheckListBox.TabIndex = 4;
+            this.toolTip.SetToolTip(this.editQuestionsCategoryCheckListBox, "Επιλέξτε ενότητες.");
+            // 
+            // editQuestionSearchTextbox
+            // 
+            this.editQuestionSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editQuestionSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionSearchTextbox.Location = new System.Drawing.Point(611, 34);
+            this.editQuestionSearchTextbox.Name = "editQuestionSearchTextbox";
+            this.editQuestionSearchTextbox.Size = new System.Drawing.Size(322, 29);
+            this.editQuestionSearchTextbox.TabIndex = 3;
+            this.editQuestionSearchTextbox.TextChanged += new System.EventHandler(this.showQuestionsSearchTextbox_TextChanged);
+            // 
+            // editQuestionLessonsCombobox
+            // 
+            this.editQuestionLessonsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editQuestionLessonsCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.editQuestionLessonsCombobox.FormattingEnabled = true;
+            this.editQuestionLessonsCombobox.Location = new System.Drawing.Point(45, 31);
+            this.editQuestionLessonsCombobox.Name = "editQuestionLessonsCombobox";
+            this.editQuestionLessonsCombobox.Size = new System.Drawing.Size(460, 32);
+            this.editQuestionLessonsCombobox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.editQuestionLessonsCombobox, "Επιλέξτε μάθημα.");
+            this.editQuestionLessonsCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
             // 
             // showQuestionsPanel
             // 
@@ -1026,7 +1471,7 @@ namespace Multiple_Choice_Generator
             this.showQuestionsPanel.AutoScroll = true;
             this.showQuestionsPanel.AutoScrollMinSize = new System.Drawing.Size(888, 0);
             this.showQuestionsPanel.Controls.Add(this.showQuestionErrorLabel);
-            this.showQuestionsPanel.Controls.Add(this.panel2);
+            this.showQuestionsPanel.Controls.Add(this.showQuestionDGVPanel);
             this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterButton);
             this.showQuestionsPanel.Controls.Add(this.showQuestionsFilterPanel);
             this.showQuestionsPanel.Controls.Add(this.showQuestionsSearchTextbox);
@@ -1051,39 +1496,39 @@ namespace Multiple_Choice_Generator
             this.showQuestionErrorLabel.TabIndex = 24;
             this.showQuestionErrorLabel.Visible = false;
             // 
-            // panel2
+            // showQuestionDGVPanel
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.showQuestionDGVPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.showQuestionDataGridView);
-            this.panel2.Location = new System.Drawing.Point(45, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(886, 482);
-            this.panel2.TabIndex = 8;
+            this.showQuestionDGVPanel.Controls.Add(this.showQuestionDataGridView);
+            this.showQuestionDGVPanel.Location = new System.Drawing.Point(45, 65);
+            this.showQuestionDGVPanel.Name = "showQuestionDGVPanel";
+            this.showQuestionDGVPanel.Size = new System.Drawing.Size(886, 482);
+            this.showQuestionDGVPanel.TabIndex = 8;
             // 
             // showQuestionDataGridView
             // 
             this.showQuestionDataGridView.AllowUserToAddRows = false;
             this.showQuestionDataGridView.AllowUserToDeleteRows = false;
             this.showQuestionDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.Teal;
-            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Teal;
+            this.showQuestionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.showQuestionDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
             this.showQuestionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.showQuestionDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.showQuestionDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.showQuestionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.showQuestionDataGridView.ColumnHeadersHeight = 38;
             this.showQuestionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.showQuestionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1091,14 +1536,14 @@ namespace Multiple_Choice_Generator
             this.que_lesson,
             this.que_unit,
             this.que_dif});
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showQuestionDataGridView.DefaultCellStyle = dataGridViewCellStyle19;
             this.showQuestionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showQuestionDataGridView.EnableHeadersVisualStyles = false;
             this.showQuestionDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -1108,12 +1553,12 @@ namespace Multiple_Choice_Generator
             this.showQuestionDataGridView.ReadOnly = true;
             this.showQuestionDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.showQuestionDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle50.Padding = new System.Windows.Forms.Padding(2);
-            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(2);
+            this.showQuestionDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.showQuestionDataGridView.RowTemplate.Height = 30;
             this.showQuestionDataGridView.RowTemplate.ReadOnly = true;
             this.showQuestionDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1126,8 +1571,8 @@ namespace Multiple_Choice_Generator
             // 
             this.que_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.que_name.DataPropertyName = "que";
-            dataGridViewCellStyle48.BackColor = System.Drawing.Color.Transparent;
-            this.que_name.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Transparent;
+            this.que_name.DefaultCellStyle = dataGridViewCellStyle18;
             this.que_name.FillWeight = 200F;
             this.que_name.HeaderText = "Ερώτηση";
             this.que_name.MinimumWidth = 397;
@@ -1262,67 +1707,6 @@ namespace Multiple_Choice_Generator
             this.toolTip.SetToolTip(this.showQuestionLessonCombobox, "Επιλέξτε μάθημα.");
             this.showQuestionLessonCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
             this.showQuestionLessonCombobox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showQuestionLessonCombobox_MouseDown);
-            // 
-            // createTestPanel
-            // 
-            this.createTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.createTestPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.createTestPanel.Controls.Add(this.button2);
-            this.createTestPanel.Controls.Add(this.label9);
-            this.createTestPanel.Controls.Add(this.button1);
-            this.createTestPanel.Location = new System.Drawing.Point(0, 0);
-            this.createTestPanel.Name = "createTestPanel";
-            this.createTestPanel.Size = new System.Drawing.Size(977, 593);
-            this.createTestPanel.TabIndex = 16;
-            this.createTestPanel.Visible = false;
-            this.createTestPanel.Click += new System.EventHandler(this.setfocus_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(547, 262);
-            this.button2.MinimumSize = new System.Drawing.Size(200, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 70);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Χειροκίνητα";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(350, 211);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(281, 30);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Δημιουργία διαγωνίσματος";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(241, 262);
-            this.button1.MinimumSize = new System.Drawing.Size(200, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Αυτόματα";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // createAutoTestPanel
             // 
@@ -1524,6 +1908,200 @@ namespace Multiple_Choice_Generator
             this.label10.Text = "Μάθημα:";
             this.toolTip.SetToolTip(this.label10, "Επιλέξτε το μάθημα του διαγωνίσματος.");
             // 
+            // createTestPanel
+            // 
+            this.createTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createTestPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.createTestPanel.Controls.Add(this.button2);
+            this.createTestPanel.Controls.Add(this.label9);
+            this.createTestPanel.Controls.Add(this.button1);
+            this.createTestPanel.Location = new System.Drawing.Point(0, 0);
+            this.createTestPanel.Name = "createTestPanel";
+            this.createTestPanel.Size = new System.Drawing.Size(977, 593);
+            this.createTestPanel.TabIndex = 16;
+            this.createTestPanel.Visible = false;
+            this.createTestPanel.Click += new System.EventHandler(this.setfocus_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(547, 262);
+            this.button2.MinimumSize = new System.Drawing.Size(200, 70);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 70);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Χειροκίνητα";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(350, 211);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(281, 30);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Δημιουργία διαγωνίσματος";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(241, 262);
+            this.button1.MinimumSize = new System.Drawing.Size(200, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 70);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Αυτόματα";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // showTestsPanel
+            // 
+            this.showTestsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showTestsPanel.Controls.Add(this.showTestsLessonComboBox);
+            this.showTestsPanel.Controls.Add(this.panel3);
+            this.showTestsPanel.Location = new System.Drawing.Point(0, 0);
+            this.showTestsPanel.Name = "showTestsPanel";
+            this.showTestsPanel.Size = new System.Drawing.Size(962, 583);
+            this.showTestsPanel.TabIndex = 23;
+            this.showTestsPanel.Visible = false;
+            // 
+            // showTestsLessonComboBox
+            // 
+            this.showTestsLessonComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showTestsLessonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.showTestsLessonComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.showTestsLessonComboBox.FormattingEnabled = true;
+            this.showTestsLessonComboBox.Location = new System.Drawing.Point(30, 27);
+            this.showTestsLessonComboBox.Name = "showTestsLessonComboBox";
+            this.showTestsLessonComboBox.Size = new System.Drawing.Size(906, 32);
+            this.showTestsLessonComboBox.TabIndex = 2;
+            this.toolTip.SetToolTip(this.showTestsLessonComboBox, "Επιλέξτε μάθημα.");
+            this.showTestsLessonComboBox.SelectionChangeCommitted += new System.EventHandler(this.showTestsLessonComboBox_SelectionChangeCommitted);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.showTestsDataGridView);
+            this.panel3.Location = new System.Drawing.Point(32, 65);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(906, 498);
+            this.panel3.TabIndex = 0;
+            // 
+            // showTestsDataGridView
+            // 
+            this.showTestsDataGridView.AllowUserToAddRows = false;
+            this.showTestsDataGridView.AllowUserToDeleteRows = false;
+            this.showTestsDataGridView.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal;
+            this.showTestsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.showTestsDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
+            this.showTestsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.showTestsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.showTestsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.showTestsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.showTestsDataGridView.ColumnHeadersHeight = 38;
+            this.showTestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.showTestsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.showTestsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.showTestsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showTestsDataGridView.EnableHeadersVisualStyles = false;
+            this.showTestsDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.showTestsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.showTestsDataGridView.MultiSelect = false;
+            this.showTestsDataGridView.Name = "showTestsDataGridView";
+            this.showTestsDataGridView.ReadOnly = true;
+            this.showTestsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.showTestsDataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            this.showTestsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.showTestsDataGridView.RowTemplate.Height = 30;
+            this.showTestsDataGridView.RowTemplate.ReadOnly = true;
+            this.showTestsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.showTestsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.showTestsDataGridView.Size = new System.Drawing.Size(906, 498);
+            this.showTestsDataGridView.TabIndex = 1;
+            this.showTestsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showTestsDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "que";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn2.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Διαγώνισμα";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 397;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.FillWeight = 1F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "PDF";
+            this.dataGridViewTextBoxColumn3.Image = global::Multiple_Choice_Generator.Properties.Resources.pdf;
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 80;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 1F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Εκτύπωση";
+            this.dataGridViewTextBoxColumn4.Image = global::Multiple_Choice_Generator.Properties.Resources.printer;
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 80;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // editLessonsPanel
             // 
             this.editLessonsPanel.Controls.Add(this.textBox1);
@@ -1560,35 +2138,35 @@ namespace Multiple_Choice_Generator
             this.editLessonsDataGridView.AllowUserToDeleteRows = false;
             this.editLessonsDataGridView.AllowUserToResizeColumns = false;
             this.editLessonsDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.Teal;
-            this.editLessonsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Teal;
+            this.editLessonsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.editLessonsDataGridView.BackgroundColor = System.Drawing.Color.DimGray;
             this.editLessonsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.editLessonsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.editLessonsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editLessonsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.editLessonsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.editLessonsDataGridView.ColumnHeadersHeight = 38;
             this.editLessonsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.editLessonsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.editLessonsDataGridView.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.editLessonsDataGridView.DefaultCellStyle = dataGridViewCellStyle24;
             this.editLessonsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.editLessonsDataGridView.EnableHeadersVisualStyles = false;
             this.editLessonsDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -1598,12 +2176,12 @@ namespace Multiple_Choice_Generator
             this.editLessonsDataGridView.ReadOnly = true;
             this.editLessonsDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.editLessonsDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle55.Padding = new System.Windows.Forms.Padding(2);
-            this.editLessonsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(2);
+            this.editLessonsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.editLessonsDataGridView.RowTemplate.Height = 30;
             this.editLessonsDataGridView.RowTemplate.ReadOnly = true;
             this.editLessonsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1616,255 +2194,13 @@ namespace Multiple_Choice_Generator
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "que";
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.Transparent;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn1.FillWeight = 200F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Μάθημα";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 397;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // editQuestionPanel
-            // 
-            this.editQuestionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionPanel.AutoScroll = true;
-            this.editQuestionPanel.AutoScrollMinSize = new System.Drawing.Size(888, 0);
-            this.editQuestionPanel.Controls.Add(this.editQuestionsErrorLabel);
-            this.editQuestionPanel.Controls.Add(this.editQuestionGridViewPanel);
-            this.editQuestionPanel.Controls.Add(this.editQuestionFilterButton);
-            this.editQuestionPanel.Controls.Add(this.editQuestionFilterPanel);
-            this.editQuestionPanel.Controls.Add(this.editQuestionSearchTextbox);
-            this.editQuestionPanel.Controls.Add(this.editQuestionLessonsCombobox);
-            this.editQuestionPanel.Location = new System.Drawing.Point(0, 0);
-            this.editQuestionPanel.Name = "editQuestionPanel";
-            this.editQuestionPanel.Size = new System.Drawing.Size(962, 583);
-            this.editQuestionPanel.TabIndex = 22;
-            this.editQuestionPanel.Visible = false;
-            // 
-            // editQuestionsErrorLabel
-            // 
-            this.editQuestionsErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionsErrorLabel.AutoEllipsis = true;
-            this.editQuestionsErrorLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionsErrorLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.editQuestionsErrorLabel.Location = new System.Drawing.Point(48, 555);
-            this.editQuestionsErrorLabel.Name = "editQuestionsErrorLabel";
-            this.editQuestionsErrorLabel.Size = new System.Drawing.Size(881, 21);
-            this.editQuestionsErrorLabel.TabIndex = 24;
-            this.editQuestionsErrorLabel.Visible = false;
-            // 
-            // editQuestionGridViewPanel
-            // 
-            this.editQuestionGridViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionGridViewPanel.Controls.Add(this.editQuestionGridView);
-            this.editQuestionGridViewPanel.Location = new System.Drawing.Point(45, 65);
-            this.editQuestionGridViewPanel.Name = "editQuestionGridViewPanel";
-            this.editQuestionGridViewPanel.Size = new System.Drawing.Size(886, 482);
-            this.editQuestionGridViewPanel.TabIndex = 8;
-            // 
-            // editQuestionGridView
-            // 
-            this.editQuestionGridView.AllowUserToAddRows = false;
-            this.editQuestionGridView.AllowUserToDeleteRows = false;
-            this.editQuestionGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.Teal;
-            this.editQuestionGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle56;
-            this.editQuestionGridView.BackgroundColor = System.Drawing.Color.DimGray;
-            this.editQuestionGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.editQuestionGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.editQuestionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.editQuestionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
-            this.editQuestionGridView.ColumnHeadersHeight = 38;
-            this.editQuestionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.editQuestionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxQuestions,
-            this.dataGridViewTextBoxLessons,
-            this.dataGridViewTextBoxUnits,
-            this.dataGridViewTextBoxDiff});
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.editQuestionGridView.DefaultCellStyle = dataGridViewCellStyle59;
-            this.editQuestionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editQuestionGridView.EnableHeadersVisualStyles = false;
-            this.editQuestionGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.editQuestionGridView.Location = new System.Drawing.Point(0, 0);
-            this.editQuestionGridView.MultiSelect = false;
-            this.editQuestionGridView.Name = "editQuestionGridView";
-            this.editQuestionGridView.ReadOnly = true;
-            this.editQuestionGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.editQuestionGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle60.Padding = new System.Windows.Forms.Padding(2);
-            this.editQuestionGridView.RowsDefaultCellStyle = dataGridViewCellStyle60;
-            this.editQuestionGridView.RowTemplate.Height = 30;
-            this.editQuestionGridView.RowTemplate.ReadOnly = true;
-            this.editQuestionGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.editQuestionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.editQuestionGridView.Size = new System.Drawing.Size(886, 482);
-            this.editQuestionGridView.TabIndex = 0;
-            this.editQuestionGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showQuestionDataGridView_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxQuestions
-            // 
-            this.dataGridViewTextBoxQuestions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxQuestions.DataPropertyName = "que";
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.Transparent;
-            this.dataGridViewTextBoxQuestions.DefaultCellStyle = dataGridViewCellStyle58;
-            this.dataGridViewTextBoxQuestions.FillWeight = 200F;
-            this.dataGridViewTextBoxQuestions.HeaderText = "Ερώτηση";
-            this.dataGridViewTextBoxQuestions.MinimumWidth = 397;
-            this.dataGridViewTextBoxQuestions.Name = "dataGridViewTextBoxQuestions";
-            this.dataGridViewTextBoxQuestions.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxLessons
-            // 
-            this.dataGridViewTextBoxLessons.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxLessons.HeaderText = "Μάθημα";
-            this.dataGridViewTextBoxLessons.MinimumWidth = 150;
-            this.dataGridViewTextBoxLessons.Name = "dataGridViewTextBoxLessons";
-            this.dataGridViewTextBoxLessons.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxUnits
-            // 
-            this.dataGridViewTextBoxUnits.HeaderText = "Ενότητα";
-            this.dataGridViewTextBoxUnits.MinimumWidth = 150;
-            this.dataGridViewTextBoxUnits.Name = "dataGridViewTextBoxUnits";
-            this.dataGridViewTextBoxUnits.ReadOnly = true;
-            this.dataGridViewTextBoxUnits.Width = 150;
-            // 
-            // dataGridViewTextBoxDiff
-            // 
-            this.dataGridViewTextBoxDiff.HeaderText = "Δυσκολία";
-            this.dataGridViewTextBoxDiff.MinimumWidth = 100;
-            this.dataGridViewTextBoxDiff.Name = "dataGridViewTextBoxDiff";
-            this.dataGridViewTextBoxDiff.ReadOnly = true;
-            // 
-            // editQuestionFilterButton
-            // 
-            this.editQuestionFilterButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.editQuestionFilterButton.FlatAppearance.BorderSize = 0;
-            this.editQuestionFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editQuestionFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionFilterButton.ForeColor = System.Drawing.Color.White;
-            this.editQuestionFilterButton.Location = new System.Drawing.Point(0, 195);
-            this.editQuestionFilterButton.Name = "editQuestionFilterButton";
-            this.editQuestionFilterButton.Size = new System.Drawing.Size(32, 149);
-            this.editQuestionFilterButton.TabIndex = 7;
-            this.editQuestionFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
-            this.editQuestionFilterButton.UseVisualStyleBackColor = false;
-            this.editQuestionFilterButton.Click += new System.EventHandler(this.editQuestionFilterButton_Click);
-            // 
-            // editQuestionFilterPanel
-            // 
-            this.editQuestionFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.editQuestionFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
-            this.editQuestionFilterPanel.Controls.Add(this.button4);
-            this.editQuestionFilterPanel.Controls.Add(this.label21);
-            this.editQuestionFilterPanel.Controls.Add(this.editQuestionsDiffCheckListbox);
-            this.editQuestionFilterPanel.Controls.Add(this.editQuestionsCategoryCheckListBox);
-            this.editQuestionFilterPanel.Location = new System.Drawing.Point(0, 0);
-            this.editQuestionFilterPanel.Name = "editQuestionFilterPanel";
-            this.editQuestionFilterPanel.Size = new System.Drawing.Size(0, 583);
-            this.editQuestionFilterPanel.TabIndex = 6;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.BackColor = System.Drawing.Color.YellowGreen;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(16, 541);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(212, 35);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Εφαρμογή";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(14, 13);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(83, 23);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "Φίλτρα";
-            // 
-            // editQuestionsDiffCheckListbox
-            // 
-            this.editQuestionsDiffCheckListbox.CheckOnClick = true;
-            this.editQuestionsDiffCheckListbox.ColumnWidth = 90;
-            this.editQuestionsDiffCheckListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionsDiffCheckListbox.Items.AddRange(new object[] {
-            "Εύκολες",
-            "Μέτριες",
-            "Δύσκολες"});
-            this.editQuestionsDiffCheckListbox.Location = new System.Drawing.Point(18, 45);
-            this.editQuestionsDiffCheckListbox.Name = "editQuestionsDiffCheckListbox";
-            this.editQuestionsDiffCheckListbox.Size = new System.Drawing.Size(127, 76);
-            this.editQuestionsDiffCheckListbox.TabIndex = 2;
-            this.toolTip.SetToolTip(this.editQuestionsDiffCheckListbox, "Επιλέξτε τα επίπεδα δυσκολίας των ερωτήσεων που θα εμφανιστούν.");
-            // 
-            // editQuestionsCategoryCheckListBox
-            // 
-            this.editQuestionsCategoryCheckListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.editQuestionsCategoryCheckListBox.CheckOnClick = true;
-            this.editQuestionsCategoryCheckListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionsCategoryCheckListBox.FormattingEnabled = true;
-            this.editQuestionsCategoryCheckListBox.Location = new System.Drawing.Point(16, 139);
-            this.editQuestionsCategoryCheckListBox.Name = "editQuestionsCategoryCheckListBox";
-            this.editQuestionsCategoryCheckListBox.Size = new System.Drawing.Size(213, 384);
-            this.editQuestionsCategoryCheckListBox.TabIndex = 4;
-            this.toolTip.SetToolTip(this.editQuestionsCategoryCheckListBox, "Επιλέξτε ενότητες.");
-            // 
-            // editQuestionSearchTextbox
-            // 
-            this.editQuestionSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionSearchTextbox.Location = new System.Drawing.Point(611, 34);
-            this.editQuestionSearchTextbox.Name = "editQuestionSearchTextbox";
-            this.editQuestionSearchTextbox.Size = new System.Drawing.Size(322, 29);
-            this.editQuestionSearchTextbox.TabIndex = 3;
-            this.editQuestionSearchTextbox.TextChanged += new System.EventHandler(this.showQuestionsSearchTextbox_TextChanged);
-            // 
-            // editQuestionLessonsCombobox
-            // 
-            this.editQuestionLessonsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editQuestionLessonsCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.editQuestionLessonsCombobox.FormattingEnabled = true;
-            this.editQuestionLessonsCombobox.Location = new System.Drawing.Point(45, 31);
-            this.editQuestionLessonsCombobox.Name = "editQuestionLessonsCombobox";
-            this.editQuestionLessonsCombobox.Size = new System.Drawing.Size(460, 32);
-            this.editQuestionLessonsCombobox.TabIndex = 1;
-            this.toolTip.SetToolTip(this.editQuestionLessonsCombobox, "Επιλέξτε μάθημα.");
-            this.editQuestionLessonsCombobox.SelectionChangeCommitted += new System.EventHandler(this.showQuestionLessonCombobox_SelectionChangeCommitted);
             // 
             // createLessonPanel
             // 
@@ -2033,225 +2369,6 @@ namespace Multiple_Choice_Generator
             this.label6.Text = "Τίτλος Μαθήματος";
             this.toolTip.SetToolTip(this.label6, "Γράψτε τον τίτλο του μαθήματος που θα δημιουργήσετε.");
             // 
-            // createManualTestPanel
-            // 
-            this.createManualTestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestPanel.Controls.Add(this.createManualTestFilterPanel);
-            this.createManualTestPanel.Controls.Add(this.createTestFilterButton);
-            this.createManualTestPanel.Controls.Add(this.createManualTestSearchTextbox);
-            this.createManualTestPanel.Controls.Add(this.createManualTestConfButton);
-            this.createManualTestPanel.Controls.Add(this.label16);
-            this.createManualTestPanel.Controls.Add(this.createManualTestDataGridView);
-            this.createManualTestPanel.Controls.Add(this.createManualTestLessonButton);
-            this.createManualTestPanel.Controls.Add(this.createManualTestComboBox);
-            this.createManualTestPanel.Controls.Add(this.label15);
-            this.createManualTestPanel.Location = new System.Drawing.Point(0, 0);
-            this.createManualTestPanel.Name = "createManualTestPanel";
-            this.createManualTestPanel.Size = new System.Drawing.Size(962, 583);
-            this.createManualTestPanel.TabIndex = 18;
-            this.createManualTestPanel.Visible = false;
-            this.createManualTestPanel.Click += new System.EventHandler(this.setfocus_Click);
-            // 
-            // createManualTestFilterPanel
-            // 
-            this.createManualTestFilterPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestFilterPanel.BackColor = System.Drawing.Color.SkyBlue;
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestFilterConfButton);
-            this.createManualTestFilterPanel.Controls.Add(this.label17);
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestDifficultyCheckbox);
-            this.createManualTestFilterPanel.Controls.Add(this.createManualTestCatagoryCheckbox);
-            this.createManualTestFilterPanel.Location = new System.Drawing.Point(0, 0);
-            this.createManualTestFilterPanel.Name = "createManualTestFilterPanel";
-            this.createManualTestFilterPanel.Size = new System.Drawing.Size(0, 583);
-            this.createManualTestFilterPanel.TabIndex = 13;
-            // 
-            // createManualTestFilterConfButton
-            // 
-            this.createManualTestFilterConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestFilterConfButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.createManualTestFilterConfButton.FlatAppearance.BorderSize = 0;
-            this.createManualTestFilterConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createManualTestFilterConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestFilterConfButton.ForeColor = System.Drawing.Color.White;
-            this.createManualTestFilterConfButton.Location = new System.Drawing.Point(16, 541);
-            this.createManualTestFilterConfButton.Name = "createManualTestFilterConfButton";
-            this.createManualTestFilterConfButton.Size = new System.Drawing.Size(212, 35);
-            this.createManualTestFilterConfButton.TabIndex = 6;
-            this.createManualTestFilterConfButton.Text = "Εφαρμογή";
-            this.createManualTestFilterConfButton.UseVisualStyleBackColor = false;
-            this.createManualTestFilterConfButton.Click += new System.EventHandler(this.createManualTestFilterConfButton_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(14, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 23);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Φίλτρα";
-            // 
-            // createManualTestDifficultyCheckbox
-            // 
-            this.createManualTestDifficultyCheckbox.CheckOnClick = true;
-            this.createManualTestDifficultyCheckbox.ColumnWidth = 90;
-            this.createManualTestDifficultyCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestDifficultyCheckbox.Items.AddRange(new object[] {
-            "Εύκολες",
-            "Μεσαίες",
-            "Δύσκολες"});
-            this.createManualTestDifficultyCheckbox.Location = new System.Drawing.Point(16, 36);
-            this.createManualTestDifficultyCheckbox.Name = "createManualTestDifficultyCheckbox";
-            this.createManualTestDifficultyCheckbox.Size = new System.Drawing.Size(127, 76);
-            this.createManualTestDifficultyCheckbox.TabIndex = 2;
-            this.toolTip.SetToolTip(this.createManualTestDifficultyCheckbox, "Επιλέξτε από ποιές κατηγορίες δυσκολίας θα εμφανιστούν ερωτήσεις.");
-            // 
-            // createManualTestCatagoryCheckbox
-            // 
-            this.createManualTestCatagoryCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.createManualTestCatagoryCheckbox.CheckOnClick = true;
-            this.createManualTestCatagoryCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestCatagoryCheckbox.FormattingEnabled = true;
-            this.createManualTestCatagoryCheckbox.Location = new System.Drawing.Point(16, 120);
-            this.createManualTestCatagoryCheckbox.Name = "createManualTestCatagoryCheckbox";
-            this.createManualTestCatagoryCheckbox.Size = new System.Drawing.Size(213, 403);
-            this.createManualTestCatagoryCheckbox.TabIndex = 4;
-            this.toolTip.SetToolTip(this.createManualTestCatagoryCheckbox, "Επιλέξτε από ποιές ενότητες θα εμφανιστούν ερωτήσεις.");
-            // 
-            // createTestFilterButton
-            // 
-            this.createTestFilterButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.createTestFilterButton.Enabled = false;
-            this.createTestFilterButton.FlatAppearance.BorderSize = 0;
-            this.createTestFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createTestFilterButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createTestFilterButton.ForeColor = System.Drawing.Color.White;
-            this.createTestFilterButton.Location = new System.Drawing.Point(0, 195);
-            this.createTestFilterButton.Name = "createTestFilterButton";
-            this.createTestFilterButton.Size = new System.Drawing.Size(32, 149);
-            this.createTestFilterButton.TabIndex = 12;
-            this.createTestFilterButton.Text = "Φ\r\nΙ\r\nΛ\r\nΤ\r\nΡ\r\nΑ";
-            this.createTestFilterButton.UseVisualStyleBackColor = false;
-            this.createTestFilterButton.Click += new System.EventHandler(this.createTestFilterButton_Click);
-            // 
-            // createManualTestSearchTextbox
-            // 
-            this.createManualTestSearchTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestSearchTextbox.Enabled = false;
-            this.createManualTestSearchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestSearchTextbox.Location = new System.Drawing.Point(609, 94);
-            this.createManualTestSearchTextbox.Name = "createManualTestSearchTextbox";
-            this.createManualTestSearchTextbox.Size = new System.Drawing.Size(322, 29);
-            this.createManualTestSearchTextbox.TabIndex = 11;
-            // 
-            // createManualTestConfButton
-            // 
-            this.createManualTestConfButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestConfButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.createManualTestConfButton.Enabled = false;
-            this.createManualTestConfButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createManualTestConfButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestConfButton.ForeColor = System.Drawing.Color.White;
-            this.createManualTestConfButton.Location = new System.Drawing.Point(751, 512);
-            this.createManualTestConfButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.createManualTestConfButton.Name = "createManualTestConfButton";
-            this.createManualTestConfButton.Size = new System.Drawing.Size(182, 60);
-            this.createManualTestConfButton.TabIndex = 10;
-            this.createManualTestConfButton.Text = "Δημιουργία";
-            this.createManualTestConfButton.UseVisualStyleBackColor = false;
-            this.createManualTestConfButton.Click += new System.EventHandler(this.createManualTestConfButton_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(42, 108);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 18);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Ερωτήσεις:";
-            this.toolTip.SetToolTip(this.label16, "Επιλέξτε τις ερωτήσεις που θα υπάρχουν στο διαγώνισμα.");
-            // 
-            // createManualTestDataGridView
-            // 
-            this.createManualTestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.createManualTestDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mantest_que,
-            this.mantest_unit,
-            this.mantest_dif,
-            this.mantest_check});
-            this.createManualTestDataGridView.Enabled = false;
-            this.createManualTestDataGridView.Location = new System.Drawing.Point(45, 129);
-            this.createManualTestDataGridView.Name = "createManualTestDataGridView";
-            this.createManualTestDataGridView.Size = new System.Drawing.Size(888, 376);
-            this.createManualTestDataGridView.TabIndex = 8;
-            // 
-            // mantest_que
-            // 
-            this.mantest_que.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mantest_que.HeaderText = "Ερώτηση";
-            this.mantest_que.Name = "mantest_que";
-            this.mantest_que.ReadOnly = true;
-            // 
-            // mantest_unit
-            // 
-            this.mantest_unit.HeaderText = "Ενότητα";
-            this.mantest_unit.Name = "mantest_unit";
-            this.mantest_unit.ReadOnly = true;
-            this.mantest_unit.Width = 150;
-            // 
-            // mantest_dif
-            // 
-            this.mantest_dif.HeaderText = "Δυσκολία";
-            this.mantest_dif.Name = "mantest_dif";
-            this.mantest_dif.ReadOnly = true;
-            // 
-            // mantest_check
-            // 
-            this.mantest_check.HeaderText = "Επιλογή";
-            this.mantest_check.Name = "mantest_check";
-            // 
-            // createManualTestLessonButton
-            // 
-            this.createManualTestLessonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestLessonButton.Location = new System.Drawing.Point(797, 39);
-            this.createManualTestLessonButton.Name = "createManualTestLessonButton";
-            this.createManualTestLessonButton.Size = new System.Drawing.Size(136, 32);
-            this.createManualTestLessonButton.TabIndex = 7;
-            this.createManualTestLessonButton.Text = "Επιλογή";
-            this.createManualTestLessonButton.UseVisualStyleBackColor = true;
-            this.createManualTestLessonButton.Click += new System.EventHandler(this.createManualTestLessonButton_Click);
-            // 
-            // createManualTestComboBox
-            // 
-            this.createManualTestComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.createManualTestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.createManualTestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.createManualTestComboBox.FormattingEnabled = true;
-            this.createManualTestComboBox.Location = new System.Drawing.Point(45, 39);
-            this.createManualTestComboBox.Name = "createManualTestComboBox";
-            this.createManualTestComboBox.Size = new System.Drawing.Size(746, 32);
-            this.createManualTestComboBox.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(42, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 18);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Μάθημα:";
-            this.toolTip.SetToolTip(this.label15, "Επιλέξτε το μάθημα του διαγωνίσματος.");
-            // 
             // filtersTimer
             // 
             this.filtersTimer.Interval = 5;
@@ -2270,41 +2387,6 @@ namespace Multiple_Choice_Generator
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "que";
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.Transparent;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle43;
-            this.dataGridViewTextBoxColumn2.FillWeight = 200F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Διαγώνισμα";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 397;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.FillWeight = 1F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "PDF";
-            this.dataGridViewTextBoxColumn3.Image = global::Multiple_Choice_Generator.Properties.Resources.pdf;
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 1F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Εκτύπωση";
-            this.dataGridViewTextBoxColumn4.Image = global::Multiple_Choice_Generator.Properties.Resources.printer;
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form1
             // 
@@ -2343,39 +2425,41 @@ namespace Multiple_Choice_Generator
             ((System.ComponentModel.ISupportInitialize)(this.createQuestionsplitContainer)).EndInit();
             this.createQuestionsplitContainer.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            this.showTestsPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.showTestsDataGridView)).EndInit();
-            this.showQuestionsPanel.ResumeLayout(false);
-            this.showQuestionsPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
-            this.showQuestionsFilterPanel.ResumeLayout(false);
-            this.showQuestionsFilterPanel.PerformLayout();
-            this.createTestPanel.ResumeLayout(false);
-            this.createTestPanel.PerformLayout();
-            this.createAutoTestPanel.ResumeLayout(false);
-            this.createAutoTestPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).EndInit();
-            this.editLessonsPanel.ResumeLayout(false);
-            this.editLessonsPanel.PerformLayout();
-            this.editLessonDataGridViewPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).EndInit();
+            this.createManualTestPanel.ResumeLayout(false);
+            this.createManualTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.createManualTestDGVPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
+            this.createManualTestFilterPanel.ResumeLayout(false);
+            this.createManualTestFilterPanel.PerformLayout();
             this.editQuestionPanel.ResumeLayout(false);
             this.editQuestionPanel.PerformLayout();
             this.editQuestionGridViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.editQuestionGridView)).EndInit();
             this.editQuestionFilterPanel.ResumeLayout(false);
             this.editQuestionFilterPanel.PerformLayout();
+            this.showQuestionsPanel.ResumeLayout(false);
+            this.showQuestionsPanel.PerformLayout();
+            this.showQuestionDGVPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.showQuestionDataGridView)).EndInit();
+            this.showQuestionsFilterPanel.ResumeLayout(false);
+            this.showQuestionsFilterPanel.PerformLayout();
+            this.createAutoTestPanel.ResumeLayout(false);
+            this.createAutoTestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.createAutoTestNumericUpDown)).EndInit();
+            this.createTestPanel.ResumeLayout(false);
+            this.createTestPanel.PerformLayout();
+            this.showTestsPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.showTestsDataGridView)).EndInit();
+            this.editLessonsPanel.ResumeLayout(false);
+            this.editLessonsPanel.PerformLayout();
+            this.editLessonDataGridViewPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.editLessonsDataGridView)).EndInit();
             this.createLessonPanel.ResumeLayout(false);
             this.createLessonPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonDeletePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createLessonAddPictureBox)).EndInit();
-            this.createManualTestPanel.ResumeLayout(false);
-            this.createManualTestPanel.PerformLayout();
-            this.createManualTestFilterPanel.ResumeLayout(false);
-            this.createManualTestFilterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.createManualTestDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2422,7 +2506,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.RadioButton createQuestionRadioButton2;
         private System.Windows.Forms.RadioButton createQuestionRadioButton1;
         private System.Windows.Forms.ComboBox createQuestionCategoryCombobox;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel createLessonPanel;
         private System.Windows.Forms.Label label7;
@@ -2460,7 +2543,6 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Timer sleepTimer;
         private System.Windows.Forms.Button createManualTestConfButton;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView createManualTestDataGridView;
         private System.Windows.Forms.Button createManualTestLessonButton;
         private System.Windows.Forms.ComboBox createManualTestComboBox;
         private System.Windows.Forms.Label label15;
@@ -2486,13 +2568,9 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.Label createLessonErrorTitleLabel;
         private System.Windows.Forms.Label createLessonErrorLabel;
         private System.Windows.Forms.TextBox createLessonCategoryTextbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_que;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mantest_dif;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn mantest_check;
         private System.Windows.Forms.TextBox createAutoTestTitleTextbox;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel showQuestionDGVPanel;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_lesson;
         private System.Windows.Forms.DataGridViewTextBoxColumn que_unit;
@@ -2528,6 +2606,13 @@ namespace Multiple_Choice_Generator
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Panel createManualTestDGVPanel;
+        private System.Windows.Forms.DataGridView createManualTestDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToTest;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -206,6 +206,30 @@ namespace Multiple_Choice_Generator
                     }
                 }
 
+                //create units
+                if(units.Count < this.unitsDataGridView.Rows.Count - 1)
+                {
+                    for(int i=units.Count; i<this.unitsDataGridView.Rows.Count-1; i++)
+                    {                        
+                        String unitName = this.unitsDataGridView.Rows[i].Cells[0].Value.ToString();
+                        if (!String.IsNullOrEmpty(unitName) && !String.IsNullOrWhiteSpace(unitName))
+                        {
+                            check = db.iUnit(unitName, user, lesson);
+
+                            if (check != 1)
+                            {
+                                closeFlag = false;
+                                this.errorsLabel.Text += "Υπήρξε πρόβλημα με την δημιουργία ενότητας.\n";
+                            }
+                        }else
+                        {
+                            this.errorsLabel.Text += "Δε μπορείτε να εισάγεται κενό όνομα ενότητας.";
+                            closeFlag = false;
+                        }
+                                 
+                    }
+                }
+
                 father.loadLessons();   //load lessons, refresh them
 
                 if (closeFlag)  //all good

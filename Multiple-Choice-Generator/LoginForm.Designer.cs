@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.showPasswordPictureBox = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.loginSignupLinkLabel = new System.Windows.Forms.LinkLabel();
             this.loginSignupLabel = new System.Windows.Forms.Label();
@@ -49,8 +48,9 @@
             this.findusLabel = new System.Windows.Forms.Label();
             this.titleL = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordPictureBox)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.linkedinPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twitterPictureBox)).BeginInit();
@@ -61,8 +61,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.showPasswordPictureBox);
             this.panel1.Controls.Add(this.errorLabel);
             this.panel1.Controls.Add(this.loginSignupLinkLabel);
             this.panel1.Controls.Add(this.loginSignupLabel);
@@ -79,36 +79,25 @@
             this.panel1.Size = new System.Drawing.Size(415, 418);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // showPasswordPictureBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(137, 355);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Ξέχασα τον κωδικό μου";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Multiple_Choice_Generator.Properties.Resources.look;
-            this.pictureBox2.Location = new System.Drawing.Point(302, 211);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            this.showPasswordPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showPasswordPictureBox.Image = global::Multiple_Choice_Generator.Properties.Resources.look;
+            this.showPasswordPictureBox.Location = new System.Drawing.Point(302, 211);
+            this.showPasswordPictureBox.Name = "showPasswordPictureBox";
+            this.showPasswordPictureBox.Size = new System.Drawing.Size(30, 28);
+            this.showPasswordPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.showPasswordPictureBox.TabIndex = 11;
+            this.showPasswordPictureBox.TabStop = false;
+            this.showPasswordPictureBox.Visible = false;
+            this.showPasswordPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
+            this.showPasswordPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // errorLabel
             // 
             this.errorLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorLabel.Location = new System.Drawing.Point(8, 367);
+            this.errorLabel.Location = new System.Drawing.Point(8, 380);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(404, 23);
             this.errorLabel.TabIndex = 10;
@@ -187,7 +176,8 @@
             this.loginPasswordTextbox.PasswordChar = '*';
             this.loginPasswordTextbox.Size = new System.Drawing.Size(223, 24);
             this.loginPasswordTextbox.TabIndex = 4;
-            this.loginPasswordTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPasswordTextbox_KeyPress);
+            this.loginPasswordTextbox.TextChanged += new System.EventHandler(this.loginPasswordTextbox_TextChanged);
+            this.loginPasswordTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginUsernameTextbox_KeyPress);
             // 
             // loginUsernameSeperator
             // 
@@ -319,6 +309,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel1.Location = new System.Drawing.Point(126, 355);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(133, 15);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Ξέχασα τον κωδικό μου";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +337,7 @@
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordPictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.linkedinPictureBox)).EndInit();
@@ -360,11 +365,11 @@
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label titleL;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox showPasswordPictureBox;
         private System.Windows.Forms.Label findusLabel;
         private System.Windows.Forms.PictureBox linkedinPictureBox;
         private System.Windows.Forms.PictureBox twitterPictureBox;
         private System.Windows.Forms.PictureBox facebookPictureBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

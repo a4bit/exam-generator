@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Το Multiple Choice Exam Generatos,  ή αλλιώς MCEG, είναι ένα πρόγραμμα δημιουργία διαγωνισμάτων πολλαπλών επιλογών.
+
+Δημιουργήστε τα δικά σας μαθήματα και ενότητες και εισάγετε εύκολα ερωτήσεις.
+Φτιάξτε διαγωνισμάτα επιλέγωντας οι ίδιοι τις ερωτήσεις που θέλετε ή αφήνοντας το MCEG να το κάνει για εσας.
+Κάντε ανασκόπηση του διαγωνίσματος, παραμετροποιήστε το και εξάγετε το σε μορφή αρχείου PDF, έτοιμο για εκτύπωση.</value>
+  </data>
 </root>

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using System.Security.Cryptography;
+using System.Windows.Threading;
+
 namespace Multiple_Choice_Generator
 {
     public partial class LoginForm : Form
@@ -30,13 +32,28 @@ namespace Multiple_Choice_Generator
             System.Diagnostics.Process.Start("https://users.it.teithe.gr/~it154453/exam-generator-website1/register.php");   //navigate to URL
         }
 
+        //disable maximazied
         private void LoginForm_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
+
+            try
+            {
+
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                MessageBox.Show("There was an error." +
+                    "Check the path to the bitmap.");
+            }
         }
 
-        //show password
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        public void RotateWheelEvent(object sender, EventArgs args)
+        {
+
+        }
+            //show password
+            private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
             this.loginPasswordTextbox.PasswordChar = '\0';
         }
@@ -47,25 +64,9 @@ namespace Multiple_Choice_Generator
             this.loginPasswordTextbox.PasswordChar = '*';
         }
 
-        //go to website
+        //go to social website
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            database db = new database();
-            //Το foreach γινεται για την προβολή των απαντησεων της ερωτησης. Η ερωστηση ειναι το questions[0].ElementAt(i) (για την i ερωτηση) και οι απαντησεις της μεσα στο foreach η μεταβλητη answer ειναι η καθε απαντηση της
-            List<string>[] questions = new List<string>[3];
-            List<string> answers = new List<string>();
-            questions = db.qTest("trixas", "Δίκτυα", "test2");
-            for (int i = 0; i < questions[0].Count; i++)
-            { 
-                answers = db.qAnswers(questions[0].ElementAt(i), questions[1].ElementAt(i), "trixas", questions[2].ElementAt(i));
-                Console.WriteLine("Ερώτηση: " + questions[0].ElementAt(i));
-                foreach (string answer in answers)
-                {
-                    Console.WriteLine(answer);
-                }
-                answers.Clear();
-            }
-
             PictureBox social = (PictureBox)sender;
 
             if(social.Name.Equals("facebookPictureBox"))
@@ -85,6 +86,7 @@ namespace Multiple_Choice_Generator
             social.Size = new Size(47,47);  //change size
         }
 
+        //grow up social media icons when hover
         private void PictureBox_MouseLeave(object sender, EventArgs e)
         {
             PictureBox social = (PictureBox)sender;
@@ -92,6 +94,7 @@ namespace Multiple_Choice_Generator
             social.Size = new Size(45,45);  //change size
         }
 
+        //send email with password
         private void label1_Click(object sender, EventArgs e)
         {
             database db = new database();
@@ -156,6 +159,7 @@ namespace Multiple_Choice_Generator
                 MessageBox.Show("Δεν δώσατε όνομα χρήστη στο πεδίο!");
         }
 
+        //login with press enter
         private void loginUsernameTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == (char)13)
@@ -164,6 +168,7 @@ namespace Multiple_Choice_Generator
             }
         }
 
+        //login
         private void loginFunction()
         {
             errorLabel.Text = "";   //delete errors in label
@@ -192,12 +197,14 @@ namespace Multiple_Choice_Generator
             }
         }
 
-        private void loginPasswordTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        //show password button
+        private void loginPasswordTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                loginFunction();
-            }
+            if (String.IsNullOrWhiteSpace(this.loginPasswordTextbox.Text) || String.IsNullOrEmpty(this.loginPasswordTextbox.Text))
+                this.showPasswordPictureBox.Visible = false;
+            else
+                this.showPasswordPictureBox.Visible = true;
         }
+
     }
 }

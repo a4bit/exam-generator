@@ -51,7 +51,6 @@
             // 
             // unitsDataGridView
             // 
-            this.unitsDataGridView.AllowUserToAddRows = false;
             this.unitsDataGridView.AllowUserToDeleteRows = false;
             this.unitsDataGridView.AllowUserToResizeColumns = false;
             this.unitsDataGridView.AllowUserToResizeRows = false;
@@ -97,7 +96,7 @@
             this.unitsDataGridView.RowTemplate.Height = 30;
             this.unitsDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.unitsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.unitsDataGridView.Size = new System.Drawing.Size(831, 200);
+            this.unitsDataGridView.Size = new System.Drawing.Size(831, 250);
             this.unitsDataGridView.TabIndex = 17;
             this.unitsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitsDataGridView_CellContentClick);
             this.unitsDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.unitsDataGridView_CellMouseClick);
@@ -124,9 +123,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.unitsDataGridViewPanel.Controls.Add(this.unitsDataGridView);
-            this.unitsDataGridViewPanel.Location = new System.Drawing.Point(30, 195);
+            this.unitsDataGridViewPanel.Location = new System.Drawing.Point(30, 185);
             this.unitsDataGridViewPanel.Name = "unitsDataGridViewPanel";
-            this.unitsDataGridViewPanel.Size = new System.Drawing.Size(831, 200);
+            this.unitsDataGridViewPanel.Size = new System.Drawing.Size(831, 250);
             this.unitsDataGridViewPanel.TabIndex = 18;
             // 
             // questionLabel
@@ -143,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label1.Location = new System.Drawing.Point(27, 174);
+            this.label1.Location = new System.Drawing.Point(27, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 20;
@@ -154,10 +153,10 @@
             this.descriptionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft YaHei Light", 14.25F, System.Drawing.FontStyle.Italic);
-            this.descriptionTextbox.Location = new System.Drawing.Point(30, 92);
+            this.descriptionTextbox.Location = new System.Drawing.Point(30, 102);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
-            this.descriptionTextbox.Size = new System.Drawing.Size(831, 69);
+            this.descriptionTextbox.Size = new System.Drawing.Size(831, 59);
             this.descriptionTextbox.TabIndex = 22;
             // 
             // lessonTextbox
